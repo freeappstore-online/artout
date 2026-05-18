@@ -1,7 +1,7 @@
 {
-  "name": "artout",
-  "short_name": "artout",
-  "description": "Free artout app — part of FreeAppStore",
+  "name": "ArtOut",
+  "short_name": "ArtOut",
+  "description": "Street art. On the map. By the community.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "any",
