@@ -5,6 +5,7 @@ export function useFavorites() {
   const [favorites, setFavorites] = useState<string[]>([])
 
   useEffect(() => {
+    if (!fas.auth.user) return
     fas.kv.get<string[]>('favorites').then((val) => {
       if (val) setFavorites(val)
     })
