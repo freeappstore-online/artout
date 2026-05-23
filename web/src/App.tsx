@@ -15,7 +15,7 @@ import type { ArtPost } from './lib/types'
 export default function App() {
   const [tab, setTab] = useState<Tab>('map')
   const { posts, loading, addPost } = usePosts()
-  const { favorites, toggle: toggleFavorite, isFavorite } = useFavorites()
+  const { favorites, toggle: toggleFavorite, isFavorite, getFavCount } = useFavorites()
   const { position, state: geoState } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
   const [galleryPosts, setGalleryPosts] = useState<ArtPost[]>([])
@@ -82,6 +82,7 @@ export default function App() {
           onPostClick={openGallery}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
+          getFavCount={getFavCount}
         />
       )}
       {tab === 'add' && (
@@ -109,6 +110,7 @@ export default function App() {
           onClose={() => setGalleryIndex(null)}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
+          getFavCount={getFavCount}
         />
       )}
 

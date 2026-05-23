@@ -9,6 +9,7 @@ interface WallViewProps {
   onPostClick: (post: ArtPost) => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
+  getFavCount: (id: string) => number
 }
 
 type Sort = 'nearby' | 'newest'
@@ -20,7 +21,7 @@ function formatDistance(meters: number): string {
   return `${Math.round(meters / 1000)}km`
 }
 
-export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite }: WallViewProps) {
+export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite, getFavCount }: WallViewProps) {
   const hasLocation = userLat != null && userLon != null
   const [sort, setSort] = useState<Sort>('newest')
   const [layout, setLayout] = useState<Layout>('grid')
@@ -108,9 +109,10 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
               />
               <button
                 onClick={() => onToggleFavorite(post.id)}
-                className="absolute right-1 top-1 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-sm backdrop-blur-sm"
+                className="absolute right-1 top-1 flex items-center gap-0.5 rounded-full bg-black/40 px-1.5 py-0.5 text-xs backdrop-blur-sm"
               >
                 {isFavorite(post.id) ? '❤️' : '🤍'}
+                {getFavCount(post.id) > 0 && <span className="text-white/80">{getFavCount(post.id)}</span>}
               </button>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">
                 <span className="text-[0.6rem] font-medium text-white/90">{post.locationName}</span>

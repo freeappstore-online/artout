@@ -9,9 +9,10 @@ interface GalleryProps {
   onClose: () => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
+  getFavCount: (id: string) => number
 }
 
-export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite }: GalleryProps) {
+export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, getFavCount }: GalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(index)
   const current = posts[currentIndex]
 
@@ -31,9 +32,12 @@ export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite }:
         <div className="fixed inset-x-0 bottom-0 z-[10000] flex items-center gap-3 bg-black/80 px-4 py-3 backdrop-blur">
           <button
             onClick={() => onToggleFavorite(current.id)}
-            className="shrink-0 text-xl"
+            className="flex shrink-0 items-center gap-1.5 text-xl"
           >
             {isFavorite(current.id) ? '❤️' : '🤍'}
+            {getFavCount(current.id) > 0 && (
+              <span className="text-sm font-semibold text-white/80">{getFavCount(current.id)}</span>
+            )}
           </button>
           <div className="min-w-0 flex-1">
             <div className="truncate text-sm text-white/90">{current.locationPath || current.locationName}</div>
