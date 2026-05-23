@@ -1,0 +1,10013 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: artout.spec.ts >> ArtOut >> wall has nearby/newest sort toggle
+- Location: e2e/artout.spec.ts:26:7
+
+# Error details
+
+```
+Error: expect(locator).toBeVisible() failed
+
+Locator: getByText('Newest')
+Expected: visible
+Timeout: 10000ms
+Error: element(s) not found
+
+Call log:
+  - Expect "toBeVisible" with timeout 10000ms
+  - waiting for getByText('Newest')
+
+```
+
+```yaml
+- main:
+  - button:
+    - img
+  - button:
+    - img
+  - button "Street art 🤍 Rue de la Platière":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Platière
+  - button "Street art 🤍 Rue Antoine Zattara":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Antoine Zattara
+  - button "Street art 🤍 Königstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Königstraße
+  - button "Street art 🤍 Cours Belsunce":
+    - img "Street art"
+    - button "🤍"
+    - text: Cours Belsunce
+  - button "Street art 🤍 Rue Paul Bert":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Paul Bert
+  - button "Street art 🤍 Rue de la Platière":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Platière
+  - button "Street art 🤍 Viale Zara":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale Zara
+  - button "Street art 🤍 S Ə Şirvani küc":
+    - img "Street art"
+    - button "🤍"
+    - text: S Ə Şirvani küc
+  - button "Street art 🤍 Aleksandra Čaka iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Aleksandra Čaka iela
+  - button "Street art 🤍 Königstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Königstraße
+  - button "Street art 🤍 R 2453":
+    - img "Street art"
+    - button "🤍"
+    - text: R 2453
+  - button "Street art 🤍 ทางหลวงชนบท ชร 5023":
+    - img "Street art"
+    - button "🤍"
+    - text: ทางหลวงชนบท ชร 5023
+  - button "Street art 🤍 Viale Zara":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale Zara
+  - button "Street art 🤍 Tunnel de la Joliette":
+    - img "Street art"
+    - button "🤍"
+    - text: Tunnel de la Joliette
+  - button "Street art 🤍 ulitsa Zlatarska":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Zlatarska
+  - button "Street art 🤍 Rue Audric":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Audric
+  - button "Street art 🤍 Avenida Panamá":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Panamá
+  - button "Street art 🤍 Aleksandra Čaka iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Aleksandra Čaka iela
+  - button "Street art 🤍 Königstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Königstraße
+  - button "Street art 🤍 باهنر":
+    - img "Street art"
+    - button "🤍"
+    - text: باهنر
+  - button "Street art 🤍 Rua das Portas do Sol":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua das Portas do Sol
+  - button "Street art 🤍 Hda Santa Ana":
+    - img "Street art"
+    - button "🤍"
+    - text: Hda Santa Ana
+  - button "Street art 🤍 Adelgade":
+    - img "Street art"
+    - button "🤍"
+    - text: Adelgade
+  - button "Street art 🤍 Calle Puerto Rico":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Puerto Rico
+  - button "Street art 🤍 Rua das Portas do Sol":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua das Portas do Sol
+  - button "Street art 🤍 Corso Niccolò Machiavelli":
+    - img "Street art"
+    - button "🤍"
+    - text: Corso Niccolò Machiavelli
+  - button "Street art 🤍 Rue des trois Epis":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des trois Epis
+  - button "Street art 🤍 Rua das Portas do Sol":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua das Portas do Sol
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Avenue 5":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue 5
+  - button "Street art 🤍 Calle 80 Sur":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 80 Sur
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Contrà San Giorgio":
+    - img "Street art"
+    - button "🤍"
+    - text: Contrà San Giorgio
+  - button "Street art 🤍 Carrera 60":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrera 60
+  - button "Street art 🤍 Calle Puerto Rico":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Puerto Rico
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Eppensteinerstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Eppensteinerstraße
+  - button "Street art 🤍 Ofener Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Ofener Straße
+  - button "Street art 🤍 Westerstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Westerstraße
+  - button "Street art 🤍 Allée Gavoty Honorat":
+    - img "Street art"
+    - button "🤍"
+    - text: Allée Gavoty Honorat
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Vengara – Achanambalam Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Vengara – Achanambalam Road
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 Hotel Circle North":
+    - img "Street art"
+    - button "🤍"
+    - text: Hotel Circle North
+  - button "Street art 🤍 Vulytsya Kostyushko":
+    - img "Street art"
+    - button "🤍"
+    - text: Vulytsya Kostyushko
+  - button "Street art 🤍 Grassy Point Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Grassy Point Road
+  - button "Street art 🤍 Ermine Path":
+    - img "Street art"
+    - button "🤍"
+    - text: Ermine Path
+  - button "Street art 🤍 Place Jules Vallès":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Jules Vallès
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 Rue Jules Ferry":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jules Ferry
+  - button "Street art 🤍 County Road 169":
+    - img "Street art"
+    - button "🤍"
+    - text: County Road 169
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 Grassy Point Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Grassy Point Road
+  - button "Street art 🤍 Rosemary Crescent":
+    - img "Street art"
+    - button "🤍"
+    - text: Rosemary Crescent
+  - button "Street art 🤍 Titsian Tabidze Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Titsian Tabidze Street
+  - button "Street art 🤍 Wienerstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Wienerstraße
+  - button "Street art 🤍 Mapleton Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Mapleton Avenue
+  - button "Street art 🤍 Soi Lucky Lek":
+    - img "Street art"
+    - button "🤍"
+    - text: Soi Lucky Lek
+  - button "Street art 🤍 Hitchcock Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hitchcock Lane
+  - button "Street art 🤍 Impasse du Talamont":
+    - img "Street art"
+    - button "🤍"
+    - text: Impasse du Talamont
+  - button "Street art 🤍 Costa Rica":
+    - img "Street art"
+    - button "🤍"
+    - text: Costa Rica
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Avenida Conduta":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Conduta
+  - button "Street art 🤍 22 de Mayo":
+    - img "Street art"
+    - button "🤍"
+    - text: 22 de Mayo
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Eraniel - Monday Market Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Eraniel - Monday Market Road
+  - button "Street art 🤍 Ulitsa Yumasheva":
+    - img "Street art"
+    - button "🤍"
+    - text: Ulitsa Yumasheva
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 Ramallo":
+    - img "Street art"
+    - button "🤍"
+    - text: Ramallo
+  - button "Street art 🤍 Samaypur Market Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Samaypur Market Road
+  - button "Street art 🤍 Ulitsa Levanevskogo":
+    - img "Street art"
+    - button "🤍"
+    - text: Ulitsa Levanevskogo
+  - button "Street art 🤍 Leystraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Leystraße
+  - button "Street art 🤍 Lark Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Lark Avenue
+  - button "Street art 🤍 Paris Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Paris Street
+  - button "Street art 🤍 Clark Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clark Street
+  - button "Street art 🤍 STKK Road":
+    - img "Street art"
+    - button "🤍"
+    - text: STKK Road
+  - button "Street art 🤍 Larrea":
+    - img "Street art"
+    - button "🤍"
+    - text: Larrea
+  - button "Street art 🤍 Rue Léon Augustin l Hermitte":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Léon Augustin l Hermitte
+  - button "Street art 🤍 Via Tobruk":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Tobruk
+  - button "Street art 🤍 Brunswick Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick Avenue North
+  - button "Street art 🤍 Calle Bruno":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Bruno
+  - button "Street art 🤍 Ambalappadu-Kakkur Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Ambalappadu-Kakkur Road
+  - button "Street art 🤍 Calle de los Molinos Baja":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle de los Molinos Baja
+  - button "Street art 🤍 Rue de Charonne":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Charonne
+  - button "Street art 🤍 Berkeley Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Berkeley Street
+  - button "Street art 🤍 Persiaran Apec":
+    - img "Street art"
+    - button "🤍"
+    - text: Persiaran Apec
+  - button "Street art 🤍 Jalan Tepi Sungai":
+    - img "Street art"
+    - button "🤍"
+    - text: Jalan Tepi Sungai
+  - button "Street art 🤍 Revolution Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Revolution Road
+  - button "Street art 🤍 Cap Juan Antonio Artigas":
+    - img "Street art"
+    - button "🤍"
+    - text: Cap Juan Antonio Artigas
+  - button "Street art 🤍 Juan Antonio Lavalleja":
+    - img "Street art"
+    - button "🤍"
+    - text: Juan Antonio Lavalleja
+  - button "Street art 🤍 Paraná":
+    - img "Street art"
+    - button "🤍"
+    - text: Paraná
+  - button "Street art 🤍 Leystraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Leystraße
+  - button "Street art 🤍 Khersons ka Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Khersons ka Street
+  - button "Street art 🤍 Ulitsa Oktyabr skaya":
+    - img "Street art"
+    - button "🤍"
+    - text: Ulitsa Oktyabr skaya
+  - button "Street art 🤍 Via Alfonso Sozy Carafa":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Alfonso Sozy Carafa
+  - button "Street art 🤍 Independencia":
+    - img "Street art"
+    - button "🤍"
+    - text: Independencia
+  - button "Street art 🤍 Paraná":
+    - img "Street art"
+    - button "🤍"
+    - text: Paraná
+  - button "Street art 🤍 W15":
+    - img "Street art"
+    - button "🤍"
+    - text: W15
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Calle 7":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 7
+  - button "Street art 🤍 Calle 70":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 70
+  - button "Street art 🤍 اسماء بنت سعيد بن العاص":
+    - img "Street art"
+    - button "🤍"
+    - text: اسماء بنت سعيد بن العاص
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Canal de La Luz":
+    - img "Street art"
+    - button "🤍"
+    - text: Canal de La Luz
+  - button "Street art 🤍 Rue Saint-Urbain":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Urbain
+  - button "Street art 🤍 Araku - Visakhapatnam Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Araku - Visakhapatnam Road
+  - button "Street art 🤍 7a Avenida":
+    - img "Street art"
+    - button "🤍"
+    - text: 7a Avenida
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Avenue Charles de Gaulle":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Charles de Gaulle
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Rue Jenner":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jenner
+  - button "Street art 🤍 Rue Jeanne d Arc":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jeanne d Arc
+  - button "Street art 🤍 Place Pinel":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Pinel
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Place Pinel":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Pinel
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Rue Jeanne d Arc":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jeanne d Arc
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Rue Jeanne d Arc":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jeanne d Arc
+  - button "Street art 🤍 Rue Jenner":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jenner
+  - button "Street art 🤍 Rue Jeanne d Arc":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jeanne d Arc
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Place Pinel":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Pinel
+  - button "Street art 🤍 Boulevard Vincent Auriol":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vincent Auriol
+  - button "Street art 🤍 Rue Jeanne d Arc":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jeanne d Arc
+  - button "Street art 🤍 Rainbird Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Rainbird Road
+  - button "Street art 🤍 Rue Pouchet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Pouchet
+  - button "Street art 🤍 Campo San Geremia":
+    - img "Street art"
+    - button "🤍"
+    - text: Campo San Geremia
+  - button "Street art 🤍 Place de la Haute Vieille Tour":
+    - img "Street art"
+    - button "🤍"
+    - text: Place de la Haute Vieille Tour
+  - button "Street art 🤍 Rainbird Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Rainbird Road
+  - button "Street art 🤍 Carrera 87c":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrera 87c
+  - button "Street art 🤍 Pasaje 1":
+    - img "Street art"
+    - button "🤍"
+    - text: Pasaje 1
+  - button "Street art 🤍 Rue Saint-Nicolas":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Nicolas
+  - button "Street art 🤍 Pallichal - Vizhinjam Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Pallichal - Vizhinjam Road
+  - button "Street art 🤍 Place Barthélémy":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Barthélémy
+  - button "Street art 🤍 Dörpstraat":
+    - img "Street art"
+    - button "🤍"
+    - text: Dörpstraat
+  - button "Street art 🤍 Bhogpur - Adampur Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Bhogpur - Adampur Road
+  - button "Street art 🤍 Leon Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Leon Avenue
+  - button "Street art 🤍 Avenue de l Europe":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue de l Europe
+  - button "Street art 🤍 Rue Saint-Nicolas":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Nicolas
+  - button "Street art 🤍 Vulytsya Travneva":
+    - img "Street art"
+    - button "🤍"
+    - text: Vulytsya Travneva
+  - button "Street art 🤍 Lawrence Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Lawrence Avenue
+  - button "Street art 🤍 Koppisetti Street Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Koppisetti Street Road
+  - button "Street art 🤍 Juno Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Juno Road
+  - button "Street art 🤍 Rue Saint-Romain":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Romain
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Rue des Carmes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Carmes
+  - button "Street art 🤍 Rue du Gros Horloge":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Gros Horloge
+  - button "Street art 🤍 Via degli Olivi":
+    - img "Street art"
+    - button "🤍"
+    - text: Via degli Olivi
+  - button "Street art 🤍 Avenue Grassion Cibrand":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Grassion Cibrand
+  - button "Street art 🤍 Rue du Gros Horloge":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Gros Horloge
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Avenida Francisco I Madero":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Francisco I Madero
+  - button "Street art 🤍 Avenue Grassion Cibrand":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Grassion Cibrand
+  - button "Street art 🤍 Mõisavahe":
+    - img "Street art"
+    - button "🤍"
+    - text: Mõisavahe
+  - button "Street art 🤍 Rue Percière":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Percière
+  - button "Street art 🤍 Rue des Carmes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Carmes
+  - button "Street art 🤍 Avenue Grassion Cibrand":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Grassion Cibrand
+  - button "Street art 🤍 Rue Ganterie":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Ganterie
+  - button "Street art 🤍 Rue Saint-Nicolas":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Nicolas
+  - button "Street art 🤍 Rue de la Poterne":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Poterne
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Rue Percière":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Percière
+  - button "Street art 🤍 Triq Il-Vitorja":
+    - img "Street art"
+    - button "🤍"
+    - text: Triq Il-Vitorja
+  - button "Street art 🤍 Southeast Pine Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Southeast Pine Street
+  - button "Street art 🤍 State Route 55":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 55
+  - button "Street art 🤍 Carrer dels Teixidors":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer dels Teixidors
+  - button "Street art 🤍 Carrer dels Calderers":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer dels Calderers
+  - button "Street art 🤍 Carrer de Baix":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Baix
+  - button "Street art 🤍 Plaça del Carme":
+    - img "Street art"
+    - button "🤍"
+    - text: Plaça del Carme
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Rotonda de la Fuente de La Hispanidad":
+    - img "Street art"
+    - button "🤍"
+    - text: Rotonda de la Fuente de La Hispanidad
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Carrer dels Drets":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer dels Drets
+  - button "Street art 🤍 Carrer de Quart":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Quart
+  - button "Street art 🤍 Place de la République":
+    - img "Street art"
+    - button "🤍"
+    - text: Place de la République
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Carrer de Sant Miquel":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Sant Miquel
+  - button "Street art 🤍 State Route 55":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 55
+  - button "Street art 🤍 Carrer del Moro Zeid":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer del Moro Zeid
+  - button "Street art 🤍 Carrer d En Gall":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer d En Gall
+  - button "Street art 🤍 Carrer de la Tapineria":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de la Tapineria
+  - button "Street art 🤍 Gran Via de Ferran el Catòlic":
+    - img "Street art"
+    - button "🤍"
+    - text: Gran Via de Ferran el Catòlic
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Market Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Lane
+  - button "Street art 🤍 State Route 55":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 55
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Market Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Lane
+  - button "Street art 🤍 State Route 55":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 55
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Market Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Lane
+  - button "Street art 🤍 Market Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Lane
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Market Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Lane
+  - button "Street art 🤍 State Route 55":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 55
+  - button "Street art 🤍 Market Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Lane
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Southeast 17th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Southeast 17th Avenue
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Calle de Tomás Bretón":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle de Tomás Bretón
+  - button "Street art 🤍 Spring Mountain Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Mountain Road
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Segundo Callejón San Juan de Dios":
+    - img "Street art"
+    - button "🤍"
+    - text: Segundo Callejón San Juan de Dios
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 N103":
+    - img "Street art"
+    - button "🤍"
+    - text: N103
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Sophienblatt":
+    - img "Street art"
+    - button "🤍"
+    - text: Sophienblatt
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Travessera de Dalt":
+    - img "Street art"
+    - button "🤍"
+    - text: Travessera de Dalt
+  - button "Street art 🤍 Rue Carmagnole-Liberté":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Carmagnole-Liberté
+  - button "Street art 🤍 Via Arrigo da Settimello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Arrigo da Settimello
+  - button "Street art 🤍 Rue Huchette":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Huchette
+  - button "Street art 🤍 Hardenvoort":
+    - img "Street art"
+    - button "🤍"
+    - text: Hardenvoort
+  - button "Street art 🤍 Bredastraat":
+    - img "Street art"
+    - button "🤍"
+    - text: Bredastraat
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 IJzerenwaag":
+    - img "Street art"
+    - button "🤍"
+    - text: IJzerenwaag
+  - button "Street art 🤍 Hardenvoort":
+    - img "Street art"
+    - button "🤍"
+    - text: Hardenvoort
+  - button "Street art 🤍 Rue Genissieu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Genissieu
+  - button "Street art 🤍 Rue des Frênes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Frênes
+  - button "Street art 🤍 IJzerenwaag":
+    - img "Street art"
+    - button "🤍"
+    - text: IJzerenwaag
+  - button "Street art 🤍 Viaduct-Dam":
+    - img "Street art"
+    - button "🤍"
+    - text: Viaduct-Dam
+  - button "Street art 🤍 Theodoor van Rijswijckplaats":
+    - img "Street art"
+    - button "🤍"
+    - text: Theodoor van Rijswijckplaats
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Theodoor van Rijswijckplaats":
+    - img "Street art"
+    - button "🤍"
+    - text: Theodoor van Rijswijckplaats
+  - button "Street art 🤍 Rue Genissieu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Genissieu
+  - button "Street art 🤍 Viaduct-Dam":
+    - img "Street art"
+    - button "🤍"
+    - text: Viaduct-Dam
+  - button "Street art 🤍 Asiadok-Westkaai":
+    - img "Street art"
+    - button "🤍"
+    - text: Asiadok-Westkaai
+  - button "Street art 🤍 Asiadok-Westkaai":
+    - img "Street art"
+    - button "🤍"
+    - text: Asiadok-Westkaai
+  - button "Street art 🤍 Schloßgasse":
+    - img "Street art"
+    - button "🤍"
+    - text: Schloßgasse
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Badham Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Badham Street
+  - button "Street art 🤍 Noorderlaan":
+    - img "Street art"
+    - button "🤍"
+    - text: Noorderlaan
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Noorderlaan":
+    - img "Street art"
+    - button "🤍"
+    - text: Noorderlaan
+  - button "Street art 🤍 Noorderlaan":
+    - img "Street art"
+    - button "🤍"
+    - text: Noorderlaan
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 zh k Orfey":
+    - img "Street art"
+    - button "🤍"
+    - text: zh k Orfey
+  - button "Street art 🤍 Noorderlaan":
+    - img "Street art"
+    - button "🤍"
+    - text: Noorderlaan
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Kurt-Schumacher-Platz":
+    - img "Street art"
+    - button "🤍"
+    - text: Kurt-Schumacher-Platz
+  - button "Street art 🤍 Deoria Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Deoria Road
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Yarra Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Yarra Boulevard
+  - button "Street art 🤍 Rue Allain":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Allain
+  - button "Street art 🤍 Avenue de Lusancay":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue de Lusancay
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Chemin Rural des Paludiers":
+    - img "Street art"
+    - button "🤍"
+    - text: Chemin Rural des Paludiers
+  - button "Street art 🤍 Rue Joseph Cholet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Joseph Cholet
+  - button "Street art 🤍 Rue des Acadiens":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Acadiens
+  - button "Street art 🤍 Montée du Perron":
+    - img "Street art"
+    - button "🤍"
+    - text: Montée du Perron
+  - button "Street art 🤍 Malerkotla - Barnala Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Malerkotla - Barnala Road
+  - button "Street art 🤍 Avenida Valentín Vergara":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Valentín Vergara
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Yarra Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Yarra Boulevard
+  - button "Street art 🤍 Yarra Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Yarra Boulevard
+  - button "Street art 🤍 Yarra Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Yarra Boulevard
+  - button "Street art 🤍 Eastern Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Freeway
+  - button "Street art 🤍 Market Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Street
+  - button "Street art 🤍 Woolley Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Woolley Street
+  - button "Street art 🤍 Yarra Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Yarra Boulevard
+  - button "Street art 🤍 Yarra Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Yarra Boulevard
+  - button "Street art 🤍 Montée du Perron":
+    - img "Street art"
+    - button "🤍"
+    - text: Montée du Perron
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Rue Marcel Sembat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Marcel Sembat
+  - button "Street art 🤍 Bypass Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Bypass Road
+  - button "Street art 🤍 National Highway 3 Service Road":
+    - img "Street art"
+    - button "🤍"
+    - text: National Highway 3 Service Road
+  - button "Street art 🤍 Damua Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Damua Road
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Street Number 6":
+    - img "Street art"
+    - button "🤍"
+    - text: Street Number 6
+  - button "Street art 🤍 4th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 4th Street
+  - button "Street art 🤍 Rue Pierre Vogler":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Pierre Vogler
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 4th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 4th Street
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Avenue de Lusancay":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue de Lusancay
+  - button "Street art 🤍 Boulevard du Port":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard du Port
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Cohen Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Cohen Place
+  - button "Street art 🤍 Boulevard du Port":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard du Port
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Carrer Alta Maduixa":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Alta Maduixa
+  - button "Street art 🤍 Carrer Sant Sebastià":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Sant Sebastià
+  - button "Street art 🤍 Passeig José Canalejas":
+    - img "Street art"
+    - button "🤍"
+    - text: Passeig José Canalejas
+  - button "Street art 🤍 Carrer Fontanella":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Fontanella
+  - button "Street art 🤍 Royal Oaks Drive":
+    - img "Street art"
+    - button "🤍"
+    - text: Royal Oaks Drive
+  - button "Street art 🤍 Waratah Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Waratah Place
+  - button "Street art 🤍 Rue Ulysse Darracq":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Ulysse Darracq
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Carrer Clivillers":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Clivillers
+  - button "Street art 🤍 Carrer de les Ballesteries":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de les Ballesteries
+  - button "Street art 🤍 Carrer Fontanella":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Fontanella
+  - button "Street art 🤍 Passeig José Canalejas":
+    - img "Street art"
+    - button "🤍"
+    - text: Passeig José Canalejas
+  - button "Street art 🤍 Carrer Murrià":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Murrià
+  - button "Street art 🤍 GI-522":
+    - img "Street art"
+    - button "🤍"
+    - text: GI-522
+  - button "Street art 🤍 Carrer Murrià":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Murrià
+  - button "Street art 🤍 Carrer Fontanella":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Fontanella
+  - button "Street art 🤍 Waratah Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Waratah Place
+  - button "Street art 🤍 Carrer Alta Maduixa":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Alta Maduixa
+  - button "Street art 🤍 Passeig José Canalejas":
+    - img "Street art"
+    - button "🤍"
+    - text: Passeig José Canalejas
+  - button "Street art 🤍 Rue Joseph Quaranta":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Joseph Quaranta
+  - button "Street art 🤍 Rue du Castillet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Castillet
+  - button "Street art 🤍 Plaça de la Pia Almoina":
+    - img "Street art"
+    - button "🤍"
+    - text: Plaça de la Pia Almoina
+  - button "Street art 🤍 Carrer Sant Pere Màrtir":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Sant Pere Màrtir
+  - button "Street art 🤍 Rue du Castillet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Castillet
+  - button "Street art 🤍 Northwest Park Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Northwest Park Avenue
+  - button "Street art 🤍 Plaça del Pont d en Vestit":
+    - img "Street art"
+    - button "🤍"
+    - text: Plaça del Pont d en Vestit
+  - button "Street art 🤍 Carrer de Torres i Jonama":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Torres i Jonama
+  - button "Street art 🤍 Carretera de Palamós":
+    - img "Street art"
+    - button "🤍"
+    - text: Carretera de Palamós
+  - button "Street art 🤍 Carrer Marià Vayreda":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Marià Vayreda
+  - button "Street art 🤍 Carretera de Palamós":
+    - img "Street art"
+    - button "🤍"
+    - text: Carretera de Palamós
+  - button "Street art 🤍 Carrer de Pirroig":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Pirroig
+  - button "Street art 🤍 Avinguda de Josep Tarradellas":
+    - img "Street art"
+    - button "🤍"
+    - text: Avinguda de Josep Tarradellas
+  - button "Street art 🤍 Carrer Forn Nou":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Forn Nou
+  - button "Street art 🤍 Carrer de Pirroig":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Pirroig
+  - button "Street art 🤍 Avinguda d Espanya":
+    - img "Street art"
+    - button "🤍"
+    - text: Avinguda d Espanya
+  - button "Street art 🤍 Carrer del Camp Llarg":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer del Camp Llarg
+  - button "Street art 🤍 Carrer de Ramon Trias Fargas":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Ramon Trias Fargas
+  - button "Street art 🤍 Northwest Park Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Northwest Park Avenue
+  - button "Street art 🤍 Northwest Hoyt Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Northwest Hoyt Street
+  - button "Street art 🤍 Carrer d Olot":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer d Olot
+  - button "Street art 🤍 Carrer Escultor Amadeu":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Escultor Amadeu
+  - button "Street art 🤍 Avinguda de les Flors":
+    - img "Street art"
+    - button "🤍"
+    - text: Avinguda de les Flors
+  - button "Street art 🤍 Avinguda Reis Catòlics":
+    - img "Street art"
+    - button "🤍"
+    - text: Avinguda Reis Catòlics
+  - button "Street art 🤍 Avenida Francisco Matarazzo":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Francisco Matarazzo
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 Maguey":
+    - img "Street art"
+    - button "🤍"
+    - text: Maguey
+  - button "Street art 🤍 Rua Bárbara Heliodora":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Bárbara Heliodora
+  - button "Street art 🤍 Avenida Francisco Matarazzo":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Francisco Matarazzo
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 Northwest Everett Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Northwest Everett Street
+  - button "Street art 🤍 Avenida Francisco Matarazzo":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Francisco Matarazzo
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 Avinguda Reis Catòlics":
+    - img "Street art"
+    - button "🤍"
+    - text: Avinguda Reis Catòlics
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 Carrer Miquel Servet":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Miquel Servet
+  - button "Street art 🤍 Rua Doutor Francisco Figueiredo Barreto":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Doutor Francisco Figueiredo Barreto
+  - button "Street art 🤍 Rua Doutor Francisco Figueiredo Barreto":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Doutor Francisco Figueiredo Barreto
+  - button "Street art 🤍 Avinguda de les Flors":
+    - img "Street art"
+    - button "🤍"
+    - text: Avinguda de les Flors
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 A36":
+    - img "Street art"
+    - button "🤍"
+    - text: A36
+  - button "Street art 🤍 Smith Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Smith Street
+  - button "Street art 🤍 Boulevard Jacqueline Auriol Supérieur":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Jacqueline Auriol Supérieur
+  - button "Street art 🤍 Flanatička ulica":
+    - img "Street art"
+    - button "🤍"
+    - text: Flanatička ulica
+  - button "Street art 🤍 Moor Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Moor Street
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Smith Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Smith Street
+  - button "Street art 🤍 Avenida Té":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Té
+  - button "Street art 🤍 Rua Domingos Paiva":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Domingos Paiva
+  - button "Street art 🤍 May Street":
+    - img "Street art"
+    - button "🤍"
+    - text: May Street
+  - button "Street art 🤍 King Street":
+    - img "Street art"
+    - button "🤍"
+    - text: King Street
+  - button "Street art 🤍 Avenida Rangel Pestana":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Rangel Pestana
+  - button "Street art 🤍 Praça Ribeira":
+    - img "Street art"
+    - button "🤍"
+    - text: Praça Ribeira
+  - button "Street art 🤍 Greeves Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves Street
+  - button "Street art 🤍 Iredale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Iredale Street
+  - button "Street art 🤍 Applebee Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Applebee Street
+  - button "Street art 🤍 Avenida Professor Alfonso Bovero":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Professor Alfonso Bovero
+  - button "Street art 🤍 Rua Londrina":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Londrina
+  - button "Street art 🤍 Avenida Professor Alfonso Bovero":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Professor Alfonso Bovero
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 D1075":
+    - img "Street art"
+    - button "🤍"
+    - text: D1075
+  - button "Street art 🤍 Monte Blanco":
+    - img "Street art"
+    - button "🤍"
+    - text: Monte Blanco
+  - button "Street art 🤍 1st Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: 1st Avenue North
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 1st Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: 1st Avenue North
+  - button "Street art 🤍 Central Avenue South":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue South
+  - button "Street art 🤍 Monte Blanco":
+    - img "Street art"
+    - button "🤍"
+    - text: Monte Blanco
+  - button "Street art 🤍 Little Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Via della Pace":
+    - img "Street art"
+    - button "🤍"
+    - text: Via della Pace
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 1st Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: 1st Avenue North
+  - button "Street art 🤍 Monte Blanco":
+    - img "Street art"
+    - button "🤍"
+    - text: Monte Blanco
+  - button "Street art 🤍 Central Avenue South":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue South
+  - button "Street art 🤍 Arlington Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: Arlington Avenue North
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 Rue du Colonel Fabien":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Colonel Fabien
+  - button "Street art 🤍 9th Street North":
+    - img "Street art"
+    - button "🤍"
+    - text: 9th Street North
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 7th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 7th Street
+  - button "Street art 🤍 Improv Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Improv Alley
+  - button "Street art 🤍 23rd Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: 23rd Avenue North
+  - button "Street art 🤍 Improv Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Improv Alley
+  - button "Street art 🤍 Rue du Colonel Fabien":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Colonel Fabien
+  - button "Street art 🤍 W Street":
+    - img "Street art"
+    - button "🤍"
+    - text: W Street
+  - button "Street art 🤍 10th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 10th Street
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 J Street":
+    - img "Street art"
+    - button "🤍"
+    - text: J Street
+  - button "Street art 🤍 1st Avenue North":
+    - img "Street art"
+    - button "🤍"
+    - text: 1st Avenue North
+  - button "Street art 🤍 Improv Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Improv Alley
+  - button "Street art 🤍 Improv Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Improv Alley
+  - button "Street art 🤍 7th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 7th Street
+  - button "Street art 🤍 Chemin des Tamaris":
+    - img "Street art"
+    - button "🤍"
+    - text: Chemin des Tamaris
+  - button "Street art 🤍 Central Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Avenue
+  - button "Street art 🤍 Eastern Esplanade":
+    - img "Street art"
+    - button "🤍"
+    - text: Eastern Esplanade
+  - button "Street art 🤍 Rue Jean Marie Jego":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Jean Marie Jego
+  - button "Street art 🤍 Paseo de la Reforma":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Reforma
+  - button "Street art 🤍 Rue Oberkampf":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Oberkampf
+  - button "Street art 🤍 Matamoros":
+    - img "Street art"
+    - button "🤍"
+    - text: Matamoros
+  - button "Street art 🤍 Rue Crespin du Gast":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Crespin du Gast
+  - button "Street art 🤍 Calle 8 Norte":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 8 Norte
+  - button "Street art 🤍 Calle Quinta Avenida":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Quinta Avenida
+  - button "Street art 🤍 Avenida de los Compositores":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida de los Compositores
+  - button "Street art 🤍 Piazza Tito Minniti":
+    - img "Street art"
+    - button "🤍"
+    - text: Piazza Tito Minniti
+  - button "Street art 🤍 Piazza Tito Minniti":
+    - img "Street art"
+    - button "🤍"
+    - text: Piazza Tito Minniti
+  - button "Street art 🤍 Paseo de la Reforma":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Reforma
+  - button "Street art 🤍 Rue de Thionville":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Thionville
+  - button "Street art 🤍 Rue Oberkampf":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Oberkampf
+  - button "Street art 🤍 Rue de Ventadour":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Ventadour
+  - button "Street art 🤍 Punta Nizuc - Cancún":
+    - img "Street art"
+    - button "🤍"
+    - text: Punta Nizuc - Cancún
+  - button "Street art 🤍 Rue Oberkampf":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Oberkampf
+  - button "Street art 🤍 Rue Oberkampf":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Oberkampf
+  - button "Street art 🤍 Quai de Jemmapes":
+    - img "Street art"
+    - button "🤍"
+    - text: Quai de Jemmapes
+  - button "Street art 🤍 Farringdon Service Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Farringdon Service Road
+  - button "Street art 🤍 Place Bernard Cornut Gentille":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Bernard Cornut Gentille
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Avenida Rueda Medina":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Rueda Medina
+  - button "Street art 🤍 Calle Abasolo":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Abasolo
+  - button "Street art 🤍 Flinders Court":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Court
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Myrtle Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Myrtle Road
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Avenida Juárez":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Juárez
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Myrtle Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Myrtle Road
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Myrtle Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Myrtle Road
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Rue Marcel Pagnol":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Marcel Pagnol
+  - button "Street art 🤍 Frisco Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Frisco Trail
+  - button "Street art 🤍 U S Highway 64":
+    - img "Street art"
+    - button "🤍"
+    - text: U S Highway 64
+  - button "Street art 🤍 West Mountain Street":
+    - img "Street art"
+    - button "🤍"
+    - text: West Mountain Street
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 North West Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: North West Avenue
+  - button "Street art 🤍 West Mountain Street":
+    - img "Street art"
+    - button "🤍"
+    - text: West Mountain Street
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 West Center Street":
+    - img "Street art"
+    - button "🤍"
+    - text: West Center Street
+  - button "Street art 🤍 Via Cairo Montenotte":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Cairo Montenotte
+  - button "Street art 🤍 South East Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: South East Avenue
+  - button "Street art 🤍 Avenue des Anciens Combattants en Afrique du Nord":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue des Anciens Combattants en Afrique du Nord
+  - button "Street art 🤍 North 9th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: North 9th Street
+  - button "Street art 🤍 Ross Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ross Street
+  - button "Street art 🤍 Boulevard Victor Tuby":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Victor Tuby
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Southwest A Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Southwest A Street
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Garrison Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Garrison Avenue
+  - button "Street art 🤍 Drage Spasić":
+    - img "Street art"
+    - button "🤍"
+    - text: Drage Spasić
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Allée de la Liberté Charles de Gaulle":
+    - img "Street art"
+    - button "🤍"
+    - text: Allée de la Liberté Charles de Gaulle
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Boulevard de Magenta":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard de Magenta
+  - button "Street art 🤍 Via Giuseppe Ripamonti":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Giuseppe Ripamonti
+  - button "Street art 🤍 Petra Drapšina":
+    - img "Street art"
+    - button "🤍"
+    - text: Petra Drapšina
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Rue Saint-Antoine":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Antoine
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Via Antonio Cechov":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Antonio Cechov
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Square Alban Satragne":
+    - img "Street art"
+    - button "🤍"
+    - text: Square Alban Satragne
+  - button "Street art 🤍 Ulitsa Strelochnikov":
+    - img "Street art"
+    - button "🤍"
+    - text: Ulitsa Strelochnikov
+  - button "Street art 🤍 Calle Santa María":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Santa María
+  - button "Street art 🤍 Calle Casas de Campos":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Casas de Campos
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Ulitsa Strelochnikov":
+    - img "Street art"
+    - button "🤍"
+    - text: Ulitsa Strelochnikov
+  - button "Street art 🤍 Rutledge Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Lane
+  - button "Street art 🤍 Avenue du Docteur Raymond Picaud":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue du Docteur Raymond Picaud
+  - button "Street art 🤍 Calle Casas de Campos":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Casas de Campos
+  - button "Street art 🤍 Rue Marceau":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Marceau
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 High Street":
+    - img "Street art"
+    - button "🤍"
+    - text: High Street
+  - button "Street art 🤍 Most slobode":
+    - img "Street art"
+    - button "🤍"
+    - text: Most slobode
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Sunčani kej":
+    - img "Street art"
+    - button "🤍"
+    - text: Sunčani kej
+  - button "Street art 🤍 Trg Dositeja Obradovića":
+    - img "Street art"
+    - button "🤍"
+    - text: Trg Dositeja Obradovića
+  - button "Street art 🤍 George Street":
+    - img "Street art"
+    - button "🤍"
+    - text: George Street
+  - button "Street art 🤍 Most slobode":
+    - img "Street art"
+    - button "🤍"
+    - text: Most slobode
+  - button "Street art 🤍 Bulevar Mihajla Pupina":
+    - img "Street art"
+    - button "🤍"
+    - text: Bulevar Mihajla Pupina
+  - button "Street art 🤍 Pohligstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Pohligstraße
+  - button "Street art 🤍 Kineska četvrt":
+    - img "Street art"
+    - button "🤍"
+    - text: Kineska četvrt
+  - button "Street art 🤍 Ingram Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ingram Street
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Dr Zorana Đinđića":
+    - img "Street art"
+    - button "🤍"
+    - text: Dr Zorana Đinđića
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Dobrovol s koho Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Dobrovol s koho Avenue
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Villa Faucheur":
+    - img "Street art"
+    - button "🤍"
+    - text: Villa Faucheur
+  - button "Street art 🤍 Rue de l Ourthe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de l Ourthe
+  - button "Street art 🤍 Rue Piat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Piat
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Boulevard Edouard Herriot":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Edouard Herriot
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Nacional":
+    - img "Street art"
+    - button "🤍"
+    - text: Nacional
+  - button "Street art 🤍 Rue Piat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Piat
+  - button "Street art 🤍 Rue Piat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Piat
+  - button "Street art 🤍 Rue Piat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Piat
+  - button "Street art 🤍 Boulevard Edouard Herriot":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Edouard Herriot
+  - button "Street art 🤍 Rue Piat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Piat
+  - button "Street art 🤍 Boulevard Edouard Herriot":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Edouard Herriot
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Rue Piat":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Piat
+  - button "Street art 🤍 Napier Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Brunswick Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Young Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Young Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Napier Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier Street
+  - button "Street art 🤍 Brunswick Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick Street
+  - button "Street art 🤍 Napier Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier Street
+  - button "Street art 🤍 Napier Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier Street
+  - button "Street art 🤍 Young Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Young Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Young Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Young Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Argyle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Brunswick Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Leicester Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester Street
+  - button "Street art 🤍 Leicester Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester Street
+  - button "Street art 🤍 Leicester Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Henry Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Henry Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Henry Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Henry Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Nicholson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicholson Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Henry Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Henry Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Henry Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Henry Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Henry Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Henry Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Kerr Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr Street
+  - button "Street art 🤍 Rose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Fitzroy Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Harrison Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Harrison Place
+  - button "Street art 🤍 Harrison Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Harrison Place
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Harrison Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Harrison Place
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Harrison Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Harrison Place
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Harrison Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Harrison Place
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Harrison Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Harrison Place
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Spring Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring Street
+  - button "Street art 🤍 Johnston Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Place
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Boulevard Vallombrosa":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Vallombrosa
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Johnston Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Place
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Domaine de l Université de Paris Sud":
+    - img "Street art"
+    - button "🤍"
+    - text: Domaine de l Université de Paris Sud
+  - button "Street art 🤍 Johnston Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Place
+  - button "Street art 🤍 Domaine de l Université de Paris Sud":
+    - img "Street art"
+    - button "🤍"
+    - text: Domaine de l Université de Paris Sud
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Rutledge Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Rutledge Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rutledge Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rutledge Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Hosier Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Allen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Allen Street
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Rue Juliette Dodu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Juliette Dodu
+  - button "Street art 🤍 Via W 4 Norte":
+    - img "Street art"
+    - button "🤍"
+    - text: Via W 4 Norte
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Calle 4 Norte":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 4 Norte
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Cours Julien":
+    - img "Street art"
+    - button "🤍"
+    - text: Cours Julien
+  - button "Street art 🤍 Unnamed Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Unnamed Road
+  - button "Street art 🤍 Quai de la Loire":
+    - img "Street art"
+    - button "🤍"
+    - text: Quai de la Loire
+  - button "Street art 🤍 Avenida 28 Oriente":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 28 Oriente
+  - button "Street art 🤍 Rue Riquet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Riquet
+  - button "Street art 🤍 Rue d Aubervilliers":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Aubervilliers
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Calle Molina Lario":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Molina Lario
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rue Riquet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Riquet
+  - button "Street art 🤍 Rue Vian":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Vian
+  - button "Street art 🤍 Rue de Sambre-et-Meuse":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Sambre-et-Meuse
+  - button "Street art 🤍 Rue du Retrait":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Retrait
+  - button "Street art 🤍 Rue de la Verrerie":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Verrerie
+  - button "Street art 🤍 Impasse des Arbalétriers":
+    - img "Street art"
+    - button "🤍"
+    - text: Impasse des Arbalétriers
+  - button "Street art 🤍 Rue de Moussy":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Moussy
+  - button "Street art 🤍 Rue des Ecouffes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Ecouffes
+  - button "Street art 🤍 Calle 3 Oriente":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 3 Oriente
+  - button "Street art 🤍 Rue de Sambre-et-Meuse":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Sambre-et-Meuse
+  - button "Street art 🤍 Rue du Retrait":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Retrait
+  - button "Street art 🤍 Rue Oberkampf":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Oberkampf
+  - button "Street art 🤍 Rue de Sambre-et-Meuse":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Sambre-et-Meuse
+  - button "Street art 🤍 Passage Saint-Sébastien":
+    - img "Street art"
+    - button "🤍"
+    - text: Passage Saint-Sébastien
+  - button "Street art 🤍 Rue Froissart":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Froissart
+  - button "Street art 🤍 Rue du Vieux Colombier":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Vieux Colombier
+  - button "Street art 🤍 Rue du Retrait":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Retrait
+  - button "Street art 🤍 Rue de la Verrerie":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Verrerie
+  - button "Street art 🤍 Rue des Panoyaux":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Panoyaux
+  - button "Street art 🤍 Rue des Panoyaux":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Panoyaux
+  - button "Street art 🤍 Rue d Annam":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Annam
+  - button "Street art 🤍 Rue des Panoyaux":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Panoyaux
+  - button "Street art 🤍 Dando Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Dando Street
+  - button "Street art 🤍 Rue des Serbes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Serbes
+  - button "Street art 🤍 Rue du Suquet":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Suquet
+  - button "Street art 🤍 Rue Chauvelot":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Chauvelot
+  - button "Street art 🤍 Rue Saint-Dizier":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Dizier
+  - button "Street art 🤍 Place Bernard Cornut Gentille":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Bernard Cornut Gentille
+  - button "Street art 🤍 Rue d Annam":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Annam
+  - button "Street art 🤍 Rue d Annam":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Annam
+  - button "Street art 🤍 Rue du Cherche-Midi":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Cherche-Midi
+  - button "Street art 🤍 Rue Fontaine de Chande":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Fontaine de Chande
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Rue Emile Landrin":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Emile Landrin
+  - button "Street art 🤍 Rue des Gabres":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Gabres
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rue des Serbes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des Serbes
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Rue d Annam":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Annam
+  - button "Street art 🤍 Via Conti Agosti":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Conti Agosti
+  - button "Street art 🤍 Rue du Cherche-Midi":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Cherche-Midi
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Viale Veneto":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale Veneto
+  - button "Street art 🤍 Rua Eduardo de Martino":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Eduardo de Martino
+  - button "Street art 🤍 Rua Eduardo de Martino":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Eduardo de Martino
+  - button "Street art 🤍 Rua Eduardo de Martino":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Eduardo de Martino
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Place Paul Cézanne":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Paul Cézanne
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Strada Regionale 53 Postumia":
+    - img "Street art"
+    - button "🤍"
+    - text: Strada Regionale 53 Postumia
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Rue de la Terrassière":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Terrassière
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Quai François Mitterrand":
+    - img "Street art"
+    - button "🤍"
+    - text: Quai François Mitterrand
+  - button "Street art 🤍 Aleksandra Čaka iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Aleksandra Čaka iela
+  - button "Street art 🤍 Rua Eugênia de Guerin":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Eugênia de Guerin
+  - button "Street art 🤍 Rue Sibie":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sibie
+  - button "Street art 🤍 Russell Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Place
+  - button "Street art 🤍 Calle Cantuarias":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Cantuarias
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Rue de la Terrassière":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Terrassière
+  - button "Street art 🤍 Greville Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Greville Street
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Rue Richard Gurley Drew":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Richard Gurley Drew
+  - button "Street art 🤍 Greville Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Greville Street
+  - button "Street art 🤍 Quai François Mitterrand":
+    - img "Street art"
+    - button "🤍"
+    - text: Quai François Mitterrand
+  - button "Street art 🤍 Stafford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Stafford Street
+  - button "Street art 🤍 Grand Rue":
+    - img "Street art"
+    - button "🤍"
+    - text: Grand Rue
+  - button "Street art 🤍 Rua Alexandre Caturla":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Alexandre Caturla
+  - button "Street art 🤍 Viale delle Vittorie":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale delle Vittorie
+  - button "Street art 🤍 Vojvođanska":
+    - img "Street art"
+    - button "🤍"
+    - text: Vojvođanska
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Bulevar Oslobođenja (Ulaz 40-46)":
+    - img "Street art"
+    - button "🤍"
+    - text: Bulevar Oslobođenja (Ulaz 40-46)
+  - button "Street art 🤍 Carrer de Rafael Casanova":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de Rafael Casanova
+  - button "Street art 🤍 Viale delle Vittorie":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale delle Vittorie
+  - button "Street art 🤍 Puškinova":
+    - img "Street art"
+    - button "🤍"
+    - text: Puškinova
+  - button "Street art 🤍 Rua Ferdinando Brivio":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Ferdinando Brivio
+  - button "Street art 🤍 Rua Eugênia de Guerin":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Eugênia de Guerin
+  - button "Street art 🤍 Viale delle Vittorie":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale delle Vittorie
+  - button "Street art 🤍 Rua Eugênia de Guerin":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Eugênia de Guerin
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rua Ferdinando Brivio":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Ferdinando Brivio
+  - button "Street art 🤍 Viale delle Vittorie":
+    - img "Street art"
+    - button "🤍"
+    - text: Viale delle Vittorie
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Avenida Professor João Batista Conti":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Professor João Batista Conti
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rue du Gond":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Gond
+  - button "Street art 🤍 Duckboard Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Duckboard Place
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Alfred Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Alfred Place
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Lauderdale Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Lauderdale Place
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Rue du Gond":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue du Gond
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Duckboard Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Duckboard Place
+  - button "Street art 🤍 Duckboard Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Duckboard Place
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Duckboard Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Duckboard Place
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Blaasjeskruid":
+    - img "Street art"
+    - button "🤍"
+    - text: Blaasjeskruid
+  - button "Street art 🤍 Rue Richelieu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Richelieu
+  - button "Street art 🤍 Rua Nélson de Oliveira":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Nélson de Oliveira
+  - button "Street art 🤍 Carrer Narcís Puget Riquer":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer Narcís Puget Riquer
+  - button "Street art 🤍 Rua Nélson de Oliveira":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Nélson de Oliveira
+  - button "Street art 🤍 Southern Cross Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Southern Cross Lane
+  - button "Street art 🤍 Talstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Talstraße
+  - button "Street art 🤍 Melbourne Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Melbourne Place
+  - button "Street art 🤍 Rue Richelieu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Richelieu
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Blaasjeskruid":
+    - img "Street art"
+    - button "🤍"
+    - text: Blaasjeskruid
+  - button "Street art 🤍 Rua Ettore Ximenes":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Ettore Ximenes
+  - button "Street art 🤍 Rua Nélson de Oliveira":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Nélson de Oliveira
+  - button "Street art 🤍 Avenue du Parc Industriel":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue du Parc Industriel
+  - button "Street art 🤍 Melbourne Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Melbourne Place
+  - button "Street art 🤍 Talstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Talstraße
+  - button "Street art 🤍 Circonvallazione Occidentale":
+    - img "Street art"
+    - button "🤍"
+    - text: Circonvallazione Occidentale
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Boulevard Kimber":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Kimber
+  - button "Street art 🤍 Boulevard Kimber":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Kimber
+  - button "Street art 🤍 Autoroute René-Lévesque":
+    - img "Street art"
+    - button "🤍"
+    - text: Autoroute René-Lévesque
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Strachan Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Strachan Lane
+  - button "Street art 🤍 Rue Port-de-Montréal":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Port-de-Montréal
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Autoroute René-Lévesque":
+    - img "Street art"
+    - button "🤍"
+    - text: Autoroute René-Lévesque
+  - button "Street art 🤍 Rue Port-de-Montréal":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Port-de-Montréal
+  - button "Street art 🤍 Boulevard Kimber":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Kimber
+  - button "Street art 🤍 Autoroute René-Lévesque":
+    - img "Street art"
+    - button "🤍"
+    - text: Autoroute René-Lévesque
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Sint-Pietersnieuwstraat":
+    - img "Street art"
+    - button "🤍"
+    - text: Sint-Pietersnieuwstraat
+  - button "Street art 🤍 Exhibition Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Exhibition Street
+  - button "Street art 🤍 Strachan Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Strachan Lane
+  - button "Street art 🤍 Boulevard Marie":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Marie
+  - button "Street art 🤍 Rue Port-de-Montréal":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Port-de-Montréal
+  - button "Street art 🤍 Place Cockerill":
+    - img "Street art"
+    - button "🤍"
+    - text: Place Cockerill
+  - button "Street art 🤍 Rue d Auteuil":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Auteuil
+  - button "Street art 🤍 Rue Bussy l Indien":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Bussy l Indien
+  - button "Street art 🤍 Rue des 3 Rois":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des 3 Rois
+  - button "Street art 🤍 Cours Julien":
+    - img "Street art"
+    - button "🤍"
+    - text: Cours Julien
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Rue Crudère":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Crudère
+  - button "Street art 🤍 Boulevard Marie":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Marie
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Cours Julien":
+    - img "Street art"
+    - button "🤍"
+    - text: Cours Julien
+  - button "Street art 🤍 Cours Julien":
+    - img "Street art"
+    - button "🤍"
+    - text: Cours Julien
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Rue Vian":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Vian
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Rue des 3 Rois":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des 3 Rois
+  - button "Street art 🤍 Rue des 3 Rois":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue des 3 Rois
+  - button "Street art 🤍 Aleksandra Čaka iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Aleksandra Čaka iela
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Canterbury Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Canterbury Road
+  - button "Street art 🤍 Liteynyy prospekt":
+    - img "Street art"
+    - button "🤍"
+    - text: Liteynyy prospekt
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Canterbury Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Canterbury Road
+  - button "Street art 🤍 Avenida 7":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 7
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Valentín Alsina":
+    - img "Street art"
+    - button "🤍"
+    - text: Valentín Alsina
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Avenida 1":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 1
+  - button "Street art 🤍 Barrio Santa Lucia":
+    - img "Street art"
+    - button "🤍"
+    - text: Barrio Santa Lucia
+  - button "Street art 🤍 Avenida 1":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 1
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Canterbury Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Canterbury Road
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Avenida 7":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 7
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Alexandra Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Parade
+  - button "Street art 🤍 Lange Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Lange Avenue
+  - button "Street art 🤍 Avenida 8":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 8
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Avenida 10 Jesús Ocaña Rojas":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 10 Jesús Ocaña Rojas
+  - button "Street art 🤍 Boulevard Dent":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Dent
+  - button "Street art 🤍 Boulevard Dent":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Dent
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Boulevard Dent":
+    - img "Street art"
+    - button "🤍"
+    - text: Boulevard Dent
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 2nd Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: 2nd Avenue
+  - button "Street art 🤍 Avenida 7":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 7
+  - button "Street art 🤍 Avenida Central":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Central
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Avenida Central":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Central
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Avenida Central":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Central
+  - button "Street art 🤍 Gertrude Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Gertrude Street
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Doctor Adolfo Carit Eva":
+    - img "Street art"
+    - button "🤍"
+    - text: Doctor Adolfo Carit Eva
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Paseo de Las Damas":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de Las Damas
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Circunvalación":
+    - img "Street art"
+    - button "🤍"
+    - text: Circunvalación
+  - button "Street art 🤍 Rue Resther":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Resther
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Paseo Rubén Darío":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo Rubén Darío
+  - button "Street art 🤍 Paseo Rubén Darío":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo Rubén Darío
+  - button "Street art 🤍 Rue Grand Trunk":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Grand Trunk
+  - button "Street art 🤍 Paseo de la Segunda República":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Segunda República
+  - button "Street art 🤍 Rokeby Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rokeby Street
+  - button "Street art 🤍 204":
+    - img "Street art"
+    - button "🤍"
+    - text: "204"
+  - button "Street art 🤍 Paseo de la Segunda República":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Segunda República
+  - button "Street art 🤍 Transversal 29":
+    - img "Street art"
+    - button "🤍"
+    - text: Transversal 29
+  - button "Street art 🤍 Avenida 8":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 8
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 Thanon Phra Sumen":
+    - img "Street art"
+    - button "🤍"
+    - text: Thanon Phra Sumen
+  - button "Street art 🤍 Calle 51":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 51
+  - button "Street art 🤍 Avenue Henri Ravera":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Henri Ravera
+  - button "Street art 🤍 Rue d Hibernia":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue d Hibernia
+  - button "Street art 🤍 Rue Resther":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Resther
+  - button "Street art 🤍 Calle 25":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 25
+  - button "Street art 🤍 Rue Resther":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Resther
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 Milton Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: Milton Parade
+  - button "Street art 🤍 Smith Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Smith Street
+  - button "Street art 🤍 Sirat Expressway":
+    - img "Street art"
+    - button "🤍"
+    - text: Sirat Expressway
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 Avenida de la Cultura":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida de la Cultura
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 ถนน สี่พระยา":
+    - img "Street art"
+    - button "🤍"
+    - text: ถนน สี่พระยา
+  - button "Street art 🤍 Charoen Krung Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Charoen Krung Road
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 Paseo de la Segunda República":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Segunda República
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 Avenida de la Cultura":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida de la Cultura
+  - button "Street art 🤍 Paseo de la Segunda República":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Segunda República
+  - button "Street art 🤍 Avenida de la Cultura":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida de la Cultura
+  - button "Street art 🤍 Avenida de la Cultura":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida de la Cultura
+  - button "Street art 🤍 Calle 61":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 61
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Avenida de la Cultura":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida de la Cultura
+  - button "Street art 🤍 Citylink":
+    - img "Street art"
+    - button "🤍"
+    - text: Citylink
+  - button "Street art 🤍 Rue Saint-Martin":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Saint-Martin
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Citylink":
+    - img "Street art"
+    - button "🤍"
+    - text: Citylink
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Citylink":
+    - img "Street art"
+    - button "🤍"
+    - text: Citylink
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Little Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Oxford Street
+  - button "Street art 🤍 Citylink":
+    - img "Street art"
+    - button "🤍"
+    - text: Citylink
+  - button "Street art 🤍 Avenida 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 3
+  - button "Street art 🤍 Paseo de la Segunda República":
+    - img "Street art"
+    - button "🤍"
+    - text: Paseo de la Segunda República
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Glenferrie Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Glenferrie Road
+  - button "Street art 🤍 Citylink":
+    - img "Street art"
+    - button "🤍"
+    - text: Citylink
+  - button "Street art 🤍 Swanston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston Street
+  - button "Street art 🤍 Princes Walk":
+    - img "Street art"
+    - button "🤍"
+    - text: Princes Walk
+  - button "Street art 🤍 Princes Walk":
+    - img "Street art"
+    - button "🤍"
+    - text: Princes Walk
+  - button "Street art 🤍 Swanston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston Street
+  - button "Street art 🤍 Princes Walk":
+    - img "Street art"
+    - button "🤍"
+    - text: Princes Walk
+  - button "Street art 🤍 Swanston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston Street
+  - button "Street art 🤍 Swanston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston Street
+  - button "Street art 🤍 Princes Walk":
+    - img "Street art"
+    - button "🤍"
+    - text: Princes Walk
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Swanston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Princes Walk":
+    - img "Street art"
+    - button "🤍"
+    - text: Princes Walk
+  - button "Street art 🤍 Sackville Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Little Francis Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Francis Street
+  - button "Street art 🤍 Monash Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Monash Freeway
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Easey Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Easey Street
+  - button "Street art 🤍 Easey Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Easey Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Sackville Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville Street
+  - button "Street art 🤍 Monash Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Monash Freeway
+  - button "Street art 🤍 Monash Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Monash Freeway
+  - button "Street art 🤍 Market Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Market Place
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Sackville Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Monash Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: Monash Freeway
+  - button "Street art 🤍 Cato Lane North":
+    - img "Street art"
+    - button "🤍"
+    - text: Cato Lane North
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Calle 51":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 51
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Calle 21":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 21
+  - button "Street art 🤍 Avenida 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 3
+  - button "Street art 🤍 Avenida 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 3
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 Collins Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Collins Street
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 Avenida 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 3
+  - button "Street art 🤍 Station Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Station Street
+  - button "Street art 🤍 Avenida 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 3
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 Avenida Central":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Central
+  - button "Street art 🤍 Calle 51":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle 51
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 Avenida 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 3
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 3":
+    - img "Street art"
+    - button "🤍"
+    - text: "3"
+  - button "Street art 🤍 Rue de Laprairie":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Laprairie
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Narciso De La Colina":
+    - img "Street art"
+    - button "🤍"
+    - text: Narciso De La Colina
+  - button "Street art 🤍 Avenue Greene":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Greene
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Carroll Crescent":
+    - img "Street art"
+    - button "🤍"
+    - text: Carroll Crescent
+  - button "Street art 🤍 Rue Knox":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Knox
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Ferrars Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Ferrars Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Rue Charon":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Charon
+  - button "Street art 🤍 Calle Alfonso Ugarte":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Alfonso Ugarte
+  - button "Street art 🤍 Avenue Greene":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Greene
+  - button "Street art 🤍 Rue Knox":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Knox
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Rue Charon":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Charon
+  - button "Street art 🤍 Chapel Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Independencia":
+    - img "Street art"
+    - button "🤍"
+    - text: Independencia
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 Independencia":
+    - img "Street art"
+    - button "🤍"
+    - text: Independencia
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bourke Street
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 Ecuador":
+    - img "Street art"
+    - button "🤍"
+    - text: Ecuador
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Brunton Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunton Avenue
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Swan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Hay Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Hay Street
+  - button "Street art 🤍 Shafto Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Shafto Lane
+  - button "Street art 🤍 Hay Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Hay Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Shafto Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Shafto Lane
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Mayfair Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Mayfair Street
+  - button "Street art 🤍 Shafto Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Shafto Lane
+  - button "Street art 🤍 Cambridge Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Cambridge Street
+  - button "Street art 🤍 Hay Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Hay Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Mayfair Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Mayfair Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Shafto Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Shafto Lane
+  - button "Street art 🤍 Mayfair Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Mayfair Street
+  - button "Street art 🤍 Hay Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Hay Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 James Scullin Court":
+    - img "Street art"
+    - button "🤍"
+    - text: James Scullin Court
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Fitzgerald Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzgerald Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Rue Grand Trunk":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Grand Trunk
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Bourke Street Mall":
+    - img "Street art"
+    - button "🤍"
+    - text: Bourke Street Mall
+  - button "Street art 🤍 Cameron Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Cameron Street
+  - button "Street art 🤍 White Post Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: White Post Lane
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 London Way":
+    - img "Street art"
+    - button "🤍"
+    - text: London Way
+  - button "Street art 🤍 Bosisto Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bosisto Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Fitzgerald Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzgerald Street
+  - button "Street art 🤍 Wallis Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Wallis Road
+  - button "Street art 🤍 Fitzgerald Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzgerald Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 Benson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Benson Street
+  - button "Street art 🤍 London Way":
+    - img "Street art"
+    - button "🤍"
+    - text: London Way
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Praterstern":
+    - img "Street art"
+    - button "🤍"
+    - text: Praterstern
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Praterstern":
+    - img "Street art"
+    - button "🤍"
+    - text: Praterstern
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Avenida 28 de Julio":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida 28 de Julio
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 Calle Alcanfores":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Alcanfores
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Calle Alcanfores":
+    - img "Street art"
+    - button "🤍"
+    - text: Calle Alcanfores
+  - button "Street art 🤍 Detroit Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Detroit Boulevard
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Nordbahnstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Nordbahnstraße
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Bahnhof Wien-Nord":
+    - img "Street art"
+    - button "🤍"
+    - text: Bahnhof Wien-Nord
+  - button "Street art 🤍 Praterstern":
+    - img "Street art"
+    - button "🤍"
+    - text: Praterstern
+  - button "Street art 🤍 Walkway":
+    - img "Street art"
+    - button "🤍"
+    - text: Walkway
+  - button "Street art 🤍 Praterstern":
+    - img "Street art"
+    - button "🤍"
+    - text: Praterstern
+  - button "Street art 🤍 Princes Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Princes Street
+  - button "Street art 🤍 Southwest Water Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Southwest Water Street
+  - button "Street art 🤍 ulitsa Bazhova":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Bazhova
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Carrer d Oporto":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer d Oporto
+  - button "Street art 🤍 Praterstern":
+    - img "Street art"
+    - button "🤍"
+    - text: Praterstern
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Bahnhof Wien-Nord":
+    - img "Street art"
+    - button "🤍"
+    - text: Bahnhof Wien-Nord
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Praterstern":
+    - img "Street art"
+    - button "🤍"
+    - text: Praterstern
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Aberdeen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Aberdeen Street
+  - button "Street art 🤍 Aberdeen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Aberdeen Street
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Aberdeen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Aberdeen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Aberdeen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Aberdeen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Aberdeen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Aberdeen Street
+  - button "Street art 🤍 Aberdeen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Aberdeen Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Victoria Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Victoria Street
+  - button "Street art 🤍 Victoria Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Victoria Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Roe Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Roe Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 ulitsa Malysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Malysheva
+  - button "Street art 🤍 ulitsa Malysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Malysheva
+  - button "Street art 🤍 Nicks Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicks Lane
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Queen Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen Street
+  - button "Street art 🤍 Nicks Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicks Lane
+  - button "Street art 🤍 Bury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bury Street
+  - button "Street art 🤍 Liverpool Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Liverpool Street
+  - button "Street art 🤍 Nicks Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicks Lane
+  - button "Street art 🤍 James Street":
+    - img "Street art"
+    - button "🤍"
+    - text: James Street
+  - button "Street art 🤍 Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bourke Street
+  - button "Street art 🤍 Bury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bury Street
+  - button "Street art 🤍 James Street":
+    - img "Street art"
+    - button "🤍"
+    - text: James Street
+  - button "Street art 🤍 James Street":
+    - img "Street art"
+    - button "🤍"
+    - text: James Street
+  - button "Street art 🤍 Nicks Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicks Lane
+  - button "Street art 🤍 Liverpool Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Liverpool Street
+  - button "Street art 🤍 Roe Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Roe Street
+  - button "Street art 🤍 Liverpool Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Liverpool Street
+  - button "Street art 🤍 Bury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bury Street
+  - button "Street art 🤍 Bury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bury Street
+  - button "Street art 🤍 Liverpool Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Liverpool Street
+  - button "Street art 🤍 James Street":
+    - img "Street art"
+    - button "🤍"
+    - text: James Street
+  - button "Street art 🤍 Bury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bury Street
+  - button "Street art 🤍 Nicks Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicks Lane
+  - button "Street art 🤍 Nicks Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicks Lane
+  - button "Street art 🤍 Lake Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lake Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bourke Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Hanbury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanbury Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Bourke Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bourke Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Redchurch Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Redchurch Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Norman Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Norman Street
+  - button "Street art 🤍 Hanbury Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanbury Street
+  - button "Street art 🤍 Ann Arbor Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Ann Arbor Way
+  - button "Street art 🤍 Oliver Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Oliver Lane
+  - button "Street art 🤍 Seven Stars Yd":
+    - img "Street art"
+    - button "🤍"
+    - text: Seven Stars Yd
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Seven Stars Yd":
+    - img "Street art"
+    - button "🤍"
+    - text: Seven Stars Yd
+  - button "Street art 🤍 Brick Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Brick Lane
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 ulitsa Terminal":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Terminal
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Wentworth Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wentworth Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Fashion Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fashion Street
+  - button "Street art 🤍 Improv Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Improv Alley
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Poyser Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Poyser Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 South Sacramento Freeway":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sacramento Freeway
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Russell Street Extension":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street Extension
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Main Yarra Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Main Yarra Trail
+  - button "Street art 🤍 Powlett Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Powlett Street
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Invalidenstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Invalidenstraße
+  - button "Street art 🤍 Reischachstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Reischachstraße
+  - button "Street art 🤍 улица Анжерская":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Анжерская
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Invalidenstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Invalidenstraße
+  - button "Street art 🤍 Reischachstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Reischachstraße
+  - button "Street art 🤍 Johnston Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston Street
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 улица Анжерская":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Анжерская
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Reischachstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Reischachstraße
+  - button "Street art 🤍 Bedford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Bedford Street
+  - button "Street art 🤍 Reischachstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Reischachstraße
+  - button "Street art 🤍 Invalidenstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Invalidenstraße
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Große Ungarbrücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Große Ungarbrücke
+  - button "Street art 🤍 Brovarskyi Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Brovarskyi Avenue
+  - button "Street art 🤍 Rue Grand Trunk":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Grand Trunk
+  - button "Street art 🤍 Frame Court":
+    - img "Street art"
+    - button "🤍"
+    - text: Frame Court
+  - button "Street art 🤍 Landstraßer Hauptstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Landstraßer Hauptstraße
+  - button "Street art 🤍 Frame Court":
+    - img "Street art"
+    - button "🤍"
+    - text: Frame Court
+  - button "Street art 🤍 Vincent Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Vincent Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Ligovskiy prospekt":
+    - img "Street art"
+    - button "🤍"
+    - text: Ligovskiy prospekt
+  - button "Street art 🤍 ulitsa Zhukovskogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Zhukovskogo
+  - button "Street art 🤍 Hütteldorfer Brücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Hütteldorfer Brücke
+  - button "Street art 🤍 Brisbane Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Brisbane Street
+  - button "Street art 🤍 Frame Court":
+    - img "Street art"
+    - button "🤍"
+    - text: Frame Court
+  - button "Street art 🤍 Frame Court":
+    - img "Street art"
+    - button "🤍"
+    - text: Frame Court
+  - button "Street art 🤍 Landstraßer Hauptstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Landstraßer Hauptstraße
+  - button "Street art 🤍 The Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: The Avenue
+  - button "Street art 🤍 Leederville Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: Leederville Parade
+  - button "Street art 🤍 Avenue Ash":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenue Ash
+  - button "Street art 🤍 Hütteldorfer Brücke":
+    - img "Street art"
+    - button "🤍"
+    - text: Hütteldorfer Brücke
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Sovetskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Sovetskaya ulitsa
+  - button "Street art 🤍 Rue de la Commune Ouest":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de la Commune Ouest
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Rue McGill":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue McGill
+  - button "Street art 🤍 Andrews Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Andrews Road
+  - button "Street art 🤍 Newcastle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Newcastle Street
+  - button "Street art 🤍 Rue McGill":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue McGill
+  - button "Street art 🤍 Newcastle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Newcastle Street
+  - button "Street art 🤍 Shacklewell Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Shacklewell Lane
+  - button "Street art 🤍 Hare Row":
+    - img "Street art"
+    - button "🤍"
+    - text: Hare Row
+  - button "Street art 🤍 Rue McGill":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue McGill
+  - button "Street art 🤍 Andrews Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Andrews Road
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Rue Olier":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Olier
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Newcastle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Newcastle Street
+  - button "Street art 🤍 Centre Place":
+    - img "Street art"
+    - button "🤍"
+    - text: Centre Place
+  - button "Street art 🤍 Newcastle Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Newcastle Street
+  - button "Street art 🤍 Rue de Liverpool":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Liverpool
+  - button "Street art 🤍 ulitsa Kuybysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Kuybysheva
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 улица Горького":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Горького
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 King Street":
+    - img "Street art"
+    - button "🤍"
+    - text: King Street
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 King Street":
+    - img "Street art"
+    - button "🤍"
+    - text: King Street
+  - button "Street art 🤍 Melrose Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Melrose Street
+  - button "Street art 🤍 High Street Mall":
+    - img "Street art"
+    - button "🤍"
+    - text: High Street Mall
+  - button "Street art 🤍 Rue de Liverpool":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue de Liverpool
+  - button "Street art 🤍 Eliza Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Eliza Street
+  - button "Street art 🤍 улица Горького":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Горького
+  - button "Street art 🤍 Oxford Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Oxford Street
+  - button "Street art 🤍 Church Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Church Street
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 King Street":
+    - img "Street art"
+    - button "🤍"
+    - text: King Street
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 Auburn Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Grove
+  - button "Street art 🤍 Auburn Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Grove
+  - button "Street art 🤍 Via Ortaglia Ospedale":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Ortaglia Ospedale
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 Charles Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Charles Street
+  - button "Street art 🤍 Kamzin Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Kamzin Street
+  - button "Street art 🤍 улица Кудайбергена Сураганова":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Кудайбергена Сураганова
+  - button "Street art 🤍 Auburn Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Grove
+  - button "Street art 🤍 Yakov Gering Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Yakov Gering Street
+  - button "Street art 🤍 улица Кудайбергена Сураганова":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Кудайбергена Сураганова
+  - button "Street art 🤍 улица Кудайбергена Сураганова":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Кудайбергена Сураганова
+  - button "Street art 🤍 Charles Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Charles Street
+  - button "Street art 🤍 Via Ortaglia Ospedale":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Ortaglia Ospedale
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 Auburn Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Auburn Road
+  - button "Street art 🤍 Via Umberto Ceva":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Umberto Ceva
+  - button "Street art 🤍 New Street":
+    - img "Street art"
+    - button "🤍"
+    - text: New Street
+  - button "Street art 🤍 Rue Sherbrooke Ouest":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sherbrooke Ouest
+  - button "Street art 🤍 улица Кудайбергена Сураганова":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Кудайбергена Сураганова
+  - button "Street art 🤍 Charles Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Charles Street
+  - button "Street art 🤍 ulitsa Malysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Malysheva
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Bolshoy Kamennyy most":
+    - img "Street art"
+    - button "🤍"
+    - text: Bolshoy Kamennyy most
+  - button "Street art 🤍 Pūpolu iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Pūpolu iela
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 Järnvågsgatan":
+    - img "Street art"
+    - button "🤍"
+    - text: Järnvågsgatan
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Rue Bourgeoys":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Bourgeoys
+  - button "Street art 🤍 Via Silvio Pellico":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Silvio Pellico
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Rue Bourgeoys":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Bourgeoys
+  - button "Street art 🤍 Via Ortaglia Ospedale":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Ortaglia Ospedale
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Rue Sainte-Barbe":
+    - img "Street art"
+    - button "🤍"
+    - text: Rue Sainte-Barbe
+  - button "Street art 🤍 Järnvågsgatan":
+    - img "Street art"
+    - button "🤍"
+    - text: Järnvågsgatan
+  - button "Street art 🤍 Via Silvio Pellico":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Silvio Pellico
+  - button "Street art 🤍 Järnvågsgatan":
+    - img "Street art"
+    - button "🤍"
+    - text: Järnvågsgatan
+  - button "Street art 🤍 ploshchad Kuybysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ploshchad Kuybysheva
+  - button "Street art 🤍 Galaktionovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Galaktionovskaya ulitsa
+  - button "Street art 🤍 Galaktionovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Galaktionovskaya ulitsa
+  - button "Street art 🤍 ploshchad Kuybysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ploshchad Kuybysheva
+  - button "Street art 🤍 ploshchad Kuybysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ploshchad Kuybysheva
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Emigrantvägen":
+    - img "Street art"
+    - button "🤍"
+    - text: Emigrantvägen
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Galaktionovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Galaktionovskaya ulitsa
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Järnvågsgatan":
+    - img "Street art"
+    - button "🤍"
+    - text: Järnvågsgatan
+  - button "Street art 🤍 Galaktionovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Galaktionovskaya ulitsa
+  - button "Street art 🤍 Galaktionovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Galaktionovskaya ulitsa
+  - button "Street art 🤍 Galaktionovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Galaktionovskaya ulitsa
+  - button "Street art 🤍 Emigrantvägen":
+    - img "Street art"
+    - button "🤍"
+    - text: Emigrantvägen
+  - button "Street art 🤍 Rua Hermenegildo de Barros":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Hermenegildo de Barros
+  - button "Street art 🤍 Heurlins Plates":
+    - img "Street art"
+    - button "🤍"
+    - text: Heurlins Plates
+  - button "Street art 🤍 Via Aldo Moro":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Aldo Moro
+  - button "Street art 🤍 1-y Irtyshskiy proyezd":
+    - img "Street art"
+    - button "🤍"
+    - text: 1-y Irtyshskiy proyezd
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Hirschstraße":
+    - img "Street art"
+    - button "🤍"
+    - text: Hirschstraße
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Am Hasenbiel":
+    - img "Street art"
+    - button "🤍"
+    - text: Am Hasenbiel
+  - button "Street art 🤍 1-y Irtyshskiy proyezd":
+    - img "Street art"
+    - button "🤍"
+    - text: 1-y Irtyshskiy proyezd
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Am Hasenbiel":
+    - img "Street art"
+    - button "🤍"
+    - text: Am Hasenbiel
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Tallinas iela":
+    - img "Street art"
+    - button "🤍"
+    - text: Tallinas iela
+  - button "Street art 🤍 West Custer Place":
+    - img "Street art"
+    - button "🤍"
+    - text: West Custer Place
+  - button "Street art 🤍 South Irving Street":
+    - img "Street art"
+    - button "🤍"
+    - text: South Irving Street
+  - button "Street art 🤍 Ligovskiy prospekt":
+    - img "Street art"
+    - button "🤍"
+    - text: Ligovskiy prospekt
+  - button "Street art 🤍 West Kentucky Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Kentucky Avenue
+  - button "Street art 🤍 West Kentucky Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Kentucky Avenue
+  - button "Street art 🤍 South Knox Court":
+    - img "Street art"
+    - button "🤍"
+    - text: South Knox Court
+  - button "Street art 🤍 West Kentucky Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Kentucky Avenue
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 South Hooker Street":
+    - img "Street art"
+    - button "🤍"
+    - text: South Hooker Street
+  - button "Street art 🤍 Colorado 26":
+    - img "Street art"
+    - button "🤍"
+    - text: Colorado 26
+  - button "Street art 🤍 West Alameda Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Alameda Avenue
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Colorado 26":
+    - img "Street art"
+    - button "🤍"
+    - text: Colorado 26
+  - button "Street art 🤍 South Irving Street":
+    - img "Street art"
+    - button "🤍"
+    - text: South Irving Street
+  - button "Street art 🤍 South Knox Court":
+    - img "Street art"
+    - button "🤍"
+    - text: South Knox Court
+  - button "Street art 🤍 South Irving Street":
+    - img "Street art"
+    - button "🤍"
+    - text: South Irving Street
+  - button "Street art 🤍 West Kentucky Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Kentucky Avenue
+  - button "Street art 🤍 West Center Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Center Avenue
+  - button "Street art 🤍 South Irving Street":
+    - img "Street art"
+    - button "🤍"
+    - text: South Irving Street
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 West Virginia Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Virginia Avenue
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Rua Doutor Ademar Moreira Barbosa Romeu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Doutor Ademar Moreira Barbosa Romeu
+  - button "Street art 🤍 Rua Doutor Ademar Moreira Barbosa Romeu":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Doutor Ademar Moreira Barbosa Romeu
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Fitzgerald Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzgerald Street
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 West Mississippi Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Mississippi Avenue
+  - button "Street art 🤍 West Kentucky Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Kentucky Avenue
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 West Virginia Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Virginia Avenue
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Morrison Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Morrison Road
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Rua Afonso Henrique":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Afonso Henrique
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Nicholson Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Nicholson Street
+  - button "Street art 🤍 5th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: 5th Avenue
+  - button "Street art 🤍 Weller Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Weller Way
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Victorian Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Victorian Alley
+  - button "Street art 🤍 Portola Way 5th Avenue Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Portola Way 5th Avenue Alley
+  - button "Street art 🤍 T Street":
+    - img "Street art"
+    - button "🤍"
+    - text: T Street
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Bidwell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Bidwell Way
+  - button "Street art 🤍 5th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: 5th Avenue
+  - button "Street art 🤍 19th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 19th Street
+  - button "Street art 🤍 Portola Way 5th Avenue Alley":
+    - img "Street art"
+    - button "🤍"
+    - text: Portola Way 5th Avenue Alley
+  - button "Street art 🤍 S Street":
+    - img "Street art"
+    - button "🤍"
+    - text: S Street
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 Via Grumello":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Grumello
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 California Street":
+    - img "Street art"
+    - button "🤍"
+    - text: California Street
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 Rio Linda Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Rio Linda Boulevard
+  - button "Street art 🤍 Lake Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lake Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 Lake Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lake Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 Stanley Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Stanley Street
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 Money Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Money Street
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 Haid-und-Neu-Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Haid-und-Neu-Straße
+  - button "Street art 🤍 16th Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 16th Street
+  - button "Street art 🤍 Fitzgerald Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzgerald Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 Zoi Kosmodemyanskoy ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Zoi Kosmodemyanskoy ulitsa
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 Tretye Transportnoye Koltso":
+    - img "Street art"
+    - button "🤍"
+    - text: Tretye Transportnoye Koltso
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 ulitsa Chapaeva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Chapaeva
+  - button "Street art 🤍 Francis Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Francis Street
+  - button "Street art 🤍 Wellington Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 ulitsa Sheinkmana":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Sheinkmana
+  - button "Street art 🤍 Murray Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Murray Street
+  - button "Street art 🤍 ulitsa Malysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Malysheva
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 William Street":
+    - img "Street art"
+    - button "🤍"
+    - text: William Street
+  - button "Street art 🤍 ulitsa Sheinkmana":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Sheinkmana
+  - button "Street art 🤍 Easey Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Easey Street
+  - button "Street art 🤍 Francis Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Francis Street
+  - button "Street art 🤍 Rua Palmeiras":
+    - img "Street art"
+    - button "🤍"
+    - text: Rua Palmeiras
+  - button "Street art 🤍 Avenida Estrela da Noite":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Estrela da Noite
+  - button "Street art 🤍 ulitsa Syromolotova":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Syromolotova
+  - button "Street art 🤍 Avenida Marechal Tito":
+    - img "Street art"
+    - button "🤍"
+    - text: Avenida Marechal Tito
+  - button "Street art 🤍 улица Первомайская":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Первомайская
+  - button "Street art 🤍 ulitsa Turgeneva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Turgeneva
+  - button "Street art 🤍 ulitsa Turgeneva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Turgeneva
+  - button "Street art 🤍 ulitsa Chelyuskintsev":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Chelyuskintsev
+  - button "Street art 🤍 Yubileynaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Yubileynaya ulitsa
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 ulitsa Turgeneva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Turgeneva
+  - button "Street art 🤍 ulitsa Popova":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Popova
+  - button "Street art 🤍 ulitsa Fadeeva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Fadeeva
+  - button "Street art 🤍 Federal Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Federal Boulevard
+  - button "Street art 🤍 Zhylianska Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Zhylianska Street
+  - button "Street art 🤍 ulitsa Malysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Malysheva
+  - button "Street art 🤍 улица Архитектурная":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Архитектурная
+  - button "Street art 🤍 Carrer de la Comtessa de Sobradiel":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrer de la Comtessa de Sobradiel
+  - button "Street art 🤍 Yakova Shakhunyantsya Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Yakova Shakhunyantsya Lane
+  - button "Street art 🤍 ulitsa Vaynera":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Vaynera
+  - button "Street art 🤍 Sadovaya-Samotechnaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Sadovaya-Samotechnaya ulitsa
+  - button "Street art 🤍 Olympic Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Olympic Boulevard
+  - button "Street art 🤍 ulitsa Chelyuskintsev":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Chelyuskintsev
+  - button "Street art 🤍 ulitsa Turgeneva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Turgeneva
+  - button "Street art 🤍 ulitsa Pokrovka":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Pokrovka
+  - button "Street art 🤍 Staraya Basmannaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Staraya Basmannaya ulitsa
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Nekrasovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Nekrasovskaya ulitsa
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Pokrovka":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Pokrovka
+  - button "Street art 🤍 Krasnoarmeyskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Krasnoarmeyskaya ulitsa
+  - button "Street art 🤍 Staraya Basmannaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Staraya Basmannaya ulitsa
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 ulitsa Alekseya Tolstogo":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Alekseya Tolstogo
+  - button "Street art 🤍 21st Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 21st Street
+  - button "Street art 🤍 Blake Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Blake Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 22nd Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 22nd Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 22nd Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 22nd Street
+  - button "Street art 🤍 21st Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 21st Street
+  - button "Street art 🤍 21st Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 21st Street
+  - button "Street art 🤍 Blake Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Blake Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 Delgany Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Delgany Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 Blake Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Blake Street
+  - button "Street art 🤍 21st Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 21st Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 22nd Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 22nd Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 21st Street":
+    - img "Street art"
+    - button "🤍"
+    - text: 21st Street
+  - button "Street art 🤍 Larimer Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Larimer Street
+  - button "Street art 🤍 Delgany Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Delgany Street
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 West 38th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West 38th Avenue
+  - button "Street art 🤍 Fox Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fox Street
+  - button "Street art 🤍 South Platte River Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: South Platte River Trail
+  - button "Street art 🤍 Central Park Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Park Boulevard
+  - button "Street art 🤍 Central Park Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: Central Park Boulevard
+  - button "Street art 🤍 Colorado Front Range Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Colorado Front Range Trail
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 Navajo Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Navajo Street
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 Colorado Front Range Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Colorado Front Range Trail
+  - button "Street art 🤍 Fox Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fox Street
+  - button "Street art 🤍 West 38th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West 38th Avenue
+  - button "Street art 🤍 Fox Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Fox Street
+  - button "Street art 🤍 West 31st Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West 31st Avenue
+  - button "Street art 🤍 Lipan Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lipan Street
+  - button "Street art 🤍 Park Avenue West":
+    - img "Street art"
+    - button "🤍"
+    - text: Park Avenue West
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West 37th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West 37th Avenue
+  - button "Street art 🤍 West Wyoming Place":
+    - img "Street art"
+    - button "🤍"
+    - text: West Wyoming Place
+  - button "Street art 🤍 West Jewell Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Jewell Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West Jewell Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Jewell Avenue
+  - button "Street art 🤍 West 38th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West 38th Avenue
+  - button "Street art 🤍 West Jewell Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Jewell Avenue
+  - button "Street art 🤍 West Wyoming Place":
+    - img "Street art"
+    - button "🤍"
+    - text: West Wyoming Place
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West Jewell Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Jewell Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 ulitsa Gogolya":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Gogolya
+  - button "Street art 🤍 West 37th Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West 37th Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West Jewell Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Jewell Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 Tyumenskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Tyumenskaya ulitsa
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West Mississippi Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Mississippi Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West Arizona Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Arizona Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 Via Peppino Catte":
+    - img "Street art"
+    - button "🤍"
+    - text: Via Peppino Catte
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 West Arizona Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Arizona Avenue
+  - button "Street art 🤍 Sadovaya":
+    - img "Street art"
+    - button "🤍"
+    - text: Sadovaya
+  - button "Street art 🤍 West Mississippi Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: West Mississippi Avenue
+  - button "Street art 🤍 South Sheridan Boulevard":
+    - img "Street art"
+    - button "🤍"
+    - text: South Sheridan Boulevard
+  - button "Street art 🤍 Lenin Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Lenin Avenue
+  - button "Street art 🤍 Carrera 3":
+    - img "Street art"
+    - button "🤍"
+    - text: Carrera 3
+  - button "Street art 🤍 Bolshaya Cherkizovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Bolshaya Cherkizovskaya ulitsa
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Pacific Motorway":
+    - img "Street art"
+    - button "🤍"
+    - text: Pacific Motorway
+  - button "Street art 🤍 Bolshaya Cherkizovskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Bolshaya Cherkizovskaya ulitsa
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 Zhigulevskaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Zhigulevskaya ulitsa
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 ulitsa Malysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Malysheva
+  - button "Street art 🤍 улица Долорес Ибаррури":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Долорес Ибаррури
+  - button "Street art 🤍 Avtomotornaya ulitsa":
+    - img "Street art"
+    - button "🤍"
+    - text: Avtomotornaya ulitsa
+  - button "Street art 🤍 ulitsa Popova":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Popova
+  - button "Street art 🤍 Shchelkovskoye shosse":
+    - img "Street art"
+    - button "🤍"
+    - text: Shchelkovskoye shosse
+  - button "Street art 🤍 ulitsa Bazhova":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Bazhova
+  - button "Street art 🤍 Mosely Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Mosely Street
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 Lenin Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Lenin Avenue
+  - button "Street art 🤍 Rea Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Rea Street
+  - button "Street art 🤍 Clyde Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Clyde Street
+  - button "Street art 🤍 Средний проспект В О":
+    - img "Street art"
+    - button "🤍"
+    - text: Средний проспект В О
+  - button "Street art 🤍 Челябинский тракт":
+    - img "Street art"
+    - button "🤍"
+    - text: Челябинский тракт
+  - button "Street art 🤍 High Street Bordesley":
+    - img "Street art"
+    - button "🤍"
+    - text: High Street Bordesley
+  - button "Street art 🤍 Birmingham":
+    - img "Street art"
+    - button "🤍"
+    - text: Birmingham
+  - button "Street art 🤍 улица Реутовская":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Реутовская
+  - button "Street art 🤍 High Street Deritend":
+    - img "Street art"
+    - button "🤍"
+    - text: High Street Deritend
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 Alcester Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Alcester Street
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Средний проспект В О":
+    - img "Street art"
+    - button "🤍"
+    - text: Средний проспект В О
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 Oudenarder Straße":
+    - img "Street art"
+    - button "🤍"
+    - text: Oudenarder Straße
+  - button "Street art 🤍 Floodgate Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Floodgate Street
+  - button "Street art 🤍 High Street Deritend":
+    - img "Street art"
+    - button "🤍"
+    - text: High Street Deritend
+  - button "Street art 🤍 Ковенский переулок":
+    - img "Street art"
+    - button "🤍"
+    - text: Ковенский переулок
+  - button "Street art 🤍 ulitsa Kuybysheva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Kuybysheva
+  - button "Street art 🤍 улица Шейнкмана":
+    - img "Street art"
+    - button "🤍"
+    - text: улица Шейнкмана
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 ulitsa Turgeneva":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Turgeneva
+  - button "Street art 🤍 ulitsa Bazhova":
+    - img "Street art"
+    - button "🤍"
+    - text: ulitsa Bazhova
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Raleigh Road":
+    - img "Street art"
+    - button "🤍"
+    - text: Raleigh Road
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Тбилисский бульвар":
+    - img "Street art"
+    - button "🤍"
+    - text: Тбилисский бульвар
+  - button "Street art 🤍 Digbeth":
+    - img "Street art"
+    - button "🤍"
+    - text: Digbeth
+  - button "Street art 🤍 26-я Линия":
+    - img "Street art"
+    - button "🤍"
+    - text: 26-я Линия
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Большой проспект Васильевского острова":
+    - img "Street art"
+    - button "🤍"
+    - text: Большой проспект Васильевского острова
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Flinders Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Lane
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Østervåg":
+    - img "Street art"
+    - button "🤍"
+    - text: Østervåg
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Ковельська вулиця":
+    - img "Street art"
+    - button "🤍"
+    - text: Ковельська вулиця
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Ковельська вулиця":
+    - img "Street art"
+    - button "🤍"
+    - text: Ковельська вулиця
+  - button "Street art 🤍 Wellington Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: Wellington Parade
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Alexandra Avenue":
+    - img "Street art"
+    - button "🤍"
+    - text: Alexandra Avenue
+  - button "Street art 🤍 Flinders Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Street
+  - button "Street art 🤍 Tattersalls Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Lane
+  - button "Street art 🤍 Tattersalls Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Lane
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Russell Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Tattersalls Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Lane
+  - button "Street art 🤍 Tattersalls Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Lane
+  - button "Street art 🤍 Tattersalls Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Lane
+  - button "Street art 🤍 Tattersalls Lane":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Lane
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Lonsdale Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale Street
+  - button "Street art 🤍 Elizabeth Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Elizabeth Street
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Godfrey Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Godfrey Street
+  - button "Street art 🤍 Hawthorn Glen":
+    - img "Street art"
+    - button "🤍"
+    - text: Hawthorn Glen
+  - button "Street art 🤍 Elizabeth Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Elizabeth Street
+  - button "Street art 🤍 Hawthorn Glen":
+    - img "Street art"
+    - button "🤍"
+    - text: Hawthorn Glen
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Hawthorn Glen":
+    - img "Street art"
+    - button "🤍"
+    - text: Hawthorn Glen
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Mill Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Mill Pl
+  - button "Street art 🤍 Elizabeth Street":
+    - img "Street art"
+    - button "🤍"
+    - text: Elizabeth Street
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Hawthorn Glen":
+    - img "Street art"
+    - button "🤍"
+    - text: Hawthorn Glen
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Hawthorn Glen":
+    - img "Street art"
+    - button "🤍"
+    - text: Hawthorn Glen
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 Punch Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Punch Ln
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 Elizabeth St":
+    - img "Street art"
+    - button "🤍"
+    - text: Elizabeth St
+  - button "Street art 🤍 Elizabeth St":
+    - img "Street art"
+    - button "🤍"
+    - text: Elizabeth St
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Elizabeth St":
+    - img "Street art"
+    - button "🤍"
+    - text: Elizabeth St
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 State Route 3":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 3
+  - button "Street art 🤍 Centre Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Centre Pl
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 Flinders Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ct
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Punt Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Punt Rd
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Carlisle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlisle St
+  - button "Street art 🤍 Kipling St":
+    - img "Street art"
+    - button "🤍"
+    - text: Kipling St
+  - button "Street art 🤍 Nelson St":
+    - img "Street art"
+    - button "🤍"
+    - text: Nelson St
+  - button "Street art 🤍 Kipling St":
+    - img "Street art"
+    - button "🤍"
+    - text: Kipling St
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Kipling St":
+    - img "Street art"
+    - button "🤍"
+    - text: Kipling St
+  - button "Street art 🤍 Elsternwick Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Elsternwick Pl
+  - button "Street art 🤍 Byron St":
+    - img "Street art"
+    - button "🤍"
+    - text: Byron St
+  - button "Street art 🤍 Byron St":
+    - img "Street art"
+    - button "🤍"
+    - text: Byron St
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Nelson St":
+    - img "Street art"
+    - button "🤍"
+    - text: Nelson St
+  - button "Street art 🤍 St Kilda Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Kilda Rd
+  - button "Street art 🤍 Nelson St":
+    - img "Street art"
+    - button "🤍"
+    - text: Nelson St
+  - button "Street art 🤍 Carlisle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlisle St
+  - button "Street art 🤍 Carlisle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlisle St
+  - button "Street art 🤍 Elsternwick Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Elsternwick Pl
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Elsternwick Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Elsternwick Pl
+  - button "Street art 🤍 Kipling St":
+    - img "Street art"
+    - button "🤍"
+    - text: Kipling St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Stewart St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart St
+  - button "Street art 🤍 Wangaratta St":
+    - img "Street art"
+    - button "🤍"
+    - text: Wangaratta St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Wangaratta St":
+    - img "Street art"
+    - button "🤍"
+    - text: Wangaratta St
+  - button "Street art 🤍 Wangaratta St":
+    - img "Street art"
+    - button "🤍"
+    - text: Wangaratta St
+  - button "Street art 🤍 Stewart St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Botherambo St":
+    - img "Street art"
+    - button "🤍"
+    - text: Botherambo St
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Wangaratta St":
+    - img "Street art"
+    - button "🤍"
+    - text: Wangaratta St
+  - button "Street art 🤍 Wangaratta St":
+    - img "Street art"
+    - button "🤍"
+    - text: Wangaratta St
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Burnley St":
+    - img "Street art"
+    - button "🤍"
+    - text: Burnley St
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Stewart St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart St
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Burnley St":
+    - img "Street art"
+    - button "🤍"
+    - text: Burnley St
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Burnley St":
+    - img "Street art"
+    - button "🤍"
+    - text: Burnley St
+  - button "Street art 🤍 Stewart St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart St
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Stewart Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Stewart Pl
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Madden Grove":
+    - img "Street art"
+    - button "🤍"
+    - text: Madden Grove
+  - button "Street art 🤍 Inkerman St":
+    - img "Street art"
+    - button "🤍"
+    - text: Inkerman St
+  - button "Street art 🤍 Inkerman St":
+    - img "Street art"
+    - button "🤍"
+    - text: Inkerman St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 Swan St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swan St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 St Edmonds Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: St Edmonds Rd
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 Stawell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Stawell St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Windsor Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Windsor Pl
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Union St":
+    - img "Street art"
+    - button "🤍"
+    - text: Union St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Union St":
+    - img "Street art"
+    - button "🤍"
+    - text: Union St
+  - button "Street art 🤍 Windsor Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Windsor Pl
+  - button "Street art 🤍 Union St":
+    - img "Street art"
+    - button "🤍"
+    - text: Union St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Union St":
+    - img "Street art"
+    - button "🤍"
+    - text: Union St
+  - button "Street art 🤍 Windsor Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Windsor Pl
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Union St":
+    - img "Street art"
+    - button "🤍"
+    - text: Union St
+  - button "Street art 🤍 Windsor Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Windsor Pl
+  - button "Street art 🤍 McIlwrick St":
+    - img "Street art"
+    - button "🤍"
+    - text: McIlwrick St
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Union St":
+    - img "Street art"
+    - button "🤍"
+    - text: Union St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Green St":
+    - img "Street art"
+    - button "🤍"
+    - text: Green St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Farrell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Farrell Way
+  - button "Street art 🤍 Farrell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Farrell Way
+  - button "Street art 🤍 Green St":
+    - img "Street art"
+    - button "🤍"
+    - text: Green St
+  - button "Street art 🤍 Green St":
+    - img "Street art"
+    - button "🤍"
+    - text: Green St
+  - button "Street art 🤍 Green St":
+    - img "Street art"
+    - button "🤍"
+    - text: Green St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Farrell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Farrell Way
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Green St":
+    - img "Street art"
+    - button "🤍"
+    - text: Green St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Farrell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Farrell Way
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Green St":
+    - img "Street art"
+    - button "🤍"
+    - text: Green St
+  - button "Street art 🤍 Farrell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Farrell Way
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Farrell Way":
+    - img "Street art"
+    - button "🤍"
+    - text: Farrell Way
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Mechanics Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Mechanics Ln
+  - button "Street art 🤍 Malvern Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Malvern Rd
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Mechanics Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Mechanics Ln
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Carlton St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlton St
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Malvern Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Malvern Rd
+  - button "Street art 🤍 Mechanics Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Mechanics Ln
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Artists Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Artists Ln
+  - button "Street art 🤍 Malvern Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Malvern Rd
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Little Chapel St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Chapel St
+  - button "Street art 🤍 Walker St":
+    - img "Street art"
+    - button "🤍"
+    - text: Walker St
+  - button "Street art 🤍 Carlton St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlton St
+  - button "Street art 🤍 Carlton St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlton St
+  - button "Street art 🤍 Walker St":
+    - img "Street art"
+    - button "🤍"
+    - text: Walker St
+  - button "Street art 🤍 Little Bourke St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Bourke St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Russell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell St
+  - button "Street art 🤍 La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: La Trobe St
+  - button "Street art 🤍 Clifton St":
+    - img "Street art"
+    - button "🤍"
+    - text: Clifton St
+  - button "Street art 🤍 Literature Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Literature Ln
+  - button "Street art 🤍 Walker St":
+    - img "Street art"
+    - button "🤍"
+    - text: Walker St
+  - button "Street art 🤍 Literature Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Literature Ln
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Flemington Rd":
+    - img "Street art"
+    - button "🤍"
+    - text: Flemington Rd
+  - button "Street art 🤍 Literature Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Literature Ln
+  - button "Street art 🤍 Walker St":
+    - img "Street art"
+    - button "🤍"
+    - text: Walker St
+  - button "Street art 🤍 Literature Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Literature Ln
+  - button "Street art 🤍 Walker St":
+    - img "Street art"
+    - button "🤍"
+    - text: Walker St
+  - button "Street art 🤍 Drummond St":
+    - img "Street art"
+    - button "🤍"
+    - text: Drummond St
+  - button "Street art 🤍 Clifton St":
+    - img "Street art"
+    - button "🤍"
+    - text: Clifton St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Story St":
+    - img "Street art"
+    - button "🤍"
+    - text: Story St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Hardware St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hardware St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: La Trobe St
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 State Route 30":
+    - img "Street art"
+    - button "🤍"
+    - text: State Route 30
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: La Trobe St
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Carlton St":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlton St
+  - button "Street art 🤍 Little La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little La Trobe St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Queen St":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Guildford Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Guildford Ln
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Finlay Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Finlay Ln
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Queen St":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen St
+  - button "Street art 🤍 Heape Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Heape Ct
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+  - button "Street art 🤍 Drewery Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Ln
+  - button "Street art 🤍 Drewery Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Pl
+  - button "Street art 🤍 Drewery Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Pl
+  - button "Street art 🤍 Zevenboom Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Zevenboom Ln
+  - button "Street art 🤍 La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: La Trobe St
+  - button "Street art 🤍 Drewery Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Ln
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Heape Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Heape Ct
+  - button "Street art 🤍 Russell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Russell St
+  - button "Street art 🤍 Sniders Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Sniders Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 La Trobe St":
+    - img "Street art"
+    - button "🤍"
+    - text: La Trobe St
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Heape Ct":
+    - img "Street art"
+    - button "🤍"
+    - text: Heape Ct
+  - button "Street art 🤍 Drewery Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Pl
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Knox Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Knox Pl
+  - button "Street art 🤍 Drewery Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Pl
+  - button "Street art 🤍 Flinders Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Rutledge Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Flinders Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ln
+  - button "Street art 🤍 Flinders Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders Ln
+  - button "Street art 🤍 Rutledge Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Rutledge Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Ln
+  - button "Street art 🤍 Little Barkly St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Barkly St
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 Rutledge Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Ln
+  - button "Street art 🤍 Flinders St":
+    - img "Street art"
+    - button "🤍"
+    - text: Flinders St
+  - button "Street art 🤍 Rutledge Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Rutledge Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Hosier Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Hosier Ln
+  - button "Street art 🤍 Carlow Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Carlow Pl
+  - button "Street art 🤍 Argyle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle St
+  - button "Street art 🤍 Capital City Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Capital City Trail
+  - button "Street art 🤍 Capital City Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Capital City Trail
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 Sackville St":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville St
+  - button "Street art 🤍 Gold St":
+    - img "Street art"
+    - button "🤍"
+    - text: Gold St
+  - button "Street art 🤍 Sackville St":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville St
+  - button "Street art 🤍 Capital City Trail":
+    - img "Street art"
+    - button "🤍"
+    - text: Capital City Trail
+  - button "Street art 🤍 Sackville St":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville St
+  - button "Street art 🤍 Gold St":
+    - img "Street art"
+    - button "🤍"
+    - text: Gold St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Argyle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle St
+  - button "Street art 🤍 Easey St":
+    - img "Street art"
+    - button "🤍"
+    - text: Easey St
+  - button "Street art 🤍 Sackville St":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville St
+  - button "Street art 🤍 Argyle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle St
+  - button "Street art 🤍 Sackville St":
+    - img "Street art"
+    - button "🤍"
+    - text: Sackville St
+  - button "Street art 🤍 Napier St":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier St
+  - button "Street art 🤍 Napier St":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier St
+  - button "Street art 🤍 Argyle St":
+    - img "Street art"
+    - button "🤍"
+    - text: Argyle St
+  - button "Street art 🤍 Napier St":
+    - img "Street art"
+    - button "🤍"
+    - text: Napier St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Kerr St":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Young St":
+    - img "Street art"
+    - button "🤍"
+    - text: Young St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Kerr St":
+    - img "Street art"
+    - button "🤍"
+    - text: Kerr St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Leicester St":
+    - img "Street art"
+    - button "🤍"
+    - text: Leicester St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Rose St":
+    - img "Street art"
+    - button "🤍"
+    - text: Rose St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Victoria St":
+    - img "Street art"
+    - button "🤍"
+    - text: Victoria St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Victoria St":
+    - img "Street art"
+    - button "🤍"
+    - text: Victoria St
+  - button "Street art 🤍 Canning St":
+    - img "Street art"
+    - button "🤍"
+    - text: Canning St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Victoria St":
+    - img "Street art"
+    - button "🤍"
+    - text: Victoria St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Victoria St":
+    - img "Street art"
+    - button "🤍"
+    - text: Victoria St
+  - button "Street art 🤍 Spring St":
+    - img "Street art"
+    - button "🤍"
+    - text: Spring St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Greeves St":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 Greeves St":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 Johnston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Johnston St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Greeves St":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves St
+  - button "Street art 🤍 Bell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Bell St
+  - button "Street art 🤍 Bell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Bell St
+  - button "Street art 🤍 Greeves St":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Bell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Bell St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Greeves St":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves St
+  - button "Street art 🤍 Bell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Bell St
+  - button "Street art 🤍 Bell St":
+    - img "Street art"
+    - button "🤍"
+    - text: Bell St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Greeves St":
+    - img "Street art"
+    - button "🤍"
+    - text: Greeves St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 King William St":
+    - img "Street art"
+    - button "🤍"
+    - text: King William St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Fishers Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Fishers Ln
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 Marion St":
+    - img "Street art"
+    - button "🤍"
+    - text: Marion St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 Brunswick Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick Pl
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Hanover St
+  - button "Street art 🤍 Little Hanover St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Hanover St
+  - button "Street art 🤍 Brunswick St":
+    - img "Street art"
+    - button "🤍"
+    - text: Brunswick St
+  - button "Street art 🤍 James St":
+    - img "Street art"
+    - button "🤍"
+    - text: James St
+  - button "Street art 🤍 Gertrude St":
+    - img "Street art"
+    - button "🤍"
+    - text: Gertrude St
+  - button "Street art 🤍 Queen St":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Kingsway":
+    - img "Street art"
+    - button "🤍"
+    - text: Kingsway
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Marion St":
+    - img "Street art"
+    - button "🤍"
+    - text: Marion St
+  - button "Street art 🤍 Kingsway":
+    - img "Street art"
+    - button "🤍"
+    - text: Kingsway
+  - button "Street art 🤍 Caledonian Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Caledonian Ln
+  - button "Street art 🤍 Caledonian Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Caledonian Ln
+  - button "Street art 🤍 Caledonian Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Caledonian Ln
+  - button "Street art 🤍 Fitzroy St":
+    - img "Street art"
+    - button "🤍"
+    - text: Fitzroy St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 McKillop St":
+    - img "Street art"
+    - button "🤍"
+    - text: McKillop St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Queen St":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen St
+  - button "Street art 🤍 Queen St":
+    - img "Street art"
+    - button "🤍"
+    - text: Queen St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Meyers Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Meyers Pl
+  - button "Street art 🤍 Caledonian Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Caledonian Ln
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Little Collins St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Collins St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 The Walk":
+    - img "Street art"
+    - button "🤍"
+    - text: The Walk
+  - button "Street art 🤍 Therry St":
+    - img "Street art"
+    - button "🤍"
+    - text: Therry St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Sniders Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Sniders Ln
+  - button "Street art 🤍 Drewery Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Ln
+  - button "Street art 🤍 Franklin St":
+    - img "Street art"
+    - button "🤍"
+    - text: Franklin St
+  - button "Street art 🤍 Drewery Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Drewery Ln
+  - button "Street art 🤍 Union Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Union Ln
+  - button "Street art 🤍 Carson Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Carson Pl
+  - button "Street art 🤍 M1":
+    - img "Street art"
+    - button "🤍"
+    - text: M1
+  - button "Street art 🤍 Bell Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Bell Pl
+  - button "Street art 🤍 Bourke St":
+    - img "Street art"
+    - button "🤍"
+    - text: Bourke St
+  - button "Street art 🤍 Tattersalls Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Tattersalls Ln
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 M1":
+    - img "Street art"
+    - button "🤍"
+    - text: M1
+  - button "Street art 🤍 Sugden Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Sugden Pl
+  - button "Street art 🤍 Coromandel Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Coromandel Pl
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 Union Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Union Ln
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 M1":
+    - img "Street art"
+    - button "🤍"
+    - text: M1
+  - button "Street art 🤍 Mackenzie St":
+    - img "Street art"
+    - button "🤍"
+    - text: Mackenzie St
+  - button "Street art 🤍 Mackenzie St":
+    - img "Street art"
+    - button "🤍"
+    - text: Mackenzie St
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 Little George St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little George St
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 AC/DC Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: AC/DC Ln
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 Duckboard Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Duckboard Pl
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 AC/DC Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: AC/DC Ln
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 AC/DC Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: AC/DC Ln
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 Acland St":
+    - img "Street art"
+    - button "🤍"
+    - text: Acland St
+  - button "Street art 🤍 Duckboard Pl":
+    - img "Street art"
+    - button "🤍"
+    - text: Duckboard Pl
+  - button "Street art 🤍 George Parade":
+    - img "Street art"
+    - button "🤍"
+    - text: George Parade
+  - button "Street art 🤍 South Melbourne":
+    - img "Street art"
+    - button "🤍"
+    - text: South Melbourne
+  - button "Street art 🤍 Stevenson Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Stevenson Ln
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 Stevenson Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Stevenson Ln
+  - button "Street art 🤍 Tope St":
+    - img "Street art"
+    - button "🤍"
+    - text: Tope St
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 Swanston St":
+    - img "Street art"
+    - button "🤍"
+    - text: Swanston St
+  - button "Street art 🤍 Stevenson Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Stevenson Ln
+  - button "Street art 🤍 Tope St":
+    - img "Street art"
+    - button "🤍"
+    - text: Tope St
+  - button "Street art 🤍 Corrs Ln":
+    - img "Street art"
+    - button "🤍"
+    - text: Corrs Ln
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 South Melbourne":
+    - img "Street art"
+    - button "🤍"
+    - text: South Melbourne
+  - button "Street art 🤍 South Melbourne":
+    - img "Street art"
+    - button "🤍"
+    - text: South Melbourne
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Lonsdale St
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 Saint Kilda":
+    - img "Street art"
+    - button "🤍"
+    - text: Saint Kilda
+  - button "Street art 🤍 Tope St":
+    - img "Street art"
+    - button "🤍"
+    - text: Tope St
+  - button "Street art 🤍 Little Lonsdale St":
+    - img "Street art"
+    - button "🤍"
+    - text: Little Lonsdale St
+- navigation:
+  - link "freeappstore.online":
+    - /url: https://freeappstore.online
+  - button "Map":
+    - img
+    - text: Map
+  - button "Wall":
+    - img
+    - text: Wall
+  - button:
+    - img
+  - button "Places":
+    - img
+    - text: Places
+  - button "Saved":
+    - img
+    - text: Saved
+```
+
+# Test source
+
+```ts
+  1   | import { test, expect } from '@playwright/test'
+  2   | 
+  3   | const BASE = 'https://artout.freeappstore.online'
+  4   | 
+  5   | test.describe('ArtOut', () => {
+  6   |   test('loads and shows the map tab by default', async ({ page }) => {
+  7   |     await page.goto(BASE)
+  8   |     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 15000 })
+  9   |   })
+  10  | 
+  11  |   test('shows cluster markers on the map', async ({ page }) => {
+  12  |     await page.goto(BASE)
+  13  |     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 15000 })
+  14  |     // Clusters or markers should appear
+  15  |     await expect(page.locator('.leaflet-marker-icon').first()).toBeVisible({ timeout: 10000 })
+  16  |   })
+  17  | 
+  18  |   test('wall tab shows photo grid', async ({ page }) => {
+  19  |     await page.goto(BASE)
+  20  |     // Navigate to wall tab
+  21  |     await page.getByText('Wall').click()
+  22  |     // Should show images in the grid
+  23  |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  24  |   })
+  25  | 
+  26  |   test('wall has nearby/newest sort toggle', async ({ page }) => {
+  27  |     await page.goto(BASE)
+  28  |     await page.getByText('Wall').click()
+  29  |     // Should see sort buttons (may or may not have Nearby depending on GPS)
+> 30  |     await expect(page.getByText('Newest')).toBeVisible({ timeout: 10000 })
+      |                                            ^ Error: expect(locator).toBeVisible() failed
+  31  |   })
+  32  | 
+  33  |   test('wall has grid/feed layout toggle', async ({ page }) => {
+  34  |     await page.goto(BASE)
+  35  |     await page.getByText('Wall').click()
+  36  |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  37  |     // Grid is default — images visible
+  38  |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
+  39  |   })
+  40  | 
+  41  |   test('places tab shows location tree', async ({ page }) => {
+  42  |     await page.goto(BASE)
+  43  |     await page.getByText('Places').click()
+  44  |     await expect(page.locator('text=Places').first()).toBeVisible()
+  45  |     // Should have a search input
+  46  |     await expect(page.getByPlaceholder('Search places...')).toBeVisible()
+  47  |     // Should show location nodes (countries)
+  48  |     await expect(page.locator('button:has-text("Australia")').first()).toBeVisible({ timeout: 10000 })
+  49  |   })
+  50  | 
+  51  |   test('places search filters locations', async ({ page }) => {
+  52  |     await page.goto(BASE)
+  53  |     await page.getByText('Places').click()
+  54  |     await page.getByPlaceholder('Search places...').fill('Melbourne')
+  55  |     await expect(page.locator('button:has-text("Melbourne")').first()).toBeVisible({ timeout: 5000 })
+  56  |   })
+  57  | 
+  58  |   test('places drill-down shows breadcrumb', async ({ page }) => {
+  59  |     await page.goto(BASE)
+  60  |     await page.getByText('Places').click()
+  61  |     await expect(page.locator('button:has-text("Australia")').first()).toBeVisible({ timeout: 10000 })
+  62  |     await page.locator('button:has-text("Australia")').first().click()
+  63  |     // Breadcrumb should show
+  64  |     await expect(page.getByRole('button', { name: 'All', exact: true })).toBeVisible()
+  65  |     await expect(page.locator('text=Australia').first()).toBeVisible()
+  66  |   })
+  67  | 
+  68  |   test('add tab requires sign-in', async ({ page }) => {
+  69  |     await page.goto(BASE)
+  70  |     // Click the + button (middle tab)
+  71  |     await page.locator('nav button').nth(2).click()
+  72  |     // Should show sign-in prompt
+  73  |     await expect(page.getByText('Drop some art')).toBeVisible({ timeout: 5000 })
+  74  |     await expect(page.getByText('Google')).toBeVisible()
+  75  |     await expect(page.getByText('GitHub')).toBeVisible()
+  76  |   })
+  77  | 
+  78  |   test('saved tab requires sign-in', async ({ page }) => {
+  79  |     await page.goto(BASE)
+  80  |     await page.getByText('Saved').click()
+  81  |     await expect(page.getByText('Google')).toBeVisible({ timeout: 5000 })
+  82  |   })
+  83  | 
+  84  |   test('has freeappstore.online link in nav', async ({ page }) => {
+  85  |     await page.goto(BASE)
+  86  |     await expect(page.locator('a[href="https://freeappstore.online"]')).toBeVisible({ timeout: 5000 })
+  87  |   })
+  88  | 
+  89  |   test('dark theme is default', async ({ page }) => {
+  90  |     await page.goto(BASE)
+  91  |     const bg = await page.locator('body').evaluate((el) => getComputedStyle(el).backgroundColor)
+  92  |     // Should be very dark (close to black)
+  93  |     expect(bg).toMatch(/rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)/)
+  94  |     const [, r, g, b] = bg.match(/rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)/)!
+  95  |     expect(Number(r)).toBeLessThan(30)
+  96  |     expect(Number(g)).toBeLessThan(30)
+  97  |     expect(Number(b)).toBeLessThan(30)
+  98  |   })
+  99  | 
+  100 |   test('no console errors on load', async ({ page }) => {
+  101 |     const errors: string[] = []
+  102 |     page.on('console', (msg) => {
+  103 |       if (msg.type() === 'error') errors.push(msg.text())
+  104 |     })
+  105 |     await page.goto(BASE)
+  106 |     await page.waitForTimeout(3000)
+  107 |     // Filter out expected errors (geolocation permission, favicon)
+  108 |     const real = errors.filter((e) =>
+  109 |       !e.includes('Permissions policy') &&
+  110 |       !e.includes('favicon') &&
+  111 |       !e.includes('Geolocation')
+  112 |     )
+  113 |     expect(real).toEqual([])
+  114 |   })
+  115 | })
+  116 | 
+```

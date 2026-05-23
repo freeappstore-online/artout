@@ -80,21 +80,19 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
           </button>
         )}
         {hasLocation && (
-          <>
-            <button
-              onClick={() => setSort('nearby')}
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                sort === 'nearby' ? 'bg-[var(--accent)] text-black' : 'bg-[var(--glass)] text-[var(--muted)]'
-              }`}
-            >Nearby</button>
-            <button
-              onClick={() => setSort('newest')}
-              className={`rounded-full px-3 py-1 text-xs font-semibold ${
-                sort === 'newest' ? 'bg-[var(--accent)] text-black' : 'bg-[var(--glass)] text-[var(--muted)]'
-              }`}
-            >Newest</button>
-          </>
+          <button
+            onClick={() => setSort('nearby')}
+            className={`rounded-full px-3 py-1 text-xs font-semibold ${
+              sort === 'nearby' ? 'bg-[var(--accent)] text-black' : 'bg-[var(--glass)] text-[var(--muted)]'
+            }`}
+          >Nearby</button>
         )}
+        <button
+          onClick={() => setSort('newest')}
+          className={`rounded-full px-3 py-1 text-xs font-semibold ${
+            sort === 'newest' ? 'bg-[var(--accent)] text-black' : 'bg-[var(--glass)] text-[var(--muted)]'
+          }`}
+        >Newest</button>
         <div className="ml-auto flex gap-1">
           <button
             onClick={() => setLayout('grid')}
@@ -120,43 +118,48 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
       {layout === 'grid' ? (
         <div className="grid grid-cols-3 gap-px bg-[var(--line)]">
           {sorted.map((post) => (
-            <button
-              key={post.id}
-              onClick={() => onPostClick(post)}
-              className="relative aspect-square overflow-hidden bg-[var(--paper)]"
-            >
-              <img src={post.thumbUrl} alt={post.title || 'Street art'} className="h-full w-full object-cover" loading="lazy" />
+            <div key={post.id} className="relative aspect-square overflow-hidden bg-[var(--paper)]">
+              <img
+                src={post.thumbUrl}
+                alt={post.title || 'Street art'}
+                className="h-full w-full cursor-pointer object-cover"
+                loading="lazy"
+                onClick={() => onPostClick(post)}
+              />
               <button
-                onClick={(e) => { e.stopPropagation(); onToggleFavorite(post.id) }}
-                className="absolute right-1.5 top-1.5 text-sm drop-shadow-lg"
+                onClick={() => onToggleFavorite(post.id)}
+                className="absolute right-1 top-1 flex h-7 w-7 items-center justify-center rounded-full bg-black/40 text-sm backdrop-blur-sm"
               >
                 {isFavorite(post.id) ? '❤️' : '🤍'}
               </button>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">
                 <span className="text-[0.6rem] font-medium text-white/90">{post.locationName}</span>
                 {post.dist != null && (
                   <span className="ml-1 text-[0.55rem] text-white/50">{formatDistance(post.dist)}</span>
                 )}
               </div>
-            </button>
+            </div>
           ))}
         </div>
       ) : (
         <div className="space-y-3 px-3 pb-4">
           {sorted.map((post) => (
-            <button
-              key={post.id}
-              onClick={() => onPostClick(post)}
-              className="relative w-full overflow-hidden rounded-xl bg-[var(--paper)]"
-            >
-              <img src={post.imageUrl} alt={post.title || 'Street art'} className="w-full object-cover" loading="lazy" style={{ maxHeight: 500 }} />
+            <div key={post.id} className="relative overflow-hidden rounded-xl bg-[var(--paper)]">
+              <img
+                src={post.imageUrl}
+                alt={post.title || 'Street art'}
+                className="w-full cursor-pointer object-cover"
+                loading="lazy"
+                style={{ maxHeight: 500 }}
+                onClick={() => onPostClick(post)}
+              />
               <button
-                onClick={(e) => { e.stopPropagation(); onToggleFavorite(post.id) }}
-                className="absolute right-3 top-3 text-xl drop-shadow-lg"
+                onClick={() => onToggleFavorite(post.id)}
+                className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-lg backdrop-blur-sm"
               >
                 {isFavorite(post.id) ? '❤️' : '🤍'}
               </button>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
                 <div className="flex items-end justify-between">
                   <div>
                     <span className="text-sm font-medium text-white">{post.locationName}</span>
@@ -168,14 +171,13 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
                     href={`https://www.google.com/maps/dir/?api=1&destination=${post.lat},${post.lon}`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="shrink-0 text-xs font-medium text-[var(--sky)]"
+                    className="pointer-events-auto shrink-0 text-xs font-medium text-[var(--sky)]"
                   >
                     Navigate →
                   </a>
                 </div>
               </div>
-            </button>
+            </div>
           ))}
         </div>
       )}
