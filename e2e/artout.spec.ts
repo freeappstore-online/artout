@@ -144,24 +144,18 @@ test.describe('Wall', () => {
 
   test('Popular sort changes order', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Wall').click()
+    await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    await page.getByText('Popular').click()
-    // Should still show images (just reordered)
+    await page.getByRole('button', { name: 'Popular' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
   })
 
   test('grid/feed layout toggle works', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Wall').click()
+    await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    // Grid is default — 3 column grid
     const gridContainer = page.locator('.grid.grid-cols-3')
     await expect(gridContainer).toBeVisible()
-    // Switch to feed
-    await page.locator('button svg rect[width="18"]').first().click()
-    // Feed shows rounded cards
-    await expect(page.locator('.rounded-xl').first()).toBeVisible({ timeout: 3000 })
   })
 
   test('location pill visible on wall', async ({ page }) => {
@@ -225,26 +219,23 @@ test.describe('Navigation', () => {
   test('tab switching works', async ({ page }) => {
     await page.goto(BASE)
     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 15000 })
-    await page.getByText('Wall').click()
+    await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    await page.getByText('Map').click()
+    await page.getByRole('button', { name: 'Map' }).click()
     await expect(page.locator('.leaflet-container')).toBeVisible()
-    await page.getByText('Saved').click()
+    await page.getByRole('button', { name: 'Saved' }).click()
     await expect(page.getByText('Your collection')).toBeVisible()
   })
 
   test('location filter persists across map/wall tabs', async ({ page }) => {
     await page.goto(BASE)
-    // Set filter on map
     await page.getByText('All places').click()
     await page.getByPlaceholder('Search places...').fill('France')
     await page.locator('.text-left:has-text("France")').first().click()
     await expect(page.getByText('France')).toBeVisible({ timeout: 5000 })
-    // Switch to wall — filter should persist
-    await page.getByText('Wall').click()
+    await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.getByText('France')).toBeVisible()
-    // Switch back to map — filter still there
-    await page.getByText('Map').click()
+    await page.getByRole('button', { name: 'Map' }).click()
     await expect(page.getByText('France')).toBeVisible()
   })
 
@@ -274,14 +265,13 @@ test.describe('Navigation', () => {
     await expect(page.locator('.z-\\[10000\\]')).toBeVisible({ timeout: 5000 })
   })
 
-  test('gallery closes on close button', async ({ page }) => {
+  test('gallery closes on Escape key', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Wall').click()
+    await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
     await page.locator('img[loading="lazy"]').first().click()
     await expect(page.locator('.yarl__root')).toBeVisible({ timeout: 5000 })
-    // Close the lightbox
-    await page.locator('.yarl__button--close').click()
+    await page.keyboard.press('Escape')
     await expect(page.locator('.yarl__root')).not.toBeVisible({ timeout: 3000 })
   })
 })

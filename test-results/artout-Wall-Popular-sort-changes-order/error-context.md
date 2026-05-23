@@ -1,0 +1,10131 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: artout.spec.ts >> Wall >> Popular sort changes order
+- Location: e2e/artout.spec.ts:145:7
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded.
+```
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('button', { name: 'Popular' })
+    - locator resolved to <button class="rounded-full px-3 py-1 text-xs font-semibold bg-[var(--glass)] text-[var(--muted)]">Popular</button>
+  - attempting click action
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <span class="text-[var(--muted)]">(2460)</span> from <div class="absolute inset-x-0 top-0 z-[1050] px-3">…</div> subtree intercepts pointer events
+    - retrying click action
+    - waiting 20ms
+    2 × waiting for element to be visible, enabled and stable
+      - element is visible, enabled and stable
+      - scrolling into view if needed
+      - done scrolling
+      - <span class="text-[var(--muted)]">(2460)</span> from <div class="absolute inset-x-0 top-0 z-[1050] px-3">…</div> subtree intercepts pointer events
+    - retrying click action
+      - waiting 100ms
+    52 × waiting for element to be visible, enabled and stable
+       - element is visible, enabled and stable
+       - scrolling into view if needed
+       - done scrolling
+       - <span class="text-[var(--muted)]">(2460)</span> from <div class="absolute inset-x-0 top-0 z-[1050] px-3">…</div> subtree intercepts pointer events
+     - retrying click action
+       - waiting 500ms
+    - waiting for element to be visible, enabled and stable
+
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - button "All places (2460)" [ref=e5]:
+    - img [ref=e6]
+    - text: All places
+    - generic [ref=e9]: (2460)
+    - img [ref=e10]
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - button "Newest" [ref=e15]
+        - button "Popular" [ref=e16]
+        - generic [ref=e17]:
+          - button [ref=e18]:
+            - img [ref=e19]
+          - button [ref=e24]:
+            - img [ref=e25]
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - img "Street art" [ref=e30] [cursor=pointer]
+          - button "🤍" [ref=e31]
+          - generic: Rue de la Platière
+        - generic [ref=e32]:
+          - img "Street art" [ref=e33] [cursor=pointer]
+          - button "🤍" [ref=e34]
+          - generic: Rue Antoine Zattara
+        - generic [ref=e35]:
+          - img "Street art" [ref=e36] [cursor=pointer]
+          - button "🤍" [ref=e37]
+          - generic: Königstraße
+        - generic [ref=e38]:
+          - img "Street art" [ref=e39] [cursor=pointer]
+          - button "🤍" [ref=e40]
+          - generic: Cours Belsunce
+        - generic [ref=e41]:
+          - img "Street art" [ref=e42] [cursor=pointer]
+          - button "🤍" [ref=e43]
+          - generic: Rue Paul Bert
+        - generic [ref=e44]:
+          - img "Street art" [ref=e45] [cursor=pointer]
+          - button "🤍" [ref=e46]
+          - generic: Rue de la Platière
+        - generic [ref=e47]:
+          - img "Street art" [ref=e48] [cursor=pointer]
+          - button "🤍" [ref=e49]
+          - generic: Viale Zara
+        - generic [ref=e50]:
+          - img "Street art" [ref=e51] [cursor=pointer]
+          - button "🤍" [ref=e52]
+          - generic: S Ə Şirvani küc
+        - generic [ref=e53]:
+          - img "Street art" [ref=e54] [cursor=pointer]
+          - button "🤍" [ref=e55]
+          - generic: Aleksandra Čaka iela
+        - generic [ref=e56]:
+          - img "Street art" [ref=e57] [cursor=pointer]
+          - button "🤍" [ref=e58]
+          - generic: Königstraße
+        - generic [ref=e59]:
+          - img "Street art" [ref=e60] [cursor=pointer]
+          - button "🤍" [ref=e61]
+          - generic: R 2453
+        - generic [ref=e62]:
+          - img "Street art" [ref=e63] [cursor=pointer]
+          - button "🤍" [ref=e64]
+          - generic: ทางหลวงชนบท ชร 5023
+        - generic [ref=e65]:
+          - img "Street art" [ref=e66] [cursor=pointer]
+          - button "🤍" [ref=e67]
+          - generic: Viale Zara
+        - generic [ref=e68]:
+          - img "Street art" [ref=e69] [cursor=pointer]
+          - button "🤍" [ref=e70]
+          - generic: Tunnel de la Joliette
+        - generic [ref=e71]:
+          - img "Street art" [ref=e72] [cursor=pointer]
+          - button "🤍" [ref=e73]
+          - generic: ulitsa Zlatarska
+        - generic [ref=e74]:
+          - img "Street art" [ref=e75] [cursor=pointer]
+          - button "🤍" [ref=e76]
+          - generic: Rue Audric
+        - generic [ref=e77]:
+          - img "Street art" [ref=e78] [cursor=pointer]
+          - button "🤍" [ref=e79]
+          - generic: Avenida Panamá
+        - generic [ref=e80]:
+          - img "Street art" [ref=e81] [cursor=pointer]
+          - button "🤍" [ref=e82]
+          - generic: Aleksandra Čaka iela
+        - generic [ref=e83]:
+          - img "Street art" [ref=e84] [cursor=pointer]
+          - button "🤍" [ref=e85]
+          - generic: Königstraße
+        - generic [ref=e86]:
+          - img "Street art" [ref=e87] [cursor=pointer]
+          - button "🤍" [ref=e88]
+          - generic: باهنر
+        - generic [ref=e89]:
+          - img "Street art" [ref=e90] [cursor=pointer]
+          - button "🤍" [ref=e91]
+          - generic: Rua das Portas do Sol
+        - generic [ref=e92]:
+          - img "Street art" [ref=e93] [cursor=pointer]
+          - button "🤍" [ref=e94]
+          - generic: Hda Santa Ana
+        - generic [ref=e95]:
+          - img "Street art" [ref=e96] [cursor=pointer]
+          - button "🤍" [ref=e97]
+          - generic: Adelgade
+        - generic [ref=e98]:
+          - img "Street art" [ref=e99] [cursor=pointer]
+          - button "🤍" [ref=e100]
+          - generic: Calle Puerto Rico
+        - generic [ref=e101]:
+          - img "Street art" [ref=e102] [cursor=pointer]
+          - button "🤍" [ref=e103]
+          - generic: Rua das Portas do Sol
+        - generic [ref=e104]:
+          - img "Street art" [ref=e105] [cursor=pointer]
+          - button "🤍" [ref=e106]
+          - generic: Corso Niccolò Machiavelli
+        - generic [ref=e107]:
+          - img "Street art" [ref=e108] [cursor=pointer]
+          - button "🤍" [ref=e109]
+          - generic: Rue des trois Epis
+        - generic [ref=e110]:
+          - img "Street art" [ref=e111] [cursor=pointer]
+          - button "🤍" [ref=e112]
+          - generic: Rua das Portas do Sol
+        - generic [ref=e113]:
+          - img "Street art" [ref=e114] [cursor=pointer]
+          - button "🤍" [ref=e115]
+          - generic: Unnamed Road
+        - generic [ref=e116]:
+          - img "Street art" [ref=e117] [cursor=pointer]
+          - button "🤍" [ref=e118]
+          - generic: Avenue 5
+        - generic [ref=e119]:
+          - img "Street art" [ref=e120] [cursor=pointer]
+          - button "🤍" [ref=e121]
+          - generic: Calle 80 Sur
+        - generic [ref=e122]:
+          - img "Street art" [ref=e123] [cursor=pointer]
+          - button "🤍" [ref=e124]
+          - generic: Unnamed Road
+        - generic [ref=e125]:
+          - img "Street art" [ref=e126] [cursor=pointer]
+          - button "🤍" [ref=e127]
+          - generic: Contrà San Giorgio
+        - generic [ref=e128]:
+          - img "Street art" [ref=e129] [cursor=pointer]
+          - button "🤍" [ref=e130]
+          - generic: Carrera 60
+        - generic [ref=e131]:
+          - img "Street art" [ref=e132] [cursor=pointer]
+          - button "🤍" [ref=e133]
+          - generic: Calle Puerto Rico
+        - generic [ref=e134]:
+          - img "Street art" [ref=e135] [cursor=pointer]
+          - button "🤍" [ref=e136]
+          - generic: Unnamed Road
+        - generic [ref=e137]:
+          - img "Street art" [ref=e138] [cursor=pointer]
+          - button "🤍" [ref=e139]
+          - generic: Eppensteinerstraße
+        - generic [ref=e140]:
+          - img "Street art" [ref=e141] [cursor=pointer]
+          - button "🤍" [ref=e142]
+          - generic: Ofener Straße
+        - generic [ref=e143]:
+          - img "Street art" [ref=e144] [cursor=pointer]
+          - button "🤍" [ref=e145]
+          - generic: Westerstraße
+        - generic [ref=e146]:
+          - img "Street art" [ref=e147] [cursor=pointer]
+          - button "🤍" [ref=e148]
+          - generic: Allée Gavoty Honorat
+        - generic [ref=e149]:
+          - img "Street art" [ref=e150] [cursor=pointer]
+          - button "🤍" [ref=e151]
+          - generic: Unnamed Road
+        - generic [ref=e152]:
+          - img "Street art" [ref=e153] [cursor=pointer]
+          - button "🤍" [ref=e154]
+          - generic: Vengara – Achanambalam Road
+        - generic [ref=e155]:
+          - img "Street art" [ref=e156] [cursor=pointer]
+          - button "🤍" [ref=e157]
+          - generic: Unnamed Road
+        - generic [ref=e158]:
+          - img "Street art" [ref=e159] [cursor=pointer]
+          - button "🤍" [ref=e160]
+          - generic: Clark Street
+        - generic [ref=e161]:
+          - img "Street art" [ref=e162] [cursor=pointer]
+          - button "🤍" [ref=e163]
+          - generic: Clark Street
+        - generic [ref=e164]:
+          - img "Street art" [ref=e165] [cursor=pointer]
+          - button "🤍" [ref=e166]
+          - generic: Hotel Circle North
+        - generic [ref=e167]:
+          - img "Street art" [ref=e168] [cursor=pointer]
+          - button "🤍" [ref=e169]
+          - generic: Vulytsya Kostyushko
+        - generic [ref=e170]:
+          - img "Street art" [ref=e171] [cursor=pointer]
+          - button "🤍" [ref=e172]
+          - generic: Grassy Point Road
+        - generic [ref=e173]:
+          - img "Street art" [ref=e174] [cursor=pointer]
+          - button "🤍" [ref=e175]
+          - generic: Ermine Path
+        - generic [ref=e176]:
+          - img "Street art" [ref=e177] [cursor=pointer]
+          - button "🤍" [ref=e178]
+          - generic: Place Jules Vallès
+        - generic [ref=e179]:
+          - img "Street art" [ref=e180] [cursor=pointer]
+          - button "🤍" [ref=e181]
+          - generic: Clark Street
+        - generic [ref=e182]:
+          - img "Street art" [ref=e183] [cursor=pointer]
+          - button "🤍" [ref=e184]
+          - generic: Rue Jules Ferry
+        - generic [ref=e185]:
+          - img "Street art" [ref=e186] [cursor=pointer]
+          - button "🤍" [ref=e187]
+          - generic: County Road 169
+        - generic [ref=e188]:
+          - img "Street art" [ref=e189] [cursor=pointer]
+          - button "🤍" [ref=e190]
+          - generic: Clark Street
+        - generic [ref=e191]:
+          - img "Street art" [ref=e192] [cursor=pointer]
+          - button "🤍" [ref=e193]
+          - generic: Grassy Point Road
+        - generic [ref=e194]:
+          - img "Street art" [ref=e195] [cursor=pointer]
+          - button "🤍" [ref=e196]
+          - generic: Rosemary Crescent
+        - generic [ref=e197]:
+          - img "Street art" [ref=e198] [cursor=pointer]
+          - button "🤍" [ref=e199]
+          - generic: Titsian Tabidze Street
+        - generic [ref=e200]:
+          - img "Street art" [ref=e201] [cursor=pointer]
+          - button "🤍" [ref=e202]
+          - generic: Wienerstraße
+        - generic [ref=e203]:
+          - img "Street art" [ref=e204] [cursor=pointer]
+          - button "🤍" [ref=e205]
+          - generic: Mapleton Avenue
+        - generic [ref=e206]:
+          - img "Street art" [ref=e207] [cursor=pointer]
+          - button "🤍" [ref=e208]
+          - generic: Soi Lucky Lek
+        - generic [ref=e209]:
+          - img "Street art" [ref=e210] [cursor=pointer]
+          - button "🤍" [ref=e211]
+          - generic: Hitchcock Lane
+        - generic [ref=e212]:
+          - img "Street art" [ref=e213] [cursor=pointer]
+          - button "🤍" [ref=e214]
+          - generic: Impasse du Talamont
+        - generic [ref=e215]:
+          - img "Street art" [ref=e216] [cursor=pointer]
+          - button "🤍" [ref=e217]
+          - generic: Costa Rica
+        - generic [ref=e218]:
+          - img "Street art" [ref=e219] [cursor=pointer]
+          - button "🤍" [ref=e220]
+          - generic: Unnamed Road
+        - generic [ref=e221]:
+          - img "Street art" [ref=e222] [cursor=pointer]
+          - button "🤍" [ref=e223]
+          - generic: Avenida Conduta
+        - generic [ref=e224]:
+          - img "Street art" [ref=e225] [cursor=pointer]
+          - button "🤍" [ref=e226]
+          - generic: 22 de Mayo
+        - generic [ref=e227]:
+          - img "Street art" [ref=e228] [cursor=pointer]
+          - button "🤍" [ref=e229]
+          - generic: Clark Street
+        - generic [ref=e230]:
+          - img "Street art" [ref=e231] [cursor=pointer]
+          - button "🤍" [ref=e232]
+          - generic: Unnamed Road
+        - generic [ref=e233]:
+          - img "Street art" [ref=e234] [cursor=pointer]
+          - button "🤍" [ref=e235]
+          - generic: Eraniel - Monday Market Road
+        - generic [ref=e236]:
+          - img "Street art" [ref=e237] [cursor=pointer]
+          - button "🤍" [ref=e238]
+          - generic: Ulitsa Yumasheva
+        - generic [ref=e239]:
+          - img "Street art" [ref=e240] [cursor=pointer]
+          - button "🤍" [ref=e241]
+          - generic: Clark Street
+        - generic [ref=e242]:
+          - img "Street art" [ref=e243] [cursor=pointer]
+          - button "🤍" [ref=e244]
+          - generic: Ramallo
+        - generic [ref=e245]:
+          - img "Street art" [ref=e246] [cursor=pointer]
+          - button "🤍" [ref=e247]
+          - generic: Samaypur Market Road
+        - generic [ref=e248]:
+          - img "Street art" [ref=e249] [cursor=pointer]
+          - button "🤍" [ref=e250]
+          - generic: Ulitsa Levanevskogo
+        - generic [ref=e251]:
+          - img "Street art" [ref=e252] [cursor=pointer]
+          - button "🤍" [ref=e253]
+          - generic: Leystraße
+        - generic [ref=e254]:
+          - img "Street art" [ref=e255] [cursor=pointer]
+          - button "🤍" [ref=e256]
+          - generic: Lark Avenue
+        - generic [ref=e257]:
+          - img "Street art" [ref=e258] [cursor=pointer]
+          - button "🤍" [ref=e259]
+          - generic: Paris Street
+        - generic [ref=e260]:
+          - img "Street art" [ref=e261] [cursor=pointer]
+          - button "🤍" [ref=e262]
+          - generic: Clark Street
+        - generic [ref=e263]:
+          - img "Street art" [ref=e264] [cursor=pointer]
+          - button "🤍" [ref=e265]
+          - generic: STKK Road
+        - generic [ref=e266]:
+          - img "Street art" [ref=e267] [cursor=pointer]
+          - button "🤍" [ref=e268]
+          - generic: Larrea
+        - generic [ref=e269]:
+          - img "Street art" [ref=e270] [cursor=pointer]
+          - button "🤍" [ref=e271]
+          - generic: Rue Léon Augustin l Hermitte
+        - generic [ref=e272]:
+          - img "Street art" [ref=e273] [cursor=pointer]
+          - button "🤍" [ref=e274]
+          - generic: Via Tobruk
+        - generic [ref=e275]:
+          - img "Street art" [ref=e276] [cursor=pointer]
+          - button "🤍" [ref=e277]
+          - generic: Brunswick Avenue North
+        - generic [ref=e278]:
+          - img "Street art" [ref=e279] [cursor=pointer]
+          - button "🤍" [ref=e280]
+          - generic: Calle Bruno
+        - generic [ref=e281]:
+          - img "Street art" [ref=e282] [cursor=pointer]
+          - button "🤍" [ref=e283]
+          - generic: Ambalappadu-Kakkur Road
+        - generic [ref=e284]:
+          - img "Street art" [ref=e285] [cursor=pointer]
+          - button "🤍" [ref=e286]
+          - generic: Calle de los Molinos Baja
+        - generic [ref=e287]:
+          - img "Street art" [ref=e288] [cursor=pointer]
+          - button "🤍" [ref=e289]
+          - generic: Rue de Charonne
+        - generic [ref=e290]:
+          - img "Street art" [ref=e291] [cursor=pointer]
+          - button "🤍" [ref=e292]
+          - generic: Berkeley Street
+        - generic [ref=e293]:
+          - img "Street art" [ref=e294] [cursor=pointer]
+          - button "🤍" [ref=e295]
+          - generic: Persiaran Apec
+        - generic [ref=e296]:
+          - img "Street art" [ref=e297] [cursor=pointer]
+          - button "🤍" [ref=e298]
+          - generic: Jalan Tepi Sungai
+        - generic [ref=e299]:
+          - img "Street art" [ref=e300] [cursor=pointer]
+          - button "🤍" [ref=e301]
+          - generic: Revolution Road
+        - generic [ref=e302]:
+          - img "Street art" [ref=e303] [cursor=pointer]
+          - button "🤍" [ref=e304]
+          - generic: Cap Juan Antonio Artigas
+        - generic [ref=e305]:
+          - img "Street art" [ref=e306] [cursor=pointer]
+          - button "🤍" [ref=e307]
+          - generic: Juan Antonio Lavalleja
+        - generic [ref=e308]:
+          - img "Street art" [ref=e309] [cursor=pointer]
+          - button "🤍" [ref=e310]
+          - generic: Paraná
+        - generic [ref=e311]:
+          - img "Street art" [ref=e312] [cursor=pointer]
+          - button "🤍" [ref=e313]
+          - generic: Leystraße
+        - generic [ref=e314]:
+          - img "Street art" [ref=e315] [cursor=pointer]
+          - button "🤍" [ref=e316]
+          - generic: Khersons ka Street
+        - generic [ref=e317]:
+          - img "Street art" [ref=e318] [cursor=pointer]
+          - button "🤍" [ref=e319]
+          - generic: Ulitsa Oktyabr skaya
+        - generic [ref=e320]:
+          - img "Street art" [ref=e321] [cursor=pointer]
+          - button "🤍" [ref=e322]
+          - generic: Via Alfonso Sozy Carafa
+        - generic [ref=e323]:
+          - img "Street art" [ref=e324] [cursor=pointer]
+          - button "🤍" [ref=e325]
+          - generic: Independencia
+        - generic [ref=e326]:
+          - img "Street art" [ref=e327] [cursor=pointer]
+          - button "🤍" [ref=e328]
+          - generic: Paraná
+        - generic [ref=e329]:
+          - img "Street art" [ref=e330] [cursor=pointer]
+          - button "🤍" [ref=e331]
+          - generic: W15
+        - generic [ref=e332]:
+          - img "Street art" [ref=e333] [cursor=pointer]
+          - button "🤍" [ref=e334]
+          - generic: Tallinas iela
+        - generic [ref=e335]:
+          - img "Street art" [ref=e336] [cursor=pointer]
+          - button "🤍" [ref=e337]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e338]:
+          - img "Street art" [ref=e339] [cursor=pointer]
+          - button "🤍" [ref=e340]
+          - generic: Tallinas iela
+        - generic [ref=e341]:
+          - img "Street art" [ref=e342] [cursor=pointer]
+          - button "🤍" [ref=e343]
+          - generic: Calle 7
+        - generic [ref=e344]:
+          - img "Street art" [ref=e345] [cursor=pointer]
+          - button "🤍" [ref=e346]
+          - generic: Calle 70
+        - generic [ref=e347]:
+          - img "Street art" [ref=e348] [cursor=pointer]
+          - button "🤍" [ref=e349]
+          - generic: اسماء بنت سعيد بن العاص
+        - generic [ref=e350]:
+          - img "Street art" [ref=e351] [cursor=pointer]
+          - button "🤍" [ref=e352]
+          - generic: Tallinas iela
+        - generic [ref=e353]:
+          - img "Street art" [ref=e354] [cursor=pointer]
+          - button "🤍" [ref=e355]
+          - generic: Tallinas iela
+        - generic [ref=e356]:
+          - img "Street art" [ref=e357] [cursor=pointer]
+          - button "🤍" [ref=e358]
+          - generic: Tallinas iela
+        - generic [ref=e359]:
+          - img "Street art" [ref=e360] [cursor=pointer]
+          - button "🤍" [ref=e361]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e362]:
+          - img "Street art" [ref=e363] [cursor=pointer]
+          - button "🤍" [ref=e364]
+          - generic: Canal de La Luz
+        - generic [ref=e365]:
+          - img "Street art" [ref=e366] [cursor=pointer]
+          - button "🤍" [ref=e367]
+          - generic: Rue Saint-Urbain
+        - generic [ref=e368]:
+          - img "Street art" [ref=e369] [cursor=pointer]
+          - button "🤍" [ref=e370]
+          - generic: Araku - Visakhapatnam Road
+        - generic [ref=e371]:
+          - img "Street art" [ref=e372] [cursor=pointer]
+          - button "🤍" [ref=e373]
+          - generic: 7a Avenida
+        - generic [ref=e374]:
+          - img "Street art" [ref=e375] [cursor=pointer]
+          - button "🤍" [ref=e376]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e377]:
+          - img "Street art" [ref=e378] [cursor=pointer]
+          - button "🤍" [ref=e379]
+          - generic: Tallinas iela
+        - generic [ref=e380]:
+          - img "Street art" [ref=e381] [cursor=pointer]
+          - button "🤍" [ref=e382]
+          - generic: Tallinas iela
+        - generic [ref=e383]:
+          - img "Street art" [ref=e384] [cursor=pointer]
+          - button "🤍" [ref=e385]
+          - generic: Tallinas iela
+        - generic [ref=e386]:
+          - img "Street art" [ref=e387] [cursor=pointer]
+          - button "🤍" [ref=e388]
+          - generic: Unnamed Road
+        - generic [ref=e389]:
+          - img "Street art" [ref=e390] [cursor=pointer]
+          - button "🤍" [ref=e391]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e392]:
+          - img "Street art" [ref=e393] [cursor=pointer]
+          - button "🤍" [ref=e394]
+          - generic: Avenue Charles de Gaulle
+        - generic [ref=e395]:
+          - img "Street art" [ref=e396] [cursor=pointer]
+          - button "🤍" [ref=e397]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e398]:
+          - img "Street art" [ref=e399] [cursor=pointer]
+          - button "🤍" [ref=e400]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e401]:
+          - img "Street art" [ref=e402] [cursor=pointer]
+          - button "🤍" [ref=e403]
+          - generic: Rue Jenner
+        - generic [ref=e404]:
+          - img "Street art" [ref=e405] [cursor=pointer]
+          - button "🤍" [ref=e406]
+          - generic: Rue Jeanne d Arc
+        - generic [ref=e407]:
+          - img "Street art" [ref=e408] [cursor=pointer]
+          - button "🤍" [ref=e409]
+          - generic: Place Pinel
+        - generic [ref=e410]:
+          - img "Street art" [ref=e411] [cursor=pointer]
+          - button "🤍" [ref=e412]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e413]:
+          - img "Street art" [ref=e414] [cursor=pointer]
+          - button "🤍" [ref=e415]
+          - generic: Place Pinel
+        - generic [ref=e416]:
+          - img "Street art" [ref=e417] [cursor=pointer]
+          - button "🤍" [ref=e418]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e419]:
+          - img "Street art" [ref=e420] [cursor=pointer]
+          - button "🤍" [ref=e421]
+          - generic: Rue Jeanne d Arc
+        - generic [ref=e422]:
+          - img "Street art" [ref=e423] [cursor=pointer]
+          - button "🤍" [ref=e424]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e425]:
+          - img "Street art" [ref=e426] [cursor=pointer]
+          - button "🤍" [ref=e427]
+          - generic: Rue Jeanne d Arc
+        - generic [ref=e428]:
+          - img "Street art" [ref=e429] [cursor=pointer]
+          - button "🤍" [ref=e430]
+          - generic: Rue Jenner
+        - generic [ref=e431]:
+          - img "Street art" [ref=e432] [cursor=pointer]
+          - button "🤍" [ref=e433]
+          - generic: Rue Jeanne d Arc
+        - generic [ref=e434]:
+          - img "Street art" [ref=e435] [cursor=pointer]
+          - button "🤍" [ref=e436]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e437]:
+          - img "Street art" [ref=e438] [cursor=pointer]
+          - button "🤍" [ref=e439]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e440]:
+          - img "Street art" [ref=e441] [cursor=pointer]
+          - button "🤍" [ref=e442]
+          - generic: Place Pinel
+        - generic [ref=e443]:
+          - img "Street art" [ref=e444] [cursor=pointer]
+          - button "🤍" [ref=e445]
+          - generic: Boulevard Vincent Auriol
+        - generic [ref=e446]:
+          - img "Street art" [ref=e447] [cursor=pointer]
+          - button "🤍" [ref=e448]
+          - generic: Rue Jeanne d Arc
+        - generic [ref=e449]:
+          - img "Street art" [ref=e450] [cursor=pointer]
+          - button "🤍" [ref=e451]
+          - generic: Rainbird Road
+        - generic [ref=e452]:
+          - img "Street art" [ref=e453] [cursor=pointer]
+          - button "🤍" [ref=e454]
+          - generic: Rue Pouchet
+        - generic [ref=e455]:
+          - img "Street art" [ref=e456] [cursor=pointer]
+          - button "🤍" [ref=e457]
+          - generic: Campo San Geremia
+        - generic [ref=e458]:
+          - img "Street art" [ref=e459] [cursor=pointer]
+          - button "🤍" [ref=e460]
+          - generic: Place de la Haute Vieille Tour
+        - generic [ref=e461]:
+          - img "Street art" [ref=e462] [cursor=pointer]
+          - button "🤍" [ref=e463]
+          - generic: Rainbird Road
+        - generic [ref=e464]:
+          - img "Street art" [ref=e465] [cursor=pointer]
+          - button "🤍" [ref=e466]
+          - generic: Carrera 87c
+        - generic [ref=e467]:
+          - img "Street art" [ref=e468] [cursor=pointer]
+          - button "🤍" [ref=e469]
+          - generic: Pasaje 1
+        - generic [ref=e470]:
+          - img "Street art" [ref=e471] [cursor=pointer]
+          - button "🤍" [ref=e472]
+          - generic: Rue Saint-Nicolas
+        - generic [ref=e473]:
+          - img "Street art" [ref=e474] [cursor=pointer]
+          - button "🤍" [ref=e475]
+          - generic: Pallichal - Vizhinjam Road
+        - generic [ref=e476]:
+          - img "Street art" [ref=e477] [cursor=pointer]
+          - button "🤍" [ref=e478]
+          - generic: Place Barthélémy
+        - generic [ref=e479]:
+          - img "Street art" [ref=e480] [cursor=pointer]
+          - button "🤍" [ref=e481]
+          - generic: Dörpstraat
+        - generic [ref=e482]:
+          - img "Street art" [ref=e483] [cursor=pointer]
+          - button "🤍" [ref=e484]
+          - generic: Bhogpur - Adampur Road
+        - generic [ref=e485]:
+          - img "Street art" [ref=e486] [cursor=pointer]
+          - button "🤍" [ref=e487]
+          - generic: Leon Avenue
+        - generic [ref=e488]:
+          - img "Street art" [ref=e489] [cursor=pointer]
+          - button "🤍" [ref=e490]
+          - generic: Avenue de l Europe
+        - generic [ref=e491]:
+          - img "Street art" [ref=e492] [cursor=pointer]
+          - button "🤍" [ref=e493]
+          - generic: Rue Saint-Nicolas
+        - generic [ref=e494]:
+          - img "Street art" [ref=e495] [cursor=pointer]
+          - button "🤍" [ref=e496]
+          - generic: Vulytsya Travneva
+        - generic [ref=e497]:
+          - img "Street art" [ref=e498] [cursor=pointer]
+          - button "🤍" [ref=e499]
+          - generic: Lawrence Avenue
+        - generic [ref=e500]:
+          - img "Street art" [ref=e501] [cursor=pointer]
+          - button "🤍" [ref=e502]
+          - generic: Koppisetti Street Road
+        - generic [ref=e503]:
+          - img "Street art" [ref=e504] [cursor=pointer]
+          - button "🤍" [ref=e505]
+          - generic: Juno Road
+        - generic [ref=e506]:
+          - img "Street art" [ref=e507] [cursor=pointer]
+          - button "🤍" [ref=e508]
+          - generic: Rue Saint-Romain
+        - generic [ref=e509]:
+          - img "Street art" [ref=e510] [cursor=pointer]
+          - button "🤍" [ref=e511]
+          - generic: State Route 30
+        - generic [ref=e512]:
+          - img "Street art" [ref=e513] [cursor=pointer]
+          - button "🤍" [ref=e514]
+          - generic: Church Street
+        - generic [ref=e515]:
+          - img "Street art" [ref=e516] [cursor=pointer]
+          - button "🤍" [ref=e517]
+          - generic: Rue des Carmes
+        - generic [ref=e518]:
+          - img "Street art" [ref=e519] [cursor=pointer]
+          - button "🤍" [ref=e520]
+          - generic: Rue du Gros Horloge
+        - generic [ref=e521]:
+          - img "Street art" [ref=e522] [cursor=pointer]
+          - button "🤍" [ref=e523]
+          - generic: Via degli Olivi
+        - generic [ref=e524]:
+          - img "Street art" [ref=e525] [cursor=pointer]
+          - button "🤍" [ref=e526]
+          - generic: Avenue Grassion Cibrand
+        - generic [ref=e527]:
+          - img "Street art" [ref=e528] [cursor=pointer]
+          - button "🤍" [ref=e529]
+          - generic: Rue du Gros Horloge
+        - generic [ref=e530]:
+          - img "Street art" [ref=e531] [cursor=pointer]
+          - button "🤍" [ref=e532]
+          - generic: State Route 30
+        - generic [ref=e533]:
+          - img "Street art" [ref=e534] [cursor=pointer]
+          - button "🤍" [ref=e535]
+          - generic: Avenida Francisco I Madero
+        - generic [ref=e536]:
+          - img "Street art" [ref=e537] [cursor=pointer]
+          - button "🤍" [ref=e538]
+          - generic: Avenue Grassion Cibrand
+        - generic [ref=e539]:
+          - img "Street art" [ref=e540] [cursor=pointer]
+          - button "🤍" [ref=e541]
+          - generic: Mõisavahe
+        - generic [ref=e542]:
+          - img "Street art" [ref=e543] [cursor=pointer]
+          - button "🤍" [ref=e544]
+          - generic: Rue Percière
+        - generic [ref=e545]:
+          - img "Street art" [ref=e546] [cursor=pointer]
+          - button "🤍" [ref=e547]
+          - generic: Rue des Carmes
+        - generic [ref=e548]:
+          - img "Street art" [ref=e549] [cursor=pointer]
+          - button "🤍" [ref=e550]
+          - generic: Avenue Grassion Cibrand
+        - generic [ref=e551]:
+          - img "Street art" [ref=e552] [cursor=pointer]
+          - button "🤍" [ref=e553]
+          - generic: Rue Ganterie
+        - generic [ref=e554]:
+          - img "Street art" [ref=e555] [cursor=pointer]
+          - button "🤍" [ref=e556]
+          - generic: Rue Saint-Nicolas
+        - generic [ref=e557]:
+          - img "Street art" [ref=e558] [cursor=pointer]
+          - button "🤍" [ref=e559]
+          - generic: Rue de la Poterne
+        - generic [ref=e560]:
+          - img "Street art" [ref=e561] [cursor=pointer]
+          - button "🤍" [ref=e562]
+          - generic: Church Street
+        - generic [ref=e563]:
+          - img "Street art" [ref=e564] [cursor=pointer]
+          - button "🤍" [ref=e565]
+          - generic: Rue Percière
+        - generic [ref=e566]:
+          - img "Street art" [ref=e567] [cursor=pointer]
+          - button "🤍" [ref=e568]
+          - generic: Triq Il-Vitorja
+        - generic [ref=e569]:
+          - img "Street art" [ref=e570] [cursor=pointer]
+          - button "🤍" [ref=e571]
+          - generic: Southeast Pine Street
+        - generic [ref=e572]:
+          - img "Street art" [ref=e573] [cursor=pointer]
+          - button "🤍" [ref=e574]
+          - generic: State Route 55
+        - generic [ref=e575]:
+          - img "Street art" [ref=e576] [cursor=pointer]
+          - button "🤍" [ref=e577]
+          - generic: Carrer dels Teixidors
+        - generic [ref=e578]:
+          - img "Street art" [ref=e579] [cursor=pointer]
+          - button "🤍" [ref=e580]
+          - generic: Carrer dels Calderers
+        - generic [ref=e581]:
+          - img "Street art" [ref=e582] [cursor=pointer]
+          - button "🤍" [ref=e583]
+          - generic: Carrer de Baix
+        - generic [ref=e584]:
+          - img "Street art" [ref=e585] [cursor=pointer]
+          - button "🤍" [ref=e586]
+          - generic: Plaça del Carme
+        - generic [ref=e587]:
+          - img "Street art" [ref=e588] [cursor=pointer]
+          - button "🤍" [ref=e589]
+          - generic: Queen Street
+        - generic [ref=e590]:
+          - img "Street art" [ref=e591] [cursor=pointer]
+          - button "🤍" [ref=e592]
+          - generic: Rotonda de la Fuente de La Hispanidad
+        - generic [ref=e593]:
+          - img "Street art" [ref=e594] [cursor=pointer]
+          - button "🤍" [ref=e595]
+          - generic: Church Street
+        - generic [ref=e596]:
+          - img "Street art" [ref=e597] [cursor=pointer]
+          - button "🤍" [ref=e598]
+          - generic: Carrer dels Drets
+        - generic [ref=e599]:
+          - img "Street art" [ref=e600] [cursor=pointer]
+          - button "🤍" [ref=e601]
+          - generic: Carrer de Quart
+        - generic [ref=e602]:
+          - img "Street art" [ref=e603] [cursor=pointer]
+          - button "🤍" [ref=e604]
+          - generic: Place de la République
+        - generic [ref=e605]:
+          - img "Street art" [ref=e606] [cursor=pointer]
+          - button "🤍" [ref=e607]
+          - generic: Queen Street
+        - generic [ref=e608]:
+          - img "Street art" [ref=e609] [cursor=pointer]
+          - button "🤍" [ref=e610]
+          - generic: Queen Street
+        - generic [ref=e611]:
+          - img "Street art" [ref=e612] [cursor=pointer]
+          - button "🤍" [ref=e613]
+          - generic: Carrer de Sant Miquel
+        - generic [ref=e614]:
+          - img "Street art" [ref=e615] [cursor=pointer]
+          - button "🤍" [ref=e616]
+          - generic: State Route 55
+        - generic [ref=e617]:
+          - img "Street art" [ref=e618] [cursor=pointer]
+          - button "🤍" [ref=e619]
+          - generic: Carrer del Moro Zeid
+        - generic [ref=e620]:
+          - img "Street art" [ref=e621] [cursor=pointer]
+          - button "🤍" [ref=e622]
+          - generic: Carrer d En Gall
+        - generic [ref=e623]:
+          - img "Street art" [ref=e624] [cursor=pointer]
+          - button "🤍" [ref=e625]
+          - generic: Carrer de la Tapineria
+        - generic [ref=e626]:
+          - img "Street art" [ref=e627] [cursor=pointer]
+          - button "🤍" [ref=e628]
+          - generic: Gran Via de Ferran el Catòlic
+        - generic [ref=e629]:
+          - img "Street art" [ref=e630] [cursor=pointer]
+          - button "🤍" [ref=e631]
+          - generic: Little Bourke Street
+        - generic [ref=e632]:
+          - img "Street art" [ref=e633] [cursor=pointer]
+          - button "🤍" [ref=e634]
+          - generic: Market Lane
+        - generic [ref=e635]:
+          - img "Street art" [ref=e636] [cursor=pointer]
+          - button "🤍" [ref=e637]
+          - generic: State Route 55
+        - generic [ref=e638]:
+          - img "Street art" [ref=e639] [cursor=pointer]
+          - button "🤍" [ref=e640]
+          - generic: Little Bourke Street
+        - generic [ref=e641]:
+          - img "Street art" [ref=e642] [cursor=pointer]
+          - button "🤍" [ref=e643]
+          - generic: Little Bourke Street
+        - generic [ref=e644]:
+          - img "Street art" [ref=e645] [cursor=pointer]
+          - button "🤍" [ref=e646]
+          - generic: Little Bourke Street
+        - generic [ref=e647]:
+          - img "Street art" [ref=e648] [cursor=pointer]
+          - button "🤍" [ref=e649]
+          - generic: Market Lane
+        - generic [ref=e650]:
+          - img "Street art" [ref=e651] [cursor=pointer]
+          - button "🤍" [ref=e652]
+          - generic: State Route 55
+        - generic [ref=e653]:
+          - img "Street art" [ref=e654] [cursor=pointer]
+          - button "🤍" [ref=e655]
+          - generic: Little Bourke Street
+        - generic [ref=e656]:
+          - img "Street art" [ref=e657] [cursor=pointer]
+          - button "🤍" [ref=e658]
+          - generic: Market Lane
+        - generic [ref=e659]:
+          - img "Street art" [ref=e660] [cursor=pointer]
+          - button "🤍" [ref=e661]
+          - generic: Market Lane
+        - generic [ref=e662]:
+          - img "Street art" [ref=e663] [cursor=pointer]
+          - button "🤍" [ref=e664]
+          - generic: Little Bourke Street
+        - generic [ref=e665]:
+          - img "Street art" [ref=e666] [cursor=pointer]
+          - button "🤍" [ref=e667]
+          - generic: Little Bourke Street
+        - generic [ref=e668]:
+          - img "Street art" [ref=e669] [cursor=pointer]
+          - button "🤍" [ref=e670]
+          - generic: Little Bourke Street
+        - generic [ref=e671]:
+          - img "Street art" [ref=e672] [cursor=pointer]
+          - button "🤍" [ref=e673]
+          - generic: Little Bourke Street
+        - generic [ref=e674]:
+          - img "Street art" [ref=e675] [cursor=pointer]
+          - button "🤍" [ref=e676]
+          - generic: Market Lane
+        - generic [ref=e677]:
+          - img "Street art" [ref=e678] [cursor=pointer]
+          - button "🤍" [ref=e679]
+          - generic: State Route 55
+        - generic [ref=e680]:
+          - img "Street art" [ref=e681] [cursor=pointer]
+          - button "🤍" [ref=e682]
+          - generic: Market Lane
+        - generic [ref=e683]:
+          - img "Street art" [ref=e684] [cursor=pointer]
+          - button "🤍" [ref=e685]
+          - generic: Little Bourke Street
+        - generic [ref=e686]:
+          - img "Street art" [ref=e687] [cursor=pointer]
+          - button "🤍" [ref=e688]
+          - generic: Little Bourke Street
+        - generic [ref=e689]:
+          - img "Street art" [ref=e690] [cursor=pointer]
+          - button "🤍" [ref=e691]
+          - generic: Southeast 17th Avenue
+        - generic [ref=e692]:
+          - img "Street art" [ref=e693] [cursor=pointer]
+          - button "🤍" [ref=e694]
+          - generic: Exhibition Street
+        - generic [ref=e695]:
+          - img "Street art" [ref=e696] [cursor=pointer]
+          - button "🤍" [ref=e697]
+          - generic: Calle de Tomás Bretón
+        - generic [ref=e698]:
+          - img "Street art" [ref=e699] [cursor=pointer]
+          - button "🤍" [ref=e700]
+          - generic: Spring Mountain Road
+        - generic [ref=e701]:
+          - img "Street art" [ref=e702] [cursor=pointer]
+          - button "🤍" [ref=e703]
+          - generic: Exhibition Street
+        - generic [ref=e704]:
+          - img "Street art" [ref=e705] [cursor=pointer]
+          - button "🤍" [ref=e706]
+          - generic: Segundo Callejón San Juan de Dios
+        - generic [ref=e707]:
+          - img "Street art" [ref=e708] [cursor=pointer]
+          - button "🤍" [ref=e709]
+          - generic: Exhibition Street
+        - generic [ref=e710]:
+          - img "Street art" [ref=e711] [cursor=pointer]
+          - button "🤍" [ref=e712]
+          - generic: Little Bourke Street
+        - generic [ref=e713]:
+          - img "Street art" [ref=e714] [cursor=pointer]
+          - button "🤍" [ref=e715]
+          - generic: Little Bourke Street
+        - generic [ref=e716]:
+          - img "Street art" [ref=e717] [cursor=pointer]
+          - button "🤍" [ref=e718]
+          - generic: Exhibition Street
+        - generic [ref=e719]:
+          - img "Street art" [ref=e720] [cursor=pointer]
+          - button "🤍" [ref=e721]
+          - generic: N103
+        - generic [ref=e722]:
+          - img "Street art" [ref=e723] [cursor=pointer]
+          - button "🤍" [ref=e724]
+          - generic: Exhibition Street
+        - generic [ref=e725]:
+          - img "Street art" [ref=e726] [cursor=pointer]
+          - button "🤍" [ref=e727]
+          - generic: Sophienblatt
+        - generic [ref=e728]:
+          - img "Street art" [ref=e729] [cursor=pointer]
+          - button "🤍" [ref=e730]
+          - generic: Little Bourke Street
+        - generic [ref=e731]:
+          - img "Street art" [ref=e732] [cursor=pointer]
+          - button "🤍" [ref=e733]
+          - generic: Exhibition Street
+        - generic [ref=e734]:
+          - img "Street art" [ref=e735] [cursor=pointer]
+          - button "🤍" [ref=e736]
+          - generic: Exhibition Street
+        - generic [ref=e737]:
+          - img "Street art" [ref=e738] [cursor=pointer]
+          - button "🤍" [ref=e739]
+          - generic: Exhibition Street
+        - generic [ref=e740]:
+          - img "Street art" [ref=e741] [cursor=pointer]
+          - button "🤍" [ref=e742]
+          - generic: Travessera de Dalt
+        - generic [ref=e743]:
+          - img "Street art" [ref=e744] [cursor=pointer]
+          - button "🤍" [ref=e745]
+          - generic: Rue Carmagnole-Liberté
+        - generic [ref=e746]:
+          - img "Street art" [ref=e747] [cursor=pointer]
+          - button "🤍" [ref=e748]
+          - generic: Via Arrigo da Settimello
+        - generic [ref=e749]:
+          - img "Street art" [ref=e750] [cursor=pointer]
+          - button "🤍" [ref=e751]
+          - generic: Rue Huchette
+        - generic [ref=e752]:
+          - img "Street art" [ref=e753] [cursor=pointer]
+          - button "🤍" [ref=e754]
+          - generic: Hardenvoort
+        - generic [ref=e755]:
+          - img "Street art" [ref=e756] [cursor=pointer]
+          - button "🤍" [ref=e757]
+          - generic: Bredastraat
+        - generic [ref=e758]:
+          - img "Street art" [ref=e759] [cursor=pointer]
+          - button "🤍" [ref=e760]
+          - generic: Collins Street
+        - generic [ref=e761]:
+          - img "Street art" [ref=e762] [cursor=pointer]
+          - button "🤍" [ref=e763]
+          - generic: Collins Street
+        - generic [ref=e764]:
+          - img "Street art" [ref=e765] [cursor=pointer]
+          - button "🤍" [ref=e766]
+          - generic: IJzerenwaag
+        - generic [ref=e767]:
+          - img "Street art" [ref=e768] [cursor=pointer]
+          - button "🤍" [ref=e769]
+          - generic: Hardenvoort
+        - generic [ref=e770]:
+          - img "Street art" [ref=e771] [cursor=pointer]
+          - button "🤍" [ref=e772]
+          - generic: Rue Genissieu
+        - generic [ref=e773]:
+          - img "Street art" [ref=e774] [cursor=pointer]
+          - button "🤍" [ref=e775]
+          - generic: Rue des Frênes
+        - generic [ref=e776]:
+          - img "Street art" [ref=e777] [cursor=pointer]
+          - button "🤍" [ref=e778]
+          - generic: IJzerenwaag
+        - generic [ref=e779]:
+          - img "Street art" [ref=e780] [cursor=pointer]
+          - button "🤍" [ref=e781]
+          - generic: Viaduct-Dam
+        - generic [ref=e782]:
+          - img "Street art" [ref=e783] [cursor=pointer]
+          - button "🤍" [ref=e784]
+          - generic: Theodoor van Rijswijckplaats
+        - generic [ref=e785]:
+          - img "Street art" [ref=e786] [cursor=pointer]
+          - button "🤍" [ref=e787]
+          - generic: Exhibition Street
+        - generic [ref=e788]:
+          - img "Street art" [ref=e789] [cursor=pointer]
+          - button "🤍" [ref=e790]
+          - generic: Exhibition Street
+        - generic [ref=e791]:
+          - img "Street art" [ref=e792] [cursor=pointer]
+          - button "🤍" [ref=e793]
+          - generic: Collins Street
+        - generic [ref=e794]:
+          - img "Street art" [ref=e795] [cursor=pointer]
+          - button "🤍" [ref=e796]
+          - generic: Theodoor van Rijswijckplaats
+        - generic [ref=e797]:
+          - img "Street art" [ref=e798] [cursor=pointer]
+          - button "🤍" [ref=e799]
+          - generic: Rue Genissieu
+        - generic [ref=e800]:
+          - img "Street art" [ref=e801] [cursor=pointer]
+          - button "🤍" [ref=e802]
+          - generic: Viaduct-Dam
+        - generic [ref=e803]:
+          - img "Street art" [ref=e804] [cursor=pointer]
+          - button "🤍" [ref=e805]
+          - generic: Asiadok-Westkaai
+        - generic [ref=e806]:
+          - img "Street art" [ref=e807] [cursor=pointer]
+          - button "🤍" [ref=e808]
+          - generic: Asiadok-Westkaai
+        - generic [ref=e809]:
+          - img "Street art" [ref=e810] [cursor=pointer]
+          - button "🤍" [ref=e811]
+          - generic: Schloßgasse
+        - generic [ref=e812]:
+          - img "Street art" [ref=e813] [cursor=pointer]
+          - button "🤍" [ref=e814]
+          - generic: Eastern Freeway
+        - generic [ref=e815]:
+          - img "Street art" [ref=e816] [cursor=pointer]
+          - button "🤍" [ref=e817]
+          - generic: Eastern Freeway
+        - generic [ref=e818]:
+          - img "Street art" [ref=e819] [cursor=pointer]
+          - button "🤍" [ref=e820]
+          - generic: Eastern Freeway
+        - generic [ref=e821]:
+          - img "Street art" [ref=e822] [cursor=pointer]
+          - button "🤍" [ref=e823]
+          - generic: Eastern Freeway
+        - generic [ref=e824]:
+          - img "Street art" [ref=e825] [cursor=pointer]
+          - button "🤍" [ref=e826]
+          - generic: Badham Street
+        - generic [ref=e827]:
+          - img "Street art" [ref=e828] [cursor=pointer]
+          - button "🤍" [ref=e829]
+          - generic: Noorderlaan
+        - generic [ref=e830]:
+          - img "Street art" [ref=e831] [cursor=pointer]
+          - button "🤍" [ref=e832]
+          - generic: Eastern Freeway
+        - generic [ref=e833]:
+          - img "Street art" [ref=e834] [cursor=pointer]
+          - button "🤍" [ref=e835]
+          - generic: Noorderlaan
+        - generic [ref=e836]:
+          - img "Street art" [ref=e837] [cursor=pointer]
+          - button "🤍" [ref=e838]
+          - generic: Noorderlaan
+        - generic [ref=e839]:
+          - img "Street art" [ref=e840] [cursor=pointer]
+          - button "🤍" [ref=e841]
+          - generic: Eastern Freeway
+        - generic [ref=e842]:
+          - img "Street art" [ref=e843] [cursor=pointer]
+          - button "🤍" [ref=e844]
+          - generic: zh k Orfey
+        - generic [ref=e845]:
+          - img "Street art" [ref=e846] [cursor=pointer]
+          - button "🤍" [ref=e847]
+          - generic: Noorderlaan
+        - generic [ref=e848]:
+          - img "Street art" [ref=e849] [cursor=pointer]
+          - button "🤍" [ref=e850]
+          - generic: Eastern Freeway
+        - generic [ref=e851]:
+          - img "Street art" [ref=e852] [cursor=pointer]
+          - button "🤍" [ref=e853]
+          - generic: Eastern Freeway
+        - generic [ref=e854]:
+          - img "Street art" [ref=e855] [cursor=pointer]
+          - button "🤍" [ref=e856]
+          - generic: Eastern Freeway
+        - generic [ref=e857]:
+          - img "Street art" [ref=e858] [cursor=pointer]
+          - button "🤍" [ref=e859]
+          - generic: Eastern Freeway
+        - generic [ref=e860]:
+          - img "Street art" [ref=e861] [cursor=pointer]
+          - button "🤍" [ref=e862]
+          - generic: Kurt-Schumacher-Platz
+        - generic [ref=e863]:
+          - img "Street art" [ref=e864] [cursor=pointer]
+          - button "🤍" [ref=e865]
+          - generic: Deoria Road
+        - generic [ref=e866]:
+          - img "Street art" [ref=e867] [cursor=pointer]
+          - button "🤍" [ref=e868]
+          - generic: Eastern Freeway
+        - generic [ref=e869]:
+          - img "Street art" [ref=e870] [cursor=pointer]
+          - button "🤍" [ref=e871]
+          - generic: Yarra Boulevard
+        - generic [ref=e872]:
+          - img "Street art" [ref=e873] [cursor=pointer]
+          - button "🤍" [ref=e874]
+          - generic: Rue Allain
+        - generic [ref=e875]:
+          - img "Street art" [ref=e876] [cursor=pointer]
+          - button "🤍" [ref=e877]
+          - generic: Avenue de Lusancay
+        - generic [ref=e878]:
+          - img "Street art" [ref=e879] [cursor=pointer]
+          - button "🤍" [ref=e880]
+          - generic: Unnamed Road
+        - generic [ref=e881]:
+          - img "Street art" [ref=e882] [cursor=pointer]
+          - button "🤍" [ref=e883]
+          - generic: Chemin Rural des Paludiers
+        - generic [ref=e884]:
+          - img "Street art" [ref=e885] [cursor=pointer]
+          - button "🤍" [ref=e886]
+          - generic: Rue Joseph Cholet
+        - generic [ref=e887]:
+          - img "Street art" [ref=e888] [cursor=pointer]
+          - button "🤍" [ref=e889]
+          - generic: Rue des Acadiens
+        - generic [ref=e890]:
+          - img "Street art" [ref=e891] [cursor=pointer]
+          - button "🤍" [ref=e892]
+          - generic: Montée du Perron
+        - generic [ref=e893]:
+          - img "Street art" [ref=e894] [cursor=pointer]
+          - button "🤍" [ref=e895]
+          - generic: Malerkotla - Barnala Road
+        - generic [ref=e896]:
+          - img "Street art" [ref=e897] [cursor=pointer]
+          - button "🤍" [ref=e898]
+          - generic: Avenida Valentín Vergara
+        - generic [ref=e899]:
+          - img "Street art" [ref=e900] [cursor=pointer]
+          - button "🤍" [ref=e901]
+          - generic: Lonsdale Street
+        - generic [ref=e902]:
+          - img "Street art" [ref=e903] [cursor=pointer]
+          - button "🤍" [ref=e904]
+          - generic: Yarra Boulevard
+        - generic [ref=e905]:
+          - img "Street art" [ref=e906] [cursor=pointer]
+          - button "🤍" [ref=e907]
+          - generic: Yarra Boulevard
+        - generic [ref=e908]:
+          - img "Street art" [ref=e909] [cursor=pointer]
+          - button "🤍" [ref=e910]
+          - generic: Yarra Boulevard
+        - generic [ref=e911]:
+          - img "Street art" [ref=e912] [cursor=pointer]
+          - button "🤍" [ref=e913]
+          - generic: Eastern Freeway
+        - generic [ref=e914]:
+          - img "Street art" [ref=e915] [cursor=pointer]
+          - button "🤍" [ref=e916]
+          - generic: Market Street
+        - generic [ref=e917]:
+          - img "Street art" [ref=e918] [cursor=pointer]
+          - button "🤍" [ref=e919]
+          - generic: Woolley Street
+        - generic [ref=e920]:
+          - img "Street art" [ref=e921] [cursor=pointer]
+          - button "🤍" [ref=e922]
+          - generic: Yarra Boulevard
+        - generic [ref=e923]:
+          - img "Street art" [ref=e924] [cursor=pointer]
+          - button "🤍" [ref=e925]
+          - generic: Yarra Boulevard
+        - generic [ref=e926]:
+          - img "Street art" [ref=e927] [cursor=pointer]
+          - button "🤍" [ref=e928]
+          - generic: Montée du Perron
+        - generic [ref=e929]:
+          - img "Street art" [ref=e930] [cursor=pointer]
+          - button "🤍" [ref=e931]
+          - generic: Unnamed Road
+        - generic [ref=e932]:
+          - img "Street art" [ref=e933] [cursor=pointer]
+          - button "🤍" [ref=e934]
+          - generic: Rue Marcel Sembat
+        - generic [ref=e935]:
+          - img "Street art" [ref=e936] [cursor=pointer]
+          - button "🤍" [ref=e937]
+          - generic: Bypass Road
+        - generic [ref=e938]:
+          - img "Street art" [ref=e939] [cursor=pointer]
+          - button "🤍" [ref=e940]
+          - generic: National Highway 3 Service Road
+        - generic [ref=e941]:
+          - img "Street art" [ref=e942] [cursor=pointer]
+          - button "🤍" [ref=e943]
+          - generic: Damua Road
+        - generic [ref=e944]:
+          - img "Street art" [ref=e945] [cursor=pointer]
+          - button "🤍" [ref=e946]
+          - generic: State Route 30
+        - generic [ref=e947]:
+          - img "Street art" [ref=e948] [cursor=pointer]
+          - button "🤍" [ref=e949]
+          - generic: Street Number 6
+        - generic [ref=e950]:
+          - img "Street art" [ref=e951] [cursor=pointer]
+          - button "🤍" [ref=e952]
+          - generic: 4th Street
+        - generic [ref=e953]:
+          - img "Street art" [ref=e954] [cursor=pointer]
+          - button "🤍" [ref=e955]
+          - generic: Rue Pierre Vogler
+        - generic [ref=e956]:
+          - img "Street art" [ref=e957] [cursor=pointer]
+          - button "🤍" [ref=e958]
+          - generic: State Route 30
+        - generic [ref=e959]:
+          - img "Street art" [ref=e960] [cursor=pointer]
+          - button "🤍" [ref=e961]
+          - generic: 4th Street
+        - generic [ref=e962]:
+          - img "Street art" [ref=e963] [cursor=pointer]
+          - button "🤍" [ref=e964]
+          - generic: State Route 30
+        - generic [ref=e965]:
+          - img "Street art" [ref=e966] [cursor=pointer]
+          - button "🤍" [ref=e967]
+          - generic: Avenue de Lusancay
+        - generic [ref=e968]:
+          - img "Street art" [ref=e969] [cursor=pointer]
+          - button "🤍" [ref=e970]
+          - generic: Boulevard du Port
+        - generic [ref=e971]:
+          - img "Street art" [ref=e972] [cursor=pointer]
+          - button "🤍" [ref=e973]
+          - generic: State Route 30
+        - generic [ref=e974]:
+          - img "Street art" [ref=e975] [cursor=pointer]
+          - button "🤍" [ref=e976]
+          - generic: State Route 30
+        - generic [ref=e977]:
+          - img "Street art" [ref=e978] [cursor=pointer]
+          - button "🤍" [ref=e979]
+          - generic: Cohen Place
+        - generic [ref=e980]:
+          - img "Street art" [ref=e981] [cursor=pointer]
+          - button "🤍" [ref=e982]
+          - generic: Boulevard du Port
+        - generic [ref=e983]:
+          - img "Street art" [ref=e984] [cursor=pointer]
+          - button "🤍" [ref=e985]
+          - generic: Little Bourke Street
+        - generic [ref=e986]:
+          - img "Street art" [ref=e987] [cursor=pointer]
+          - button "🤍" [ref=e988]
+          - generic: State Route 30
+        - generic [ref=e989]:
+          - img "Street art" [ref=e990] [cursor=pointer]
+          - button "🤍" [ref=e991]
+          - generic: Carrer Alta Maduixa
+        - generic [ref=e992]:
+          - img "Street art" [ref=e993] [cursor=pointer]
+          - button "🤍" [ref=e994]
+          - generic: Carrer Sant Sebastià
+        - generic [ref=e995]:
+          - img "Street art" [ref=e996] [cursor=pointer]
+          - button "🤍" [ref=e997]
+          - generic: Passeig José Canalejas
+        - generic [ref=e998]:
+          - img "Street art" [ref=e999] [cursor=pointer]
+          - button "🤍" [ref=e1000]
+          - generic: Carrer Fontanella
+        - generic [ref=e1001]:
+          - img "Street art" [ref=e1002] [cursor=pointer]
+          - button "🤍" [ref=e1003]
+          - generic: Royal Oaks Drive
+        - generic [ref=e1004]:
+          - img "Street art" [ref=e1005] [cursor=pointer]
+          - button "🤍" [ref=e1006]
+          - generic: Waratah Place
+        - generic [ref=e1007]:
+          - img "Street art" [ref=e1008] [cursor=pointer]
+          - button "🤍" [ref=e1009]
+          - generic: Rue Ulysse Darracq
+        - generic [ref=e1010]:
+          - img "Street art" [ref=e1011] [cursor=pointer]
+          - button "🤍" [ref=e1012]
+          - generic: Russell Street
+        - generic [ref=e1013]:
+          - img "Street art" [ref=e1014] [cursor=pointer]
+          - button "🤍" [ref=e1015]
+          - generic: Carrer Clivillers
+        - generic [ref=e1016]:
+          - img "Street art" [ref=e1017] [cursor=pointer]
+          - button "🤍" [ref=e1018]
+          - generic: Carrer de les Ballesteries
+        - generic [ref=e1019]:
+          - img "Street art" [ref=e1020] [cursor=pointer]
+          - button "🤍" [ref=e1021]
+          - generic: Carrer Fontanella
+        - generic [ref=e1022]:
+          - img "Street art" [ref=e1023] [cursor=pointer]
+          - button "🤍" [ref=e1024]
+          - generic: Passeig José Canalejas
+        - generic [ref=e1025]:
+          - img "Street art" [ref=e1026] [cursor=pointer]
+          - button "🤍" [ref=e1027]
+          - generic: Carrer Murrià
+        - generic [ref=e1028]:
+          - img "Street art" [ref=e1029] [cursor=pointer]
+          - button "🤍" [ref=e1030]
+          - generic: GI-522
+        - generic [ref=e1031]:
+          - img "Street art" [ref=e1032] [cursor=pointer]
+          - button "🤍" [ref=e1033]
+          - generic: Carrer Murrià
+        - generic [ref=e1034]:
+          - img "Street art" [ref=e1035] [cursor=pointer]
+          - button "🤍" [ref=e1036]
+          - generic: Carrer Fontanella
+        - generic [ref=e1037]:
+          - img "Street art" [ref=e1038] [cursor=pointer]
+          - button "🤍" [ref=e1039]
+          - generic: Waratah Place
+        - generic [ref=e1040]:
+          - img "Street art" [ref=e1041] [cursor=pointer]
+          - button "🤍" [ref=e1042]
+          - generic: Carrer Alta Maduixa
+        - generic [ref=e1043]:
+          - img "Street art" [ref=e1044] [cursor=pointer]
+          - button "🤍" [ref=e1045]
+          - generic: Passeig José Canalejas
+        - generic [ref=e1046]:
+          - img "Street art" [ref=e1047] [cursor=pointer]
+          - button "🤍" [ref=e1048]
+          - generic: Rue Joseph Quaranta
+        - generic [ref=e1049]:
+          - img "Street art" [ref=e1050] [cursor=pointer]
+          - button "🤍" [ref=e1051]
+          - generic: Rue du Castillet
+        - generic [ref=e1052]:
+          - img "Street art" [ref=e1053] [cursor=pointer]
+          - button "🤍" [ref=e1054]
+          - generic: Plaça de la Pia Almoina
+        - generic [ref=e1055]:
+          - img "Street art" [ref=e1056] [cursor=pointer]
+          - button "🤍" [ref=e1057]
+          - generic: Carrer Sant Pere Màrtir
+        - generic [ref=e1058]:
+          - img "Street art" [ref=e1059] [cursor=pointer]
+          - button "🤍" [ref=e1060]
+          - generic: Rue du Castillet
+        - generic [ref=e1061]:
+          - img "Street art" [ref=e1062] [cursor=pointer]
+          - button "🤍" [ref=e1063]
+          - generic: Northwest Park Avenue
+        - generic [ref=e1064]:
+          - img "Street art" [ref=e1065] [cursor=pointer]
+          - button "🤍" [ref=e1066]
+          - generic: Plaça del Pont d en Vestit
+        - generic [ref=e1067]:
+          - img "Street art" [ref=e1068] [cursor=pointer]
+          - button "🤍" [ref=e1069]
+          - generic: Carrer de Torres i Jonama
+        - generic [ref=e1070]:
+          - img "Street art" [ref=e1071] [cursor=pointer]
+          - button "🤍" [ref=e1072]
+          - generic: Carretera de Palamós
+        - generic [ref=e1073]:
+          - img "Street art" [ref=e1074] [cursor=pointer]
+          - button "🤍" [ref=e1075]
+          - generic: Carrer Marià Vayreda
+        - generic [ref=e1076]:
+          - img "Street art" [ref=e1077] [cursor=pointer]
+          - button "🤍" [ref=e1078]
+          - generic: Carretera de Palamós
+        - generic [ref=e1079]:
+          - img "Street art" [ref=e1080] [cursor=pointer]
+          - button "🤍" [ref=e1081]
+          - generic: Carrer de Pirroig
+        - generic [ref=e1082]:
+          - img "Street art" [ref=e1083] [cursor=pointer]
+          - button "🤍" [ref=e1084]
+          - generic: Avinguda de Josep Tarradellas
+        - generic [ref=e1085]:
+          - img "Street art" [ref=e1086] [cursor=pointer]
+          - button "🤍" [ref=e1087]
+          - generic: Carrer Forn Nou
+        - generic [ref=e1088]:
+          - img "Street art" [ref=e1089] [cursor=pointer]
+          - button "🤍" [ref=e1090]
+          - generic: Carrer de Pirroig
+        - generic [ref=e1091]:
+          - img "Street art" [ref=e1092] [cursor=pointer]
+          - button "🤍" [ref=e1093]
+          - generic: Avinguda d Espanya
+        - generic [ref=e1094]:
+          - img "Street art" [ref=e1095] [cursor=pointer]
+          - button "🤍" [ref=e1096]
+          - generic: Carrer del Camp Llarg
+        - generic [ref=e1097]:
+          - img "Street art" [ref=e1098] [cursor=pointer]
+          - button "🤍" [ref=e1099]
+          - generic: Carrer de Ramon Trias Fargas
+        - generic [ref=e1100]:
+          - img "Street art" [ref=e1101] [cursor=pointer]
+          - button "🤍" [ref=e1102]
+          - generic: Northwest Park Avenue
+        - generic [ref=e1103]:
+          - img "Street art" [ref=e1104] [cursor=pointer]
+          - button "🤍" [ref=e1105]
+          - generic: Northwest Hoyt Street
+        - generic [ref=e1106]:
+          - img "Street art" [ref=e1107] [cursor=pointer]
+          - button "🤍" [ref=e1108]
+          - generic: Carrer d Olot
+        - generic [ref=e1109]:
+          - img "Street art" [ref=e1110] [cursor=pointer]
+          - button "🤍" [ref=e1111]
+          - generic: Carrer Escultor Amadeu
+        - generic [ref=e1112]:
+          - img "Street art" [ref=e1113] [cursor=pointer]
+          - button "🤍" [ref=e1114]
+          - generic: Avinguda de les Flors
+        - generic [ref=e1115]:
+          - img "Street art" [ref=e1116] [cursor=pointer]
+          - button "🤍" [ref=e1117]
+          - generic: Avinguda Reis Catòlics
+        - generic [ref=e1118]:
+          - img "Street art" [ref=e1119] [cursor=pointer]
+          - button "🤍" [ref=e1120]
+          - generic: Avenida Francisco Matarazzo
+        - generic [ref=e1121]:
+          - img "Street art" [ref=e1122] [cursor=pointer]
+          - button "🤍" [ref=e1123]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1124]:
+          - img "Street art" [ref=e1125] [cursor=pointer]
+          - button "🤍" [ref=e1126]
+          - generic: Maguey
+        - generic [ref=e1127]:
+          - img "Street art" [ref=e1128] [cursor=pointer]
+          - button "🤍" [ref=e1129]
+          - generic: Rua Bárbara Heliodora
+        - generic [ref=e1130]:
+          - img "Street art" [ref=e1131] [cursor=pointer]
+          - button "🤍" [ref=e1132]
+          - generic: Avenida Francisco Matarazzo
+        - generic [ref=e1133]:
+          - img "Street art" [ref=e1134] [cursor=pointer]
+          - button "🤍" [ref=e1135]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1136]:
+          - img "Street art" [ref=e1137] [cursor=pointer]
+          - button "🤍" [ref=e1138]
+          - generic: Northwest Everett Street
+        - generic [ref=e1139]:
+          - img "Street art" [ref=e1140] [cursor=pointer]
+          - button "🤍" [ref=e1141]
+          - generic: Avenida Francisco Matarazzo
+        - generic [ref=e1142]:
+          - img "Street art" [ref=e1143] [cursor=pointer]
+          - button "🤍" [ref=e1144]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1145]:
+          - img "Street art" [ref=e1146] [cursor=pointer]
+          - button "🤍" [ref=e1147]
+          - generic: Avinguda Reis Catòlics
+        - generic [ref=e1148]:
+          - img "Street art" [ref=e1149] [cursor=pointer]
+          - button "🤍" [ref=e1150]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1151]:
+          - img "Street art" [ref=e1152] [cursor=pointer]
+          - button "🤍" [ref=e1153]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1154]:
+          - img "Street art" [ref=e1155] [cursor=pointer]
+          - button "🤍" [ref=e1156]
+          - generic: Carrer Miquel Servet
+        - generic [ref=e1157]:
+          - img "Street art" [ref=e1158] [cursor=pointer]
+          - button "🤍" [ref=e1159]
+          - generic: Rua Doutor Francisco Figueiredo Barreto
+        - generic [ref=e1160]:
+          - img "Street art" [ref=e1161] [cursor=pointer]
+          - button "🤍" [ref=e1162]
+          - generic: Rua Doutor Francisco Figueiredo Barreto
+        - generic [ref=e1163]:
+          - img "Street art" [ref=e1164] [cursor=pointer]
+          - button "🤍" [ref=e1165]
+          - generic: Avinguda de les Flors
+        - generic [ref=e1166]:
+          - img "Street art" [ref=e1167] [cursor=pointer]
+          - button "🤍" [ref=e1168]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1169]:
+          - img "Street art" [ref=e1170] [cursor=pointer]
+          - button "🤍" [ref=e1171]
+          - generic: A36
+        - generic [ref=e1172]:
+          - img "Street art" [ref=e1173] [cursor=pointer]
+          - button "🤍" [ref=e1174]
+          - generic: Smith Street
+        - generic [ref=e1175]:
+          - img "Street art" [ref=e1176] [cursor=pointer]
+          - button "🤍" [ref=e1177]
+          - generic: Boulevard Jacqueline Auriol Supérieur
+        - generic [ref=e1178]:
+          - img "Street art" [ref=e1179] [cursor=pointer]
+          - button "🤍" [ref=e1180]
+          - generic: Flanatička ulica
+        - generic [ref=e1181]:
+          - img "Street art" [ref=e1182] [cursor=pointer]
+          - button "🤍" [ref=e1183]
+          - generic: Moor Street
+        - generic [ref=e1184]:
+          - img "Street art" [ref=e1185] [cursor=pointer]
+          - button "🤍" [ref=e1186]
+          - generic: Chapel Street
+        - generic [ref=e1187]:
+          - img "Street art" [ref=e1188] [cursor=pointer]
+          - button "🤍" [ref=e1189]
+          - generic: Smith Street
+        - generic [ref=e1190]:
+          - img "Street art" [ref=e1191] [cursor=pointer]
+          - button "🤍" [ref=e1192]
+          - generic: Avenida Té
+        - generic [ref=e1193]:
+          - img "Street art" [ref=e1194] [cursor=pointer]
+          - button "🤍" [ref=e1195]
+          - generic: Rua Domingos Paiva
+        - generic [ref=e1196]:
+          - img "Street art" [ref=e1197] [cursor=pointer]
+          - button "🤍" [ref=e1198]
+          - generic: May Street
+        - generic [ref=e1199]:
+          - img "Street art" [ref=e1200] [cursor=pointer]
+          - button "🤍" [ref=e1201]
+          - generic: King Street
+        - generic [ref=e1202]:
+          - img "Street art" [ref=e1203] [cursor=pointer]
+          - button "🤍" [ref=e1204]
+          - generic: Avenida Rangel Pestana
+        - generic [ref=e1205]:
+          - img "Street art" [ref=e1206] [cursor=pointer]
+          - button "🤍" [ref=e1207]
+          - generic: Praça Ribeira
+        - generic [ref=e1208]:
+          - img "Street art" [ref=e1209] [cursor=pointer]
+          - button "🤍" [ref=e1210]
+          - generic: Greeves Street
+        - generic [ref=e1211]:
+          - img "Street art" [ref=e1212] [cursor=pointer]
+          - button "🤍" [ref=e1213]
+          - generic: Iredale Street
+        - generic [ref=e1214]:
+          - img "Street art" [ref=e1215] [cursor=pointer]
+          - button "🤍" [ref=e1216]
+          - generic: Applebee Street
+        - generic [ref=e1217]:
+          - img "Street art" [ref=e1218] [cursor=pointer]
+          - button "🤍" [ref=e1219]
+          - generic: Avenida Professor Alfonso Bovero
+        - generic [ref=e1220]:
+          - img "Street art" [ref=e1221] [cursor=pointer]
+          - button "🤍" [ref=e1222]
+          - generic: Rua Londrina
+        - generic [ref=e1223]:
+          - img "Street art" [ref=e1224] [cursor=pointer]
+          - button "🤍" [ref=e1225]
+          - generic: Avenida Professor Alfonso Bovero
+        - generic [ref=e1226]:
+          - img "Street art" [ref=e1227] [cursor=pointer]
+          - button "🤍" [ref=e1228]
+          - generic: Chapel Street
+        - generic [ref=e1229]:
+          - img "Street art" [ref=e1230] [cursor=pointer]
+          - button "🤍" [ref=e1231]
+          - generic: D1075
+        - generic [ref=e1232]:
+          - img "Street art" [ref=e1233] [cursor=pointer]
+          - button "🤍" [ref=e1234]
+          - generic: Monte Blanco
+        - generic [ref=e1235]:
+          - img "Street art" [ref=e1236] [cursor=pointer]
+          - button "🤍" [ref=e1237]
+          - generic: 1st Avenue North
+        - generic [ref=e1238]:
+          - img "Street art" [ref=e1239] [cursor=pointer]
+          - button "🤍" [ref=e1240]
+          - generic: Johnston Street
+        - generic [ref=e1241]:
+          - img "Street art" [ref=e1242] [cursor=pointer]
+          - button "🤍" [ref=e1243]
+          - generic: Chapel Street
+        - generic [ref=e1244]:
+          - img "Street art" [ref=e1245] [cursor=pointer]
+          - button "🤍" [ref=e1246]
+          - generic: 1st Avenue North
+        - generic [ref=e1247]:
+          - img "Street art" [ref=e1248] [cursor=pointer]
+          - button "🤍" [ref=e1249]
+          - generic: Central Avenue South
+        - generic [ref=e1250]:
+          - img "Street art" [ref=e1251] [cursor=pointer]
+          - button "🤍" [ref=e1252]
+          - generic: Monte Blanco
+        - generic [ref=e1253]:
+          - img "Street art" [ref=e1254] [cursor=pointer]
+          - button "🤍" [ref=e1255]
+          - generic: Little Bourke Street
+        - generic [ref=e1256]:
+          - img "Street art" [ref=e1257] [cursor=pointer]
+          - button "🤍" [ref=e1258]
+          - generic: Johnston Street
+        - generic [ref=e1259]:
+          - img "Street art" [ref=e1260] [cursor=pointer]
+          - button "🤍" [ref=e1261]
+          - generic: Via della Pace
+        - generic [ref=e1262]:
+          - img "Street art" [ref=e1263] [cursor=pointer]
+          - button "🤍" [ref=e1264]
+          - generic: Johnston Street
+        - generic [ref=e1265]:
+          - img "Street art" [ref=e1266] [cursor=pointer]
+          - button "🤍" [ref=e1267]
+          - generic: 1st Avenue North
+        - generic [ref=e1268]:
+          - img "Street art" [ref=e1269] [cursor=pointer]
+          - button "🤍" [ref=e1270]
+          - generic: Monte Blanco
+        - generic [ref=e1271]:
+          - img "Street art" [ref=e1272] [cursor=pointer]
+          - button "🤍" [ref=e1273]
+          - generic: Central Avenue South
+        - generic [ref=e1274]:
+          - img "Street art" [ref=e1275] [cursor=pointer]
+          - button "🤍" [ref=e1276]
+          - generic: Arlington Avenue North
+        - generic [ref=e1277]:
+          - img "Street art" [ref=e1278] [cursor=pointer]
+          - button "🤍" [ref=e1279]
+          - generic: Central Avenue
+        - generic [ref=e1280]:
+          - img "Street art" [ref=e1281] [cursor=pointer]
+          - button "🤍" [ref=e1282]
+          - generic: Central Avenue
+        - generic [ref=e1283]:
+          - img "Street art" [ref=e1284] [cursor=pointer]
+          - button "🤍" [ref=e1285]
+          - generic: Johnston Street
+        - generic [ref=e1286]:
+          - img "Street art" [ref=e1287] [cursor=pointer]
+          - button "🤍" [ref=e1288]
+          - generic: Central Avenue
+        - generic [ref=e1289]:
+          - img "Street art" [ref=e1290] [cursor=pointer]
+          - button "🤍" [ref=e1291]
+          - generic: Rue du Colonel Fabien
+        - generic [ref=e1292]:
+          - img "Street art" [ref=e1293] [cursor=pointer]
+          - button "🤍" [ref=e1294]
+          - generic: 9th Street North
+        - generic [ref=e1295]:
+          - img "Street art" [ref=e1296] [cursor=pointer]
+          - button "🤍" [ref=e1297]
+          - generic: Central Avenue
+        - generic [ref=e1298]:
+          - img "Street art" [ref=e1299] [cursor=pointer]
+          - button "🤍" [ref=e1300]
+          - generic: Central Avenue
+        - generic [ref=e1301]:
+          - img "Street art" [ref=e1302] [cursor=pointer]
+          - button "🤍" [ref=e1303]
+          - generic: 7th Street
+        - generic [ref=e1304]:
+          - img "Street art" [ref=e1305] [cursor=pointer]
+          - button "🤍" [ref=e1306]
+          - generic: Improv Alley
+        - generic [ref=e1307]:
+          - img "Street art" [ref=e1308] [cursor=pointer]
+          - button "🤍" [ref=e1309]
+          - generic: 23rd Avenue North
+        - generic [ref=e1310]:
+          - img "Street art" [ref=e1311] [cursor=pointer]
+          - button "🤍" [ref=e1312]
+          - generic: Improv Alley
+        - generic [ref=e1313]:
+          - img "Street art" [ref=e1314] [cursor=pointer]
+          - button "🤍" [ref=e1315]
+          - generic: Rue du Colonel Fabien
+        - generic [ref=e1316]:
+          - img "Street art" [ref=e1317] [cursor=pointer]
+          - button "🤍" [ref=e1318]
+          - generic: W Street
+        - generic [ref=e1319]:
+          - img "Street art" [ref=e1320] [cursor=pointer]
+          - button "🤍" [ref=e1321]
+          - generic: 10th Street
+        - generic [ref=e1322]:
+          - img "Street art" [ref=e1323] [cursor=pointer]
+          - button "🤍" [ref=e1324]
+          - generic: Central Avenue
+        - generic [ref=e1325]:
+          - img "Street art" [ref=e1326] [cursor=pointer]
+          - button "🤍" [ref=e1327]
+          - generic: J Street
+        - generic [ref=e1328]:
+          - img "Street art" [ref=e1329] [cursor=pointer]
+          - button "🤍" [ref=e1330]
+          - generic: 1st Avenue North
+        - generic [ref=e1331]:
+          - img "Street art" [ref=e1332] [cursor=pointer]
+          - button "🤍" [ref=e1333]
+          - generic: Improv Alley
+        - generic [ref=e1334]:
+          - img "Street art" [ref=e1335] [cursor=pointer]
+          - button "🤍" [ref=e1336]
+          - generic: Improv Alley
+        - generic [ref=e1337]:
+          - img "Street art" [ref=e1338] [cursor=pointer]
+          - button "🤍" [ref=e1339]
+          - generic: 7th Street
+        - generic [ref=e1340]:
+          - img "Street art" [ref=e1341] [cursor=pointer]
+          - button "🤍" [ref=e1342]
+          - generic: Chemin des Tamaris
+        - generic [ref=e1343]:
+          - img "Street art" [ref=e1344] [cursor=pointer]
+          - button "🤍" [ref=e1345]
+          - generic: Central Avenue
+        - generic [ref=e1346]:
+          - img "Street art" [ref=e1347] [cursor=pointer]
+          - button "🤍" [ref=e1348]
+          - generic: Eastern Esplanade
+        - generic [ref=e1349]:
+          - img "Street art" [ref=e1350] [cursor=pointer]
+          - button "🤍" [ref=e1351]
+          - generic: Rue Jean Marie Jego
+        - generic [ref=e1352]:
+          - img "Street art" [ref=e1353] [cursor=pointer]
+          - button "🤍" [ref=e1354]
+          - generic: Paseo de la Reforma
+        - generic [ref=e1355]:
+          - img "Street art" [ref=e1356] [cursor=pointer]
+          - button "🤍" [ref=e1357]
+          - generic: Rue Oberkampf
+        - generic [ref=e1358]:
+          - img "Street art" [ref=e1359] [cursor=pointer]
+          - button "🤍" [ref=e1360]
+          - generic: Matamoros
+        - generic [ref=e1361]:
+          - img "Street art" [ref=e1362] [cursor=pointer]
+          - button "🤍" [ref=e1363]
+          - generic: Rue Crespin du Gast
+        - generic [ref=e1364]:
+          - img "Street art" [ref=e1365] [cursor=pointer]
+          - button "🤍" [ref=e1366]
+          - generic: Calle 8 Norte
+        - generic [ref=e1367]:
+          - img "Street art" [ref=e1368] [cursor=pointer]
+          - button "🤍" [ref=e1369]
+          - generic: Calle Quinta Avenida
+        - generic [ref=e1370]:
+          - img "Street art" [ref=e1371] [cursor=pointer]
+          - button "🤍" [ref=e1372]
+          - generic: Avenida de los Compositores
+        - generic [ref=e1373]:
+          - img "Street art" [ref=e1374] [cursor=pointer]
+          - button "🤍" [ref=e1375]
+          - generic: Piazza Tito Minniti
+        - generic [ref=e1376]:
+          - img "Street art" [ref=e1377] [cursor=pointer]
+          - button "🤍" [ref=e1378]
+          - generic: Piazza Tito Minniti
+        - generic [ref=e1379]:
+          - img "Street art" [ref=e1380] [cursor=pointer]
+          - button "🤍" [ref=e1381]
+          - generic: Paseo de la Reforma
+        - generic [ref=e1382]:
+          - img "Street art" [ref=e1383] [cursor=pointer]
+          - button "🤍" [ref=e1384]
+          - generic: Rue de Thionville
+        - generic [ref=e1385]:
+          - img "Street art" [ref=e1386] [cursor=pointer]
+          - button "🤍" [ref=e1387]
+          - generic: Rue Oberkampf
+        - generic [ref=e1388]:
+          - img "Street art" [ref=e1389] [cursor=pointer]
+          - button "🤍" [ref=e1390]
+          - generic: Rue de Ventadour
+        - generic [ref=e1391]:
+          - img "Street art" [ref=e1392] [cursor=pointer]
+          - button "🤍" [ref=e1393]
+          - generic: Punta Nizuc - Cancún
+        - generic [ref=e1394]:
+          - img "Street art" [ref=e1395] [cursor=pointer]
+          - button "🤍" [ref=e1396]
+          - generic: Rue Oberkampf
+        - generic [ref=e1397]:
+          - img "Street art" [ref=e1398] [cursor=pointer]
+          - button "🤍" [ref=e1399]
+          - generic: Rue Oberkampf
+        - generic [ref=e1400]:
+          - img "Street art" [ref=e1401] [cursor=pointer]
+          - button "🤍" [ref=e1402]
+          - generic: Quai de Jemmapes
+        - generic [ref=e1403]:
+          - img "Street art" [ref=e1404] [cursor=pointer]
+          - button "🤍" [ref=e1405]
+          - generic: Farringdon Service Road
+        - generic [ref=e1406]:
+          - img "Street art" [ref=e1407] [cursor=pointer]
+          - button "🤍" [ref=e1408]
+          - generic: Place Bernard Cornut Gentille
+        - generic [ref=e1409]:
+          - img "Street art" [ref=e1410] [cursor=pointer]
+          - button "🤍" [ref=e1411]
+          - generic: Hosier Lane
+        - generic [ref=e1412]:
+          - img "Street art" [ref=e1413] [cursor=pointer]
+          - button "🤍" [ref=e1414]
+          - generic: Hosier Lane
+        - generic [ref=e1415]:
+          - img "Street art" [ref=e1416] [cursor=pointer]
+          - button "🤍" [ref=e1417]
+          - generic: Russell Street
+        - generic [ref=e1418]:
+          - img "Street art" [ref=e1419] [cursor=pointer]
+          - button "🤍" [ref=e1420]
+          - generic: Russell Street
+        - generic [ref=e1421]:
+          - img "Street art" [ref=e1422] [cursor=pointer]
+          - button "🤍" [ref=e1423]
+          - generic: Avenida Rueda Medina
+        - generic [ref=e1424]:
+          - img "Street art" [ref=e1425] [cursor=pointer]
+          - button "🤍" [ref=e1426]
+          - generic: Calle Abasolo
+        - generic [ref=e1427]:
+          - img "Street art" [ref=e1428] [cursor=pointer]
+          - button "🤍" [ref=e1429]
+          - generic: Flinders Court
+        - generic [ref=e1430]:
+          - img "Street art" [ref=e1431] [cursor=pointer]
+          - button "🤍" [ref=e1432]
+          - generic: Flinders Lane
+        - generic [ref=e1433]:
+          - img "Street art" [ref=e1434] [cursor=pointer]
+          - button "🤍" [ref=e1435]
+          - generic: Flinders Street
+        - generic [ref=e1436]:
+          - img "Street art" [ref=e1437] [cursor=pointer]
+          - button "🤍" [ref=e1438]
+          - generic: Hosier Lane
+        - generic [ref=e1439]:
+          - img "Street art" [ref=e1440] [cursor=pointer]
+          - button "🤍" [ref=e1441]
+          - generic: Myrtle Road
+        - generic [ref=e1442]:
+          - img "Street art" [ref=e1443] [cursor=pointer]
+          - button "🤍" [ref=e1444]
+          - generic: Flinders Lane
+        - generic [ref=e1445]:
+          - img "Street art" [ref=e1446] [cursor=pointer]
+          - button "🤍" [ref=e1447]
+          - generic: Hosier Lane
+        - generic [ref=e1448]:
+          - img "Street art" [ref=e1449] [cursor=pointer]
+          - button "🤍" [ref=e1450]
+          - generic: Avenida Juárez
+        - generic [ref=e1451]:
+          - img "Street art" [ref=e1452] [cursor=pointer]
+          - button "🤍" [ref=e1453]
+          - generic: Hosier Lane
+        - generic [ref=e1454]:
+          - img "Street art" [ref=e1455] [cursor=pointer]
+          - button "🤍" [ref=e1456]
+          - generic: Myrtle Road
+        - generic [ref=e1457]:
+          - img "Street art" [ref=e1458] [cursor=pointer]
+          - button "🤍" [ref=e1459]
+          - generic: Hosier Lane
+        - generic [ref=e1460]:
+          - img "Street art" [ref=e1461] [cursor=pointer]
+          - button "🤍" [ref=e1462]
+          - generic: Myrtle Road
+        - generic [ref=e1463]:
+          - img "Street art" [ref=e1464] [cursor=pointer]
+          - button "🤍" [ref=e1465]
+          - generic: Hosier Lane
+        - generic [ref=e1466]:
+          - img "Street art" [ref=e1467] [cursor=pointer]
+          - button "🤍" [ref=e1468]
+          - generic: Rue Marcel Pagnol
+        - generic [ref=e1469]:
+          - img "Street art" [ref=e1470] [cursor=pointer]
+          - button "🤍" [ref=e1471]
+          - generic: Frisco Trail
+        - generic [ref=e1472]:
+          - img "Street art" [ref=e1473] [cursor=pointer]
+          - button "🤍" [ref=e1474]
+          - generic: U S Highway 64
+        - generic [ref=e1475]:
+          - img "Street art" [ref=e1476] [cursor=pointer]
+          - button "🤍" [ref=e1477]
+          - generic: West Mountain Street
+        - generic [ref=e1478]:
+          - img "Street art" [ref=e1479] [cursor=pointer]
+          - button "🤍" [ref=e1480]
+          - generic: Hosier Lane
+        - generic [ref=e1481]:
+          - img "Street art" [ref=e1482] [cursor=pointer]
+          - button "🤍" [ref=e1483]
+          - generic: Hosier Lane
+        - generic [ref=e1484]:
+          - img "Street art" [ref=e1485] [cursor=pointer]
+          - button "🤍" [ref=e1486]
+          - generic: North West Avenue
+        - generic [ref=e1487]:
+          - img "Street art" [ref=e1488] [cursor=pointer]
+          - button "🤍" [ref=e1489]
+          - generic: West Mountain Street
+        - generic [ref=e1490]:
+          - img "Street art" [ref=e1491] [cursor=pointer]
+          - button "🤍" [ref=e1492]
+          - generic: Hosier Lane
+        - generic [ref=e1493]:
+          - img "Street art" [ref=e1494] [cursor=pointer]
+          - button "🤍" [ref=e1495]
+          - generic: West Center Street
+        - generic [ref=e1496]:
+          - img "Street art" [ref=e1497] [cursor=pointer]
+          - button "🤍" [ref=e1498]
+          - generic: Via Cairo Montenotte
+        - generic [ref=e1499]:
+          - img "Street art" [ref=e1500] [cursor=pointer]
+          - button "🤍" [ref=e1501]
+          - generic: South East Avenue
+        - generic [ref=e1502]:
+          - img "Street art" [ref=e1503] [cursor=pointer]
+          - button "🤍" [ref=e1504]
+          - generic: Avenue des Anciens Combattants en Afrique du Nord
+        - generic [ref=e1505]:
+          - img "Street art" [ref=e1506] [cursor=pointer]
+          - button "🤍" [ref=e1507]
+          - generic: North 9th Street
+        - generic [ref=e1508]:
+          - img "Street art" [ref=e1509] [cursor=pointer]
+          - button "🤍" [ref=e1510]
+          - generic: Ross Street
+        - generic [ref=e1511]:
+          - img "Street art" [ref=e1512] [cursor=pointer]
+          - button "🤍" [ref=e1513]
+          - generic: Boulevard Victor Tuby
+        - generic [ref=e1514]:
+          - img "Street art" [ref=e1515] [cursor=pointer]
+          - button "🤍" [ref=e1516]
+          - generic: Hosier Lane
+        - generic [ref=e1517]:
+          - img "Street art" [ref=e1518] [cursor=pointer]
+          - button "🤍" [ref=e1519]
+          - generic: Southwest A Street
+        - generic [ref=e1520]:
+          - img "Street art" [ref=e1521] [cursor=pointer]
+          - button "🤍" [ref=e1522]
+          - generic: Hosier Lane
+        - generic [ref=e1523]:
+          - img "Street art" [ref=e1524] [cursor=pointer]
+          - button "🤍" [ref=e1525]
+          - generic: Garrison Avenue
+        - generic [ref=e1526]:
+          - img "Street art" [ref=e1527] [cursor=pointer]
+          - button "🤍" [ref=e1528]
+          - generic: Drage Spasić
+        - generic [ref=e1529]:
+          - img "Street art" [ref=e1530] [cursor=pointer]
+          - button "🤍" [ref=e1531]
+          - generic: Hosier Lane
+        - generic [ref=e1532]:
+          - img "Street art" [ref=e1533] [cursor=pointer]
+          - button "🤍" [ref=e1534]
+          - generic: Allée de la Liberté Charles de Gaulle
+        - generic [ref=e1535]:
+          - img "Street art" [ref=e1536] [cursor=pointer]
+          - button "🤍" [ref=e1537]
+          - generic: Hosier Lane
+        - generic [ref=e1538]:
+          - img "Street art" [ref=e1539] [cursor=pointer]
+          - button "🤍" [ref=e1540]
+          - generic: Boulevard de Magenta
+        - generic [ref=e1541]:
+          - img "Street art" [ref=e1542] [cursor=pointer]
+          - button "🤍" [ref=e1543]
+          - generic: Via Giuseppe Ripamonti
+        - generic [ref=e1544]:
+          - img "Street art" [ref=e1545] [cursor=pointer]
+          - button "🤍" [ref=e1546]
+          - generic: Petra Drapšina
+        - generic [ref=e1547]:
+          - img "Street art" [ref=e1548] [cursor=pointer]
+          - button "🤍" [ref=e1549]
+          - generic: Hosier Lane
+        - generic [ref=e1550]:
+          - img "Street art" [ref=e1551] [cursor=pointer]
+          - button "🤍" [ref=e1552]
+          - generic: Rue Saint-Antoine
+        - generic [ref=e1553]:
+          - img "Street art" [ref=e1554] [cursor=pointer]
+          - button "🤍" [ref=e1555]
+          - generic: Flinders Lane
+        - generic [ref=e1556]:
+          - img "Street art" [ref=e1557] [cursor=pointer]
+          - button "🤍" [ref=e1558]
+          - generic: Via Antonio Cechov
+        - generic [ref=e1559]:
+          - img "Street art" [ref=e1560] [cursor=pointer]
+          - button "🤍" [ref=e1561]
+          - generic: Hosier Lane
+        - generic [ref=e1562]:
+          - img "Street art" [ref=e1563] [cursor=pointer]
+          - button "🤍" [ref=e1564]
+          - generic: Square Alban Satragne
+        - generic [ref=e1565]:
+          - img "Street art" [ref=e1566] [cursor=pointer]
+          - button "🤍" [ref=e1567]
+          - generic: Ulitsa Strelochnikov
+        - generic [ref=e1568]:
+          - img "Street art" [ref=e1569] [cursor=pointer]
+          - button "🤍" [ref=e1570]
+          - generic: Calle Santa María
+        - generic [ref=e1571]:
+          - img "Street art" [ref=e1572] [cursor=pointer]
+          - button "🤍" [ref=e1573]
+          - generic: Calle Casas de Campos
+        - generic [ref=e1574]:
+          - img "Street art" [ref=e1575] [cursor=pointer]
+          - button "🤍" [ref=e1576]
+          - generic: Hosier Lane
+        - generic [ref=e1577]:
+          - img "Street art" [ref=e1578] [cursor=pointer]
+          - button "🤍" [ref=e1579]
+          - generic: Ulitsa Strelochnikov
+        - generic [ref=e1580]:
+          - img "Street art" [ref=e1581] [cursor=pointer]
+          - button "🤍" [ref=e1582]
+          - generic: Rutledge Lane
+        - generic [ref=e1583]:
+          - img "Street art" [ref=e1584] [cursor=pointer]
+          - button "🤍" [ref=e1585]
+          - generic: Avenue du Docteur Raymond Picaud
+        - generic [ref=e1586]:
+          - img "Street art" [ref=e1587] [cursor=pointer]
+          - button "🤍" [ref=e1588]
+          - generic: Calle Casas de Campos
+        - generic [ref=e1589]:
+          - img "Street art" [ref=e1590] [cursor=pointer]
+          - button "🤍" [ref=e1591]
+          - generic: Rue Marceau
+        - generic [ref=e1592]:
+          - img "Street art" [ref=e1593] [cursor=pointer]
+          - button "🤍" [ref=e1594]
+          - generic: Hosier Lane
+        - generic [ref=e1595]:
+          - img "Street art" [ref=e1596] [cursor=pointer]
+          - button "🤍" [ref=e1597]
+          - generic: Flinders Lane
+        - generic [ref=e1598]:
+          - img "Street art" [ref=e1599] [cursor=pointer]
+          - button "🤍" [ref=e1600]
+          - generic: High Street
+        - generic [ref=e1601]:
+          - img "Street art" [ref=e1602] [cursor=pointer]
+          - button "🤍" [ref=e1603]
+          - generic: Most slobode
+        - generic [ref=e1604]:
+          - img "Street art" [ref=e1605] [cursor=pointer]
+          - button "🤍" [ref=e1606]
+          - generic: Hosier Lane
+        - generic [ref=e1607]:
+          - img "Street art" [ref=e1608] [cursor=pointer]
+          - button "🤍" [ref=e1609]
+          - generic: Collins Street
+        - generic [ref=e1610]:
+          - img "Street art" [ref=e1611] [cursor=pointer]
+          - button "🤍" [ref=e1612]
+          - generic: Sunčani kej
+        - generic [ref=e1613]:
+          - img "Street art" [ref=e1614] [cursor=pointer]
+          - button "🤍" [ref=e1615]
+          - generic: Trg Dositeja Obradovića
+        - generic [ref=e1616]:
+          - img "Street art" [ref=e1617] [cursor=pointer]
+          - button "🤍" [ref=e1618]
+          - generic: George Street
+        - generic [ref=e1619]:
+          - img "Street art" [ref=e1620] [cursor=pointer]
+          - button "🤍" [ref=e1621]
+          - generic: Most slobode
+        - generic [ref=e1622]:
+          - img "Street art" [ref=e1623] [cursor=pointer]
+          - button "🤍" [ref=e1624]
+          - generic: Bulevar Mihajla Pupina
+        - generic [ref=e1625]:
+          - img "Street art" [ref=e1626] [cursor=pointer]
+          - button "🤍" [ref=e1627]
+          - generic: Pohligstraße
+        - generic [ref=e1628]:
+          - img "Street art" [ref=e1629] [cursor=pointer]
+          - button "🤍" [ref=e1630]
+          - generic: Kineska četvrt
+        - generic [ref=e1631]:
+          - img "Street art" [ref=e1632] [cursor=pointer]
+          - button "🤍" [ref=e1633]
+          - generic: Ingram Street
+        - generic [ref=e1634]:
+          - img "Street art" [ref=e1635] [cursor=pointer]
+          - button "🤍" [ref=e1636]
+          - generic: Flinders Lane
+        - generic [ref=e1637]:
+          - img "Street art" [ref=e1638] [cursor=pointer]
+          - button "🤍" [ref=e1639]
+          - generic: Dr Zorana Đinđića
+        - generic [ref=e1640]:
+          - img "Street art" [ref=e1641] [cursor=pointer]
+          - button "🤍" [ref=e1642]
+          - generic: Hosier Lane
+        - generic [ref=e1643]:
+          - img "Street art" [ref=e1644] [cursor=pointer]
+          - button "🤍" [ref=e1645]
+          - generic: Hosier Lane
+        - generic [ref=e1646]:
+          - img "Street art" [ref=e1647] [cursor=pointer]
+          - button "🤍" [ref=e1648]
+          - generic: Hosier Lane
+        - generic [ref=e1649]:
+          - img "Street art" [ref=e1650] [cursor=pointer]
+          - button "🤍" [ref=e1651]
+          - generic: Dobrovol s koho Avenue
+        - generic [ref=e1652]:
+          - img "Street art" [ref=e1653] [cursor=pointer]
+          - button "🤍" [ref=e1654]
+          - generic: Argyle Street
+        - generic [ref=e1655]:
+          - img "Street art" [ref=e1656] [cursor=pointer]
+          - button "🤍" [ref=e1657]
+          - generic: Argyle Street
+        - generic [ref=e1658]:
+          - img "Street art" [ref=e1659] [cursor=pointer]
+          - button "🤍" [ref=e1660]
+          - generic: Villa Faucheur
+        - generic [ref=e1661]:
+          - img "Street art" [ref=e1662] [cursor=pointer]
+          - button "🤍" [ref=e1663]
+          - generic: Rue de l Ourthe
+        - generic [ref=e1664]:
+          - img "Street art" [ref=e1665] [cursor=pointer]
+          - button "🤍" [ref=e1666]
+          - generic: Rue Piat
+        - generic [ref=e1667]:
+          - img "Street art" [ref=e1668] [cursor=pointer]
+          - button "🤍" [ref=e1669]
+          - generic: Argyle Street
+        - generic [ref=e1670]:
+          - img "Street art" [ref=e1671] [cursor=pointer]
+          - button "🤍" [ref=e1672]
+          - generic: Argyle Street
+        - generic [ref=e1673]:
+          - img "Street art" [ref=e1674] [cursor=pointer]
+          - button "🤍" [ref=e1675]
+          - generic: Argyle Street
+        - generic [ref=e1676]:
+          - img "Street art" [ref=e1677] [cursor=pointer]
+          - button "🤍" [ref=e1678]
+          - generic: Boulevard Edouard Herriot
+        - generic [ref=e1679]:
+          - img "Street art" [ref=e1680] [cursor=pointer]
+          - button "🤍" [ref=e1681]
+          - generic: Russell Street
+        - generic [ref=e1682]:
+          - img "Street art" [ref=e1683] [cursor=pointer]
+          - button "🤍" [ref=e1684]
+          - generic: Nacional
+        - generic [ref=e1685]:
+          - img "Street art" [ref=e1686] [cursor=pointer]
+          - button "🤍" [ref=e1687]
+          - generic: Rue Piat
+        - generic [ref=e1688]:
+          - img "Street art" [ref=e1689] [cursor=pointer]
+          - button "🤍" [ref=e1690]
+          - generic: Rue Piat
+        - generic [ref=e1691]:
+          - img "Street art" [ref=e1692] [cursor=pointer]
+          - button "🤍" [ref=e1693]
+          - generic: Rue Piat
+        - generic [ref=e1694]:
+          - img "Street art" [ref=e1695] [cursor=pointer]
+          - button "🤍" [ref=e1696]
+          - generic: Boulevard Edouard Herriot
+        - generic [ref=e1697]:
+          - img "Street art" [ref=e1698] [cursor=pointer]
+          - button "🤍" [ref=e1699]
+          - generic: Rue Piat
+        - generic [ref=e1700]:
+          - img "Street art" [ref=e1701] [cursor=pointer]
+          - button "🤍" [ref=e1702]
+          - generic: Boulevard Edouard Herriot
+        - generic [ref=e1703]:
+          - img "Street art" [ref=e1704] [cursor=pointer]
+          - button "🤍" [ref=e1705]
+          - generic: Argyle Street
+        - generic [ref=e1706]:
+          - img "Street art" [ref=e1707] [cursor=pointer]
+          - button "🤍" [ref=e1708]
+          - generic: Rue Piat
+        - generic [ref=e1709]:
+          - img "Street art" [ref=e1710] [cursor=pointer]
+          - button "🤍" [ref=e1711]
+          - generic: Napier Street
+        - generic [ref=e1712]:
+          - img "Street art" [ref=e1713] [cursor=pointer]
+          - button "🤍" [ref=e1714]
+          - generic: Kerr Street
+        - generic [ref=e1715]:
+          - img "Street art" [ref=e1716] [cursor=pointer]
+          - button "🤍" [ref=e1717]
+          - generic: Argyle Street
+        - generic [ref=e1718]:
+          - img "Street art" [ref=e1719] [cursor=pointer]
+          - button "🤍" [ref=e1720]
+          - generic: Brunswick Street
+        - generic [ref=e1721]:
+          - img "Street art" [ref=e1722] [cursor=pointer]
+          - button "🤍" [ref=e1723]
+          - generic: Argyle Street
+        - generic [ref=e1724]:
+          - img "Street art" [ref=e1725] [cursor=pointer]
+          - button "🤍" [ref=e1726]
+          - generic: Kerr Street
+        - generic [ref=e1727]:
+          - img "Street art" [ref=e1728] [cursor=pointer]
+          - button "🤍" [ref=e1729]
+          - generic: Young Street
+        - generic [ref=e1730]:
+          - img "Street art" [ref=e1731] [cursor=pointer]
+          - button "🤍" [ref=e1732]
+          - generic: Argyle Street
+        - generic [ref=e1733]:
+          - img "Street art" [ref=e1734] [cursor=pointer]
+          - button "🤍" [ref=e1735]
+          - generic: Argyle Street
+        - generic [ref=e1736]:
+          - img "Street art" [ref=e1737] [cursor=pointer]
+          - button "🤍" [ref=e1738]
+          - generic: Kerr Street
+        - generic [ref=e1739]:
+          - img "Street art" [ref=e1740] [cursor=pointer]
+          - button "🤍" [ref=e1741]
+          - generic: Napier Street
+        - generic [ref=e1742]:
+          - img "Street art" [ref=e1743] [cursor=pointer]
+          - button "🤍" [ref=e1744]
+          - generic: Brunswick Street
+        - generic [ref=e1745]:
+          - img "Street art" [ref=e1746] [cursor=pointer]
+          - button "🤍" [ref=e1747]
+          - generic: Napier Street
+        - generic [ref=e1748]:
+          - img "Street art" [ref=e1749] [cursor=pointer]
+          - button "🤍" [ref=e1750]
+          - generic: Napier Street
+        - generic [ref=e1751]:
+          - img "Street art" [ref=e1752] [cursor=pointer]
+          - button "🤍" [ref=e1753]
+          - generic: Young Street
+        - generic [ref=e1754]:
+          - img "Street art" [ref=e1755] [cursor=pointer]
+          - button "🤍" [ref=e1756]
+          - generic: Kerr Street
+        - generic [ref=e1757]:
+          - img "Street art" [ref=e1758] [cursor=pointer]
+          - button "🤍" [ref=e1759]
+          - generic: Young Street
+        - generic [ref=e1760]:
+          - img "Street art" [ref=e1761] [cursor=pointer]
+          - button "🤍" [ref=e1762]
+          - generic: Kerr Street
+        - generic [ref=e1763]:
+          - img "Street art" [ref=e1764] [cursor=pointer]
+          - button "🤍" [ref=e1765]
+          - generic: Argyle Street
+        - generic [ref=e1766]:
+          - img "Street art" [ref=e1767] [cursor=pointer]
+          - button "🤍" [ref=e1768]
+          - generic: Argyle Street
+        - generic [ref=e1769]:
+          - img "Street art" [ref=e1770] [cursor=pointer]
+          - button "🤍" [ref=e1771]
+          - generic: Rose Street
+        - generic [ref=e1772]:
+          - img "Street art" [ref=e1773] [cursor=pointer]
+          - button "🤍" [ref=e1774]
+          - generic: Brunswick Street
+        - generic [ref=e1775]:
+          - img "Street art" [ref=e1776] [cursor=pointer]
+          - button "🤍" [ref=e1777]
+          - generic: Rose Street
+        - generic [ref=e1778]:
+          - img "Street art" [ref=e1779] [cursor=pointer]
+          - button "🤍" [ref=e1780]
+          - generic: Kerr Street
+        - generic [ref=e1781]:
+          - img "Street art" [ref=e1782] [cursor=pointer]
+          - button "🤍" [ref=e1783]
+          - generic: Leicester Street
+        - generic [ref=e1784]:
+          - img "Street art" [ref=e1785] [cursor=pointer]
+          - button "🤍" [ref=e1786]
+          - generic: Leicester Street
+        - generic [ref=e1787]:
+          - img "Street art" [ref=e1788] [cursor=pointer]
+          - button "🤍" [ref=e1789]
+          - generic: Leicester Street
+        - generic [ref=e1790]:
+          - img "Street art" [ref=e1791] [cursor=pointer]
+          - button "🤍" [ref=e1792]
+          - generic: Rose Street
+        - generic [ref=e1793]:
+          - img "Street art" [ref=e1794] [cursor=pointer]
+          - button "🤍" [ref=e1795]
+          - generic: Rose Street
+        - generic [ref=e1796]:
+          - img "Street art" [ref=e1797] [cursor=pointer]
+          - button "🤍" [ref=e1798]
+          - generic: Rose Street
+        - generic [ref=e1799]:
+          - img "Street art" [ref=e1800] [cursor=pointer]
+          - button "🤍" [ref=e1801]
+          - generic: Rose Street
+        - generic [ref=e1802]:
+          - img "Street art" [ref=e1803] [cursor=pointer]
+          - button "🤍" [ref=e1804]
+          - generic: Rose Street
+        - generic [ref=e1805]:
+          - img "Street art" [ref=e1806] [cursor=pointer]
+          - button "🤍" [ref=e1807]
+          - generic: Rose Street
+        - generic [ref=e1808]:
+          - img "Street art" [ref=e1809] [cursor=pointer]
+          - button "🤍" [ref=e1810]
+          - generic: Rose Street
+        - generic [ref=e1811]:
+          - img "Street art" [ref=e1812] [cursor=pointer]
+          - button "🤍" [ref=e1813]
+          - generic: Rose Street
+        - generic [ref=e1814]:
+          - img "Street art" [ref=e1815] [cursor=pointer]
+          - button "🤍" [ref=e1816]
+          - generic: Rose Street
+        - generic [ref=e1817]:
+          - img "Street art" [ref=e1818] [cursor=pointer]
+          - button "🤍" [ref=e1819]
+          - generic: Rose Street
+        - generic [ref=e1820]:
+          - img "Street art" [ref=e1821] [cursor=pointer]
+          - button "🤍" [ref=e1822]
+          - generic: Rose Street
+        - generic [ref=e1823]:
+          - img "Street art" [ref=e1824] [cursor=pointer]
+          - button "🤍" [ref=e1825]
+          - generic: Rose Street
+        - generic [ref=e1826]:
+          - img "Street art" [ref=e1827] [cursor=pointer]
+          - button "🤍" [ref=e1828]
+          - generic: Rose Street
+        - generic [ref=e1829]:
+          - img "Street art" [ref=e1830] [cursor=pointer]
+          - button "🤍" [ref=e1831]
+          - generic: Henry Street
+        - generic [ref=e1832]:
+          - img "Street art" [ref=e1833] [cursor=pointer]
+          - button "🤍" [ref=e1834]
+          - generic: Spring Street
+        - generic [ref=e1835]:
+          - img "Street art" [ref=e1836] [cursor=pointer]
+          - button "🤍" [ref=e1837]
+          - generic: Henry Street
+        - generic [ref=e1838]:
+          - img "Street art" [ref=e1839] [cursor=pointer]
+          - button "🤍" [ref=e1840]
+          - generic: Spring Street
+        - generic [ref=e1841]:
+          - img "Street art" [ref=e1842] [cursor=pointer]
+          - button "🤍" [ref=e1843]
+          - generic: Spring Street
+        - generic [ref=e1844]:
+          - img "Street art" [ref=e1845] [cursor=pointer]
+          - button "🤍" [ref=e1846]
+          - generic: Spring Street
+        - generic [ref=e1847]:
+          - img "Street art" [ref=e1848] [cursor=pointer]
+          - button "🤍" [ref=e1849]
+          - generic: Spring Street
+        - generic [ref=e1850]:
+          - img "Street art" [ref=e1851] [cursor=pointer]
+          - button "🤍" [ref=e1852]
+          - generic: Kerr Street
+        - generic [ref=e1853]:
+          - img "Street art" [ref=e1854] [cursor=pointer]
+          - button "🤍" [ref=e1855]
+          - generic: Nicholson Street
+        - generic [ref=e1856]:
+          - img "Street art" [ref=e1857] [cursor=pointer]
+          - button "🤍" [ref=e1858]
+          - generic: Kerr Street
+        - generic [ref=e1859]:
+          - img "Street art" [ref=e1860] [cursor=pointer]
+          - button "🤍" [ref=e1861]
+          - generic: Spring Street
+        - generic [ref=e1862]:
+          - img "Street art" [ref=e1863] [cursor=pointer]
+          - button "🤍" [ref=e1864]
+          - generic: Kerr Street
+        - generic [ref=e1865]:
+          - img "Street art" [ref=e1866] [cursor=pointer]
+          - button "🤍" [ref=e1867]
+          - generic: Henry Street
+        - generic [ref=e1868]:
+          - img "Street art" [ref=e1869] [cursor=pointer]
+          - button "🤍" [ref=e1870]
+          - generic: Kerr Street
+        - generic [ref=e1871]:
+          - img "Street art" [ref=e1872] [cursor=pointer]
+          - button "🤍" [ref=e1873]
+          - generic: Henry Street
+        - generic [ref=e1874]:
+          - img "Street art" [ref=e1875] [cursor=pointer]
+          - button "🤍" [ref=e1876]
+          - generic: Kerr Street
+        - generic [ref=e1877]:
+          - img "Street art" [ref=e1878] [cursor=pointer]
+          - button "🤍" [ref=e1879]
+          - generic: Henry Street
+        - generic [ref=e1880]:
+          - img "Street art" [ref=e1881] [cursor=pointer]
+          - button "🤍" [ref=e1882]
+          - generic: Spring Street
+        - generic [ref=e1883]:
+          - img "Street art" [ref=e1884] [cursor=pointer]
+          - button "🤍" [ref=e1885]
+          - generic: Kerr Street
+        - generic [ref=e1886]:
+          - img "Street art" [ref=e1887] [cursor=pointer]
+          - button "🤍" [ref=e1888]
+          - generic: Rose Street
+        - generic [ref=e1889]:
+          - img "Street art" [ref=e1890] [cursor=pointer]
+          - button "🤍" [ref=e1891]
+          - generic: Fitzroy Street
+        - generic [ref=e1892]:
+          - img "Street art" [ref=e1893] [cursor=pointer]
+          - button "🤍" [ref=e1894]
+          - generic: Johnston Street
+        - generic [ref=e1895]:
+          - img "Street art" [ref=e1896] [cursor=pointer]
+          - button "🤍" [ref=e1897]
+          - generic: Fitzroy Street
+        - generic [ref=e1898]:
+          - img "Street art" [ref=e1899] [cursor=pointer]
+          - button "🤍" [ref=e1900]
+          - generic: Fitzroy Street
+        - generic [ref=e1901]:
+          - img "Street art" [ref=e1902] [cursor=pointer]
+          - button "🤍" [ref=e1903]
+          - generic: Fitzroy Street
+        - generic [ref=e1904]:
+          - img "Street art" [ref=e1905] [cursor=pointer]
+          - button "🤍" [ref=e1906]
+          - generic: Fitzroy Street
+        - generic [ref=e1907]:
+          - img "Street art" [ref=e1908] [cursor=pointer]
+          - button "🤍" [ref=e1909]
+          - generic: Johnston Street
+        - generic [ref=e1910]:
+          - img "Street art" [ref=e1911] [cursor=pointer]
+          - button "🤍" [ref=e1912]
+          - generic: Fitzroy Street
+        - generic [ref=e1913]:
+          - img "Street art" [ref=e1914] [cursor=pointer]
+          - button "🤍" [ref=e1915]
+          - generic: Fitzroy Street
+        - generic [ref=e1916]:
+          - img "Street art" [ref=e1917] [cursor=pointer]
+          - button "🤍" [ref=e1918]
+          - generic: Fitzroy Street
+        - generic [ref=e1919]:
+          - img "Street art" [ref=e1920] [cursor=pointer]
+          - button "🤍" [ref=e1921]
+          - generic: Spring Street
+        - generic [ref=e1922]:
+          - img "Street art" [ref=e1923] [cursor=pointer]
+          - button "🤍" [ref=e1924]
+          - generic: Fitzroy Street
+        - generic [ref=e1925]:
+          - img "Street art" [ref=e1926] [cursor=pointer]
+          - button "🤍" [ref=e1927]
+          - generic: Fitzroy Street
+        - generic [ref=e1928]:
+          - img "Street art" [ref=e1929] [cursor=pointer]
+          - button "🤍" [ref=e1930]
+          - generic: Fitzroy Street
+        - generic [ref=e1931]:
+          - img "Street art" [ref=e1932] [cursor=pointer]
+          - button "🤍" [ref=e1933]
+          - generic: Fitzroy Street
+        - generic [ref=e1934]:
+          - img "Street art" [ref=e1935] [cursor=pointer]
+          - button "🤍" [ref=e1936]
+          - generic: Johnston Street
+        - generic [ref=e1937]:
+          - img "Street art" [ref=e1938] [cursor=pointer]
+          - button "🤍" [ref=e1939]
+          - generic: Harrison Place
+        - generic [ref=e1940]:
+          - img "Street art" [ref=e1941] [cursor=pointer]
+          - button "🤍" [ref=e1942]
+          - generic: Harrison Place
+        - generic [ref=e1943]:
+          - img "Street art" [ref=e1944] [cursor=pointer]
+          - button "🤍" [ref=e1945]
+          - generic: Johnston Street
+        - generic [ref=e1946]:
+          - img "Street art" [ref=e1947] [cursor=pointer]
+          - button "🤍" [ref=e1948]
+          - generic: Harrison Place
+        - generic [ref=e1949]:
+          - img "Street art" [ref=e1950] [cursor=pointer]
+          - button "🤍" [ref=e1951]
+          - generic: Spring Street
+        - generic [ref=e1952]:
+          - img "Street art" [ref=e1953] [cursor=pointer]
+          - button "🤍" [ref=e1954]
+          - generic: Spring Street
+        - generic [ref=e1955]:
+          - img "Street art" [ref=e1956] [cursor=pointer]
+          - button "🤍" [ref=e1957]
+          - generic: Spring Street
+        - generic [ref=e1958]:
+          - img "Street art" [ref=e1959] [cursor=pointer]
+          - button "🤍" [ref=e1960]
+          - generic: Spring Street
+        - generic [ref=e1961]:
+          - img "Street art" [ref=e1962] [cursor=pointer]
+          - button "🤍" [ref=e1963]
+          - generic: Harrison Place
+        - generic [ref=e1964]:
+          - img "Street art" [ref=e1965] [cursor=pointer]
+          - button "🤍" [ref=e1966]
+          - generic: Spring Street
+        - generic [ref=e1967]:
+          - img "Street art" [ref=e1968] [cursor=pointer]
+          - button "🤍" [ref=e1969]
+          - generic: Spring Street
+        - generic [ref=e1970]:
+          - img "Street art" [ref=e1971] [cursor=pointer]
+          - button "🤍" [ref=e1972]
+          - generic: Harrison Place
+        - generic [ref=e1973]:
+          - img "Street art" [ref=e1974] [cursor=pointer]
+          - button "🤍" [ref=e1975]
+          - generic: Johnston Street
+        - generic [ref=e1976]:
+          - img "Street art" [ref=e1977] [cursor=pointer]
+          - button "🤍" [ref=e1978]
+          - generic: Johnston Street
+        - generic [ref=e1979]:
+          - img "Street art" [ref=e1980] [cursor=pointer]
+          - button "🤍" [ref=e1981]
+          - generic: Harrison Place
+        - generic [ref=e1982]:
+          - img "Street art" [ref=e1983] [cursor=pointer]
+          - button "🤍" [ref=e1984]
+          - generic: Johnston Street
+        - generic [ref=e1985]:
+          - img "Street art" [ref=e1986] [cursor=pointer]
+          - button "🤍" [ref=e1987]
+          - generic: Spring Street
+        - generic [ref=e1988]:
+          - img "Street art" [ref=e1989] [cursor=pointer]
+          - button "🤍" [ref=e1990]
+          - generic: Johnston Street
+        - generic [ref=e1991]:
+          - img "Street art" [ref=e1992] [cursor=pointer]
+          - button "🤍" [ref=e1993]
+          - generic: Johnston Street
+        - generic [ref=e1994]:
+          - img "Street art" [ref=e1995] [cursor=pointer]
+          - button "🤍" [ref=e1996]
+          - generic: Johnston Street
+        - generic [ref=e1997]:
+          - img "Street art" [ref=e1998] [cursor=pointer]
+          - button "🤍" [ref=e1999]
+          - generic: Spring Street
+        - generic [ref=e2000]:
+          - img "Street art" [ref=e2001] [cursor=pointer]
+          - button "🤍" [ref=e2002]
+          - generic: Spring Street
+        - generic [ref=e2003]:
+          - img "Street art" [ref=e2004] [cursor=pointer]
+          - button "🤍" [ref=e2005]
+          - generic: Spring Street
+        - generic [ref=e2006]:
+          - img "Street art" [ref=e2007] [cursor=pointer]
+          - button "🤍" [ref=e2008]
+          - generic: Spring Street
+        - generic [ref=e2009]:
+          - img "Street art" [ref=e2010] [cursor=pointer]
+          - button "🤍" [ref=e2011]
+          - generic: Johnston Place
+        - generic [ref=e2012]:
+          - img "Street art" [ref=e2013] [cursor=pointer]
+          - button "🤍" [ref=e2014]
+          - generic: Flinders Street
+        - generic [ref=e2015]:
+          - img "Street art" [ref=e2016] [cursor=pointer]
+          - button "🤍" [ref=e2017]
+          - generic: Boulevard Vallombrosa
+        - generic [ref=e2018]:
+          - img "Street art" [ref=e2019] [cursor=pointer]
+          - button "🤍" [ref=e2020]
+          - generic: Johnston Street
+        - generic [ref=e2021]:
+          - img "Street art" [ref=e2022] [cursor=pointer]
+          - button "🤍" [ref=e2023]
+          - generic: Flinders Street
+        - generic [ref=e2024]:
+          - img "Street art" [ref=e2025] [cursor=pointer]
+          - button "🤍" [ref=e2026]
+          - generic: Johnston Place
+        - generic [ref=e2027]:
+          - img "Street art" [ref=e2028] [cursor=pointer]
+          - button "🤍" [ref=e2029]
+          - generic: Hosier Lane
+        - generic [ref=e2030]:
+          - img "Street art" [ref=e2031] [cursor=pointer]
+          - button "🤍" [ref=e2032]
+          - generic: Flinders Street
+        - generic [ref=e2033]:
+          - img "Street art" [ref=e2034] [cursor=pointer]
+          - button "🤍" [ref=e2035]
+          - generic: Flinders Street
+        - generic [ref=e2036]:
+          - img "Street art" [ref=e2037] [cursor=pointer]
+          - button "🤍" [ref=e2038]
+          - generic: Flinders Street
+        - generic [ref=e2039]:
+          - img "Street art" [ref=e2040] [cursor=pointer]
+          - button "🤍" [ref=e2041]
+          - generic: Hosier Lane
+        - generic [ref=e2042]:
+          - img "Street art" [ref=e2043] [cursor=pointer]
+          - button "🤍" [ref=e2044]
+          - generic: Hosier Lane
+        - generic [ref=e2045]:
+          - img "Street art" [ref=e2046] [cursor=pointer]
+          - button "🤍" [ref=e2047]
+          - generic: Johnston Street
+        - generic [ref=e2048]:
+          - img "Street art" [ref=e2049] [cursor=pointer]
+          - button "🤍" [ref=e2050]
+          - generic: Russell Street
+        - generic [ref=e2051]:
+          - img "Street art" [ref=e2052] [cursor=pointer]
+          - button "🤍" [ref=e2053]
+          - generic: Johnston Street
+        - generic [ref=e2054]:
+          - img "Street art" [ref=e2055] [cursor=pointer]
+          - button "🤍" [ref=e2056]
+          - generic: Domaine de l Université de Paris Sud
+        - generic [ref=e2057]:
+          - img "Street art" [ref=e2058] [cursor=pointer]
+          - button "🤍" [ref=e2059]
+          - generic: Johnston Place
+        - generic [ref=e2060]:
+          - img "Street art" [ref=e2061] [cursor=pointer]
+          - button "🤍" [ref=e2062]
+          - generic: Domaine de l Université de Paris Sud
+        - generic [ref=e2063]:
+          - img "Street art" [ref=e2064] [cursor=pointer]
+          - button "🤍" [ref=e2065]
+          - generic: Flinders Street
+        - generic [ref=e2066]:
+          - img "Street art" [ref=e2067] [cursor=pointer]
+          - button "🤍" [ref=e2068]
+          - generic: Hosier Lane
+        - generic [ref=e2069]:
+          - img "Street art" [ref=e2070] [cursor=pointer]
+          - button "🤍" [ref=e2071]
+          - generic: Hosier Lane
+        - generic [ref=e2072]:
+          - img "Street art" [ref=e2073] [cursor=pointer]
+          - button "🤍" [ref=e2074]
+          - generic: Hosier Lane
+        - generic [ref=e2075]:
+          - img "Street art" [ref=e2076] [cursor=pointer]
+          - button "🤍" [ref=e2077]
+          - generic: Rutledge Lane
+        - generic [ref=e2078]:
+          - img "Street art" [ref=e2079] [cursor=pointer]
+          - button "🤍" [ref=e2080]
+          - generic: Hosier Lane
+        - generic [ref=e2081]:
+          - img "Street art" [ref=e2082] [cursor=pointer]
+          - button "🤍" [ref=e2083]
+          - generic: Hosier Lane
+        - generic [ref=e2084]:
+          - img "Street art" [ref=e2085] [cursor=pointer]
+          - button "🤍" [ref=e2086]
+          - generic: Rutledge Lane
+        - generic [ref=e2087]:
+          - img "Street art" [ref=e2088] [cursor=pointer]
+          - button "🤍" [ref=e2089]
+          - generic: Hosier Lane
+        - generic [ref=e2090]:
+          - img "Street art" [ref=e2091] [cursor=pointer]
+          - button "🤍" [ref=e2092]
+          - generic: Flinders Lane
+        - generic [ref=e2093]:
+          - img "Street art" [ref=e2094] [cursor=pointer]
+          - button "🤍" [ref=e2095]
+          - generic: Flinders Lane
+        - generic [ref=e2096]:
+          - img "Street art" [ref=e2097] [cursor=pointer]
+          - button "🤍" [ref=e2098]
+          - generic: Flinders Lane
+        - generic [ref=e2099]:
+          - img "Street art" [ref=e2100] [cursor=pointer]
+          - button "🤍" [ref=e2101]
+          - generic: Rutledge Lane
+        - generic [ref=e2102]:
+          - img "Street art" [ref=e2103] [cursor=pointer]
+          - button "🤍" [ref=e2104]
+          - generic: Flinders Lane
+        - generic [ref=e2105]:
+          - img "Street art" [ref=e2106] [cursor=pointer]
+          - button "🤍" [ref=e2107]
+          - generic: Flinders Lane
+        - generic [ref=e2108]:
+          - img "Street art" [ref=e2109] [cursor=pointer]
+          - button "🤍" [ref=e2110]
+          - generic: Rutledge Lane
+        - generic [ref=e2111]:
+          - img "Street art" [ref=e2112] [cursor=pointer]
+          - button "🤍" [ref=e2113]
+          - generic: Hosier Lane
+        - generic [ref=e2114]:
+          - img "Street art" [ref=e2115] [cursor=pointer]
+          - button "🤍" [ref=e2116]
+          - generic: Hosier Lane
+        - generic [ref=e2117]:
+          - img "Street art" [ref=e2118] [cursor=pointer]
+          - button "🤍" [ref=e2119]
+          - generic: Hosier Lane
+        - generic [ref=e2120]:
+          - img "Street art" [ref=e2121] [cursor=pointer]
+          - button "🤍" [ref=e2122]
+          - generic: Flinders Lane
+        - generic [ref=e2123]:
+          - img "Street art" [ref=e2124] [cursor=pointer]
+          - button "🤍" [ref=e2125]
+          - generic: Hosier Lane
+        - generic [ref=e2126]:
+          - img "Street art" [ref=e2127] [cursor=pointer]
+          - button "🤍" [ref=e2128]
+          - generic: Flinders Lane
+        - generic [ref=e2129]:
+          - img "Street art" [ref=e2130] [cursor=pointer]
+          - button "🤍" [ref=e2131]
+          - generic: Allen Street
+        - generic [ref=e2132]:
+          - img "Street art" [ref=e2133] [cursor=pointer]
+          - button "🤍" [ref=e2134]
+          - generic: Flinders Lane
+        - generic [ref=e2135]:
+          - img "Street art" [ref=e2136] [cursor=pointer]
+          - button "🤍" [ref=e2137]
+          - generic: Glenferrie Road
+        - generic [ref=e2138]:
+          - img "Street art" [ref=e2139] [cursor=pointer]
+          - button "🤍" [ref=e2140]
+          - generic: Rue Juliette Dodu
+        - generic [ref=e2141]:
+          - img "Street art" [ref=e2142] [cursor=pointer]
+          - button "🤍" [ref=e2143]
+          - generic: Via W 4 Norte
+        - generic [ref=e2144]:
+          - img "Street art" [ref=e2145] [cursor=pointer]
+          - button "🤍" [ref=e2146]
+          - generic: Flinders Lane
+        - generic [ref=e2147]:
+          - img "Street art" [ref=e2148] [cursor=pointer]
+          - button "🤍" [ref=e2149]
+          - generic: Flinders Lane
+        - generic [ref=e2150]:
+          - img "Street art" [ref=e2151] [cursor=pointer]
+          - button "🤍" [ref=e2152]
+          - generic: Calle 4 Norte
+        - generic [ref=e2153]:
+          - img "Street art" [ref=e2154] [cursor=pointer]
+          - button "🤍" [ref=e2155]
+          - generic: Flinders Lane
+        - generic [ref=e2156]:
+          - img "Street art" [ref=e2157] [cursor=pointer]
+          - button "🤍" [ref=e2158]
+          - generic: Cours Julien
+        - generic [ref=e2159]:
+          - img "Street art" [ref=e2160] [cursor=pointer]
+          - button "🤍" [ref=e2161]
+          - generic: Unnamed Road
+        - generic [ref=e2162]:
+          - img "Street art" [ref=e2163] [cursor=pointer]
+          - button "🤍" [ref=e2164]
+          - generic: Quai de la Loire
+        - generic [ref=e2165]:
+          - img "Street art" [ref=e2166] [cursor=pointer]
+          - button "🤍" [ref=e2167]
+          - generic: Avenida 28 Oriente
+        - generic [ref=e2168]:
+          - img "Street art" [ref=e2169] [cursor=pointer]
+          - button "🤍" [ref=e2170]
+          - generic: Rue Riquet
+        - generic [ref=e2171]:
+          - img "Street art" [ref=e2172] [cursor=pointer]
+          - button "🤍" [ref=e2173]
+          - generic: Rue d Aubervilliers
+        - generic [ref=e2174]:
+          - img "Street art" [ref=e2175] [cursor=pointer]
+          - button "🤍" [ref=e2176]
+          - generic: Flinders Lane
+        - generic [ref=e2177]:
+          - img "Street art" [ref=e2178] [cursor=pointer]
+          - button "🤍" [ref=e2179]
+          - generic: Calle Molina Lario
+        - generic [ref=e2180]:
+          - img "Street art" [ref=e2181] [cursor=pointer]
+          - button "🤍" [ref=e2182]
+          - generic: Flinders Lane
+        - generic [ref=e2183]:
+          - img "Street art" [ref=e2184] [cursor=pointer]
+          - button "🤍" [ref=e2185]
+          - generic: Rue Riquet
+        - generic [ref=e2186]:
+          - img "Street art" [ref=e2187] [cursor=pointer]
+          - button "🤍" [ref=e2188]
+          - generic: Rue Vian
+        - generic [ref=e2189]:
+          - img "Street art" [ref=e2190] [cursor=pointer]
+          - button "🤍" [ref=e2191]
+          - generic: Rue de Sambre-et-Meuse
+        - generic [ref=e2192]:
+          - img "Street art" [ref=e2193] [cursor=pointer]
+          - button "🤍" [ref=e2194]
+          - generic: Rue du Retrait
+        - generic [ref=e2195]:
+          - img "Street art" [ref=e2196] [cursor=pointer]
+          - button "🤍" [ref=e2197]
+          - generic: Rue de la Verrerie
+        - generic [ref=e2198]:
+          - img "Street art" [ref=e2199] [cursor=pointer]
+          - button "🤍" [ref=e2200]
+          - generic: Impasse des Arbalétriers
+        - generic [ref=e2201]:
+          - img "Street art" [ref=e2202] [cursor=pointer]
+          - button "🤍" [ref=e2203]
+          - generic: Rue de Moussy
+        - generic [ref=e2204]:
+          - img "Street art" [ref=e2205] [cursor=pointer]
+          - button "🤍" [ref=e2206]
+          - generic: Rue des Ecouffes
+        - generic [ref=e2207]:
+          - img "Street art" [ref=e2208] [cursor=pointer]
+          - button "🤍" [ref=e2209]
+          - generic: Calle 3 Oriente
+        - generic [ref=e2210]:
+          - img "Street art" [ref=e2211] [cursor=pointer]
+          - button "🤍" [ref=e2212]
+          - generic: Rue de Sambre-et-Meuse
+        - generic [ref=e2213]:
+          - img "Street art" [ref=e2214] [cursor=pointer]
+          - button "🤍" [ref=e2215]
+          - generic: Rue du Retrait
+        - generic [ref=e2216]:
+          - img "Street art" [ref=e2217] [cursor=pointer]
+          - button "🤍" [ref=e2218]
+          - generic: Rue Oberkampf
+        - generic [ref=e2219]:
+          - img "Street art" [ref=e2220] [cursor=pointer]
+          - button "🤍" [ref=e2221]
+          - generic: Rue de Sambre-et-Meuse
+        - generic [ref=e2222]:
+          - img "Street art" [ref=e2223] [cursor=pointer]
+          - button "🤍" [ref=e2224]
+          - generic: Passage Saint-Sébastien
+        - generic [ref=e2225]:
+          - img "Street art" [ref=e2226] [cursor=pointer]
+          - button "🤍" [ref=e2227]
+          - generic: Rue Froissart
+        - generic [ref=e2228]:
+          - img "Street art" [ref=e2229] [cursor=pointer]
+          - button "🤍" [ref=e2230]
+          - generic: Rue du Vieux Colombier
+        - generic [ref=e2231]:
+          - img "Street art" [ref=e2232] [cursor=pointer]
+          - button "🤍" [ref=e2233]
+          - generic: Rue du Retrait
+        - generic [ref=e2234]:
+          - img "Street art" [ref=e2235] [cursor=pointer]
+          - button "🤍" [ref=e2236]
+          - generic: Rue de la Verrerie
+        - generic [ref=e2237]:
+          - img "Street art" [ref=e2238] [cursor=pointer]
+          - button "🤍" [ref=e2239]
+          - generic: Rue des Panoyaux
+        - generic [ref=e2240]:
+          - img "Street art" [ref=e2241] [cursor=pointer]
+          - button "🤍" [ref=e2242]
+          - generic: Rue des Panoyaux
+        - generic [ref=e2243]:
+          - img "Street art" [ref=e2244] [cursor=pointer]
+          - button "🤍" [ref=e2245]
+          - generic: Rue d Annam
+        - generic [ref=e2246]:
+          - img "Street art" [ref=e2247] [cursor=pointer]
+          - button "🤍" [ref=e2248]
+          - generic: Rue des Panoyaux
+        - generic [ref=e2249]:
+          - img "Street art" [ref=e2250] [cursor=pointer]
+          - button "🤍" [ref=e2251]
+          - generic: Dando Street
+        - generic [ref=e2252]:
+          - img "Street art" [ref=e2253] [cursor=pointer]
+          - button "🤍" [ref=e2254]
+          - generic: Rue des Serbes
+        - generic [ref=e2255]:
+          - img "Street art" [ref=e2256] [cursor=pointer]
+          - button "🤍" [ref=e2257]
+          - generic: Rue du Suquet
+        - generic [ref=e2258]:
+          - img "Street art" [ref=e2259] [cursor=pointer]
+          - button "🤍" [ref=e2260]
+          - generic: Rue Chauvelot
+        - generic [ref=e2261]:
+          - img "Street art" [ref=e2262] [cursor=pointer]
+          - button "🤍" [ref=e2263]
+          - generic: Rue Saint-Dizier
+        - generic [ref=e2264]:
+          - img "Street art" [ref=e2265] [cursor=pointer]
+          - button "🤍" [ref=e2266]
+          - generic: Place Bernard Cornut Gentille
+        - generic [ref=e2267]:
+          - img "Street art" [ref=e2268] [cursor=pointer]
+          - button "🤍" [ref=e2269]
+          - generic: Rue d Annam
+        - generic [ref=e2270]:
+          - img "Street art" [ref=e2271] [cursor=pointer]
+          - button "🤍" [ref=e2272]
+          - generic: Rue d Annam
+        - generic [ref=e2273]:
+          - img "Street art" [ref=e2274] [cursor=pointer]
+          - button "🤍" [ref=e2275]
+          - generic: Rue du Cherche-Midi
+        - generic [ref=e2276]:
+          - img "Street art" [ref=e2277] [cursor=pointer]
+          - button "🤍" [ref=e2278]
+          - generic: Rue Fontaine de Chande
+        - generic [ref=e2279]:
+          - img "Street art" [ref=e2280] [cursor=pointer]
+          - button "🤍" [ref=e2281]
+          - generic: Swan Street
+        - generic [ref=e2282]:
+          - img "Street art" [ref=e2283] [cursor=pointer]
+          - button "🤍" [ref=e2284]
+          - generic: Rue Emile Landrin
+        - generic [ref=e2285]:
+          - img "Street art" [ref=e2286] [cursor=pointer]
+          - button "🤍" [ref=e2287]
+          - generic: Rue des Gabres
+        - generic [ref=e2288]:
+          - img "Street art" [ref=e2289] [cursor=pointer]
+          - button "🤍" [ref=e2290]
+          - generic: Flinders Lane
+        - generic [ref=e2291]:
+          - img "Street art" [ref=e2292] [cursor=pointer]
+          - button "🤍" [ref=e2293]
+          - generic: Rue des Serbes
+        - generic [ref=e2294]:
+          - img "Street art" [ref=e2295] [cursor=pointer]
+          - button "🤍" [ref=e2296]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2297]:
+          - img "Street art" [ref=e2298] [cursor=pointer]
+          - button "🤍" [ref=e2299]
+          - generic: Swan Street
+        - generic [ref=e2300]:
+          - img "Street art" [ref=e2301] [cursor=pointer]
+          - button "🤍" [ref=e2302]
+          - generic: Rue d Annam
+        - generic [ref=e2303]:
+          - img "Street art" [ref=e2304] [cursor=pointer]
+          - button "🤍" [ref=e2305]
+          - generic: Via Conti Agosti
+        - generic [ref=e2306]:
+          - img "Street art" [ref=e2307] [cursor=pointer]
+          - button "🤍" [ref=e2308]
+          - generic: Rue du Cherche-Midi
+        - generic [ref=e2309]:
+          - img "Street art" [ref=e2310] [cursor=pointer]
+          - button "🤍" [ref=e2311]
+          - generic: Chapel Street
+        - generic [ref=e2312]:
+          - img "Street art" [ref=e2313] [cursor=pointer]
+          - button "🤍" [ref=e2314]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2315]:
+          - img "Street art" [ref=e2316] [cursor=pointer]
+          - button "🤍" [ref=e2317]
+          - generic: Chapel Street
+        - generic [ref=e2318]:
+          - img "Street art" [ref=e2319] [cursor=pointer]
+          - button "🤍" [ref=e2320]
+          - generic: Oliver Lane
+        - generic [ref=e2321]:
+          - img "Street art" [ref=e2322] [cursor=pointer]
+          - button "🤍" [ref=e2323]
+          - generic: Viale Veneto
+        - generic [ref=e2324]:
+          - img "Street art" [ref=e2325] [cursor=pointer]
+          - button "🤍" [ref=e2326]
+          - generic: Rua Eduardo de Martino
+        - generic [ref=e2327]:
+          - img "Street art" [ref=e2328] [cursor=pointer]
+          - button "🤍" [ref=e2329]
+          - generic: Rua Eduardo de Martino
+        - generic [ref=e2330]:
+          - img "Street art" [ref=e2331] [cursor=pointer]
+          - button "🤍" [ref=e2332]
+          - generic: Rua Eduardo de Martino
+        - generic [ref=e2333]:
+          - img "Street art" [ref=e2334] [cursor=pointer]
+          - button "🤍" [ref=e2335]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2336]:
+          - img "Street art" [ref=e2337] [cursor=pointer]
+          - button "🤍" [ref=e2338]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2339]:
+          - img "Street art" [ref=e2340] [cursor=pointer]
+          - button "🤍" [ref=e2341]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2342]:
+          - img "Street art" [ref=e2343] [cursor=pointer]
+          - button "🤍" [ref=e2344]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2345]:
+          - img "Street art" [ref=e2346] [cursor=pointer]
+          - button "🤍" [ref=e2347]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2348]:
+          - img "Street art" [ref=e2349] [cursor=pointer]
+          - button "🤍" [ref=e2350]
+          - generic: Tallinas iela
+        - generic [ref=e2351]:
+          - img "Street art" [ref=e2352] [cursor=pointer]
+          - button "🤍" [ref=e2353]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2354]:
+          - img "Street art" [ref=e2355] [cursor=pointer]
+          - button "🤍" [ref=e2356]
+          - generic: Place Paul Cézanne
+        - generic [ref=e2357]:
+          - img "Street art" [ref=e2358] [cursor=pointer]
+          - button "🤍" [ref=e2359]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2360]:
+          - img "Street art" [ref=e2361] [cursor=pointer]
+          - button "🤍" [ref=e2362]
+          - generic: Strada Regionale 53 Postumia
+        - generic [ref=e2363]:
+          - img "Street art" [ref=e2364] [cursor=pointer]
+          - button "🤍" [ref=e2365]
+          - generic: Chapel Street
+        - generic [ref=e2366]:
+          - img "Street art" [ref=e2367] [cursor=pointer]
+          - button "🤍" [ref=e2368]
+          - generic: Oliver Lane
+        - generic [ref=e2369]:
+          - img "Street art" [ref=e2370] [cursor=pointer]
+          - button "🤍" [ref=e2371]
+          - generic: Rue de la Terrassière
+        - generic [ref=e2372]:
+          - img "Street art" [ref=e2373] [cursor=pointer]
+          - button "🤍" [ref=e2374]
+          - generic: Tallinas iela
+        - generic [ref=e2375]:
+          - img "Street art" [ref=e2376] [cursor=pointer]
+          - button "🤍" [ref=e2377]
+          - generic: Chapel Street
+        - generic [ref=e2378]:
+          - img "Street art" [ref=e2379] [cursor=pointer]
+          - button "🤍" [ref=e2380]
+          - generic: Chapel Street
+        - generic [ref=e2381]:
+          - img "Street art" [ref=e2382] [cursor=pointer]
+          - button "🤍" [ref=e2383]
+          - generic: Quai François Mitterrand
+        - generic [ref=e2384]:
+          - img "Street art" [ref=e2385] [cursor=pointer]
+          - button "🤍" [ref=e2386]
+          - generic: Aleksandra Čaka iela
+        - generic [ref=e2387]:
+          - img "Street art" [ref=e2388] [cursor=pointer]
+          - button "🤍" [ref=e2389]
+          - generic: Rua Eugênia de Guerin
+        - generic [ref=e2390]:
+          - img "Street art" [ref=e2391] [cursor=pointer]
+          - button "🤍" [ref=e2392]
+          - generic: Rue Sibie
+        - generic [ref=e2393]:
+          - img "Street art" [ref=e2394] [cursor=pointer]
+          - button "🤍" [ref=e2395]
+          - generic: Russell Place
+        - generic [ref=e2396]:
+          - img "Street art" [ref=e2397] [cursor=pointer]
+          - button "🤍" [ref=e2398]
+          - generic: Calle Cantuarias
+        - generic [ref=e2399]:
+          - img "Street art" [ref=e2400] [cursor=pointer]
+          - button "🤍" [ref=e2401]
+          - generic: Chapel Street
+        - generic [ref=e2402]:
+          - img "Street art" [ref=e2403] [cursor=pointer]
+          - button "🤍" [ref=e2404]
+          - generic: Rue de la Terrassière
+        - generic [ref=e2405]:
+          - img "Street art" [ref=e2406] [cursor=pointer]
+          - button "🤍" [ref=e2407]
+          - generic: Greville Street
+        - generic [ref=e2408]:
+          - img "Street art" [ref=e2409] [cursor=pointer]
+          - button "🤍" [ref=e2410]
+          - generic: Chapel Street
+        - generic [ref=e2411]:
+          - img "Street art" [ref=e2412] [cursor=pointer]
+          - button "🤍" [ref=e2413]
+          - generic: Rue Richard Gurley Drew
+        - generic [ref=e2414]:
+          - img "Street art" [ref=e2415] [cursor=pointer]
+          - button "🤍" [ref=e2416]
+          - generic: Greville Street
+        - generic [ref=e2417]:
+          - img "Street art" [ref=e2418] [cursor=pointer]
+          - button "🤍" [ref=e2419]
+          - generic: Quai François Mitterrand
+        - generic [ref=e2420]:
+          - img "Street art" [ref=e2421] [cursor=pointer]
+          - button "🤍" [ref=e2422]
+          - generic: Stafford Street
+        - generic [ref=e2423]:
+          - img "Street art" [ref=e2424] [cursor=pointer]
+          - button "🤍" [ref=e2425]
+          - generic: Grand Rue
+        - generic [ref=e2426]:
+          - img "Street art" [ref=e2427] [cursor=pointer]
+          - button "🤍" [ref=e2428]
+          - generic: Rua Alexandre Caturla
+        - generic [ref=e2429]:
+          - img "Street art" [ref=e2430] [cursor=pointer]
+          - button "🤍" [ref=e2431]
+          - generic: Viale delle Vittorie
+        - generic [ref=e2432]:
+          - img "Street art" [ref=e2433] [cursor=pointer]
+          - button "🤍" [ref=e2434]
+          - generic: Vojvođanska
+        - generic [ref=e2435]:
+          - img "Street art" [ref=e2436] [cursor=pointer]
+          - button "🤍" [ref=e2437]
+          - generic: Flinders Lane
+        - generic [ref=e2438]:
+          - img "Street art" [ref=e2439] [cursor=pointer]
+          - button "🤍" [ref=e2440]
+          - generic: Flinders Lane
+        - generic [ref=e2441]:
+          - img "Street art" [ref=e2442] [cursor=pointer]
+          - button "🤍" [ref=e2443]
+          - generic: Bulevar Oslobođenja (Ulaz 40-46)
+        - generic [ref=e2444]:
+          - img "Street art" [ref=e2445] [cursor=pointer]
+          - button "🤍" [ref=e2446]
+          - generic: Carrer de Rafael Casanova
+        - generic [ref=e2447]:
+          - img "Street art" [ref=e2448] [cursor=pointer]
+          - button "🤍" [ref=e2449]
+          - generic: Viale delle Vittorie
+        - generic [ref=e2450]:
+          - img "Street art" [ref=e2451] [cursor=pointer]
+          - button "🤍" [ref=e2452]
+          - generic: Puškinova
+        - generic [ref=e2453]:
+          - img "Street art" [ref=e2454] [cursor=pointer]
+          - button "🤍" [ref=e2455]
+          - generic: Rua Ferdinando Brivio
+        - generic [ref=e2456]:
+          - img "Street art" [ref=e2457] [cursor=pointer]
+          - button "🤍" [ref=e2458]
+          - generic: Rua Eugênia de Guerin
+        - generic [ref=e2459]:
+          - img "Street art" [ref=e2460] [cursor=pointer]
+          - button "🤍" [ref=e2461]
+          - generic: Viale delle Vittorie
+        - generic [ref=e2462]:
+          - img "Street art" [ref=e2463] [cursor=pointer]
+          - button "🤍" [ref=e2464]
+          - generic: Rua Eugênia de Guerin
+        - generic [ref=e2465]:
+          - img "Street art" [ref=e2466] [cursor=pointer]
+          - button "🤍" [ref=e2467]
+          - generic: Flinders Lane
+        - generic [ref=e2468]:
+          - img "Street art" [ref=e2469] [cursor=pointer]
+          - button "🤍" [ref=e2470]
+          - generic: Flinders Lane
+        - generic [ref=e2471]:
+          - img "Street art" [ref=e2472] [cursor=pointer]
+          - button "🤍" [ref=e2473]
+          - generic: Flinders Lane
+        - generic [ref=e2474]:
+          - img "Street art" [ref=e2475] [cursor=pointer]
+          - button "🤍" [ref=e2476]
+          - generic: Flinders Lane
+        - generic [ref=e2477]:
+          - img "Street art" [ref=e2478] [cursor=pointer]
+          - button "🤍" [ref=e2479]
+          - generic: Flinders Lane
+        - generic [ref=e2480]:
+          - img "Street art" [ref=e2481] [cursor=pointer]
+          - button "🤍" [ref=e2482]
+          - generic: Rua Ferdinando Brivio
+        - generic [ref=e2483]:
+          - img "Street art" [ref=e2484] [cursor=pointer]
+          - button "🤍" [ref=e2485]
+          - generic: Viale delle Vittorie
+        - generic [ref=e2486]:
+          - img "Street art" [ref=e2487] [cursor=pointer]
+          - button "🤍" [ref=e2488]
+          - generic: Flinders Lane
+        - generic [ref=e2489]:
+          - img "Street art" [ref=e2490] [cursor=pointer]
+          - button "🤍" [ref=e2491]
+          - generic: Flinders Lane
+        - generic [ref=e2492]:
+          - img "Street art" [ref=e2493] [cursor=pointer]
+          - button "🤍" [ref=e2494]
+          - generic: Flinders Lane
+        - generic [ref=e2495]:
+          - img "Street art" [ref=e2496] [cursor=pointer]
+          - button "🤍" [ref=e2497]
+          - generic: Avenida Professor João Batista Conti
+        - generic [ref=e2498]:
+          - img "Street art" [ref=e2499] [cursor=pointer]
+          - button "🤍" [ref=e2500]
+          - generic: Flinders Lane
+        - generic [ref=e2501]:
+          - img "Street art" [ref=e2502] [cursor=pointer]
+          - button "🤍" [ref=e2503]
+          - generic: Rue du Gond
+        - generic [ref=e2504]:
+          - img "Street art" [ref=e2505] [cursor=pointer]
+          - button "🤍" [ref=e2506]
+          - generic: Duckboard Place
+        - generic [ref=e2507]:
+          - img "Street art" [ref=e2508] [cursor=pointer]
+          - button "🤍" [ref=e2509]
+          - generic: Flinders Lane
+        - generic [ref=e2510]:
+          - img "Street art" [ref=e2511] [cursor=pointer]
+          - button "🤍" [ref=e2512]
+          - generic: Alfred Place
+        - generic [ref=e2513]:
+          - img "Street art" [ref=e2514] [cursor=pointer]
+          - button "🤍" [ref=e2515]
+          - generic: Flinders Lane
+        - generic [ref=e2516]:
+          - img "Street art" [ref=e2517] [cursor=pointer]
+          - button "🤍" [ref=e2518]
+          - generic: Lauderdale Place
+        - generic [ref=e2519]:
+          - img "Street art" [ref=e2520] [cursor=pointer]
+          - button "🤍" [ref=e2521]
+          - generic: Flinders Lane
+        - generic [ref=e2522]:
+          - img "Street art" [ref=e2523] [cursor=pointer]
+          - button "🤍" [ref=e2524]
+          - generic: Flinders Lane
+        - generic [ref=e2525]:
+          - img "Street art" [ref=e2526] [cursor=pointer]
+          - button "🤍" [ref=e2527]
+          - generic: Flinders Lane
+        - generic [ref=e2528]:
+          - img "Street art" [ref=e2529] [cursor=pointer]
+          - button "🤍" [ref=e2530]
+          - generic: Rue du Gond
+        - generic [ref=e2531]:
+          - img "Street art" [ref=e2532] [cursor=pointer]
+          - button "🤍" [ref=e2533]
+          - generic: Flinders Lane
+        - generic [ref=e2534]:
+          - img "Street art" [ref=e2535] [cursor=pointer]
+          - button "🤍" [ref=e2536]
+          - generic: Flinders Lane
+        - generic [ref=e2537]:
+          - img "Street art" [ref=e2538] [cursor=pointer]
+          - button "🤍" [ref=e2539]
+          - generic: Duckboard Place
+        - generic [ref=e2540]:
+          - img "Street art" [ref=e2541] [cursor=pointer]
+          - button "🤍" [ref=e2542]
+          - generic: Duckboard Place
+        - generic [ref=e2543]:
+          - img "Street art" [ref=e2544] [cursor=pointer]
+          - button "🤍" [ref=e2545]
+          - generic: Flinders Lane
+        - generic [ref=e2546]:
+          - img "Street art" [ref=e2547] [cursor=pointer]
+          - button "🤍" [ref=e2548]
+          - generic: Duckboard Place
+        - generic [ref=e2549]:
+          - img "Street art" [ref=e2550] [cursor=pointer]
+          - button "🤍" [ref=e2551]
+          - generic: Flinders Lane
+        - generic [ref=e2552]:
+          - img "Street art" [ref=e2553] [cursor=pointer]
+          - button "🤍" [ref=e2554]
+          - generic: Flinders Lane
+        - generic [ref=e2555]:
+          - img "Street art" [ref=e2556] [cursor=pointer]
+          - button "🤍" [ref=e2557]
+          - generic: Collins Street
+        - generic [ref=e2558]:
+          - img "Street art" [ref=e2559] [cursor=pointer]
+          - button "🤍" [ref=e2560]
+          - generic: Blaasjeskruid
+        - generic [ref=e2561]:
+          - img "Street art" [ref=e2562] [cursor=pointer]
+          - button "🤍" [ref=e2563]
+          - generic: Rue Richelieu
+        - generic [ref=e2564]:
+          - img "Street art" [ref=e2565] [cursor=pointer]
+          - button "🤍" [ref=e2566]
+          - generic: Rua Nélson de Oliveira
+        - generic [ref=e2567]:
+          - img "Street art" [ref=e2568] [cursor=pointer]
+          - button "🤍" [ref=e2569]
+          - generic: Carrer Narcís Puget Riquer
+        - generic [ref=e2570]:
+          - img "Street art" [ref=e2571] [cursor=pointer]
+          - button "🤍" [ref=e2572]
+          - generic: Rua Nélson de Oliveira
+        - generic [ref=e2573]:
+          - img "Street art" [ref=e2574] [cursor=pointer]
+          - button "🤍" [ref=e2575]
+          - generic: Southern Cross Lane
+        - generic [ref=e2576]:
+          - img "Street art" [ref=e2577] [cursor=pointer]
+          - button "🤍" [ref=e2578]
+          - generic: Talstraße
+        - generic [ref=e2579]:
+          - img "Street art" [ref=e2580] [cursor=pointer]
+          - button "🤍" [ref=e2581]
+          - generic: Melbourne Place
+        - generic [ref=e2582]:
+          - img "Street art" [ref=e2583] [cursor=pointer]
+          - button "🤍" [ref=e2584]
+          - generic: Rue Richelieu
+        - generic [ref=e2585]:
+          - img "Street art" [ref=e2586] [cursor=pointer]
+          - button "🤍" [ref=e2587]
+          - generic: Russell Street
+        - generic [ref=e2588]:
+          - img "Street art" [ref=e2589] [cursor=pointer]
+          - button "🤍" [ref=e2590]
+          - generic: Blaasjeskruid
+        - generic [ref=e2591]:
+          - img "Street art" [ref=e2592] [cursor=pointer]
+          - button "🤍" [ref=e2593]
+          - generic: Rua Ettore Ximenes
+        - generic [ref=e2594]:
+          - img "Street art" [ref=e2595] [cursor=pointer]
+          - button "🤍" [ref=e2596]
+          - generic: Rua Nélson de Oliveira
+        - generic [ref=e2597]:
+          - img "Street art" [ref=e2598] [cursor=pointer]
+          - button "🤍" [ref=e2599]
+          - generic: Avenue du Parc Industriel
+        - generic [ref=e2600]:
+          - img "Street art" [ref=e2601] [cursor=pointer]
+          - button "🤍" [ref=e2602]
+          - generic: Melbourne Place
+        - generic [ref=e2603]:
+          - img "Street art" [ref=e2604] [cursor=pointer]
+          - button "🤍" [ref=e2605]
+          - generic: Talstraße
+        - generic [ref=e2606]:
+          - img "Street art" [ref=e2607] [cursor=pointer]
+          - button "🤍" [ref=e2608]
+          - generic: Circonvallazione Occidentale
+        - generic [ref=e2609]:
+          - img "Street art" [ref=e2610] [cursor=pointer]
+          - button "🤍" [ref=e2611]
+          - generic: Collins Street
+        - generic [ref=e2612]:
+          - img "Street art" [ref=e2613] [cursor=pointer]
+          - button "🤍" [ref=e2614]
+          - generic: Boulevard Kimber
+        - generic [ref=e2615]:
+          - img "Street art" [ref=e2616] [cursor=pointer]
+          - button "🤍" [ref=e2617]
+          - generic: Boulevard Kimber
+        - generic [ref=e2618]:
+          - img "Street art" [ref=e2619] [cursor=pointer]
+          - button "🤍" [ref=e2620]
+          - generic: Autoroute René-Lévesque
+        - generic [ref=e2621]:
+          - img "Street art" [ref=e2622] [cursor=pointer]
+          - button "🤍" [ref=e2623]
+          - generic: Exhibition Street
+        - generic [ref=e2624]:
+          - img "Street art" [ref=e2625] [cursor=pointer]
+          - button "🤍" [ref=e2626]
+          - generic: Flinders Lane
+        - generic [ref=e2627]:
+          - img "Street art" [ref=e2628] [cursor=pointer]
+          - button "🤍" [ref=e2629]
+          - generic: Strachan Lane
+        - generic [ref=e2630]:
+          - img "Street art" [ref=e2631] [cursor=pointer]
+          - button "🤍" [ref=e2632]
+          - generic: Rue Port-de-Montréal
+        - generic [ref=e2633]:
+          - img "Street art" [ref=e2634] [cursor=pointer]
+          - button "🤍" [ref=e2635]
+          - generic: Exhibition Street
+        - generic [ref=e2636]:
+          - img "Street art" [ref=e2637] [cursor=pointer]
+          - button "🤍" [ref=e2638]
+          - generic: Autoroute René-Lévesque
+        - generic [ref=e2639]:
+          - img "Street art" [ref=e2640] [cursor=pointer]
+          - button "🤍" [ref=e2641]
+          - generic: Rue Port-de-Montréal
+        - generic [ref=e2642]:
+          - img "Street art" [ref=e2643] [cursor=pointer]
+          - button "🤍" [ref=e2644]
+          - generic: Boulevard Kimber
+        - generic [ref=e2645]:
+          - img "Street art" [ref=e2646] [cursor=pointer]
+          - button "🤍" [ref=e2647]
+          - generic: Autoroute René-Lévesque
+        - generic [ref=e2648]:
+          - img "Street art" [ref=e2649] [cursor=pointer]
+          - button "🤍" [ref=e2650]
+          - generic: Collins Street
+        - generic [ref=e2651]:
+          - img "Street art" [ref=e2652] [cursor=pointer]
+          - button "🤍" [ref=e2653]
+          - generic: Sint-Pietersnieuwstraat
+        - generic [ref=e2654]:
+          - img "Street art" [ref=e2655] [cursor=pointer]
+          - button "🤍" [ref=e2656]
+          - generic: Exhibition Street
+        - generic [ref=e2657]:
+          - img "Street art" [ref=e2658] [cursor=pointer]
+          - button "🤍" [ref=e2659]
+          - generic: Strachan Lane
+        - generic [ref=e2660]:
+          - img "Street art" [ref=e2661] [cursor=pointer]
+          - button "🤍" [ref=e2662]
+          - generic: Boulevard Marie
+        - generic [ref=e2663]:
+          - img "Street art" [ref=e2664] [cursor=pointer]
+          - button "🤍" [ref=e2665]
+          - generic: Rue Port-de-Montréal
+        - generic [ref=e2666]:
+          - img "Street art" [ref=e2667] [cursor=pointer]
+          - button "🤍" [ref=e2668]
+          - generic: Place Cockerill
+        - generic [ref=e2669]:
+          - img "Street art" [ref=e2670] [cursor=pointer]
+          - button "🤍" [ref=e2671]
+          - generic: Rue d Auteuil
+        - generic [ref=e2672]:
+          - img "Street art" [ref=e2673] [cursor=pointer]
+          - button "🤍" [ref=e2674]
+          - generic: Rue Bussy l Indien
+        - generic [ref=e2675]:
+          - img "Street art" [ref=e2676] [cursor=pointer]
+          - button "🤍" [ref=e2677]
+          - generic: Rue des 3 Rois
+        - generic [ref=e2678]:
+          - img "Street art" [ref=e2679] [cursor=pointer]
+          - button "🤍" [ref=e2680]
+          - generic: Cours Julien
+        - generic [ref=e2681]:
+          - img "Street art" [ref=e2682] [cursor=pointer]
+          - button "🤍" [ref=e2683]
+          - generic: Oliver Lane
+        - generic [ref=e2684]:
+          - img "Street art" [ref=e2685] [cursor=pointer]
+          - button "🤍" [ref=e2686]
+          - generic: Oliver Lane
+        - generic [ref=e2687]:
+          - img "Street art" [ref=e2688] [cursor=pointer]
+          - button "🤍" [ref=e2689]
+          - generic: Rue Crudère
+        - generic [ref=e2690]:
+          - img "Street art" [ref=e2691] [cursor=pointer]
+          - button "🤍" [ref=e2692]
+          - generic: Boulevard Marie
+        - generic [ref=e2693]:
+          - img "Street art" [ref=e2694] [cursor=pointer]
+          - button "🤍" [ref=e2695]
+          - generic: Oliver Lane
+        - generic [ref=e2696]:
+          - img "Street art" [ref=e2697] [cursor=pointer]
+          - button "🤍" [ref=e2698]
+          - generic: Oliver Lane
+        - generic [ref=e2699]:
+          - img "Street art" [ref=e2700] [cursor=pointer]
+          - button "🤍" [ref=e2701]
+          - generic: Oliver Lane
+        - generic [ref=e2702]:
+          - img "Street art" [ref=e2703] [cursor=pointer]
+          - button "🤍" [ref=e2704]
+          - generic: Cours Julien
+        - generic [ref=e2705]:
+          - img "Street art" [ref=e2706] [cursor=pointer]
+          - button "🤍" [ref=e2707]
+          - generic: Cours Julien
+        - generic [ref=e2708]:
+          - img "Street art" [ref=e2709] [cursor=pointer]
+          - button "🤍" [ref=e2710]
+          - generic: Oliver Lane
+        - generic [ref=e2711]:
+          - img "Street art" [ref=e2712] [cursor=pointer]
+          - button "🤍" [ref=e2713]
+          - generic: Tallinas iela
+        - generic [ref=e2714]:
+          - img "Street art" [ref=e2715] [cursor=pointer]
+          - button "🤍" [ref=e2716]
+          - generic: Tallinas iela
+        - generic [ref=e2717]:
+          - img "Street art" [ref=e2718] [cursor=pointer]
+          - button "🤍" [ref=e2719]
+          - generic: Rue Vian
+        - generic [ref=e2720]:
+          - img "Street art" [ref=e2721] [cursor=pointer]
+          - button "🤍" [ref=e2722]
+          - generic: Oliver Lane
+        - generic [ref=e2723]:
+          - img "Street art" [ref=e2724] [cursor=pointer]
+          - button "🤍" [ref=e2725]
+          - generic: Rue des 3 Rois
+        - generic [ref=e2726]:
+          - img "Street art" [ref=e2727] [cursor=pointer]
+          - button "🤍" [ref=e2728]
+          - generic: Rue des 3 Rois
+        - generic [ref=e2729]:
+          - img "Street art" [ref=e2730] [cursor=pointer]
+          - button "🤍" [ref=e2731]
+          - generic: Aleksandra Čaka iela
+        - generic [ref=e2732]:
+          - img "Street art" [ref=e2733] [cursor=pointer]
+          - button "🤍" [ref=e2734]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2735]:
+          - img "Street art" [ref=e2736] [cursor=pointer]
+          - button "🤍" [ref=e2737]
+          - generic: Canterbury Road
+        - generic [ref=e2738]:
+          - img "Street art" [ref=e2739] [cursor=pointer]
+          - button "🤍" [ref=e2740]
+          - generic: Liteynyy prospekt
+        - generic [ref=e2741]:
+          - img "Street art" [ref=e2742] [cursor=pointer]
+          - button "🤍" [ref=e2743]
+          - generic: Transversal 29
+        - generic [ref=e2744]:
+          - img "Street art" [ref=e2745] [cursor=pointer]
+          - button "🤍" [ref=e2746]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2747]:
+          - img "Street art" [ref=e2748] [cursor=pointer]
+          - button "🤍" [ref=e2749]
+          - generic: Tallinas iela
+        - generic [ref=e2750]:
+          - img "Street art" [ref=e2751] [cursor=pointer]
+          - button "🤍" [ref=e2752]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2753]:
+          - img "Street art" [ref=e2754] [cursor=pointer]
+          - button "🤍" [ref=e2755]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2756]:
+          - img "Street art" [ref=e2757] [cursor=pointer]
+          - button "🤍" [ref=e2758]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2759]:
+          - img "Street art" [ref=e2760] [cursor=pointer]
+          - button "🤍" [ref=e2761]
+          - generic: Canterbury Road
+        - generic [ref=e2762]:
+          - img "Street art" [ref=e2763] [cursor=pointer]
+          - button "🤍" [ref=e2764]
+          - generic: Avenida 7
+        - generic [ref=e2765]:
+          - img "Street art" [ref=e2766] [cursor=pointer]
+          - button "🤍" [ref=e2767]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2768]:
+          - img "Street art" [ref=e2769] [cursor=pointer]
+          - button "🤍" [ref=e2770]
+          - generic: Valentín Alsina
+        - generic [ref=e2771]:
+          - img "Street art" [ref=e2772] [cursor=pointer]
+          - button "🤍" [ref=e2773]
+          - generic: Tallinas iela
+        - generic [ref=e2774]:
+          - img "Street art" [ref=e2775] [cursor=pointer]
+          - button "🤍" [ref=e2776]
+          - generic: Avenida 1
+        - generic [ref=e2777]:
+          - img "Street art" [ref=e2778] [cursor=pointer]
+          - button "🤍" [ref=e2779]
+          - generic: Barrio Santa Lucia
+        - generic [ref=e2780]:
+          - img "Street art" [ref=e2781] [cursor=pointer]
+          - button "🤍" [ref=e2782]
+          - generic: Avenida 1
+        - generic [ref=e2783]:
+          - img "Street art" [ref=e2784] [cursor=pointer]
+          - button "🤍" [ref=e2785]
+          - generic: Tallinas iela
+        - generic [ref=e2786]:
+          - img "Street art" [ref=e2787] [cursor=pointer]
+          - button "🤍" [ref=e2788]
+          - generic: Canterbury Road
+        - generic [ref=e2789]:
+          - img "Street art" [ref=e2790] [cursor=pointer]
+          - button "🤍" [ref=e2791]
+          - generic: Transversal 29
+        - generic [ref=e2792]:
+          - img "Street art" [ref=e2793] [cursor=pointer]
+          - button "🤍" [ref=e2794]
+          - generic: Calle 21
+        - generic [ref=e2795]:
+          - img "Street art" [ref=e2796] [cursor=pointer]
+          - button "🤍" [ref=e2797]
+          - generic: Avenida 7
+        - generic [ref=e2798]:
+          - img "Street art" [ref=e2799] [cursor=pointer]
+          - button "🤍" [ref=e2800]
+          - generic: Transversal 29
+        - generic [ref=e2801]:
+          - img "Street art" [ref=e2802] [cursor=pointer]
+          - button "🤍" [ref=e2803]
+          - generic: Alexandra Parade
+        - generic [ref=e2804]:
+          - img "Street art" [ref=e2805] [cursor=pointer]
+          - button "🤍" [ref=e2806]
+          - generic: Lange Avenue
+        - generic [ref=e2807]:
+          - img "Street art" [ref=e2808] [cursor=pointer]
+          - button "🤍" [ref=e2809]
+          - generic: Avenida 8
+        - generic [ref=e2810]:
+          - img "Street art" [ref=e2811] [cursor=pointer]
+          - button "🤍" [ref=e2812]
+          - generic: Calle 21
+        - generic [ref=e2813]:
+          - img "Street art" [ref=e2814] [cursor=pointer]
+          - button "🤍" [ref=e2815]
+          - generic: Transversal 29
+        - generic [ref=e2816]:
+          - img "Street art" [ref=e2817] [cursor=pointer]
+          - button "🤍" [ref=e2818]
+          - generic: Transversal 29
+        - generic [ref=e2819]:
+          - img "Street art" [ref=e2820] [cursor=pointer]
+          - button "🤍" [ref=e2821]
+          - generic: Transversal 29
+        - generic [ref=e2822]:
+          - img "Street art" [ref=e2823] [cursor=pointer]
+          - button "🤍" [ref=e2824]
+          - generic: Calle 21
+        - generic [ref=e2825]:
+          - img "Street art" [ref=e2826] [cursor=pointer]
+          - button "🤍" [ref=e2827]
+          - generic: Avenida 10 Jesús Ocaña Rojas
+        - generic [ref=e2828]:
+          - img "Street art" [ref=e2829] [cursor=pointer]
+          - button "🤍" [ref=e2830]
+          - generic: Boulevard Dent
+        - generic [ref=e2831]:
+          - img "Street art" [ref=e2832] [cursor=pointer]
+          - button "🤍" [ref=e2833]
+          - generic: Boulevard Dent
+        - generic [ref=e2834]:
+          - img "Street art" [ref=e2835] [cursor=pointer]
+          - button "🤍" [ref=e2836]
+          - generic: Calle 21
+        - generic [ref=e2837]:
+          - img "Street art" [ref=e2838] [cursor=pointer]
+          - button "🤍" [ref=e2839]
+          - generic: Boulevard Dent
+        - generic [ref=e2840]:
+          - img "Street art" [ref=e2841] [cursor=pointer]
+          - button "🤍" [ref=e2842]
+          - generic: Transversal 29
+        - generic [ref=e2843]:
+          - img "Street art" [ref=e2844] [cursor=pointer]
+          - button "🤍" [ref=e2845]
+          - generic: 2nd Avenue
+        - generic [ref=e2846]:
+          - img "Street art" [ref=e2847] [cursor=pointer]
+          - button "🤍" [ref=e2848]
+          - generic: Avenida 7
+        - generic [ref=e2849]:
+          - img "Street art" [ref=e2850] [cursor=pointer]
+          - button "🤍" [ref=e2851]
+          - generic: Avenida Central
+        - generic [ref=e2852]:
+          - img "Street art" [ref=e2853] [cursor=pointer]
+          - button "🤍" [ref=e2854]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2855]:
+          - img "Street art" [ref=e2856] [cursor=pointer]
+          - button "🤍" [ref=e2857]
+          - generic: Avenida Central
+        - generic [ref=e2858]:
+          - img "Street art" [ref=e2859] [cursor=pointer]
+          - button "🤍" [ref=e2860]
+          - generic: Transversal 29
+        - generic [ref=e2861]:
+          - img "Street art" [ref=e2862] [cursor=pointer]
+          - button "🤍" [ref=e2863]
+          - generic: Avenida Central
+        - generic [ref=e2864]:
+          - img "Street art" [ref=e2865] [cursor=pointer]
+          - button "🤍" [ref=e2866]
+          - generic: Gertrude Street
+        - generic [ref=e2867]:
+          - img "Street art" [ref=e2868] [cursor=pointer]
+          - button "🤍" [ref=e2869]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2870]:
+          - img "Street art" [ref=e2871] [cursor=pointer]
+          - button "🤍" [ref=e2872]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2873]:
+          - img "Street art" [ref=e2874] [cursor=pointer]
+          - button "🤍" [ref=e2875]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2876]:
+          - img "Street art" [ref=e2877] [cursor=pointer]
+          - button "🤍" [ref=e2878]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2879]:
+          - img "Street art" [ref=e2880] [cursor=pointer]
+          - button "🤍" [ref=e2881]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2882]:
+          - img "Street art" [ref=e2883] [cursor=pointer]
+          - button "🤍" [ref=e2884]
+          - generic: Doctor Adolfo Carit Eva
+        - generic [ref=e2885]:
+          - img "Street art" [ref=e2886] [cursor=pointer]
+          - button "🤍" [ref=e2887]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2888]:
+          - img "Street art" [ref=e2889] [cursor=pointer]
+          - button "🤍" [ref=e2890]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2891]:
+          - img "Street art" [ref=e2892] [cursor=pointer]
+          - button "🤍" [ref=e2893]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2894]:
+          - img "Street art" [ref=e2895] [cursor=pointer]
+          - button "🤍" [ref=e2896]
+          - generic: Paseo de Las Damas
+        - generic [ref=e2897]:
+          - img "Street art" [ref=e2898] [cursor=pointer]
+          - button "🤍" [ref=e2899]
+          - generic: Transversal 29
+        - generic [ref=e2900]:
+          - img "Street art" [ref=e2901] [cursor=pointer]
+          - button "🤍" [ref=e2902]
+          - generic: Transversal 29
+        - generic [ref=e2903]:
+          - img "Street art" [ref=e2904] [cursor=pointer]
+          - button "🤍" [ref=e2905]
+          - generic: Transversal 29
+        - generic [ref=e2906]:
+          - img "Street art" [ref=e2907] [cursor=pointer]
+          - button "🤍" [ref=e2908]
+          - generic: Transversal 29
+        - generic [ref=e2909]:
+          - img "Street art" [ref=e2910] [cursor=pointer]
+          - button "🤍" [ref=e2911]
+          - generic: Circunvalación
+        - generic [ref=e2912]:
+          - img "Street art" [ref=e2913] [cursor=pointer]
+          - button "🤍" [ref=e2914]
+          - generic: Rue Resther
+        - generic [ref=e2915]:
+          - img "Street art" [ref=e2916] [cursor=pointer]
+          - button "🤍" [ref=e2917]
+          - generic: Transversal 29
+        - generic [ref=e2918]:
+          - img "Street art" [ref=e2919] [cursor=pointer]
+          - button "🤍" [ref=e2920]
+          - generic: Paseo Rubén Darío
+        - generic [ref=e2921]:
+          - img "Street art" [ref=e2922] [cursor=pointer]
+          - button "🤍" [ref=e2923]
+          - generic: Paseo Rubén Darío
+        - generic [ref=e2924]:
+          - img "Street art" [ref=e2925] [cursor=pointer]
+          - button "🤍" [ref=e2926]
+          - generic: Rue Grand Trunk
+        - generic [ref=e2927]:
+          - img "Street art" [ref=e2928] [cursor=pointer]
+          - button "🤍" [ref=e2929]
+          - generic: Paseo de la Segunda República
+        - generic [ref=e2930]:
+          - img "Street art" [ref=e2931] [cursor=pointer]
+          - button "🤍" [ref=e2932]
+          - generic: Rokeby Street
+        - generic [ref=e2933]:
+          - img "Street art" [ref=e2934] [cursor=pointer]
+          - button "🤍" [ref=e2935]
+          - generic: "204"
+        - generic [ref=e2936]:
+          - img "Street art" [ref=e2937] [cursor=pointer]
+          - button "🤍" [ref=e2938]
+          - generic: Paseo de la Segunda República
+        - generic [ref=e2939]:
+          - img "Street art" [ref=e2940] [cursor=pointer]
+          - button "🤍" [ref=e2941]
+          - generic: Transversal 29
+        - generic [ref=e2942]:
+          - img "Street art" [ref=e2943] [cursor=pointer]
+          - button "🤍" [ref=e2944]
+          - generic: Avenida 8
+        - generic [ref=e2945]:
+          - img "Street art" [ref=e2946] [cursor=pointer]
+          - button "🤍" [ref=e2947]
+          - generic: Calle 61
+        - generic [ref=e2948]:
+          - img "Street art" [ref=e2949] [cursor=pointer]
+          - button "🤍" [ref=e2950]
+          - generic: Thanon Phra Sumen
+        - generic [ref=e2951]:
+          - img "Street art" [ref=e2952] [cursor=pointer]
+          - button "🤍" [ref=e2953]
+          - generic: Calle 51
+        - generic [ref=e2954]:
+          - img "Street art" [ref=e2955] [cursor=pointer]
+          - button "🤍" [ref=e2956]
+          - generic: Avenue Henri Ravera
+        - generic [ref=e2957]:
+          - img "Street art" [ref=e2958] [cursor=pointer]
+          - button "🤍" [ref=e2959]
+          - generic: Rue d Hibernia
+        - generic [ref=e2960]:
+          - img "Street art" [ref=e2961] [cursor=pointer]
+          - button "🤍" [ref=e2962]
+          - generic: Rue Resther
+        - generic [ref=e2963]:
+          - img "Street art" [ref=e2964] [cursor=pointer]
+          - button "🤍" [ref=e2965]
+          - generic: Calle 25
+        - generic [ref=e2966]:
+          - img "Street art" [ref=e2967] [cursor=pointer]
+          - button "🤍" [ref=e2968]
+          - generic: Rue Resther
+        - generic [ref=e2969]:
+          - img "Street art" [ref=e2970] [cursor=pointer]
+          - button "🤍" [ref=e2971]
+          - generic: Calle 61
+        - generic [ref=e2972]:
+          - img "Street art" [ref=e2973] [cursor=pointer]
+          - button "🤍" [ref=e2974]
+          - generic: Milton Parade
+        - generic [ref=e2975]:
+          - img "Street art" [ref=e2976] [cursor=pointer]
+          - button "🤍" [ref=e2977]
+          - generic: Smith Street
+        - generic [ref=e2978]:
+          - img "Street art" [ref=e2979] [cursor=pointer]
+          - button "🤍" [ref=e2980]
+          - generic: Sirat Expressway
+        - generic [ref=e2981]:
+          - img "Street art" [ref=e2982] [cursor=pointer]
+          - button "🤍" [ref=e2983]
+          - generic: Wellington Street
+        - generic [ref=e2984]:
+          - img "Street art" [ref=e2985] [cursor=pointer]
+          - button "🤍" [ref=e2986]
+          - generic: Avenida de la Cultura
+        - generic [ref=e2987]:
+          - img "Street art" [ref=e2988] [cursor=pointer]
+          - button "🤍" [ref=e2989]
+          - generic: Calle 61
+        - generic [ref=e2990]:
+          - img "Street art" [ref=e2991] [cursor=pointer]
+          - button "🤍" [ref=e2992]
+          - generic: ถนน สี่พระยา
+        - generic [ref=e2993]:
+          - img "Street art" [ref=e2994] [cursor=pointer]
+          - button "🤍" [ref=e2995]
+          - generic: Charoen Krung Road
+        - generic [ref=e2996]:
+          - img "Street art" [ref=e2997] [cursor=pointer]
+          - button "🤍" [ref=e2998]
+          - generic: Calle 61
+        - generic [ref=e2999]:
+          - img "Street art" [ref=e3000] [cursor=pointer]
+          - button "🤍" [ref=e3001]
+          - generic: Paseo de la Segunda República
+        - generic [ref=e3002]:
+          - img "Street art" [ref=e3003] [cursor=pointer]
+          - button "🤍" [ref=e3004]
+          - generic: Calle 61
+        - generic [ref=e3005]:
+          - img "Street art" [ref=e3006] [cursor=pointer]
+          - button "🤍" [ref=e3007]
+          - generic: Calle 61
+        - generic [ref=e3008]:
+          - img "Street art" [ref=e3009] [cursor=pointer]
+          - button "🤍" [ref=e3010]
+          - generic: Avenida de la Cultura
+        - generic [ref=e3011]:
+          - img "Street art" [ref=e3012] [cursor=pointer]
+          - button "🤍" [ref=e3013]
+          - generic: Paseo de la Segunda República
+        - generic [ref=e3014]:
+          - img "Street art" [ref=e3015] [cursor=pointer]
+          - button "🤍" [ref=e3016]
+          - generic: Avenida de la Cultura
+        - generic [ref=e3017]:
+          - img "Street art" [ref=e3018] [cursor=pointer]
+          - button "🤍" [ref=e3019]
+          - generic: Avenida de la Cultura
+        - generic [ref=e3020]:
+          - img "Street art" [ref=e3021] [cursor=pointer]
+          - button "🤍" [ref=e3022]
+          - generic: Calle 61
+        - generic [ref=e3023]:
+          - img "Street art" [ref=e3024] [cursor=pointer]
+          - button "🤍" [ref=e3025]
+          - generic: Calle 21
+        - generic [ref=e3026]:
+          - img "Street art" [ref=e3027] [cursor=pointer]
+          - button "🤍" [ref=e3028]
+          - generic: Avenida de la Cultura
+        - generic [ref=e3029]:
+          - img "Street art" [ref=e3030] [cursor=pointer]
+          - button "🤍" [ref=e3031]
+          - generic: Citylink
+        - generic [ref=e3032]:
+          - img "Street art" [ref=e3033] [cursor=pointer]
+          - button "🤍" [ref=e3034]
+          - generic: Rue Saint-Martin
+        - generic [ref=e3035]:
+          - img "Street art" [ref=e3036] [cursor=pointer]
+          - button "🤍" [ref=e3037]
+          - generic: Calle 21
+        - generic [ref=e3038]:
+          - img "Street art" [ref=e3039] [cursor=pointer]
+          - button "🤍" [ref=e3040]
+          - generic: Glenferrie Road
+        - generic [ref=e3041]:
+          - img "Street art" [ref=e3042] [cursor=pointer]
+          - button "🤍" [ref=e3043]
+          - generic: Glenferrie Road
+        - generic [ref=e3044]:
+          - img "Street art" [ref=e3045] [cursor=pointer]
+          - button "🤍" [ref=e3046]
+          - generic: Citylink
+        - generic [ref=e3047]:
+          - img "Street art" [ref=e3048] [cursor=pointer]
+          - button "🤍" [ref=e3049]
+          - generic: Glenferrie Road
+        - generic [ref=e3050]:
+          - img "Street art" [ref=e3051] [cursor=pointer]
+          - button "🤍" [ref=e3052]
+          - generic: Citylink
+        - generic [ref=e3053]:
+          - img "Street art" [ref=e3054] [cursor=pointer]
+          - button "🤍" [ref=e3055]
+          - generic: Glenferrie Road
+        - generic [ref=e3056]:
+          - img "Street art" [ref=e3057] [cursor=pointer]
+          - button "🤍" [ref=e3058]
+          - generic: Little Oxford Street
+        - generic [ref=e3059]:
+          - img "Street art" [ref=e3060] [cursor=pointer]
+          - button "🤍" [ref=e3061]
+          - generic: Citylink
+        - generic [ref=e3062]:
+          - img "Street art" [ref=e3063] [cursor=pointer]
+          - button "🤍" [ref=e3064]
+          - generic: Avenida 3
+        - generic [ref=e3065]:
+          - img "Street art" [ref=e3066] [cursor=pointer]
+          - button "🤍" [ref=e3067]
+          - generic: Paseo de la Segunda República
+        - generic [ref=e3068]:
+          - img "Street art" [ref=e3069] [cursor=pointer]
+          - button "🤍" [ref=e3070]
+          - generic: Glenferrie Road
+        - generic [ref=e3071]:
+          - img "Street art" [ref=e3072] [cursor=pointer]
+          - button "🤍" [ref=e3073]
+          - generic: Glenferrie Road
+        - generic [ref=e3074]:
+          - img "Street art" [ref=e3075] [cursor=pointer]
+          - button "🤍" [ref=e3076]
+          - generic: Glenferrie Road
+        - generic [ref=e3077]:
+          - img "Street art" [ref=e3078] [cursor=pointer]
+          - button "🤍" [ref=e3079]
+          - generic: Glenferrie Road
+        - generic [ref=e3080]:
+          - img "Street art" [ref=e3081] [cursor=pointer]
+          - button "🤍" [ref=e3082]
+          - generic: Glenferrie Road
+        - generic [ref=e3083]:
+          - img "Street art" [ref=e3084] [cursor=pointer]
+          - button "🤍" [ref=e3085]
+          - generic: Glenferrie Road
+        - generic [ref=e3086]:
+          - img "Street art" [ref=e3087] [cursor=pointer]
+          - button "🤍" [ref=e3088]
+          - generic: Citylink
+        - generic [ref=e3089]:
+          - img "Street art" [ref=e3090] [cursor=pointer]
+          - button "🤍" [ref=e3091]
+          - generic: Swanston Street
+        - generic [ref=e3092]:
+          - img "Street art" [ref=e3093] [cursor=pointer]
+          - button "🤍" [ref=e3094]
+          - generic: Princes Walk
+        - generic [ref=e3095]:
+          - img "Street art" [ref=e3096] [cursor=pointer]
+          - button "🤍" [ref=e3097]
+          - generic: Princes Walk
+        - generic [ref=e3098]:
+          - img "Street art" [ref=e3099] [cursor=pointer]
+          - button "🤍" [ref=e3100]
+          - generic: Swanston Street
+        - generic [ref=e3101]:
+          - img "Street art" [ref=e3102] [cursor=pointer]
+          - button "🤍" [ref=e3103]
+          - generic: Princes Walk
+        - generic [ref=e3104]:
+          - img "Street art" [ref=e3105] [cursor=pointer]
+          - button "🤍" [ref=e3106]
+          - generic: Swanston Street
+        - generic [ref=e3107]:
+          - img "Street art" [ref=e3108] [cursor=pointer]
+          - button "🤍" [ref=e3109]
+          - generic: Swanston Street
+        - generic [ref=e3110]:
+          - img "Street art" [ref=e3111] [cursor=pointer]
+          - button "🤍" [ref=e3112]
+          - generic: Princes Walk
+        - generic [ref=e3113]:
+          - img "Street art" [ref=e3114] [cursor=pointer]
+          - button "🤍" [ref=e3115]
+          - generic: Flinders Street
+        - generic [ref=e3116]:
+          - img "Street art" [ref=e3117] [cursor=pointer]
+          - button "🤍" [ref=e3118]
+          - generic: Russell Street
+        - generic [ref=e3119]:
+          - img "Street art" [ref=e3120] [cursor=pointer]
+          - button "🤍" [ref=e3121]
+          - generic: Russell Street
+        - generic [ref=e3122]:
+          - img "Street art" [ref=e3123] [cursor=pointer]
+          - button "🤍" [ref=e3124]
+          - generic: Russell Street
+        - generic [ref=e3125]:
+          - img "Street art" [ref=e3126] [cursor=pointer]
+          - button "🤍" [ref=e3127]
+          - generic: Flinders Street
+        - generic [ref=e3128]:
+          - img "Street art" [ref=e3129] [cursor=pointer]
+          - button "🤍" [ref=e3130]
+          - generic: Russell Street
+        - generic [ref=e3131]:
+          - img "Street art" [ref=e3132] [cursor=pointer]
+          - button "🤍" [ref=e3133]
+          - generic: Swanston Street
+        - generic [ref=e3134]:
+          - img "Street art" [ref=e3135] [cursor=pointer]
+          - button "🤍" [ref=e3136]
+          - generic: Russell Street
+        - generic [ref=e3137]:
+          - img "Street art" [ref=e3138] [cursor=pointer]
+          - button "🤍" [ref=e3139]
+          - generic: Russell Street
+        - generic [ref=e3140]:
+          - img "Street art" [ref=e3141] [cursor=pointer]
+          - button "🤍" [ref=e3142]
+          - generic: Flinders Street
+        - generic [ref=e3143]:
+          - img "Street art" [ref=e3144] [cursor=pointer]
+          - button "🤍" [ref=e3145]
+          - generic: Russell Street
+        - generic [ref=e3146]:
+          - img "Street art" [ref=e3147] [cursor=pointer]
+          - button "🤍" [ref=e3148]
+          - generic: Princes Walk
+        - generic [ref=e3149]:
+          - img "Street art" [ref=e3150] [cursor=pointer]
+          - button "🤍" [ref=e3151]
+          - generic: Sackville Street
+        - generic [ref=e3152]:
+          - img "Street art" [ref=e3153] [cursor=pointer]
+          - button "🤍" [ref=e3154]
+          - generic: Oxford Street
+        - generic [ref=e3155]:
+          - img "Street art" [ref=e3156] [cursor=pointer]
+          - button "🤍" [ref=e3157]
+          - generic: Russell Street Extension
+        - generic [ref=e3158]:
+          - img "Street art" [ref=e3159] [cursor=pointer]
+          - button "🤍" [ref=e3160]
+          - generic: Russell Street
+        - generic [ref=e3161]:
+          - img "Street art" [ref=e3162] [cursor=pointer]
+          - button "🤍" [ref=e3163]
+          - generic: Little Francis Street
+        - generic [ref=e3164]:
+          - img "Street art" [ref=e3165] [cursor=pointer]
+          - button "🤍" [ref=e3166]
+          - generic: Monash Freeway
+        - generic [ref=e3167]:
+          - img "Street art" [ref=e3168] [cursor=pointer]
+          - button "🤍" [ref=e3169]
+          - generic: Russell Street
+        - generic [ref=e3170]:
+          - img "Street art" [ref=e3171] [cursor=pointer]
+          - button "🤍" [ref=e3172]
+          - generic: Easey Street
+        - generic [ref=e3173]:
+          - img "Street art" [ref=e3174] [cursor=pointer]
+          - button "🤍" [ref=e3175]
+          - generic: Easey Street
+        - generic [ref=e3176]:
+          - img "Street art" [ref=e3177] [cursor=pointer]
+          - button "🤍" [ref=e3178]
+          - generic: Russell Street Extension
+        - generic [ref=e3179]:
+          - img "Street art" [ref=e3180] [cursor=pointer]
+          - button "🤍" [ref=e3181]
+          - generic: Russell Street Extension
+        - generic [ref=e3182]:
+          - img "Street art" [ref=e3183] [cursor=pointer]
+          - button "🤍" [ref=e3184]
+          - generic: Sackville Street
+        - generic [ref=e3185]:
+          - img "Street art" [ref=e3186] [cursor=pointer]
+          - button "🤍" [ref=e3187]
+          - generic: Monash Freeway
+        - generic [ref=e3188]:
+          - img "Street art" [ref=e3189] [cursor=pointer]
+          - button "🤍" [ref=e3190]
+          - generic: Monash Freeway
+        - generic [ref=e3191]:
+          - img "Street art" [ref=e3192] [cursor=pointer]
+          - button "🤍" [ref=e3193]
+          - generic: Market Place
+        - generic [ref=e3194]:
+          - img "Street art" [ref=e3195] [cursor=pointer]
+          - button "🤍" [ref=e3196]
+          - generic: Calle 21
+        - generic [ref=e3197]:
+          - img "Street art" [ref=e3198] [cursor=pointer]
+          - button "🤍" [ref=e3199]
+          - generic: Sackville Street
+        - generic [ref=e3200]:
+          - img "Street art" [ref=e3201] [cursor=pointer]
+          - button "🤍" [ref=e3202]
+          - generic: Russell Street Extension
+        - generic [ref=e3203]:
+          - img "Street art" [ref=e3204] [cursor=pointer]
+          - button "🤍" [ref=e3205]
+          - generic: Monash Freeway
+        - generic [ref=e3206]:
+          - img "Street art" [ref=e3207] [cursor=pointer]
+          - button "🤍" [ref=e3208]
+          - generic: Cato Lane North
+        - generic [ref=e3209]:
+          - img "Street art" [ref=e3210] [cursor=pointer]
+          - button "🤍" [ref=e3211]
+          - generic: Ferrars Street
+        - generic [ref=e3212]:
+          - img "Street art" [ref=e3213] [cursor=pointer]
+          - button "🤍" [ref=e3214]
+          - generic: Calle 21
+        - generic [ref=e3215]:
+          - img "Street art" [ref=e3216] [cursor=pointer]
+          - button "🤍" [ref=e3217]
+          - generic: Calle 51
+        - generic [ref=e3218]:
+          - img "Street art" [ref=e3219] [cursor=pointer]
+          - button "🤍" [ref=e3220]
+          - generic: Calle 21
+        - generic [ref=e3221]:
+          - img "Street art" [ref=e3222] [cursor=pointer]
+          - button "🤍" [ref=e3223]
+          - generic: Calle 21
+        - generic [ref=e3224]:
+          - img "Street art" [ref=e3225] [cursor=pointer]
+          - button "🤍" [ref=e3226]
+          - generic: Avenida 3
+        - generic [ref=e3227]:
+          - img "Street art" [ref=e3228] [cursor=pointer]
+          - button "🤍" [ref=e3229]
+          - generic: Avenida 3
+        - generic [ref=e3230]:
+          - img "Street art" [ref=e3231] [cursor=pointer]
+          - button "🤍" [ref=e3232]
+          - generic: Ferrars Street
+        - generic [ref=e3233]:
+          - img "Street art" [ref=e3234] [cursor=pointer]
+          - button "🤍" [ref=e3235]
+          - generic: Collins Street
+        - generic [ref=e3236]:
+          - img "Street art" [ref=e3237] [cursor=pointer]
+          - button "🤍" [ref=e3238]
+          - generic: Ferrars Street
+        - generic [ref=e3239]:
+          - img "Street art" [ref=e3240] [cursor=pointer]
+          - button "🤍" [ref=e3241]
+          - generic: Avenida 3
+        - generic [ref=e3242]:
+          - img "Street art" [ref=e3243] [cursor=pointer]
+          - button "🤍" [ref=e3244]
+          - generic: Station Street
+        - generic [ref=e3245]:
+          - img "Street art" [ref=e3246] [cursor=pointer]
+          - button "🤍" [ref=e3247]
+          - generic: Avenida 3
+        - generic [ref=e3248]:
+          - img "Street art" [ref=e3249] [cursor=pointer]
+          - button "🤍" [ref=e3250]
+          - generic: Ferrars Street
+        - generic [ref=e3251]:
+          - img "Street art" [ref=e3252] [cursor=pointer]
+          - button "🤍" [ref=e3253]
+          - generic: Avenida Central
+        - generic [ref=e3254]:
+          - img "Street art" [ref=e3255] [cursor=pointer]
+          - button "🤍" [ref=e3256]
+          - generic: Calle 51
+        - generic [ref=e3257]:
+          - img "Street art" [ref=e3258] [cursor=pointer]
+          - button "🤍" [ref=e3259]
+          - generic: Ferrars Street
+        - generic [ref=e3260]:
+          - img "Street art" [ref=e3261] [cursor=pointer]
+          - button "🤍" [ref=e3262]
+          - generic: Avenida 3
+        - generic [ref=e3263]:
+          - img "Street art" [ref=e3264] [cursor=pointer]
+          - button "🤍" [ref=e3265]
+          - generic: Tallinas iela
+        - generic [ref=e3266]:
+          - img "Street art" [ref=e3267] [cursor=pointer]
+          - button "🤍" [ref=e3268]
+          - generic: Ferrars Street
+        - generic [ref=e3269]:
+          - img "Street art" [ref=e3270] [cursor=pointer]
+          - button "🤍" [ref=e3271]
+          - generic: "3"
+        - generic [ref=e3272]:
+          - img "Street art" [ref=e3273] [cursor=pointer]
+          - button "🤍" [ref=e3274]
+          - generic: Rue de Laprairie
+        - generic [ref=e3275]:
+          - img "Street art" [ref=e3276] [cursor=pointer]
+          - button "🤍" [ref=e3277]
+          - generic: Tallinas iela
+        - generic [ref=e3278]:
+          - img "Street art" [ref=e3279] [cursor=pointer]
+          - button "🤍" [ref=e3280]
+          - generic: Narciso De La Colina
+        - generic [ref=e3281]:
+          - img "Street art" [ref=e3282] [cursor=pointer]
+          - button "🤍" [ref=e3283]
+          - generic: Avenue Greene
+        - generic [ref=e3284]:
+          - img "Street art" [ref=e3285] [cursor=pointer]
+          - button "🤍" [ref=e3286]
+          - generic: Chapel Street
+        - generic [ref=e3287]:
+          - img "Street art" [ref=e3288] [cursor=pointer]
+          - button "🤍" [ref=e3289]
+          - generic: Carroll Crescent
+        - generic [ref=e3290]:
+          - img "Street art" [ref=e3291] [cursor=pointer]
+          - button "🤍" [ref=e3292]
+          - generic: Rue Knox
+        - generic [ref=e3293]:
+          - img "Street art" [ref=e3294] [cursor=pointer]
+          - button "🤍" [ref=e3295]
+          - generic: Swan Street
+        - generic [ref=e3296]:
+          - img "Street art" [ref=e3297] [cursor=pointer]
+          - button "🤍" [ref=e3298]
+          - generic: Swan Street
+        - generic [ref=e3299]:
+          - img "Street art" [ref=e3300] [cursor=pointer]
+          - button "🤍" [ref=e3301]
+          - generic: Ferrars Street
+        - generic [ref=e3302]:
+          - img "Street art" [ref=e3303] [cursor=pointer]
+          - button "🤍" [ref=e3304]
+          - generic: Swan Street
+        - generic [ref=e3305]:
+          - img "Street art" [ref=e3306] [cursor=pointer]
+          - button "🤍" [ref=e3307]
+          - generic: Swan Street
+        - generic [ref=e3308]:
+          - img "Street art" [ref=e3309] [cursor=pointer]
+          - button "🤍" [ref=e3310]
+          - generic: Rue Charon
+        - generic [ref=e3311]:
+          - img "Street art" [ref=e3312] [cursor=pointer]
+          - button "🤍" [ref=e3313]
+          - generic: Calle Alfonso Ugarte
+        - generic [ref=e3314]:
+          - img "Street art" [ref=e3315] [cursor=pointer]
+          - button "🤍" [ref=e3316]
+          - generic: Avenue Greene
+        - generic [ref=e3317]:
+          - img "Street art" [ref=e3318] [cursor=pointer]
+          - button "🤍" [ref=e3319]
+          - generic: Rue Knox
+        - generic [ref=e3320]:
+          - img "Street art" [ref=e3321] [cursor=pointer]
+          - button "🤍" [ref=e3322]
+          - generic: Queen Street
+        - generic [ref=e3323]:
+          - img "Street art" [ref=e3324] [cursor=pointer]
+          - button "🤍" [ref=e3325]
+          - generic: Rue Charon
+        - generic [ref=e3326]:
+          - img "Street art" [ref=e3327] [cursor=pointer]
+          - button "🤍" [ref=e3328]
+          - generic: Chapel Street
+        - generic [ref=e3329]:
+          - img "Street art" [ref=e3330] [cursor=pointer]
+          - button "🤍" [ref=e3331]
+          - generic: Murray Street
+        - generic [ref=e3332]:
+          - img "Street art" [ref=e3333] [cursor=pointer]
+          - button "🤍" [ref=e3334]
+          - generic: Independencia
+        - generic [ref=e3335]:
+          - img "Street art" [ref=e3336] [cursor=pointer]
+          - button "🤍" [ref=e3337]
+          - generic: Swan Street
+        - generic [ref=e3338]:
+          - img "Street art" [ref=e3339] [cursor=pointer]
+          - button "🤍" [ref=e3340]
+          - generic: Swan Street
+        - generic [ref=e3341]:
+          - img "Street art" [ref=e3342] [cursor=pointer]
+          - button "🤍" [ref=e3343]
+          - generic: Oxford Street
+        - generic [ref=e3344]:
+          - img "Street art" [ref=e3345] [cursor=pointer]
+          - button "🤍" [ref=e3346]
+          - generic: Swan Street
+        - generic [ref=e3347]:
+          - img "Street art" [ref=e3348] [cursor=pointer]
+          - button "🤍" [ref=e3349]
+          - generic: Swan Street
+        - generic [ref=e3350]:
+          - img "Street art" [ref=e3351] [cursor=pointer]
+          - button "🤍" [ref=e3352]
+          - generic: Wellington Street
+        - generic [ref=e3353]:
+          - img "Street art" [ref=e3354] [cursor=pointer]
+          - button "🤍" [ref=e3355]
+          - generic: Independencia
+        - generic [ref=e3356]:
+          - img "Street art" [ref=e3357] [cursor=pointer]
+          - button "🤍" [ref=e3358]
+          - generic: Swan Street
+        - generic [ref=e3359]:
+          - img "Street art" [ref=e3360] [cursor=pointer]
+          - button "🤍" [ref=e3361]
+          - generic: Wellington Street
+        - generic [ref=e3362]:
+          - img "Street art" [ref=e3363] [cursor=pointer]
+          - button "🤍" [ref=e3364]
+          - generic: Oxford Street
+        - generic [ref=e3365]:
+          - img "Street art" [ref=e3366] [cursor=pointer]
+          - button "🤍" [ref=e3367]
+          - generic: Bourke Street
+        - generic [ref=e3368]:
+          - img "Street art" [ref=e3369] [cursor=pointer]
+          - button "🤍" [ref=e3370]
+          - generic: Wellington Street
+        - generic [ref=e3371]:
+          - img "Street art" [ref=e3372] [cursor=pointer]
+          - button "🤍" [ref=e3373]
+          - generic: Ecuador
+        - generic [ref=e3374]:
+          - img "Street art" [ref=e3375] [cursor=pointer]
+          - button "🤍" [ref=e3376]
+          - generic: Swan Street
+        - generic [ref=e3377]:
+          - img "Street art" [ref=e3378] [cursor=pointer]
+          - button "🤍" [ref=e3379]
+          - generic: Brunton Avenue
+        - generic [ref=e3380]:
+          - img "Street art" [ref=e3381] [cursor=pointer]
+          - button "🤍" [ref=e3382]
+          - generic: Murray Street
+        - generic [ref=e3383]:
+          - img "Street art" [ref=e3384] [cursor=pointer]
+          - button "🤍" [ref=e3385]
+          - generic: Swan Street
+        - generic [ref=e3386]:
+          - img "Street art" [ref=e3387] [cursor=pointer]
+          - button "🤍" [ref=e3388]
+          - generic: Murray Street
+        - generic [ref=e3389]:
+          - img "Street art" [ref=e3390] [cursor=pointer]
+          - button "🤍" [ref=e3391]
+          - generic: Alexandra Avenue
+        - generic [ref=e3392]:
+          - img "Street art" [ref=e3393] [cursor=pointer]
+          - button "🤍" [ref=e3394]
+          - generic: Hay Street
+        - generic [ref=e3395]:
+          - img "Street art" [ref=e3396] [cursor=pointer]
+          - button "🤍" [ref=e3397]
+          - generic: Shafto Lane
+        - generic [ref=e3398]:
+          - img "Street art" [ref=e3399] [cursor=pointer]
+          - button "🤍" [ref=e3400]
+          - generic: Hay Street
+        - generic [ref=e3401]:
+          - img "Street art" [ref=e3402] [cursor=pointer]
+          - button "🤍" [ref=e3403]
+          - generic: Murray Street
+        - generic [ref=e3404]:
+          - img "Street art" [ref=e3405] [cursor=pointer]
+          - button "🤍" [ref=e3406]
+          - generic: Shafto Lane
+        - generic [ref=e3407]:
+          - img "Street art" [ref=e3408] [cursor=pointer]
+          - button "🤍" [ref=e3409]
+          - generic: Murray Street
+        - generic [ref=e3410]:
+          - img "Street art" [ref=e3411] [cursor=pointer]
+          - button "🤍" [ref=e3412]
+          - generic: Mayfair Street
+        - generic [ref=e3413]:
+          - img "Street art" [ref=e3414] [cursor=pointer]
+          - button "🤍" [ref=e3415]
+          - generic: Shafto Lane
+        - generic [ref=e3416]:
+          - img "Street art" [ref=e3417] [cursor=pointer]
+          - button "🤍" [ref=e3418]
+          - generic: Cambridge Street
+        - generic [ref=e3419]:
+          - img "Street art" [ref=e3420] [cursor=pointer]
+          - button "🤍" [ref=e3421]
+          - generic: Hay Street
+        - generic [ref=e3422]:
+          - img "Street art" [ref=e3423] [cursor=pointer]
+          - button "🤍" [ref=e3424]
+          - generic: Murray Street
+        - generic [ref=e3425]:
+          - img "Street art" [ref=e3426] [cursor=pointer]
+          - button "🤍" [ref=e3427]
+          - generic: Mayfair Street
+        - generic [ref=e3428]:
+          - img "Street art" [ref=e3429] [cursor=pointer]
+          - button "🤍" [ref=e3430]
+          - generic: Murray Street
+        - generic [ref=e3431]:
+          - img "Street art" [ref=e3432] [cursor=pointer]
+          - button "🤍" [ref=e3433]
+          - generic: Shafto Lane
+        - generic [ref=e3434]:
+          - img "Street art" [ref=e3435] [cursor=pointer]
+          - button "🤍" [ref=e3436]
+          - generic: Mayfair Street
+        - generic [ref=e3437]:
+          - img "Street art" [ref=e3438] [cursor=pointer]
+          - button "🤍" [ref=e3439]
+          - generic: Hay Street
+        - generic [ref=e3440]:
+          - img "Street art" [ref=e3441] [cursor=pointer]
+          - button "🤍" [ref=e3442]
+          - generic: Murray Street
+        - generic [ref=e3443]:
+          - img "Street art" [ref=e3444] [cursor=pointer]
+          - button "🤍" [ref=e3445]
+          - generic: Murray Street
+        - generic [ref=e3446]:
+          - img "Street art" [ref=e3447] [cursor=pointer]
+          - button "🤍" [ref=e3448]
+          - generic: Murray Street
+        - generic [ref=e3449]:
+          - img "Street art" [ref=e3450] [cursor=pointer]
+          - button "🤍" [ref=e3451]
+          - generic: Benson Street
+        - generic [ref=e3452]:
+          - img "Street art" [ref=e3453] [cursor=pointer]
+          - button "🤍" [ref=e3454]
+          - generic: Benson Street
+        - generic [ref=e3455]:
+          - img "Street art" [ref=e3456] [cursor=pointer]
+          - button "🤍" [ref=e3457]
+          - generic: Benson Street
+        - generic [ref=e3458]:
+          - img "Street art" [ref=e3459] [cursor=pointer]
+          - button "🤍" [ref=e3460]
+          - generic: Main Yarra Trail
+        - generic [ref=e3461]:
+          - img "Street art" [ref=e3462] [cursor=pointer]
+          - button "🤍" [ref=e3463]
+          - generic: Benson Street
+        - generic [ref=e3464]:
+          - img "Street art" [ref=e3465] [cursor=pointer]
+          - button "🤍" [ref=e3466]
+          - generic: Main Yarra Trail
+        - generic [ref=e3467]:
+          - img "Street art" [ref=e3468] [cursor=pointer]
+          - button "🤍" [ref=e3469]
+          - generic: Benson Street
+        - generic [ref=e3470]:
+          - img "Street art" [ref=e3471] [cursor=pointer]
+          - button "🤍" [ref=e3472]
+          - generic: Benson Street
+        - generic [ref=e3473]:
+          - img "Street art" [ref=e3474] [cursor=pointer]
+          - button "🤍" [ref=e3475]
+          - generic: Benson Street
+        - generic [ref=e3476]:
+          - img "Street art" [ref=e3477] [cursor=pointer]
+          - button "🤍" [ref=e3478]
+          - generic: Main Yarra Trail
+        - generic [ref=e3479]:
+          - img "Street art" [ref=e3480] [cursor=pointer]
+          - button "🤍" [ref=e3481]
+          - generic: Benson Street
+        - generic [ref=e3482]:
+          - img "Street art" [ref=e3483] [cursor=pointer]
+          - button "🤍" [ref=e3484]
+          - generic: Benson Street
+        - generic [ref=e3485]:
+          - img "Street art" [ref=e3486] [cursor=pointer]
+          - button "🤍" [ref=e3487]
+          - generic: Main Yarra Trail
+        - generic [ref=e3488]:
+          - img "Street art" [ref=e3489] [cursor=pointer]
+          - button "🤍" [ref=e3490]
+          - generic: Benson Street
+        - generic [ref=e3491]:
+          - img "Street art" [ref=e3492] [cursor=pointer]
+          - button "🤍" [ref=e3493]
+          - generic: Benson Street
+        - generic [ref=e3494]:
+          - img "Street art" [ref=e3495] [cursor=pointer]
+          - button "🤍" [ref=e3496]
+          - generic: Benson Street
+        - generic [ref=e3497]:
+          - img "Street art" [ref=e3498] [cursor=pointer]
+          - button "🤍" [ref=e3499]
+          - generic: Benson Street
+        - generic [ref=e3500]:
+          - img "Street art" [ref=e3501] [cursor=pointer]
+          - button "🤍" [ref=e3502]
+          - generic: James Scullin Court
+        - generic [ref=e3503]:
+          - img "Street art" [ref=e3504] [cursor=pointer]
+          - button "🤍" [ref=e3505]
+          - generic: Benson Street
+        - generic [ref=e3506]:
+          - img "Street art" [ref=e3507] [cursor=pointer]
+          - button "🤍" [ref=e3508]
+          - generic: Benson Street
+        - generic [ref=e3509]:
+          - img "Street art" [ref=e3510] [cursor=pointer]
+          - button "🤍" [ref=e3511]
+          - generic: Benson Street
+        - generic [ref=e3512]:
+          - img "Street art" [ref=e3513] [cursor=pointer]
+          - button "🤍" [ref=e3514]
+          - generic: Fitzgerald Street
+        - generic [ref=e3515]:
+          - img "Street art" [ref=e3516] [cursor=pointer]
+          - button "🤍" [ref=e3517]
+          - generic: Benson Street
+        - generic [ref=e3518]:
+          - img "Street art" [ref=e3519] [cursor=pointer]
+          - button "🤍" [ref=e3520]
+          - generic: Rue Grand Trunk
+        - generic [ref=e3521]:
+          - img "Street art" [ref=e3522] [cursor=pointer]
+          - button "🤍" [ref=e3523]
+          - generic: Benson Street
+        - generic [ref=e3524]:
+          - img "Street art" [ref=e3525] [cursor=pointer]
+          - button "🤍" [ref=e3526]
+          - generic: Benson Street
+        - generic [ref=e3527]:
+          - img "Street art" [ref=e3528] [cursor=pointer]
+          - button "🤍" [ref=e3529]
+          - generic: Bourke Street Mall
+        - generic [ref=e3530]:
+          - img "Street art" [ref=e3531] [cursor=pointer]
+          - button "🤍" [ref=e3532]
+          - generic: Cameron Street
+        - generic [ref=e3533]:
+          - img "Street art" [ref=e3534] [cursor=pointer]
+          - button "🤍" [ref=e3535]
+          - generic: White Post Lane
+        - generic [ref=e3536]:
+          - img "Street art" [ref=e3537] [cursor=pointer]
+          - button "🤍" [ref=e3538]
+          - generic: Benson Street
+        - generic [ref=e3539]:
+          - img "Street art" [ref=e3540] [cursor=pointer]
+          - button "🤍" [ref=e3541]
+          - generic: London Way
+        - generic [ref=e3542]:
+          - img "Street art" [ref=e3543] [cursor=pointer]
+          - button "🤍" [ref=e3544]
+          - generic: Bosisto Street
+        - generic [ref=e3545]:
+          - img "Street art" [ref=e3546] [cursor=pointer]
+          - button "🤍" [ref=e3547]
+          - generic: Benson Street
+        - generic [ref=e3548]:
+          - img "Street art" [ref=e3549] [cursor=pointer]
+          - button "🤍" [ref=e3550]
+          - generic: Benson Street
+        - generic [ref=e3551]:
+          - img "Street art" [ref=e3552] [cursor=pointer]
+          - button "🤍" [ref=e3553]
+          - generic: Fitzgerald Street
+        - generic [ref=e3554]:
+          - img "Street art" [ref=e3555] [cursor=pointer]
+          - button "🤍" [ref=e3556]
+          - generic: Wallis Road
+        - generic [ref=e3557]:
+          - img "Street art" [ref=e3558] [cursor=pointer]
+          - button "🤍" [ref=e3559]
+          - generic: Fitzgerald Street
+        - generic [ref=e3560]:
+          - img "Street art" [ref=e3561] [cursor=pointer]
+          - button "🤍" [ref=e3562]
+          - generic: Benson Street
+        - generic [ref=e3563]:
+          - img "Street art" [ref=e3564] [cursor=pointer]
+          - button "🤍" [ref=e3565]
+          - generic: Benson Street
+        - generic [ref=e3566]:
+          - img "Street art" [ref=e3567] [cursor=pointer]
+          - button "🤍" [ref=e3568]
+          - generic: London Way
+        - generic [ref=e3569]:
+          - img "Street art" [ref=e3570] [cursor=pointer]
+          - button "🤍" [ref=e3571]
+          - generic: Murray Street
+        - generic [ref=e3572]:
+          - img "Street art" [ref=e3573] [cursor=pointer]
+          - button "🤍" [ref=e3574]
+          - generic: Praterstern
+        - generic [ref=e3575]:
+          - img "Street art" [ref=e3576] [cursor=pointer]
+          - button "🤍" [ref=e3577]
+          - generic: Murray Street
+        - generic [ref=e3578]:
+          - img "Street art" [ref=e3579] [cursor=pointer]
+          - button "🤍" [ref=e3580]
+          - generic: Murray Street
+        - generic [ref=e3581]:
+          - img "Street art" [ref=e3582] [cursor=pointer]
+          - button "🤍" [ref=e3583]
+          - generic: Praterstern
+        - generic [ref=e3584]:
+          - img "Street art" [ref=e3585] [cursor=pointer]
+          - button "🤍" [ref=e3586]
+          - generic: Murray Street
+        - generic [ref=e3587]:
+          - img "Street art" [ref=e3588] [cursor=pointer]
+          - button "🤍" [ref=e3589]
+          - generic: Avenida 28 de Julio
+        - generic [ref=e3590]:
+          - img "Street art" [ref=e3591] [cursor=pointer]
+          - button "🤍" [ref=e3592]
+          - generic: Murray Street
+        - generic [ref=e3593]:
+          - img "Street art" [ref=e3594] [cursor=pointer]
+          - button "🤍" [ref=e3595]
+          - generic: Murray Street
+        - generic [ref=e3596]:
+          - img "Street art" [ref=e3597] [cursor=pointer]
+          - button "🤍" [ref=e3598]
+          - generic: Floodgate Street
+        - generic [ref=e3599]:
+          - img "Street art" [ref=e3600] [cursor=pointer]
+          - button "🤍" [ref=e3601]
+          - generic: Floodgate Street
+        - generic [ref=e3602]:
+          - img "Street art" [ref=e3603] [cursor=pointer]
+          - button "🤍" [ref=e3604]
+          - generic: Murray Street
+        - generic [ref=e3605]:
+          - img "Street art" [ref=e3606] [cursor=pointer]
+          - button "🤍" [ref=e3607]
+          - generic: Calle Alcanfores
+        - generic [ref=e3608]:
+          - img "Street art" [ref=e3609] [cursor=pointer]
+          - button "🤍" [ref=e3610]
+          - generic: Floodgate Street
+        - generic [ref=e3611]:
+          - img "Street art" [ref=e3612] [cursor=pointer]
+          - button "🤍" [ref=e3613]
+          - generic: Floodgate Street
+        - generic [ref=e3614]:
+          - img "Street art" [ref=e3615] [cursor=pointer]
+          - button "🤍" [ref=e3616]
+          - generic: Calle Alcanfores
+        - generic [ref=e3617]:
+          - img "Street art" [ref=e3618] [cursor=pointer]
+          - button "🤍" [ref=e3619]
+          - generic: Detroit Boulevard
+        - generic [ref=e3620]:
+          - img "Street art" [ref=e3621] [cursor=pointer]
+          - button "🤍" [ref=e3622]
+          - generic: Floodgate Street
+        - generic [ref=e3623]:
+          - img "Street art" [ref=e3624] [cursor=pointer]
+          - button "🤍" [ref=e3625]
+          - generic: Floodgate Street
+        - generic [ref=e3626]:
+          - img "Street art" [ref=e3627] [cursor=pointer]
+          - button "🤍" [ref=e3628]
+          - generic: Floodgate Street
+        - generic [ref=e3629]:
+          - img "Street art" [ref=e3630] [cursor=pointer]
+          - button "🤍" [ref=e3631]
+          - generic: Queen Street
+        - generic [ref=e3632]:
+          - img "Street art" [ref=e3633] [cursor=pointer]
+          - button "🤍" [ref=e3634]
+          - generic: Lonsdale Street
+        - generic [ref=e3635]:
+          - img "Street art" [ref=e3636] [cursor=pointer]
+          - button "🤍" [ref=e3637]
+          - generic: Nordbahnstraße
+        - generic [ref=e3638]:
+          - img "Street art" [ref=e3639] [cursor=pointer]
+          - button "🤍" [ref=e3640]
+          - generic: Queen Street
+        - generic [ref=e3641]:
+          - img "Street art" [ref=e3642] [cursor=pointer]
+          - button "🤍" [ref=e3643]
+          - generic: Bahnhof Wien-Nord
+        - generic [ref=e3644]:
+          - img "Street art" [ref=e3645] [cursor=pointer]
+          - button "🤍" [ref=e3646]
+          - generic: Praterstern
+        - generic [ref=e3647]:
+          - img "Street art" [ref=e3648] [cursor=pointer]
+          - button "🤍" [ref=e3649]
+          - generic: Walkway
+        - generic [ref=e3650]:
+          - img "Street art" [ref=e3651] [cursor=pointer]
+          - button "🤍" [ref=e3652]
+          - generic: Praterstern
+        - generic [ref=e3653]:
+          - img "Street art" [ref=e3654] [cursor=pointer]
+          - button "🤍" [ref=e3655]
+          - generic: Princes Street
+        - generic [ref=e3656]:
+          - img "Street art" [ref=e3657] [cursor=pointer]
+          - button "🤍" [ref=e3658]
+          - generic: Southwest Water Street
+        - generic [ref=e3659]:
+          - img "Street art" [ref=e3660] [cursor=pointer]
+          - button "🤍" [ref=e3661]
+          - generic: ulitsa Bazhova
+        - generic [ref=e3662]:
+          - img "Street art" [ref=e3663] [cursor=pointer]
+          - button "🤍" [ref=e3664]
+          - generic: Queen Street
+        - generic [ref=e3665]:
+          - img "Street art" [ref=e3666] [cursor=pointer]
+          - button "🤍" [ref=e3667]
+          - generic: Carrer d Oporto
+        - generic [ref=e3668]:
+          - img "Street art" [ref=e3669] [cursor=pointer]
+          - button "🤍" [ref=e3670]
+          - generic: Praterstern
+        - generic [ref=e3671]:
+          - img "Street art" [ref=e3672] [cursor=pointer]
+          - button "🤍" [ref=e3673]
+          - generic: Queen Street
+        - generic [ref=e3674]:
+          - img "Street art" [ref=e3675] [cursor=pointer]
+          - button "🤍" [ref=e3676]
+          - generic: Bahnhof Wien-Nord
+        - generic [ref=e3677]:
+          - img "Street art" [ref=e3678] [cursor=pointer]
+          - button "🤍" [ref=e3679]
+          - generic: Queen Street
+        - generic [ref=e3680]:
+          - img "Street art" [ref=e3681] [cursor=pointer]
+          - button "🤍" [ref=e3682]
+          - generic: Praterstern
+        - generic [ref=e3683]:
+          - img "Street art" [ref=e3684] [cursor=pointer]
+          - button "🤍" [ref=e3685]
+          - generic: Queen Street
+        - generic [ref=e3686]:
+          - img "Street art" [ref=e3687] [cursor=pointer]
+          - button "🤍" [ref=e3688]
+          - generic: Queen Street
+        - generic [ref=e3689]:
+          - img "Street art" [ref=e3690] [cursor=pointer]
+          - button "🤍" [ref=e3691]
+          - generic: Aberdeen Street
+        - generic [ref=e3692]:
+          - img "Street art" [ref=e3693] [cursor=pointer]
+          - button "🤍" [ref=e3694]
+          - generic: Aberdeen Street
+        - generic [ref=e3695]:
+          - img "Street art" [ref=e3696] [cursor=pointer]
+          - button "🤍" [ref=e3697]
+          - generic: Flinders Lane
+        - generic [ref=e3698]:
+          - img "Street art" [ref=e3699] [cursor=pointer]
+          - button "🤍" [ref=e3700]
+          - generic: Queen Street
+        - generic [ref=e3701]:
+          - img "Street art" [ref=e3702] [cursor=pointer]
+          - button "🤍" [ref=e3703]
+          - generic: Queen Street
+        - generic [ref=e3704]:
+          - img "Street art" [ref=e3705] [cursor=pointer]
+          - button "🤍" [ref=e3706]
+          - generic: Queen Street
+        - generic [ref=e3707]:
+          - img "Street art" [ref=e3708] [cursor=pointer]
+          - button "🤍" [ref=e3709]
+          - generic: Aberdeen Street
+        - generic [ref=e3710]:
+          - img "Street art" [ref=e3711] [cursor=pointer]
+          - button "🤍" [ref=e3712]
+          - generic: Queen Street
+        - generic [ref=e3713]:
+          - img "Street art" [ref=e3714] [cursor=pointer]
+          - button "🤍" [ref=e3715]
+          - generic: Queen Street
+        - generic [ref=e3716]:
+          - img "Street art" [ref=e3717] [cursor=pointer]
+          - button "🤍" [ref=e3718]
+          - generic: Queen Street
+        - generic [ref=e3719]:
+          - img "Street art" [ref=e3720] [cursor=pointer]
+          - button "🤍" [ref=e3721]
+          - generic: Queen Street
+        - generic [ref=e3722]:
+          - img "Street art" [ref=e3723] [cursor=pointer]
+          - button "🤍" [ref=e3724]
+          - generic: Queen Street
+        - generic [ref=e3725]:
+          - img "Street art" [ref=e3726] [cursor=pointer]
+          - button "🤍" [ref=e3727]
+          - generic: Aberdeen Street
+        - generic [ref=e3728]:
+          - img "Street art" [ref=e3729] [cursor=pointer]
+          - button "🤍" [ref=e3730]
+          - generic: Queen Street
+        - generic [ref=e3731]:
+          - img "Street art" [ref=e3732] [cursor=pointer]
+          - button "🤍" [ref=e3733]
+          - generic: Queen Street
+        - generic [ref=e3734]:
+          - img "Street art" [ref=e3735] [cursor=pointer]
+          - button "🤍" [ref=e3736]
+          - generic: Aberdeen Street
+        - generic [ref=e3737]:
+          - img "Street art" [ref=e3738] [cursor=pointer]
+          - button "🤍" [ref=e3739]
+          - generic: Aberdeen Street
+        - generic [ref=e3740]:
+          - img "Street art" [ref=e3741] [cursor=pointer]
+          - button "🤍" [ref=e3742]
+          - generic: William Street
+        - generic [ref=e3743]:
+          - img "Street art" [ref=e3744] [cursor=pointer]
+          - button "🤍" [ref=e3745]
+          - generic: Queen Street
+        - generic [ref=e3746]:
+          - img "Street art" [ref=e3747] [cursor=pointer]
+          - button "🤍" [ref=e3748]
+          - generic: Queen Street
+        - generic [ref=e3749]:
+          - img "Street art" [ref=e3750] [cursor=pointer]
+          - button "🤍" [ref=e3751]
+          - generic: Queen Street
+        - generic [ref=e3752]:
+          - img "Street art" [ref=e3753] [cursor=pointer]
+          - button "🤍" [ref=e3754]
+          - generic: Queen Street
+        - generic [ref=e3755]:
+          - img "Street art" [ref=e3756] [cursor=pointer]
+          - button "🤍" [ref=e3757]
+          - generic: Queen Street
+        - generic [ref=e3758]:
+          - img "Street art" [ref=e3759] [cursor=pointer]
+          - button "🤍" [ref=e3760]
+          - generic: Queen Street
+        - generic [ref=e3761]:
+          - img "Street art" [ref=e3762] [cursor=pointer]
+          - button "🤍" [ref=e3763]
+          - generic: Queen Street
+        - generic [ref=e3764]:
+          - img "Street art" [ref=e3765] [cursor=pointer]
+          - button "🤍" [ref=e3766]
+          - generic: Queen Street
+        - generic [ref=e3767]:
+          - img "Street art" [ref=e3768] [cursor=pointer]
+          - button "🤍" [ref=e3769]
+          - generic: Victoria Street
+        - generic [ref=e3770]:
+          - img "Street art" [ref=e3771] [cursor=pointer]
+          - button "🤍" [ref=e3772]
+          - generic: Victoria Street
+        - generic [ref=e3773]:
+          - img "Street art" [ref=e3774] [cursor=pointer]
+          - button "🤍" [ref=e3775]
+          - generic: Queen Street
+        - generic [ref=e3776]:
+          - img "Street art" [ref=e3777] [cursor=pointer]
+          - button "🤍" [ref=e3778]
+          - generic: Queen Street
+        - generic [ref=e3779]:
+          - img "Street art" [ref=e3780] [cursor=pointer]
+          - button "🤍" [ref=e3781]
+          - generic: Queen Street
+        - generic [ref=e3782]:
+          - img "Street art" [ref=e3783] [cursor=pointer]
+          - button "🤍" [ref=e3784]
+          - generic: Queen Street
+        - generic [ref=e3785]:
+          - img "Street art" [ref=e3786] [cursor=pointer]
+          - button "🤍" [ref=e3787]
+          - generic: Roe Street
+        - generic [ref=e3788]:
+          - img "Street art" [ref=e3789] [cursor=pointer]
+          - button "🤍" [ref=e3790]
+          - generic: Queen Street
+        - generic [ref=e3791]:
+          - img "Street art" [ref=e3792] [cursor=pointer]
+          - button "🤍" [ref=e3793]
+          - generic: ulitsa Malysheva
+        - generic [ref=e3794]:
+          - img "Street art" [ref=e3795] [cursor=pointer]
+          - button "🤍" [ref=e3796]
+          - generic: ulitsa Malysheva
+        - generic [ref=e3797]:
+          - img "Street art" [ref=e3798] [cursor=pointer]
+          - button "🤍" [ref=e3799]
+          - generic: Nicks Lane
+        - generic [ref=e3800]:
+          - img "Street art" [ref=e3801] [cursor=pointer]
+          - button "🤍" [ref=e3802]
+          - generic: Queen Street
+        - generic [ref=e3803]:
+          - img "Street art" [ref=e3804] [cursor=pointer]
+          - button "🤍" [ref=e3805]
+          - generic: Queen Street
+        - generic [ref=e3806]:
+          - img "Street art" [ref=e3807] [cursor=pointer]
+          - button "🤍" [ref=e3808]
+          - generic: Nicks Lane
+        - generic [ref=e3809]:
+          - img "Street art" [ref=e3810] [cursor=pointer]
+          - button "🤍" [ref=e3811]
+          - generic: Bury Street
+        - generic [ref=e3812]:
+          - img "Street art" [ref=e3813] [cursor=pointer]
+          - button "🤍" [ref=e3814]
+          - generic: Liverpool Street
+        - generic [ref=e3815]:
+          - img "Street art" [ref=e3816] [cursor=pointer]
+          - button "🤍" [ref=e3817]
+          - generic: Nicks Lane
+        - generic [ref=e3818]:
+          - img "Street art" [ref=e3819] [cursor=pointer]
+          - button "🤍" [ref=e3820]
+          - generic: James Street
+        - generic [ref=e3821]:
+          - img "Street art" [ref=e3822] [cursor=pointer]
+          - button "🤍" [ref=e3823]
+          - generic: Bourke Street
+        - generic [ref=e3824]:
+          - img "Street art" [ref=e3825] [cursor=pointer]
+          - button "🤍" [ref=e3826]
+          - generic: Bury Street
+        - generic [ref=e3827]:
+          - img "Street art" [ref=e3828] [cursor=pointer]
+          - button "🤍" [ref=e3829]
+          - generic: James Street
+        - generic [ref=e3830]:
+          - img "Street art" [ref=e3831] [cursor=pointer]
+          - button "🤍" [ref=e3832]
+          - generic: James Street
+        - generic [ref=e3833]:
+          - img "Street art" [ref=e3834] [cursor=pointer]
+          - button "🤍" [ref=e3835]
+          - generic: Nicks Lane
+        - generic [ref=e3836]:
+          - img "Street art" [ref=e3837] [cursor=pointer]
+          - button "🤍" [ref=e3838]
+          - generic: Liverpool Street
+        - generic [ref=e3839]:
+          - img "Street art" [ref=e3840] [cursor=pointer]
+          - button "🤍" [ref=e3841]
+          - generic: Roe Street
+        - generic [ref=e3842]:
+          - img "Street art" [ref=e3843] [cursor=pointer]
+          - button "🤍" [ref=e3844]
+          - generic: Liverpool Street
+        - generic [ref=e3845]:
+          - img "Street art" [ref=e3846] [cursor=pointer]
+          - button "🤍" [ref=e3847]
+          - generic: Bury Street
+        - generic [ref=e3848]:
+          - img "Street art" [ref=e3849] [cursor=pointer]
+          - button "🤍" [ref=e3850]
+          - generic: Bury Street
+        - generic [ref=e3851]:
+          - img "Street art" [ref=e3852] [cursor=pointer]
+          - button "🤍" [ref=e3853]
+          - generic: Liverpool Street
+        - generic [ref=e3854]:
+          - img "Street art" [ref=e3855] [cursor=pointer]
+          - button "🤍" [ref=e3856]
+          - generic: James Street
+        - generic [ref=e3857]:
+          - img "Street art" [ref=e3858] [cursor=pointer]
+          - button "🤍" [ref=e3859]
+          - generic: Bury Street
+        - generic [ref=e3860]:
+          - img "Street art" [ref=e3861] [cursor=pointer]
+          - button "🤍" [ref=e3862]
+          - generic: Nicks Lane
+        - generic [ref=e3863]:
+          - img "Street art" [ref=e3864] [cursor=pointer]
+          - button "🤍" [ref=e3865]
+          - generic: Nicks Lane
+        - generic [ref=e3866]:
+          - img "Street art" [ref=e3867] [cursor=pointer]
+          - button "🤍" [ref=e3868]
+          - generic: Lake Street
+        - generic [ref=e3869]:
+          - img "Street art" [ref=e3870] [cursor=pointer]
+          - button "🤍" [ref=e3871]
+          - generic: Norman Street
+        - generic [ref=e3872]:
+          - img "Street art" [ref=e3873] [cursor=pointer]
+          - button "🤍" [ref=e3874]
+          - generic: Bourke Street
+        - generic [ref=e3875]:
+          - img "Street art" [ref=e3876] [cursor=pointer]
+          - button "🤍" [ref=e3877]
+          - generic: Norman Street
+        - generic [ref=e3878]:
+          - img "Street art" [ref=e3879] [cursor=pointer]
+          - button "🤍" [ref=e3880]
+          - generic: Norman Street
+        - generic [ref=e3881]:
+          - img "Street art" [ref=e3882] [cursor=pointer]
+          - button "🤍" [ref=e3883]
+          - generic: Norman Street
+        - generic [ref=e3884]:
+          - img "Street art" [ref=e3885] [cursor=pointer]
+          - button "🤍" [ref=e3886]
+          - generic: Hanbury Street
+        - generic [ref=e3887]:
+          - img "Street art" [ref=e3888] [cursor=pointer]
+          - button "🤍" [ref=e3889]
+          - generic: Norman Street
+        - generic [ref=e3890]:
+          - img "Street art" [ref=e3891] [cursor=pointer]
+          - button "🤍" [ref=e3892]
+          - generic: Bourke Street
+        - generic [ref=e3893]:
+          - img "Street art" [ref=e3894] [cursor=pointer]
+          - button "🤍" [ref=e3895]
+          - generic: Church Street
+        - generic [ref=e3896]:
+          - img "Street art" [ref=e3897] [cursor=pointer]
+          - button "🤍" [ref=e3898]
+          - generic: Norman Street
+        - generic [ref=e3899]:
+          - img "Street art" [ref=e3900] [cursor=pointer]
+          - button "🤍" [ref=e3901]
+          - generic: Church Street
+        - generic [ref=e3902]:
+          - img "Street art" [ref=e3903] [cursor=pointer]
+          - button "🤍" [ref=e3904]
+          - generic: Church Street
+        - generic [ref=e3905]:
+          - img "Street art" [ref=e3906] [cursor=pointer]
+          - button "🤍" [ref=e3907]
+          - generic: Redchurch Street
+        - generic [ref=e3908]:
+          - img "Street art" [ref=e3909] [cursor=pointer]
+          - button "🤍" [ref=e3910]
+          - generic: Church Street
+        - generic [ref=e3911]:
+          - img "Street art" [ref=e3912] [cursor=pointer]
+          - button "🤍" [ref=e3913]
+          - generic: Norman Street
+        - generic [ref=e3914]:
+          - img "Street art" [ref=e3915] [cursor=pointer]
+          - button "🤍" [ref=e3916]
+          - generic: Church Street
+        - generic [ref=e3917]:
+          - img "Street art" [ref=e3918] [cursor=pointer]
+          - button "🤍" [ref=e3919]
+          - generic: Church Street
+        - generic [ref=e3920]:
+          - img "Street art" [ref=e3921] [cursor=pointer]
+          - button "🤍" [ref=e3922]
+          - generic: Norman Street
+        - generic [ref=e3923]:
+          - img "Street art" [ref=e3924] [cursor=pointer]
+          - button "🤍" [ref=e3925]
+          - generic: Hanbury Street
+        - generic [ref=e3926]:
+          - img "Street art" [ref=e3927] [cursor=pointer]
+          - button "🤍" [ref=e3928]
+          - generic: Ann Arbor Way
+        - generic [ref=e3929]:
+          - img "Street art" [ref=e3930] [cursor=pointer]
+          - button "🤍" [ref=e3931]
+          - generic: Oliver Lane
+        - generic [ref=e3932]:
+          - img "Street art" [ref=e3933] [cursor=pointer]
+          - button "🤍" [ref=e3934]
+          - generic: Seven Stars Yd
+        - generic [ref=e3935]:
+          - img "Street art" [ref=e3936] [cursor=pointer]
+          - button "🤍" [ref=e3937]
+          - generic: Russell Street
+        - generic [ref=e3938]:
+          - img "Street art" [ref=e3939] [cursor=pointer]
+          - button "🤍" [ref=e3940]
+          - generic: Russell Street Extension
+        - generic [ref=e3941]:
+          - img "Street art" [ref=e3942] [cursor=pointer]
+          - button "🤍" [ref=e3943]
+          - generic: Russell Street
+        - generic [ref=e3944]:
+          - img "Street art" [ref=e3945] [cursor=pointer]
+          - button "🤍" [ref=e3946]
+          - generic: Russell Street Extension
+        - generic [ref=e3947]:
+          - img "Street art" [ref=e3948] [cursor=pointer]
+          - button "🤍" [ref=e3949]
+          - generic: Seven Stars Yd
+        - generic [ref=e3950]:
+          - img "Street art" [ref=e3951] [cursor=pointer]
+          - button "🤍" [ref=e3952]
+          - generic: Brick Lane
+        - generic [ref=e3953]:
+          - img "Street art" [ref=e3954] [cursor=pointer]
+          - button "🤍" [ref=e3955]
+          - generic: Russell Street Extension
+        - generic [ref=e3956]:
+          - img "Street art" [ref=e3957] [cursor=pointer]
+          - button "🤍" [ref=e3958]
+          - generic: Russell Street Extension
+        - generic [ref=e3959]:
+          - img "Street art" [ref=e3960] [cursor=pointer]
+          - button "🤍" [ref=e3961]
+          - generic: Russell Street Extension
+        - generic [ref=e3962]:
+          - img "Street art" [ref=e3963] [cursor=pointer]
+          - button "🤍" [ref=e3964]
+          - generic: Russell Street Extension
+        - generic [ref=e3965]:
+          - img "Street art" [ref=e3966] [cursor=pointer]
+          - button "🤍" [ref=e3967]
+          - generic: Russell Street Extension
+        - generic [ref=e3968]:
+          - img "Street art" [ref=e3969] [cursor=pointer]
+          - button "🤍" [ref=e3970]
+          - generic: ulitsa Terminal
+        - generic [ref=e3971]:
+          - img "Street art" [ref=e3972] [cursor=pointer]
+          - button "🤍" [ref=e3973]
+          - generic: Russell Street
+        - generic [ref=e3974]:
+          - img "Street art" [ref=e3975] [cursor=pointer]
+          - button "🤍" [ref=e3976]
+          - generic: Russell Street
+        - generic [ref=e3977]:
+          - img "Street art" [ref=e3978] [cursor=pointer]
+          - button "🤍" [ref=e3979]
+          - generic: Russell Street
+        - generic [ref=e3980]:
+          - img "Street art" [ref=e3981] [cursor=pointer]
+          - button "🤍" [ref=e3982]
+          - generic: Wentworth Street
+        - generic [ref=e3983]:
+          - img "Street art" [ref=e3984] [cursor=pointer]
+          - button "🤍" [ref=e3985]
+          - generic: Russell Street Extension
+        - generic [ref=e3986]:
+          - img "Street art" [ref=e3987] [cursor=pointer]
+          - button "🤍" [ref=e3988]
+          - generic: Fashion Street
+        - generic [ref=e3989]:
+          - img "Street art" [ref=e3990] [cursor=pointer]
+          - button "🤍" [ref=e3991]
+          - generic: Improv Alley
+        - generic [ref=e3992]:
+          - img "Street art" [ref=e3993] [cursor=pointer]
+          - button "🤍" [ref=e3994]
+          - generic: Russell Street
+        - generic [ref=e3995]:
+          - img "Street art" [ref=e3996] [cursor=pointer]
+          - button "🤍" [ref=e3997]
+          - generic: Russell Street Extension
+        - generic [ref=e3998]:
+          - img "Street art" [ref=e3999] [cursor=pointer]
+          - button "🤍" [ref=e4000]
+          - generic: Flinders Street
+        - generic [ref=e4001]:
+          - img "Street art" [ref=e4002] [cursor=pointer]
+          - button "🤍" [ref=e4003]
+          - generic: Poyser Street
+        - generic [ref=e4004]:
+          - img "Street art" [ref=e4005] [cursor=pointer]
+          - button "🤍" [ref=e4006]
+          - generic: Russell Street
+        - generic [ref=e4007]:
+          - img "Street art" [ref=e4008] [cursor=pointer]
+          - button "🤍" [ref=e4009]
+          - generic: Russell Street
+        - generic [ref=e4010]:
+          - img "Street art" [ref=e4011] [cursor=pointer]
+          - button "🤍" [ref=e4012]
+          - generic: Russell Street Extension
+        - generic [ref=e4013]:
+          - img "Street art" [ref=e4014] [cursor=pointer]
+          - button "🤍" [ref=e4015]
+          - generic: Flinders Street
+        - generic [ref=e4016]:
+          - img "Street art" [ref=e4017] [cursor=pointer]
+          - button "🤍" [ref=e4018]
+          - generic: Main Yarra Trail
+        - generic [ref=e4019]:
+          - img "Street art" [ref=e4020] [cursor=pointer]
+          - button "🤍" [ref=e4021]
+          - generic: Russell Street Extension
+        - generic [ref=e4022]:
+          - img "Street art" [ref=e4023] [cursor=pointer]
+          - button "🤍" [ref=e4024]
+          - generic: Russell Street
+        - generic [ref=e4025]:
+          - img "Street art" [ref=e4026] [cursor=pointer]
+          - button "🤍" [ref=e4027]
+          - generic: Flinders Street
+        - generic [ref=e4028]:
+          - img "Street art" [ref=e4029] [cursor=pointer]
+          - button "🤍" [ref=e4030]
+          - generic: South Sacramento Freeway
+        - generic [ref=e4031]:
+          - img "Street art" [ref=e4032] [cursor=pointer]
+          - button "🤍" [ref=e4033]
+          - generic: Main Yarra Trail
+        - generic [ref=e4034]:
+          - img "Street art" [ref=e4035] [cursor=pointer]
+          - button "🤍" [ref=e4036]
+          - generic: Russell Street Extension
+        - generic [ref=e4037]:
+          - img "Street art" [ref=e4038] [cursor=pointer]
+          - button "🤍" [ref=e4039]
+          - generic: Russell Street
+        - generic [ref=e4040]:
+          - img "Street art" [ref=e4041] [cursor=pointer]
+          - button "🤍" [ref=e4042]
+          - generic: Flinders Street
+        - generic [ref=e4043]:
+          - img "Street art" [ref=e4044] [cursor=pointer]
+          - button "🤍" [ref=e4045]
+          - generic: Main Yarra Trail
+        - generic [ref=e4046]:
+          - img "Street art" [ref=e4047] [cursor=pointer]
+          - button "🤍" [ref=e4048]
+          - generic: Powlett Street
+        - generic [ref=e4049]:
+          - img "Street art" [ref=e4050] [cursor=pointer]
+          - button "🤍" [ref=e4051]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4052]:
+          - img "Street art" [ref=e4053] [cursor=pointer]
+          - button "🤍" [ref=e4054]
+          - generic: Invalidenstraße
+        - generic [ref=e4055]:
+          - img "Street art" [ref=e4056] [cursor=pointer]
+          - button "🤍" [ref=e4057]
+          - generic: Reischachstraße
+        - generic [ref=e4058]:
+          - img "Street art" [ref=e4059] [cursor=pointer]
+          - button "🤍" [ref=e4060]
+          - generic: улица Анжерская
+        - generic [ref=e4061]:
+          - img "Street art" [ref=e4062] [cursor=pointer]
+          - button "🤍" [ref=e4063]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4064]:
+          - img "Street art" [ref=e4065] [cursor=pointer]
+          - button "🤍" [ref=e4066]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4067]:
+          - img "Street art" [ref=e4068] [cursor=pointer]
+          - button "🤍" [ref=e4069]
+          - generic: Invalidenstraße
+        - generic [ref=e4070]:
+          - img "Street art" [ref=e4071] [cursor=pointer]
+          - button "🤍" [ref=e4072]
+          - generic: Reischachstraße
+        - generic [ref=e4073]:
+          - img "Street art" [ref=e4074] [cursor=pointer]
+          - button "🤍" [ref=e4075]
+          - generic: Johnston Street
+        - generic [ref=e4076]:
+          - img "Street art" [ref=e4077] [cursor=pointer]
+          - button "🤍" [ref=e4078]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4079]:
+          - img "Street art" [ref=e4080] [cursor=pointer]
+          - button "🤍" [ref=e4081]
+          - generic: улица Анжерская
+        - generic [ref=e4082]:
+          - img "Street art" [ref=e4083] [cursor=pointer]
+          - button "🤍" [ref=e4084]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4085]:
+          - img "Street art" [ref=e4086] [cursor=pointer]
+          - button "🤍" [ref=e4087]
+          - generic: Reischachstraße
+        - generic [ref=e4088]:
+          - img "Street art" [ref=e4089] [cursor=pointer]
+          - button "🤍" [ref=e4090]
+          - generic: Bedford Street
+        - generic [ref=e4091]:
+          - img "Street art" [ref=e4092] [cursor=pointer]
+          - button "🤍" [ref=e4093]
+          - generic: Reischachstraße
+        - generic [ref=e4094]:
+          - img "Street art" [ref=e4095] [cursor=pointer]
+          - button "🤍" [ref=e4096]
+          - generic: Invalidenstraße
+        - generic [ref=e4097]:
+          - img "Street art" [ref=e4098] [cursor=pointer]
+          - button "🤍" [ref=e4099]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4100]:
+          - img "Street art" [ref=e4101] [cursor=pointer]
+          - button "🤍" [ref=e4102]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4103]:
+          - img "Street art" [ref=e4104] [cursor=pointer]
+          - button "🤍" [ref=e4105]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4106]:
+          - img "Street art" [ref=e4107] [cursor=pointer]
+          - button "🤍" [ref=e4108]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4109]:
+          - img "Street art" [ref=e4110] [cursor=pointer]
+          - button "🤍" [ref=e4111]
+          - generic: Große Ungarbrücke
+        - generic [ref=e4112]:
+          - img "Street art" [ref=e4113] [cursor=pointer]
+          - button "🤍" [ref=e4114]
+          - generic: Brovarskyi Avenue
+        - generic [ref=e4115]:
+          - img "Street art" [ref=e4116] [cursor=pointer]
+          - button "🤍" [ref=e4117]
+          - generic: Rue Grand Trunk
+        - generic [ref=e4118]:
+          - img "Street art" [ref=e4119] [cursor=pointer]
+          - button "🤍" [ref=e4120]
+          - generic: Frame Court
+        - generic [ref=e4121]:
+          - img "Street art" [ref=e4122] [cursor=pointer]
+          - button "🤍" [ref=e4123]
+          - generic: Landstraßer Hauptstraße
+        - generic [ref=e4124]:
+          - img "Street art" [ref=e4125] [cursor=pointer]
+          - button "🤍" [ref=e4126]
+          - generic: Frame Court
+        - generic [ref=e4127]:
+          - img "Street art" [ref=e4128] [cursor=pointer]
+          - button "🤍" [ref=e4129]
+          - generic: Vincent Street
+        - generic [ref=e4130]:
+          - img "Street art" [ref=e4131] [cursor=pointer]
+          - button "🤍" [ref=e4132]
+          - generic: Oxford Street
+        - generic [ref=e4133]:
+          - img "Street art" [ref=e4134] [cursor=pointer]
+          - button "🤍" [ref=e4135]
+          - generic: Ligovskiy prospekt
+        - generic [ref=e4136]:
+          - img "Street art" [ref=e4137] [cursor=pointer]
+          - button "🤍" [ref=e4138]
+          - generic: ulitsa Zhukovskogo
+        - generic [ref=e4139]:
+          - img "Street art" [ref=e4140] [cursor=pointer]
+          - button "🤍" [ref=e4141]
+          - generic: Hütteldorfer Brücke
+        - generic [ref=e4142]:
+          - img "Street art" [ref=e4143] [cursor=pointer]
+          - button "🤍" [ref=e4144]
+          - generic: Brisbane Street
+        - generic [ref=e4145]:
+          - img "Street art" [ref=e4146] [cursor=pointer]
+          - button "🤍" [ref=e4147]
+          - generic: Frame Court
+        - generic [ref=e4148]:
+          - img "Street art" [ref=e4149] [cursor=pointer]
+          - button "🤍" [ref=e4150]
+          - generic: Frame Court
+        - generic [ref=e4151]:
+          - img "Street art" [ref=e4152] [cursor=pointer]
+          - button "🤍" [ref=e4153]
+          - generic: Landstraßer Hauptstraße
+        - generic [ref=e4154]:
+          - img "Street art" [ref=e4155] [cursor=pointer]
+          - button "🤍" [ref=e4156]
+          - generic: The Avenue
+        - generic [ref=e4157]:
+          - img "Street art" [ref=e4158] [cursor=pointer]
+          - button "🤍" [ref=e4159]
+          - generic: Leederville Parade
+        - generic [ref=e4160]:
+          - img "Street art" [ref=e4161] [cursor=pointer]
+          - button "🤍" [ref=e4162]
+          - generic: Avenue Ash
+        - generic [ref=e4163]:
+          - img "Street art" [ref=e4164] [cursor=pointer]
+          - button "🤍" [ref=e4165]
+          - generic: Hütteldorfer Brücke
+        - generic [ref=e4166]:
+          - img "Street art" [ref=e4167] [cursor=pointer]
+          - button "🤍" [ref=e4168]
+          - generic: Oxford Street
+        - generic [ref=e4169]:
+          - img "Street art" [ref=e4170] [cursor=pointer]
+          - button "🤍" [ref=e4171]
+          - generic: Sovetskaya ulitsa
+        - generic [ref=e4172]:
+          - img "Street art" [ref=e4173] [cursor=pointer]
+          - button "🤍" [ref=e4174]
+          - generic: Rue de la Commune Ouest
+        - generic [ref=e4175]:
+          - img "Street art" [ref=e4176] [cursor=pointer]
+          - button "🤍" [ref=e4177]
+          - generic: Oxford Street
+        - generic [ref=e4178]:
+          - img "Street art" [ref=e4179] [cursor=pointer]
+          - button "🤍" [ref=e4180]
+          - generic: Rue McGill
+        - generic [ref=e4181]:
+          - img "Street art" [ref=e4182] [cursor=pointer]
+          - button "🤍" [ref=e4183]
+          - generic: Andrews Road
+        - generic [ref=e4184]:
+          - img "Street art" [ref=e4185] [cursor=pointer]
+          - button "🤍" [ref=e4186]
+          - generic: Newcastle Street
+        - generic [ref=e4187]:
+          - img "Street art" [ref=e4188] [cursor=pointer]
+          - button "🤍" [ref=e4189]
+          - generic: Rue McGill
+        - generic [ref=e4190]:
+          - img "Street art" [ref=e4191] [cursor=pointer]
+          - button "🤍" [ref=e4192]
+          - generic: Newcastle Street
+        - generic [ref=e4193]:
+          - img "Street art" [ref=e4194] [cursor=pointer]
+          - button "🤍" [ref=e4195]
+          - generic: Shacklewell Lane
+        - generic [ref=e4196]:
+          - img "Street art" [ref=e4197] [cursor=pointer]
+          - button "🤍" [ref=e4198]
+          - generic: Hare Row
+        - generic [ref=e4199]:
+          - img "Street art" [ref=e4200] [cursor=pointer]
+          - button "🤍" [ref=e4201]
+          - generic: Rue McGill
+        - generic [ref=e4202]:
+          - img "Street art" [ref=e4203] [cursor=pointer]
+          - button "🤍" [ref=e4204]
+          - generic: Andrews Road
+        - generic [ref=e4205]:
+          - img "Street art" [ref=e4206] [cursor=pointer]
+          - button "🤍" [ref=e4207]
+          - generic: Oxford Street
+        - generic [ref=e4208]:
+          - img "Street art" [ref=e4209] [cursor=pointer]
+          - button "🤍" [ref=e4210]
+          - generic: Oxford Street
+        - generic [ref=e4211]:
+          - img "Street art" [ref=e4212] [cursor=pointer]
+          - button "🤍" [ref=e4213]
+          - generic: Rue Olier
+        - generic [ref=e4214]:
+          - img "Street art" [ref=e4215] [cursor=pointer]
+          - button "🤍" [ref=e4216]
+          - generic: Oxford Street
+        - generic [ref=e4217]:
+          - img "Street art" [ref=e4218] [cursor=pointer]
+          - button "🤍" [ref=e4219]
+          - generic: Oxford Street
+        - generic [ref=e4220]:
+          - img "Street art" [ref=e4221] [cursor=pointer]
+          - button "🤍" [ref=e4222]
+          - generic: Newcastle Street
+        - generic [ref=e4223]:
+          - img "Street art" [ref=e4224] [cursor=pointer]
+          - button "🤍" [ref=e4225]
+          - generic: Centre Place
+        - generic [ref=e4226]:
+          - img "Street art" [ref=e4227] [cursor=pointer]
+          - button "🤍" [ref=e4228]
+          - generic: Newcastle Street
+        - generic [ref=e4229]:
+          - img "Street art" [ref=e4230] [cursor=pointer]
+          - button "🤍" [ref=e4231]
+          - generic: Rue de Liverpool
+        - generic [ref=e4232]:
+          - img "Street art" [ref=e4233] [cursor=pointer]
+          - button "🤍" [ref=e4234]
+          - generic: ulitsa Kuybysheva
+        - generic [ref=e4235]:
+          - img "Street art" [ref=e4236] [cursor=pointer]
+          - button "🤍" [ref=e4237]
+          - generic: Auburn Road
+        - generic [ref=e4238]:
+          - img "Street art" [ref=e4239] [cursor=pointer]
+          - button "🤍" [ref=e4240]
+          - generic: улица Горького
+        - generic [ref=e4241]:
+          - img "Street art" [ref=e4242] [cursor=pointer]
+          - button "🤍" [ref=e4243]
+          - generic: Auburn Road
+        - generic [ref=e4244]:
+          - img "Street art" [ref=e4245] [cursor=pointer]
+          - button "🤍" [ref=e4246]
+          - generic: Oxford Street
+        - generic [ref=e4247]:
+          - img "Street art" [ref=e4248] [cursor=pointer]
+          - button "🤍" [ref=e4249]
+          - generic: King Street
+        - generic [ref=e4250]:
+          - img "Street art" [ref=e4251] [cursor=pointer]
+          - button "🤍" [ref=e4252]
+          - generic: Oxford Street
+        - generic [ref=e4253]:
+          - img "Street art" [ref=e4254] [cursor=pointer]
+          - button "🤍" [ref=e4255]
+          - generic: King Street
+        - generic [ref=e4256]:
+          - img "Street art" [ref=e4257] [cursor=pointer]
+          - button "🤍" [ref=e4258]
+          - generic: Melrose Street
+        - generic [ref=e4259]:
+          - img "Street art" [ref=e4260] [cursor=pointer]
+          - button "🤍" [ref=e4261]
+          - generic: High Street Mall
+        - generic [ref=e4262]:
+          - img "Street art" [ref=e4263] [cursor=pointer]
+          - button "🤍" [ref=e4264]
+          - generic: Rue de Liverpool
+        - generic [ref=e4265]:
+          - img "Street art" [ref=e4266] [cursor=pointer]
+          - button "🤍" [ref=e4267]
+          - generic: Eliza Street
+        - generic [ref=e4268]:
+          - img "Street art" [ref=e4269] [cursor=pointer]
+          - button "🤍" [ref=e4270]
+          - generic: улица Горького
+        - generic [ref=e4271]:
+          - img "Street art" [ref=e4272] [cursor=pointer]
+          - button "🤍" [ref=e4273]
+          - generic: Oxford Street
+        - generic [ref=e4274]:
+          - img "Street art" [ref=e4275] [cursor=pointer]
+          - button "🤍" [ref=e4276]
+          - generic: Church Street
+        - generic [ref=e4277]:
+          - img "Street art" [ref=e4278] [cursor=pointer]
+          - button "🤍" [ref=e4279]
+          - generic: Auburn Road
+        - generic [ref=e4280]:
+          - img "Street art" [ref=e4281] [cursor=pointer]
+          - button "🤍" [ref=e4282]
+          - generic: Auburn Road
+        - generic [ref=e4283]:
+          - img "Street art" [ref=e4284] [cursor=pointer]
+          - button "🤍" [ref=e4285]
+          - generic: King Street
+        - generic [ref=e4286]:
+          - img "Street art" [ref=e4287] [cursor=pointer]
+          - button "🤍" [ref=e4288]
+          - generic: Auburn Road
+        - generic [ref=e4289]:
+          - img "Street art" [ref=e4290] [cursor=pointer]
+          - button "🤍" [ref=e4291]
+          - generic: Auburn Grove
+        - generic [ref=e4292]:
+          - img "Street art" [ref=e4293] [cursor=pointer]
+          - button "🤍" [ref=e4294]
+          - generic: Auburn Grove
+        - generic [ref=e4295]:
+          - img "Street art" [ref=e4296] [cursor=pointer]
+          - button "🤍" [ref=e4297]
+          - generic: Via Ortaglia Ospedale
+        - generic [ref=e4298]:
+          - img "Street art" [ref=e4299] [cursor=pointer]
+          - button "🤍" [ref=e4300]
+          - generic: Auburn Road
+        - generic [ref=e4301]:
+          - img "Street art" [ref=e4302] [cursor=pointer]
+          - button "🤍" [ref=e4303]
+          - generic: Charles Street
+        - generic [ref=e4304]:
+          - img "Street art" [ref=e4305] [cursor=pointer]
+          - button "🤍" [ref=e4306]
+          - generic: Kamzin Street
+        - generic [ref=e4307]:
+          - img "Street art" [ref=e4308] [cursor=pointer]
+          - button "🤍" [ref=e4309]
+          - generic: улица Кудайбергена Сураганова
+        - generic [ref=e4310]:
+          - img "Street art" [ref=e4311] [cursor=pointer]
+          - button "🤍" [ref=e4312]
+          - generic: Auburn Grove
+        - generic [ref=e4313]:
+          - img "Street art" [ref=e4314] [cursor=pointer]
+          - button "🤍" [ref=e4315]
+          - generic: Yakov Gering Street
+        - generic [ref=e4316]:
+          - img "Street art" [ref=e4317] [cursor=pointer]
+          - button "🤍" [ref=e4318]
+          - generic: улица Кудайбергена Сураганова
+        - generic [ref=e4319]:
+          - img "Street art" [ref=e4320] [cursor=pointer]
+          - button "🤍" [ref=e4321]
+          - generic: улица Кудайбергена Сураганова
+        - generic [ref=e4322]:
+          - img "Street art" [ref=e4323] [cursor=pointer]
+          - button "🤍" [ref=e4324]
+          - generic: Charles Street
+        - generic [ref=e4325]:
+          - img "Street art" [ref=e4326] [cursor=pointer]
+          - button "🤍" [ref=e4327]
+          - generic: Via Ortaglia Ospedale
+        - generic [ref=e4328]:
+          - img "Street art" [ref=e4329] [cursor=pointer]
+          - button "🤍" [ref=e4330]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4331]:
+          - img "Street art" [ref=e4332] [cursor=pointer]
+          - button "🤍" [ref=e4333]
+          - generic: Auburn Road
+        - generic [ref=e4334]:
+          - img "Street art" [ref=e4335] [cursor=pointer]
+          - button "🤍" [ref=e4336]
+          - generic: Via Umberto Ceva
+        - generic [ref=e4337]:
+          - img "Street art" [ref=e4338] [cursor=pointer]
+          - button "🤍" [ref=e4339]
+          - generic: New Street
+        - generic [ref=e4340]:
+          - img "Street art" [ref=e4341] [cursor=pointer]
+          - button "🤍" [ref=e4342]
+          - generic: Rue Sherbrooke Ouest
+        - generic [ref=e4343]:
+          - img "Street art" [ref=e4344] [cursor=pointer]
+          - button "🤍" [ref=e4345]
+          - generic: улица Кудайбергена Сураганова
+        - generic [ref=e4346]:
+          - img "Street art" [ref=e4347] [cursor=pointer]
+          - button "🤍" [ref=e4348]
+          - generic: Charles Street
+        - generic [ref=e4349]:
+          - img "Street art" [ref=e4350] [cursor=pointer]
+          - button "🤍" [ref=e4351]
+          - generic: ulitsa Malysheva
+        - generic [ref=e4352]:
+          - img "Street art" [ref=e4353] [cursor=pointer]
+          - button "🤍" [ref=e4354]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4355]:
+          - img "Street art" [ref=e4356] [cursor=pointer]
+          - button "🤍" [ref=e4357]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4358]:
+          - img "Street art" [ref=e4359] [cursor=pointer]
+          - button "🤍" [ref=e4360]
+          - generic: Bolshoy Kamennyy most
+        - generic [ref=e4361]:
+          - img "Street art" [ref=e4362] [cursor=pointer]
+          - button "🤍" [ref=e4363]
+          - generic: Pūpolu iela
+        - generic [ref=e4364]:
+          - img "Street art" [ref=e4365] [cursor=pointer]
+          - button "🤍" [ref=e4366]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4367]:
+          - img "Street art" [ref=e4368] [cursor=pointer]
+          - button "🤍" [ref=e4369]
+          - generic: Wellington Street
+        - generic [ref=e4370]:
+          - img "Street art" [ref=e4371] [cursor=pointer]
+          - button "🤍" [ref=e4372]
+          - generic: Järnvågsgatan
+        - generic [ref=e4373]:
+          - img "Street art" [ref=e4374] [cursor=pointer]
+          - button "🤍" [ref=e4375]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4376]:
+          - img "Street art" [ref=e4377] [cursor=pointer]
+          - button "🤍" [ref=e4378]
+          - generic: Rue Bourgeoys
+        - generic [ref=e4379]:
+          - img "Street art" [ref=e4380] [cursor=pointer]
+          - button "🤍" [ref=e4381]
+          - generic: Via Silvio Pellico
+        - generic [ref=e4382]:
+          - img "Street art" [ref=e4383] [cursor=pointer]
+          - button "🤍" [ref=e4384]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4385]:
+          - img "Street art" [ref=e4386] [cursor=pointer]
+          - button "🤍" [ref=e4387]
+          - generic: Rue Bourgeoys
+        - generic [ref=e4388]:
+          - img "Street art" [ref=e4389] [cursor=pointer]
+          - button "🤍" [ref=e4390]
+          - generic: Via Ortaglia Ospedale
+        - generic [ref=e4391]:
+          - img "Street art" [ref=e4392] [cursor=pointer]
+          - button "🤍" [ref=e4393]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4394]:
+          - img "Street art" [ref=e4395] [cursor=pointer]
+          - button "🤍" [ref=e4396]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4397]:
+          - img "Street art" [ref=e4398] [cursor=pointer]
+          - button "🤍" [ref=e4399]
+          - generic: Rue Sainte-Barbe
+        - generic [ref=e4400]:
+          - img "Street art" [ref=e4401] [cursor=pointer]
+          - button "🤍" [ref=e4402]
+          - generic: Järnvågsgatan
+        - generic [ref=e4403]:
+          - img "Street art" [ref=e4404] [cursor=pointer]
+          - button "🤍" [ref=e4405]
+          - generic: Via Silvio Pellico
+        - generic [ref=e4406]:
+          - img "Street art" [ref=e4407] [cursor=pointer]
+          - button "🤍" [ref=e4408]
+          - generic: Järnvågsgatan
+        - generic [ref=e4409]:
+          - img "Street art" [ref=e4410] [cursor=pointer]
+          - button "🤍" [ref=e4411]
+          - generic: ploshchad Kuybysheva
+        - generic [ref=e4412]:
+          - img "Street art" [ref=e4413] [cursor=pointer]
+          - button "🤍" [ref=e4414]
+          - generic: Galaktionovskaya ulitsa
+        - generic [ref=e4415]:
+          - img "Street art" [ref=e4416] [cursor=pointer]
+          - button "🤍" [ref=e4417]
+          - generic: Galaktionovskaya ulitsa
+        - generic [ref=e4418]:
+          - img "Street art" [ref=e4419] [cursor=pointer]
+          - button "🤍" [ref=e4420]
+          - generic: ploshchad Kuybysheva
+        - generic [ref=e4421]:
+          - img "Street art" [ref=e4422] [cursor=pointer]
+          - button "🤍" [ref=e4423]
+          - generic: ploshchad Kuybysheva
+        - generic [ref=e4424]:
+          - img "Street art" [ref=e4425] [cursor=pointer]
+          - button "🤍" [ref=e4426]
+          - generic: Tallinas iela
+        - generic [ref=e4427]:
+          - img "Street art" [ref=e4428] [cursor=pointer]
+          - button "🤍" [ref=e4429]
+          - generic: Emigrantvägen
+        - generic [ref=e4430]:
+          - img "Street art" [ref=e4431] [cursor=pointer]
+          - button "🤍" [ref=e4432]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4433]:
+          - img "Street art" [ref=e4434] [cursor=pointer]
+          - button "🤍" [ref=e4435]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4436]:
+          - img "Street art" [ref=e4437] [cursor=pointer]
+          - button "🤍" [ref=e4438]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4439]:
+          - img "Street art" [ref=e4440] [cursor=pointer]
+          - button "🤍" [ref=e4441]
+          - generic: Galaktionovskaya ulitsa
+        - generic [ref=e4442]:
+          - img "Street art" [ref=e4443] [cursor=pointer]
+          - button "🤍" [ref=e4444]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4445]:
+          - img "Street art" [ref=e4446] [cursor=pointer]
+          - button "🤍" [ref=e4447]
+          - generic: Järnvågsgatan
+        - generic [ref=e4448]:
+          - img "Street art" [ref=e4449] [cursor=pointer]
+          - button "🤍" [ref=e4450]
+          - generic: Galaktionovskaya ulitsa
+        - generic [ref=e4451]:
+          - img "Street art" [ref=e4452] [cursor=pointer]
+          - button "🤍" [ref=e4453]
+          - generic: Galaktionovskaya ulitsa
+        - generic [ref=e4454]:
+          - img "Street art" [ref=e4455] [cursor=pointer]
+          - button "🤍" [ref=e4456]
+          - generic: Galaktionovskaya ulitsa
+        - generic [ref=e4457]:
+          - img "Street art" [ref=e4458] [cursor=pointer]
+          - button "🤍" [ref=e4459]
+          - generic: Emigrantvägen
+        - generic [ref=e4460]:
+          - img "Street art" [ref=e4461] [cursor=pointer]
+          - button "🤍" [ref=e4462]
+          - generic: Rua Hermenegildo de Barros
+        - generic [ref=e4463]:
+          - img "Street art" [ref=e4464] [cursor=pointer]
+          - button "🤍" [ref=e4465]
+          - generic: Heurlins Plates
+        - generic [ref=e4466]:
+          - img "Street art" [ref=e4467] [cursor=pointer]
+          - button "🤍" [ref=e4468]
+          - generic: Via Aldo Moro
+        - generic [ref=e4469]:
+          - img "Street art" [ref=e4470] [cursor=pointer]
+          - button "🤍" [ref=e4471]
+          - generic: 1-y Irtyshskiy proyezd
+        - generic [ref=e4472]:
+          - img "Street art" [ref=e4473] [cursor=pointer]
+          - button "🤍" [ref=e4474]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4475]:
+          - img "Street art" [ref=e4476] [cursor=pointer]
+          - button "🤍" [ref=e4477]
+          - generic: Hirschstraße
+        - generic [ref=e4478]:
+          - img "Street art" [ref=e4479] [cursor=pointer]
+          - button "🤍" [ref=e4480]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4481]:
+          - img "Street art" [ref=e4482] [cursor=pointer]
+          - button "🤍" [ref=e4483]
+          - generic: Am Hasenbiel
+        - generic [ref=e4484]:
+          - img "Street art" [ref=e4485] [cursor=pointer]
+          - button "🤍" [ref=e4486]
+          - generic: 1-y Irtyshskiy proyezd
+        - generic [ref=e4487]:
+          - img "Street art" [ref=e4488] [cursor=pointer]
+          - button "🤍" [ref=e4489]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4490]:
+          - img "Street art" [ref=e4491] [cursor=pointer]
+          - button "🤍" [ref=e4492]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4493]:
+          - img "Street art" [ref=e4494] [cursor=pointer]
+          - button "🤍" [ref=e4495]
+          - generic: Tallinas iela
+        - generic [ref=e4496]:
+          - img "Street art" [ref=e4497] [cursor=pointer]
+          - button "🤍" [ref=e4498]
+          - generic: Am Hasenbiel
+        - generic [ref=e4499]:
+          - img "Street art" [ref=e4500] [cursor=pointer]
+          - button "🤍" [ref=e4501]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4502]:
+          - img "Street art" [ref=e4503] [cursor=pointer]
+          - button "🤍" [ref=e4504]
+          - generic: Tallinas iela
+        - generic [ref=e4505]:
+          - img "Street art" [ref=e4506] [cursor=pointer]
+          - button "🤍" [ref=e4507]
+          - generic: Tallinas iela
+        - generic [ref=e4508]:
+          - img "Street art" [ref=e4509] [cursor=pointer]
+          - button "🤍" [ref=e4510]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4511]:
+          - img "Street art" [ref=e4512] [cursor=pointer]
+          - button "🤍" [ref=e4513]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4514]:
+          - img "Street art" [ref=e4515] [cursor=pointer]
+          - button "🤍" [ref=e4516]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4517]:
+          - img "Street art" [ref=e4518] [cursor=pointer]
+          - button "🤍" [ref=e4519]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4520]:
+          - img "Street art" [ref=e4521] [cursor=pointer]
+          - button "🤍" [ref=e4522]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4523]:
+          - img "Street art" [ref=e4524] [cursor=pointer]
+          - button "🤍" [ref=e4525]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4526]:
+          - img "Street art" [ref=e4527] [cursor=pointer]
+          - button "🤍" [ref=e4528]
+          - generic: Tallinas iela
+        - generic [ref=e4529]:
+          - img "Street art" [ref=e4530] [cursor=pointer]
+          - button "🤍" [ref=e4531]
+          - generic: West Custer Place
+        - generic [ref=e4532]:
+          - img "Street art" [ref=e4533] [cursor=pointer]
+          - button "🤍" [ref=e4534]
+          - generic: South Irving Street
+        - generic [ref=e4535]:
+          - img "Street art" [ref=e4536] [cursor=pointer]
+          - button "🤍" [ref=e4537]
+          - generic: Ligovskiy prospekt
+        - generic [ref=e4538]:
+          - img "Street art" [ref=e4539] [cursor=pointer]
+          - button "🤍" [ref=e4540]
+          - generic: West Kentucky Avenue
+        - generic [ref=e4541]:
+          - img "Street art" [ref=e4542] [cursor=pointer]
+          - button "🤍" [ref=e4543]
+          - generic: West Kentucky Avenue
+        - generic [ref=e4544]:
+          - img "Street art" [ref=e4545] [cursor=pointer]
+          - button "🤍" [ref=e4546]
+          - generic: South Knox Court
+        - generic [ref=e4547]:
+          - img "Street art" [ref=e4548] [cursor=pointer]
+          - button "🤍" [ref=e4549]
+          - generic: West Kentucky Avenue
+        - generic [ref=e4550]:
+          - img "Street art" [ref=e4551] [cursor=pointer]
+          - button "🤍" [ref=e4552]
+          - generic: Morrison Road
+        - generic [ref=e4553]:
+          - img "Street art" [ref=e4554] [cursor=pointer]
+          - button "🤍" [ref=e4555]
+          - generic: South Hooker Street
+        - generic [ref=e4556]:
+          - img "Street art" [ref=e4557] [cursor=pointer]
+          - button "🤍" [ref=e4558]
+          - generic: Colorado 26
+        - generic [ref=e4559]:
+          - img "Street art" [ref=e4560] [cursor=pointer]
+          - button "🤍" [ref=e4561]
+          - generic: West Alameda Avenue
+        - generic [ref=e4562]:
+          - img "Street art" [ref=e4563] [cursor=pointer]
+          - button "🤍" [ref=e4564]
+          - generic: Morrison Road
+        - generic [ref=e4565]:
+          - img "Street art" [ref=e4566] [cursor=pointer]
+          - button "🤍" [ref=e4567]
+          - generic: Colorado 26
+        - generic [ref=e4568]:
+          - img "Street art" [ref=e4569] [cursor=pointer]
+          - button "🤍" [ref=e4570]
+          - generic: South Irving Street
+        - generic [ref=e4571]:
+          - img "Street art" [ref=e4572] [cursor=pointer]
+          - button "🤍" [ref=e4573]
+          - generic: South Knox Court
+        - generic [ref=e4574]:
+          - img "Street art" [ref=e4575] [cursor=pointer]
+          - button "🤍" [ref=e4576]
+          - generic: South Irving Street
+        - generic [ref=e4577]:
+          - img "Street art" [ref=e4578] [cursor=pointer]
+          - button "🤍" [ref=e4579]
+          - generic: West Kentucky Avenue
+        - generic [ref=e4580]:
+          - img "Street art" [ref=e4581] [cursor=pointer]
+          - button "🤍" [ref=e4582]
+          - generic: West Center Avenue
+        - generic [ref=e4583]:
+          - img "Street art" [ref=e4584] [cursor=pointer]
+          - button "🤍" [ref=e4585]
+          - generic: South Irving Street
+        - generic [ref=e4586]:
+          - img "Street art" [ref=e4587] [cursor=pointer]
+          - button "🤍" [ref=e4588]
+          - generic: Morrison Road
+        - generic [ref=e4589]:
+          - img "Street art" [ref=e4590] [cursor=pointer]
+          - button "🤍" [ref=e4591]
+          - generic: Morrison Road
+        - generic [ref=e4592]:
+          - img "Street art" [ref=e4593] [cursor=pointer]
+          - button "🤍" [ref=e4594]
+          - generic: Morrison Road
+        - generic [ref=e4595]:
+          - img "Street art" [ref=e4596] [cursor=pointer]
+          - button "🤍" [ref=e4597]
+          - generic: West Virginia Avenue
+        - generic [ref=e4598]:
+          - img "Street art" [ref=e4599] [cursor=pointer]
+          - button "🤍" [ref=e4600]
+          - generic: Morrison Road
+        - generic [ref=e4601]:
+          - img "Street art" [ref=e4602] [cursor=pointer]
+          - button "🤍" [ref=e4603]
+          - generic: Morrison Road
+        - generic [ref=e4604]:
+          - img "Street art" [ref=e4605] [cursor=pointer]
+          - button "🤍" [ref=e4606]
+          - generic: Morrison Road
+        - generic [ref=e4607]:
+          - img "Street art" [ref=e4608] [cursor=pointer]
+          - button "🤍" [ref=e4609]
+          - generic: Rua Doutor Ademar Moreira Barbosa Romeu
+        - generic [ref=e4610]:
+          - img "Street art" [ref=e4611] [cursor=pointer]
+          - button "🤍" [ref=e4612]
+          - generic: Rua Doutor Ademar Moreira Barbosa Romeu
+        - generic [ref=e4613]:
+          - img "Street art" [ref=e4614] [cursor=pointer]
+          - button "🤍" [ref=e4615]
+          - generic: Morrison Road
+        - generic [ref=e4616]:
+          - img "Street art" [ref=e4617] [cursor=pointer]
+          - button "🤍" [ref=e4618]
+          - generic: Fitzgerald Street
+        - generic [ref=e4619]:
+          - img "Street art" [ref=e4620] [cursor=pointer]
+          - button "🤍" [ref=e4621]
+          - generic: Morrison Road
+        - generic [ref=e4622]:
+          - img "Street art" [ref=e4623] [cursor=pointer]
+          - button "🤍" [ref=e4624]
+          - generic: West Mississippi Avenue
+        - generic [ref=e4625]:
+          - img "Street art" [ref=e4626] [cursor=pointer]
+          - button "🤍" [ref=e4627]
+          - generic: West Kentucky Avenue
+        - generic [ref=e4628]:
+          - img "Street art" [ref=e4629] [cursor=pointer]
+          - button "🤍" [ref=e4630]
+          - generic: Morrison Road
+        - generic [ref=e4631]:
+          - img "Street art" [ref=e4632] [cursor=pointer]
+          - button "🤍" [ref=e4633]
+          - generic: West Virginia Avenue
+        - generic [ref=e4634]:
+          - img "Street art" [ref=e4635] [cursor=pointer]
+          - button "🤍" [ref=e4636]
+          - generic: Via Grumello
+        - generic [ref=e4637]:
+          - img "Street art" [ref=e4638] [cursor=pointer]
+          - button "🤍" [ref=e4639]
+          - generic: Morrison Road
+        - generic [ref=e4640]:
+          - img "Street art" [ref=e4641] [cursor=pointer]
+          - button "🤍" [ref=e4642]
+          - generic: Morrison Road
+        - generic [ref=e4643]:
+          - img "Street art" [ref=e4644] [cursor=pointer]
+          - button "🤍" [ref=e4645]
+          - generic: Via Grumello
+        - generic [ref=e4646]:
+          - img "Street art" [ref=e4647] [cursor=pointer]
+          - button "🤍" [ref=e4648]
+          - generic: Rua Afonso Henrique
+        - generic [ref=e4649]:
+          - img "Street art" [ref=e4650] [cursor=pointer]
+          - button "🤍" [ref=e4651]
+          - generic: Via Grumello
+        - generic [ref=e4652]:
+          - img "Street art" [ref=e4653] [cursor=pointer]
+          - button "🤍" [ref=e4654]
+          - generic: Via Grumello
+        - generic [ref=e4655]:
+          - img "Street art" [ref=e4656] [cursor=pointer]
+          - button "🤍" [ref=e4657]
+          - generic: Via Grumello
+        - generic [ref=e4658]:
+          - img "Street art" [ref=e4659] [cursor=pointer]
+          - button "🤍" [ref=e4660]
+          - generic: Via Grumello
+        - generic [ref=e4661]:
+          - img "Street art" [ref=e4662] [cursor=pointer]
+          - button "🤍" [ref=e4663]
+          - generic: Nicholson Street
+        - generic [ref=e4664]:
+          - img "Street art" [ref=e4665] [cursor=pointer]
+          - button "🤍" [ref=e4666]
+          - generic: 5th Avenue
+        - generic [ref=e4667]:
+          - img "Street art" [ref=e4668] [cursor=pointer]
+          - button "🤍" [ref=e4669]
+          - generic: Weller Way
+        - generic [ref=e4670]:
+          - img "Street art" [ref=e4671] [cursor=pointer]
+          - button "🤍" [ref=e4672]
+          - generic: Via Grumello
+        - generic [ref=e4673]:
+          - img "Street art" [ref=e4674] [cursor=pointer]
+          - button "🤍" [ref=e4675]
+          - generic: Via Grumello
+        - generic [ref=e4676]:
+          - img "Street art" [ref=e4677] [cursor=pointer]
+          - button "🤍" [ref=e4678]
+          - generic: Victorian Alley
+        - generic [ref=e4679]:
+          - img "Street art" [ref=e4680] [cursor=pointer]
+          - button "🤍" [ref=e4681]
+          - generic: Portola Way 5th Avenue Alley
+        - generic [ref=e4682]:
+          - img "Street art" [ref=e4683] [cursor=pointer]
+          - button "🤍" [ref=e4684]
+          - generic: T Street
+        - generic [ref=e4685]:
+          - img "Street art" [ref=e4686] [cursor=pointer]
+          - button "🤍" [ref=e4687]
+          - generic: Via Grumello
+        - generic [ref=e4688]:
+          - img "Street art" [ref=e4689] [cursor=pointer]
+          - button "🤍" [ref=e4690]
+          - generic: Bidwell Way
+        - generic [ref=e4691]:
+          - img "Street art" [ref=e4692] [cursor=pointer]
+          - button "🤍" [ref=e4693]
+          - generic: 5th Avenue
+        - generic [ref=e4694]:
+          - img "Street art" [ref=e4695] [cursor=pointer]
+          - button "🤍" [ref=e4696]
+          - generic: 19th Street
+        - generic [ref=e4697]:
+          - img "Street art" [ref=e4698] [cursor=pointer]
+          - button "🤍" [ref=e4699]
+          - generic: Portola Way 5th Avenue Alley
+        - generic [ref=e4700]:
+          - img "Street art" [ref=e4701] [cursor=pointer]
+          - button "🤍" [ref=e4702]
+          - generic: S Street
+        - generic [ref=e4703]:
+          - img "Street art" [ref=e4704] [cursor=pointer]
+          - button "🤍" [ref=e4705]
+          - generic: Via Grumello
+        - generic [ref=e4706]:
+          - img "Street art" [ref=e4707] [cursor=pointer]
+          - button "🤍" [ref=e4708]
+          - generic: Via Grumello
+        - generic [ref=e4709]:
+          - img "Street art" [ref=e4710] [cursor=pointer]
+          - button "🤍" [ref=e4711]
+          - generic: 16th Street
+        - generic [ref=e4712]:
+          - img "Street art" [ref=e4713] [cursor=pointer]
+          - button "🤍" [ref=e4714]
+          - generic: California Street
+        - generic [ref=e4715]:
+          - img "Street art" [ref=e4716] [cursor=pointer]
+          - button "🤍" [ref=e4717]
+          - generic: 16th Street
+        - generic [ref=e4718]:
+          - img "Street art" [ref=e4719] [cursor=pointer]
+          - button "🤍" [ref=e4720]
+          - generic: Rio Linda Boulevard
+        - generic [ref=e4721]:
+          - img "Street art" [ref=e4722] [cursor=pointer]
+          - button "🤍" [ref=e4723]
+          - generic: Lake Street
+        - generic [ref=e4724]:
+          - img "Street art" [ref=e4725] [cursor=pointer]
+          - button "🤍" [ref=e4726]
+          - generic: William Street
+        - generic [ref=e4727]:
+          - img "Street art" [ref=e4728] [cursor=pointer]
+          - button "🤍" [ref=e4729]
+          - generic: Lake Street
+        - generic [ref=e4730]:
+          - img "Street art" [ref=e4731] [cursor=pointer]
+          - button "🤍" [ref=e4732]
+          - generic: William Street
+        - generic [ref=e4733]:
+          - img "Street art" [ref=e4734] [cursor=pointer]
+          - button "🤍" [ref=e4735]
+          - generic: 16th Street
+        - generic [ref=e4736]:
+          - img "Street art" [ref=e4737] [cursor=pointer]
+          - button "🤍" [ref=e4738]
+          - generic: Stanley Street
+        - generic [ref=e4739]:
+          - img "Street art" [ref=e4740] [cursor=pointer]
+          - button "🤍" [ref=e4741]
+          - generic: 16th Street
+        - generic [ref=e4742]:
+          - img "Street art" [ref=e4743] [cursor=pointer]
+          - button "🤍" [ref=e4744]
+          - generic: 16th Street
+        - generic [ref=e4745]:
+          - img "Street art" [ref=e4746] [cursor=pointer]
+          - button "🤍" [ref=e4747]
+          - generic: 16th Street
+        - generic [ref=e4748]:
+          - img "Street art" [ref=e4749] [cursor=pointer]
+          - button "🤍" [ref=e4750]
+          - generic: Money Street
+        - generic [ref=e4751]:
+          - img "Street art" [ref=e4752] [cursor=pointer]
+          - button "🤍" [ref=e4753]
+          - generic: 16th Street
+        - generic [ref=e4754]:
+          - img "Street art" [ref=e4755] [cursor=pointer]
+          - button "🤍" [ref=e4756]
+          - generic: Haid-und-Neu-Straße
+        - generic [ref=e4757]:
+          - img "Street art" [ref=e4758] [cursor=pointer]
+          - button "🤍" [ref=e4759]
+          - generic: 16th Street
+        - generic [ref=e4760]:
+          - img "Street art" [ref=e4761] [cursor=pointer]
+          - button "🤍" [ref=e4762]
+          - generic: Fitzgerald Street
+        - generic [ref=e4763]:
+          - img "Street art" [ref=e4764] [cursor=pointer]
+          - button "🤍" [ref=e4765]
+          - generic: William Street
+        - generic [ref=e4766]:
+          - img "Street art" [ref=e4767] [cursor=pointer]
+          - button "🤍" [ref=e4768]
+          - generic: Zoi Kosmodemyanskoy ulitsa
+        - generic [ref=e4769]:
+          - img "Street art" [ref=e4770] [cursor=pointer]
+          - button "🤍" [ref=e4771]
+          - generic: William Street
+        - generic [ref=e4772]:
+          - img "Street art" [ref=e4773] [cursor=pointer]
+          - button "🤍" [ref=e4774]
+          - generic: William Street
+        - generic [ref=e4775]:
+          - img "Street art" [ref=e4776] [cursor=pointer]
+          - button "🤍" [ref=e4777]
+          - generic: Tretye Transportnoye Koltso
+        - generic [ref=e4778]:
+          - img "Street art" [ref=e4779] [cursor=pointer]
+          - button "🤍" [ref=e4780]
+          - generic: Wellington Street
+        - generic [ref=e4781]:
+          - img "Street art" [ref=e4782] [cursor=pointer]
+          - button "🤍" [ref=e4783]
+          - generic: ulitsa Chapaeva
+        - generic [ref=e4784]:
+          - img "Street art" [ref=e4785] [cursor=pointer]
+          - button "🤍" [ref=e4786]
+          - generic: Francis Street
+        - generic [ref=e4787]:
+          - img "Street art" [ref=e4788] [cursor=pointer]
+          - button "🤍" [ref=e4789]
+          - generic: Wellington Street
+        - generic [ref=e4790]:
+          - img "Street art" [ref=e4791] [cursor=pointer]
+          - button "🤍" [ref=e4792]
+          - generic: William Street
+        - generic [ref=e4793]:
+          - img "Street art" [ref=e4794] [cursor=pointer]
+          - button "🤍" [ref=e4795]
+          - generic: ulitsa Sheinkmana
+        - generic [ref=e4796]:
+          - img "Street art" [ref=e4797] [cursor=pointer]
+          - button "🤍" [ref=e4798]
+          - generic: Murray Street
+        - generic [ref=e4799]:
+          - img "Street art" [ref=e4800] [cursor=pointer]
+          - button "🤍" [ref=e4801]
+          - generic: ulitsa Malysheva
+        - generic [ref=e4802]:
+          - img "Street art" [ref=e4803] [cursor=pointer]
+          - button "🤍" [ref=e4804]
+          - generic: William Street
+        - generic [ref=e4805]:
+          - img "Street art" [ref=e4806] [cursor=pointer]
+          - button "🤍" [ref=e4807]
+          - generic: William Street
+        - generic [ref=e4808]:
+          - img "Street art" [ref=e4809] [cursor=pointer]
+          - button "🤍" [ref=e4810]
+          - generic: ulitsa Sheinkmana
+        - generic [ref=e4811]:
+          - img "Street art" [ref=e4812] [cursor=pointer]
+          - button "🤍" [ref=e4813]
+          - generic: Easey Street
+        - generic [ref=e4814]:
+          - img "Street art" [ref=e4815] [cursor=pointer]
+          - button "🤍" [ref=e4816]
+          - generic: Francis Street
+        - generic [ref=e4817]:
+          - img "Street art" [ref=e4818] [cursor=pointer]
+          - button "🤍" [ref=e4819]
+          - generic: Rua Palmeiras
+        - generic [ref=e4820]:
+          - img "Street art" [ref=e4821] [cursor=pointer]
+          - button "🤍" [ref=e4822]
+          - generic: Avenida Estrela da Noite
+        - generic [ref=e4823]:
+          - img "Street art" [ref=e4824] [cursor=pointer]
+          - button "🤍" [ref=e4825]
+          - generic: ulitsa Syromolotova
+        - generic [ref=e4826]:
+          - img "Street art" [ref=e4827] [cursor=pointer]
+          - button "🤍" [ref=e4828]
+          - generic: Avenida Marechal Tito
+        - generic [ref=e4829]:
+          - img "Street art" [ref=e4830] [cursor=pointer]
+          - button "🤍" [ref=e4831]
+          - generic: улица Первомайская
+        - generic [ref=e4832]:
+          - img "Street art" [ref=e4833] [cursor=pointer]
+          - button "🤍" [ref=e4834]
+          - generic: ulitsa Turgeneva
+        - generic [ref=e4835]:
+          - img "Street art" [ref=e4836] [cursor=pointer]
+          - button "🤍" [ref=e4837]
+          - generic: ulitsa Turgeneva
+        - generic [ref=e4838]:
+          - img "Street art" [ref=e4839] [cursor=pointer]
+          - button "🤍" [ref=e4840]
+          - generic: ulitsa Chelyuskintsev
+        - generic [ref=e4841]:
+          - img "Street art" [ref=e4842] [cursor=pointer]
+          - button "🤍" [ref=e4843]
+          - generic: Yubileynaya ulitsa
+        - generic [ref=e4844]:
+          - img "Street art" [ref=e4845] [cursor=pointer]
+          - button "🤍" [ref=e4846]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e4847]:
+          - img "Street art" [ref=e4848] [cursor=pointer]
+          - button "🤍" [ref=e4849]
+          - generic: ulitsa Turgeneva
+        - generic [ref=e4850]:
+          - img "Street art" [ref=e4851] [cursor=pointer]
+          - button "🤍" [ref=e4852]
+          - generic: ulitsa Popova
+        - generic [ref=e4853]:
+          - img "Street art" [ref=e4854] [cursor=pointer]
+          - button "🤍" [ref=e4855]
+          - generic: ulitsa Fadeeva
+        - generic [ref=e4856]:
+          - img "Street art" [ref=e4857] [cursor=pointer]
+          - button "🤍" [ref=e4858]
+          - generic: Federal Boulevard
+        - generic [ref=e4859]:
+          - img "Street art" [ref=e4860] [cursor=pointer]
+          - button "🤍" [ref=e4861]
+          - generic: Zhylianska Street
+        - generic [ref=e4862]:
+          - img "Street art" [ref=e4863] [cursor=pointer]
+          - button "🤍" [ref=e4864]
+          - generic: ulitsa Malysheva
+        - generic [ref=e4865]:
+          - img "Street art" [ref=e4866] [cursor=pointer]
+          - button "🤍" [ref=e4867]
+          - generic: улица Архитектурная
+        - generic [ref=e4868]:
+          - img "Street art" [ref=e4869] [cursor=pointer]
+          - button "🤍" [ref=e4870]
+          - generic: Carrer de la Comtessa de Sobradiel
+        - generic [ref=e4871]:
+          - img "Street art" [ref=e4872] [cursor=pointer]
+          - button "🤍" [ref=e4873]
+          - generic: Yakova Shakhunyantsya Lane
+        - generic [ref=e4874]:
+          - img "Street art" [ref=e4875] [cursor=pointer]
+          - button "🤍" [ref=e4876]
+          - generic: ulitsa Vaynera
+        - generic [ref=e4877]:
+          - img "Street art" [ref=e4878] [cursor=pointer]
+          - button "🤍" [ref=e4879]
+          - generic: Sadovaya-Samotechnaya ulitsa
+        - generic [ref=e4880]:
+          - img "Street art" [ref=e4881] [cursor=pointer]
+          - button "🤍" [ref=e4882]
+          - generic: Olympic Boulevard
+        - generic [ref=e4883]:
+          - img "Street art" [ref=e4884] [cursor=pointer]
+          - button "🤍" [ref=e4885]
+          - generic: ulitsa Chelyuskintsev
+        - generic [ref=e4886]:
+          - img "Street art" [ref=e4887] [cursor=pointer]
+          - button "🤍" [ref=e4888]
+          - generic: ulitsa Turgeneva
+        - generic [ref=e4889]:
+          - img "Street art" [ref=e4890] [cursor=pointer]
+          - button "🤍" [ref=e4891]
+          - generic: ulitsa Pokrovka
+        - generic [ref=e4892]:
+          - img "Street art" [ref=e4893] [cursor=pointer]
+          - button "🤍" [ref=e4894]
+          - generic: Staraya Basmannaya ulitsa
+        - generic [ref=e4895]:
+          - img "Street art" [ref=e4896] [cursor=pointer]
+          - button "🤍" [ref=e4897]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4898]:
+          - img "Street art" [ref=e4899] [cursor=pointer]
+          - button "🤍" [ref=e4900]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4901]:
+          - img "Street art" [ref=e4902] [cursor=pointer]
+          - button "🤍" [ref=e4903]
+          - generic: Nekrasovskaya ulitsa
+        - generic [ref=e4904]:
+          - img "Street art" [ref=e4905] [cursor=pointer]
+          - button "🤍" [ref=e4906]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4907]:
+          - img "Street art" [ref=e4908] [cursor=pointer]
+          - button "🤍" [ref=e4909]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4910]:
+          - img "Street art" [ref=e4911] [cursor=pointer]
+          - button "🤍" [ref=e4912]
+          - generic: ulitsa Pokrovka
+        - generic [ref=e4913]:
+          - img "Street art" [ref=e4914] [cursor=pointer]
+          - button "🤍" [ref=e4915]
+          - generic: Krasnoarmeyskaya ulitsa
+        - generic [ref=e4916]:
+          - img "Street art" [ref=e4917] [cursor=pointer]
+          - button "🤍" [ref=e4918]
+          - generic: Staraya Basmannaya ulitsa
+        - generic [ref=e4919]:
+          - img "Street art" [ref=e4920] [cursor=pointer]
+          - button "🤍" [ref=e4921]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4922]:
+          - img "Street art" [ref=e4923] [cursor=pointer]
+          - button "🤍" [ref=e4924]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4925]:
+          - img "Street art" [ref=e4926] [cursor=pointer]
+          - button "🤍" [ref=e4927]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4928]:
+          - img "Street art" [ref=e4929] [cursor=pointer]
+          - button "🤍" [ref=e4930]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4931]:
+          - img "Street art" [ref=e4932] [cursor=pointer]
+          - button "🤍" [ref=e4933]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4934]:
+          - img "Street art" [ref=e4935] [cursor=pointer]
+          - button "🤍" [ref=e4936]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4937]:
+          - img "Street art" [ref=e4938] [cursor=pointer]
+          - button "🤍" [ref=e4939]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4940]:
+          - img "Street art" [ref=e4941] [cursor=pointer]
+          - button "🤍" [ref=e4942]
+          - generic: ulitsa Alekseya Tolstogo
+        - generic [ref=e4943]:
+          - img "Street art" [ref=e4944] [cursor=pointer]
+          - button "🤍" [ref=e4945]
+          - generic: 21st Street
+        - generic [ref=e4946]:
+          - img "Street art" [ref=e4947] [cursor=pointer]
+          - button "🤍" [ref=e4948]
+          - generic: Blake Street
+        - generic [ref=e4949]:
+          - img "Street art" [ref=e4950] [cursor=pointer]
+          - button "🤍" [ref=e4951]
+          - generic: Larimer Street
+        - generic [ref=e4952]:
+          - img "Street art" [ref=e4953] [cursor=pointer]
+          - button "🤍" [ref=e4954]
+          - generic: 22nd Street
+        - generic [ref=e4955]:
+          - img "Street art" [ref=e4956] [cursor=pointer]
+          - button "🤍" [ref=e4957]
+          - generic: Larimer Street
+        - generic [ref=e4958]:
+          - img "Street art" [ref=e4959] [cursor=pointer]
+          - button "🤍" [ref=e4960]
+          - generic: 22nd Street
+        - generic [ref=e4961]:
+          - img "Street art" [ref=e4962] [cursor=pointer]
+          - button "🤍" [ref=e4963]
+          - generic: 21st Street
+        - generic [ref=e4964]:
+          - img "Street art" [ref=e4965] [cursor=pointer]
+          - button "🤍" [ref=e4966]
+          - generic: 21st Street
+        - generic [ref=e4967]:
+          - img "Street art" [ref=e4968] [cursor=pointer]
+          - button "🤍" [ref=e4969]
+          - generic: Blake Street
+        - generic [ref=e4970]:
+          - img "Street art" [ref=e4971] [cursor=pointer]
+          - button "🤍" [ref=e4972]
+          - generic: Larimer Street
+        - generic [ref=e4973]:
+          - img "Street art" [ref=e4974] [cursor=pointer]
+          - button "🤍" [ref=e4975]
+          - generic: Delgany Street
+        - generic [ref=e4976]:
+          - img "Street art" [ref=e4977] [cursor=pointer]
+          - button "🤍" [ref=e4978]
+          - generic: Larimer Street
+        - generic [ref=e4979]:
+          - img "Street art" [ref=e4980] [cursor=pointer]
+          - button "🤍" [ref=e4981]
+          - generic: Blake Street
+        - generic [ref=e4982]:
+          - img "Street art" [ref=e4983] [cursor=pointer]
+          - button "🤍" [ref=e4984]
+          - generic: 21st Street
+        - generic [ref=e4985]:
+          - img "Street art" [ref=e4986] [cursor=pointer]
+          - button "🤍" [ref=e4987]
+          - generic: Larimer Street
+        - generic [ref=e4988]:
+          - img "Street art" [ref=e4989] [cursor=pointer]
+          - button "🤍" [ref=e4990]
+          - generic: Larimer Street
+        - generic [ref=e4991]:
+          - img "Street art" [ref=e4992] [cursor=pointer]
+          - button "🤍" [ref=e4993]
+          - generic: 22nd Street
+        - generic [ref=e4994]:
+          - img "Street art" [ref=e4995] [cursor=pointer]
+          - button "🤍" [ref=e4996]
+          - generic: Larimer Street
+        - generic [ref=e4997]:
+          - img "Street art" [ref=e4998] [cursor=pointer]
+          - button "🤍" [ref=e4999]
+          - generic: Park Avenue West
+        - generic [ref=e5000]:
+          - img "Street art" [ref=e5001] [cursor=pointer]
+          - button "🤍" [ref=e5002]
+          - generic: 21st Street
+        - generic [ref=e5003]:
+          - img "Street art" [ref=e5004] [cursor=pointer]
+          - button "🤍" [ref=e5005]
+          - generic: Larimer Street
+        - generic [ref=e5006]:
+          - img "Street art" [ref=e5007] [cursor=pointer]
+          - button "🤍" [ref=e5008]
+          - generic: Delgany Street
+        - generic [ref=e5009]:
+          - img "Street art" [ref=e5010] [cursor=pointer]
+          - button "🤍" [ref=e5011]
+          - generic: Park Avenue West
+        - generic [ref=e5012]:
+          - img "Street art" [ref=e5013] [cursor=pointer]
+          - button "🤍" [ref=e5014]
+          - generic: Park Avenue West
+        - generic [ref=e5015]:
+          - img "Street art" [ref=e5016] [cursor=pointer]
+          - button "🤍" [ref=e5017]
+          - generic: Park Avenue West
+        - generic [ref=e5018]:
+          - img "Street art" [ref=e5019] [cursor=pointer]
+          - button "🤍" [ref=e5020]
+          - generic: West 38th Avenue
+        - generic [ref=e5021]:
+          - img "Street art" [ref=e5022] [cursor=pointer]
+          - button "🤍" [ref=e5023]
+          - generic: Fox Street
+        - generic [ref=e5024]:
+          - img "Street art" [ref=e5025] [cursor=pointer]
+          - button "🤍" [ref=e5026]
+          - generic: South Platte River Trail
+        - generic [ref=e5027]:
+          - img "Street art" [ref=e5028] [cursor=pointer]
+          - button "🤍" [ref=e5029]
+          - generic: Central Park Boulevard
+        - generic [ref=e5030]:
+          - img "Street art" [ref=e5031] [cursor=pointer]
+          - button "🤍" [ref=e5032]
+          - generic: Central Park Boulevard
+        - generic [ref=e5033]:
+          - img "Street art" [ref=e5034] [cursor=pointer]
+          - button "🤍" [ref=e5035]
+          - generic: Colorado Front Range Trail
+        - generic [ref=e5036]:
+          - img "Street art" [ref=e5037] [cursor=pointer]
+          - button "🤍" [ref=e5038]
+          - generic: Park Avenue West
+        - generic [ref=e5039]:
+          - img "Street art" [ref=e5040] [cursor=pointer]
+          - button "🤍" [ref=e5041]
+          - generic: Navajo Street
+        - generic [ref=e5042]:
+          - img "Street art" [ref=e5043] [cursor=pointer]
+          - button "🤍" [ref=e5044]
+          - generic: Park Avenue West
+        - generic [ref=e5045]:
+          - img "Street art" [ref=e5046] [cursor=pointer]
+          - button "🤍" [ref=e5047]
+          - generic: Park Avenue West
+        - generic [ref=e5048]:
+          - img "Street art" [ref=e5049] [cursor=pointer]
+          - button "🤍" [ref=e5050]
+          - generic: Colorado Front Range Trail
+        - generic [ref=e5051]:
+          - img "Street art" [ref=e5052] [cursor=pointer]
+          - button "🤍" [ref=e5053]
+          - generic: Fox Street
+        - generic [ref=e5054]:
+          - img "Street art" [ref=e5055] [cursor=pointer]
+          - button "🤍" [ref=e5056]
+          - generic: West 38th Avenue
+        - generic [ref=e5057]:
+          - img "Street art" [ref=e5058] [cursor=pointer]
+          - button "🤍" [ref=e5059]
+          - generic: Fox Street
+        - generic [ref=e5060]:
+          - img "Street art" [ref=e5061] [cursor=pointer]
+          - button "🤍" [ref=e5062]
+          - generic: West 31st Avenue
+        - generic [ref=e5063]:
+          - img "Street art" [ref=e5064] [cursor=pointer]
+          - button "🤍" [ref=e5065]
+          - generic: Lipan Street
+        - generic [ref=e5066]:
+          - img "Street art" [ref=e5067] [cursor=pointer]
+          - button "🤍" [ref=e5068]
+          - generic: Park Avenue West
+        - generic [ref=e5069]:
+          - img "Street art" [ref=e5070] [cursor=pointer]
+          - button "🤍" [ref=e5071]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5072]:
+          - img "Street art" [ref=e5073] [cursor=pointer]
+          - button "🤍" [ref=e5074]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5075]:
+          - img "Street art" [ref=e5076] [cursor=pointer]
+          - button "🤍" [ref=e5077]
+          - generic: West 37th Avenue
+        - generic [ref=e5078]:
+          - img "Street art" [ref=e5079] [cursor=pointer]
+          - button "🤍" [ref=e5080]
+          - generic: West Wyoming Place
+        - generic [ref=e5081]:
+          - img "Street art" [ref=e5082] [cursor=pointer]
+          - button "🤍" [ref=e5083]
+          - generic: West Jewell Avenue
+        - generic [ref=e5084]:
+          - img "Street art" [ref=e5085] [cursor=pointer]
+          - button "🤍" [ref=e5086]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5087]:
+          - img "Street art" [ref=e5088] [cursor=pointer]
+          - button "🤍" [ref=e5089]
+          - generic: West Jewell Avenue
+        - generic [ref=e5090]:
+          - img "Street art" [ref=e5091] [cursor=pointer]
+          - button "🤍" [ref=e5092]
+          - generic: West 38th Avenue
+        - generic [ref=e5093]:
+          - img "Street art" [ref=e5094] [cursor=pointer]
+          - button "🤍" [ref=e5095]
+          - generic: West Jewell Avenue
+        - generic [ref=e5096]:
+          - img "Street art" [ref=e5097] [cursor=pointer]
+          - button "🤍" [ref=e5098]
+          - generic: West Wyoming Place
+        - generic [ref=e5099]:
+          - img "Street art" [ref=e5100] [cursor=pointer]
+          - button "🤍" [ref=e5101]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5102]:
+          - img "Street art" [ref=e5103] [cursor=pointer]
+          - button "🤍" [ref=e5104]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5105]:
+          - img "Street art" [ref=e5106] [cursor=pointer]
+          - button "🤍" [ref=e5107]
+          - generic: West Jewell Avenue
+        - generic [ref=e5108]:
+          - img "Street art" [ref=e5109] [cursor=pointer]
+          - button "🤍" [ref=e5110]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5111]:
+          - img "Street art" [ref=e5112] [cursor=pointer]
+          - button "🤍" [ref=e5113]
+          - generic: ulitsa Gogolya
+        - generic [ref=e5114]:
+          - img "Street art" [ref=e5115] [cursor=pointer]
+          - button "🤍" [ref=e5116]
+          - generic: West 37th Avenue
+        - generic [ref=e5117]:
+          - img "Street art" [ref=e5118] [cursor=pointer]
+          - button "🤍" [ref=e5119]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5120]:
+          - img "Street art" [ref=e5121] [cursor=pointer]
+          - button "🤍" [ref=e5122]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5123]:
+          - img "Street art" [ref=e5124] [cursor=pointer]
+          - button "🤍" [ref=e5125]
+          - generic: West Jewell Avenue
+        - generic [ref=e5126]:
+          - img "Street art" [ref=e5127] [cursor=pointer]
+          - button "🤍" [ref=e5128]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5129]:
+          - img "Street art" [ref=e5130] [cursor=pointer]
+          - button "🤍" [ref=e5131]
+          - generic: Tyumenskaya ulitsa
+        - generic [ref=e5132]:
+          - img "Street art" [ref=e5133] [cursor=pointer]
+          - button "🤍" [ref=e5134]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5135]:
+          - img "Street art" [ref=e5136] [cursor=pointer]
+          - button "🤍" [ref=e5137]
+          - generic: West Mississippi Avenue
+        - generic [ref=e5138]:
+          - img "Street art" [ref=e5139] [cursor=pointer]
+          - button "🤍" [ref=e5140]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5141]:
+          - img "Street art" [ref=e5142] [cursor=pointer]
+          - button "🤍" [ref=e5143]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5144]:
+          - img "Street art" [ref=e5145] [cursor=pointer]
+          - button "🤍" [ref=e5146]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5147]:
+          - img "Street art" [ref=e5148] [cursor=pointer]
+          - button "🤍" [ref=e5149]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5150]:
+          - img "Street art" [ref=e5151] [cursor=pointer]
+          - button "🤍" [ref=e5152]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5153]:
+          - img "Street art" [ref=e5154] [cursor=pointer]
+          - button "🤍" [ref=e5155]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5156]:
+          - img "Street art" [ref=e5157] [cursor=pointer]
+          - button "🤍" [ref=e5158]
+          - generic: West Arizona Avenue
+        - generic [ref=e5159]:
+          - img "Street art" [ref=e5160] [cursor=pointer]
+          - button "🤍" [ref=e5161]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5162]:
+          - img "Street art" [ref=e5163] [cursor=pointer]
+          - button "🤍" [ref=e5164]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5165]:
+          - img "Street art" [ref=e5166] [cursor=pointer]
+          - button "🤍" [ref=e5167]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5168]:
+          - img "Street art" [ref=e5169] [cursor=pointer]
+          - button "🤍" [ref=e5170]
+          - generic: Via Peppino Catte
+        - generic [ref=e5171]:
+          - img "Street art" [ref=e5172] [cursor=pointer]
+          - button "🤍" [ref=e5173]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5174]:
+          - img "Street art" [ref=e5175] [cursor=pointer]
+          - button "🤍" [ref=e5176]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5177]:
+          - img "Street art" [ref=e5178] [cursor=pointer]
+          - button "🤍" [ref=e5179]
+          - generic: West Arizona Avenue
+        - generic [ref=e5180]:
+          - img "Street art" [ref=e5181] [cursor=pointer]
+          - button "🤍" [ref=e5182]
+          - generic: Sadovaya
+        - generic [ref=e5183]:
+          - img "Street art" [ref=e5184] [cursor=pointer]
+          - button "🤍" [ref=e5185]
+          - generic: West Mississippi Avenue
+        - generic [ref=e5186]:
+          - img "Street art" [ref=e5187] [cursor=pointer]
+          - button "🤍" [ref=e5188]
+          - generic: South Sheridan Boulevard
+        - generic [ref=e5189]:
+          - img "Street art" [ref=e5190] [cursor=pointer]
+          - button "🤍" [ref=e5191]
+          - generic: Lenin Avenue
+        - generic [ref=e5192]:
+          - img "Street art" [ref=e5193] [cursor=pointer]
+          - button "🤍" [ref=e5194]
+          - generic: Carrera 3
+        - generic [ref=e5195]:
+          - img "Street art" [ref=e5196] [cursor=pointer]
+          - button "🤍" [ref=e5197]
+          - generic: Bolshaya Cherkizovskaya ulitsa
+        - generic [ref=e5198]:
+          - img "Street art" [ref=e5199] [cursor=pointer]
+          - button "🤍" [ref=e5200]
+          - generic: Oudenarder Straße
+        - generic [ref=e5201]:
+          - img "Street art" [ref=e5202] [cursor=pointer]
+          - button "🤍" [ref=e5203]
+          - generic: Pacific Motorway
+        - generic [ref=e5204]:
+          - img "Street art" [ref=e5205] [cursor=pointer]
+          - button "🤍" [ref=e5206]
+          - generic: Bolshaya Cherkizovskaya ulitsa
+        - generic [ref=e5207]:
+          - img "Street art" [ref=e5208] [cursor=pointer]
+          - button "🤍" [ref=e5209]
+          - generic: Digbeth
+        - generic [ref=e5210]:
+          - img "Street art" [ref=e5211] [cursor=pointer]
+          - button "🤍" [ref=e5212]
+          - generic: Zhigulevskaya ulitsa
+        - generic [ref=e5213]:
+          - img "Street art" [ref=e5214] [cursor=pointer]
+          - button "🤍" [ref=e5215]
+          - generic: Digbeth
+        - generic [ref=e5216]:
+          - img "Street art" [ref=e5217] [cursor=pointer]
+          - button "🤍" [ref=e5218]
+          - generic: ulitsa Malysheva
+        - generic [ref=e5219]:
+          - img "Street art" [ref=e5220] [cursor=pointer]
+          - button "🤍" [ref=e5221]
+          - generic: улица Долорес Ибаррури
+        - generic [ref=e5222]:
+          - img "Street art" [ref=e5223] [cursor=pointer]
+          - button "🤍" [ref=e5224]
+          - generic: Avtomotornaya ulitsa
+        - generic [ref=e5225]:
+          - img "Street art" [ref=e5226] [cursor=pointer]
+          - button "🤍" [ref=e5227]
+          - generic: ulitsa Popova
+        - generic [ref=e5228]:
+          - img "Street art" [ref=e5229] [cursor=pointer]
+          - button "🤍" [ref=e5230]
+          - generic: Shchelkovskoye shosse
+        - generic [ref=e5231]:
+          - img "Street art" [ref=e5232] [cursor=pointer]
+          - button "🤍" [ref=e5233]
+          - generic: ulitsa Bazhova
+        - generic [ref=e5234]:
+          - img "Street art" [ref=e5235] [cursor=pointer]
+          - button "🤍" [ref=e5236]
+          - generic: Mosely Street
+        - generic [ref=e5237]:
+          - img "Street art" [ref=e5238] [cursor=pointer]
+          - button "🤍" [ref=e5239]
+          - generic: Oudenarder Straße
+        - generic [ref=e5240]:
+          - img "Street art" [ref=e5241] [cursor=pointer]
+          - button "🤍" [ref=e5242]
+          - generic: Oudenarder Straße
+        - generic [ref=e5243]:
+          - img "Street art" [ref=e5244] [cursor=pointer]
+          - button "🤍" [ref=e5245]
+          - generic: Digbeth
+        - generic [ref=e5246]:
+          - img "Street art" [ref=e5247] [cursor=pointer]
+          - button "🤍" [ref=e5248]
+          - generic: Lenin Avenue
+        - generic [ref=e5249]:
+          - img "Street art" [ref=e5250] [cursor=pointer]
+          - button "🤍" [ref=e5251]
+          - generic: Rea Street
+        - generic [ref=e5252]:
+          - img "Street art" [ref=e5253] [cursor=pointer]
+          - button "🤍" [ref=e5254]
+          - generic: Clyde Street
+        - generic [ref=e5255]:
+          - img "Street art" [ref=e5256] [cursor=pointer]
+          - button "🤍" [ref=e5257]
+          - generic: Средний проспект В О
+        - generic [ref=e5258]:
+          - img "Street art" [ref=e5259] [cursor=pointer]
+          - button "🤍" [ref=e5260]
+          - generic: Челябинский тракт
+        - generic [ref=e5261]:
+          - img "Street art" [ref=e5262] [cursor=pointer]
+          - button "🤍" [ref=e5263]
+          - generic: High Street Bordesley
+        - generic [ref=e5264]:
+          - img "Street art" [ref=e5265] [cursor=pointer]
+          - button "🤍" [ref=e5266]
+          - generic: Birmingham
+        - generic [ref=e5267]:
+          - img "Street art" [ref=e5268] [cursor=pointer]
+          - button "🤍" [ref=e5269]
+          - generic: улица Реутовская
+        - generic [ref=e5270]:
+          - img "Street art" [ref=e5271] [cursor=pointer]
+          - button "🤍" [ref=e5272]
+          - generic: High Street Deritend
+        - generic [ref=e5273]:
+          - img "Street art" [ref=e5274] [cursor=pointer]
+          - button "🤍" [ref=e5275]
+          - generic: Oudenarder Straße
+        - generic [ref=e5276]:
+          - img "Street art" [ref=e5277] [cursor=pointer]
+          - button "🤍" [ref=e5278]
+          - generic: Oudenarder Straße
+        - generic [ref=e5279]:
+          - img "Street art" [ref=e5280] [cursor=pointer]
+          - button "🤍" [ref=e5281]
+          - generic: Floodgate Street
+        - generic [ref=e5282]:
+          - img "Street art" [ref=e5283] [cursor=pointer]
+          - button "🤍" [ref=e5284]
+          - generic: Alcester Street
+        - generic [ref=e5285]:
+          - img "Street art" [ref=e5286] [cursor=pointer]
+          - button "🤍" [ref=e5287]
+          - generic: Oudenarder Straße
+        - generic [ref=e5288]:
+          - img "Street art" [ref=e5289] [cursor=pointer]
+          - button "🤍" [ref=e5290]
+          - generic: Средний проспект В О
+        - generic [ref=e5291]:
+          - img "Street art" [ref=e5292] [cursor=pointer]
+          - button "🤍" [ref=e5293]
+          - generic: Digbeth
+        - generic [ref=e5294]:
+          - img "Street art" [ref=e5295] [cursor=pointer]
+          - button "🤍" [ref=e5296]
+          - generic: Oudenarder Straße
+        - generic [ref=e5297]:
+          - img "Street art" [ref=e5298] [cursor=pointer]
+          - button "🤍" [ref=e5299]
+          - generic: Floodgate Street
+        - generic [ref=e5300]:
+          - img "Street art" [ref=e5301] [cursor=pointer]
+          - button "🤍" [ref=e5302]
+          - generic: High Street Deritend
+        - generic [ref=e5303]:
+          - img "Street art" [ref=e5304] [cursor=pointer]
+          - button "🤍" [ref=e5305]
+          - generic: Ковенский переулок
+        - generic [ref=e5306]:
+          - img "Street art" [ref=e5307] [cursor=pointer]
+          - button "🤍" [ref=e5308]
+          - generic: ulitsa Kuybysheva
+        - generic [ref=e5309]:
+          - img "Street art" [ref=e5310] [cursor=pointer]
+          - button "🤍" [ref=e5311]
+          - generic: улица Шейнкмана
+        - generic [ref=e5312]:
+          - img "Street art" [ref=e5313] [cursor=pointer]
+          - button "🤍" [ref=e5314]
+          - generic: Digbeth
+        - generic [ref=e5315]:
+          - img "Street art" [ref=e5316] [cursor=pointer]
+          - button "🤍" [ref=e5317]
+          - generic: Alexandra Avenue
+        - generic [ref=e5318]:
+          - img "Street art" [ref=e5319] [cursor=pointer]
+          - button "🤍" [ref=e5320]
+          - generic: Alexandra Avenue
+        - generic [ref=e5321]:
+          - img "Street art" [ref=e5322] [cursor=pointer]
+          - button "🤍" [ref=e5323]
+          - generic: Alexandra Avenue
+        - generic [ref=e5324]:
+          - img "Street art" [ref=e5325] [cursor=pointer]
+          - button "🤍" [ref=e5326]
+          - generic: Alexandra Avenue
+        - generic [ref=e5327]:
+          - img "Street art" [ref=e5328] [cursor=pointer]
+          - button "🤍" [ref=e5329]
+          - generic: Digbeth
+        - generic [ref=e5330]:
+          - img "Street art" [ref=e5331] [cursor=pointer]
+          - button "🤍" [ref=e5332]
+          - generic: ulitsa Turgeneva
+        - generic [ref=e5333]:
+          - img "Street art" [ref=e5334] [cursor=pointer]
+          - button "🤍" [ref=e5335]
+          - generic: ulitsa Bazhova
+        - generic [ref=e5336]:
+          - img "Street art" [ref=e5337] [cursor=pointer]
+          - button "🤍" [ref=e5338]
+          - generic: Alexandra Avenue
+        - generic [ref=e5339]:
+          - img "Street art" [ref=e5340] [cursor=pointer]
+          - button "🤍" [ref=e5341]
+          - generic: Raleigh Road
+        - generic [ref=e5342]:
+          - img "Street art" [ref=e5343] [cursor=pointer]
+          - button "🤍" [ref=e5344]
+          - generic: Digbeth
+        - generic [ref=e5345]:
+          - img "Street art" [ref=e5346] [cursor=pointer]
+          - button "🤍" [ref=e5347]
+          - generic: Digbeth
+        - generic [ref=e5348]:
+          - img "Street art" [ref=e5349] [cursor=pointer]
+          - button "🤍" [ref=e5350]
+          - generic: Alexandra Avenue
+        - generic [ref=e5351]:
+          - img "Street art" [ref=e5352] [cursor=pointer]
+          - button "🤍" [ref=e5353]
+          - generic: Тбилисский бульвар
+        - generic [ref=e5354]:
+          - img "Street art" [ref=e5355] [cursor=pointer]
+          - button "🤍" [ref=e5356]
+          - generic: Digbeth
+        - generic [ref=e5357]:
+          - img "Street art" [ref=e5358] [cursor=pointer]
+          - button "🤍" [ref=e5359]
+          - generic: 26-я Линия
+        - generic [ref=e5360]:
+          - img "Street art" [ref=e5361] [cursor=pointer]
+          - button "🤍" [ref=e5362]
+          - generic: Alexandra Avenue
+        - generic [ref=e5363]:
+          - img "Street art" [ref=e5364] [cursor=pointer]
+          - button "🤍" [ref=e5365]
+          - generic: Большой проспект Васильевского острова
+        - generic [ref=e5366]:
+          - img "Street art" [ref=e5367] [cursor=pointer]
+          - button "🤍" [ref=e5368]
+          - generic: Alexandra Avenue
+        - generic [ref=e5369]:
+          - img "Street art" [ref=e5370] [cursor=pointer]
+          - button "🤍" [ref=e5371]
+          - generic: Alexandra Avenue
+        - generic [ref=e5372]:
+          - img "Street art" [ref=e5373] [cursor=pointer]
+          - button "🤍" [ref=e5374]
+          - generic: Alexandra Avenue
+        - generic [ref=e5375]:
+          - img "Street art" [ref=e5376] [cursor=pointer]
+          - button "🤍" [ref=e5377]
+          - generic: Flinders Lane
+        - generic [ref=e5378]:
+          - img "Street art" [ref=e5379] [cursor=pointer]
+          - button "🤍" [ref=e5380]
+          - generic: Flinders Street
+        - generic [ref=e5381]:
+          - img "Street art" [ref=e5382] [cursor=pointer]
+          - button "🤍" [ref=e5383]
+          - generic: Alexandra Avenue
+        - generic [ref=e5384]:
+          - img "Street art" [ref=e5385] [cursor=pointer]
+          - button "🤍" [ref=e5386]
+          - generic: Alexandra Avenue
+        - generic [ref=e5387]:
+          - img "Street art" [ref=e5388] [cursor=pointer]
+          - button "🤍" [ref=e5389]
+          - generic: Alexandra Avenue
+        - generic [ref=e5390]:
+          - img "Street art" [ref=e5391] [cursor=pointer]
+          - button "🤍" [ref=e5392]
+          - generic: Østervåg
+        - generic [ref=e5393]:
+          - img "Street art" [ref=e5394] [cursor=pointer]
+          - button "🤍" [ref=e5395]
+          - generic: Alexandra Avenue
+        - generic [ref=e5396]:
+          - img "Street art" [ref=e5397] [cursor=pointer]
+          - button "🤍" [ref=e5398]
+          - generic: Alexandra Avenue
+        - generic [ref=e5399]:
+          - img "Street art" [ref=e5400] [cursor=pointer]
+          - button "🤍" [ref=e5401]
+          - generic: Flinders Street
+        - generic [ref=e5402]:
+          - img "Street art" [ref=e5403] [cursor=pointer]
+          - button "🤍" [ref=e5404]
+          - generic: Alexandra Avenue
+        - generic [ref=e5405]:
+          - img "Street art" [ref=e5406] [cursor=pointer]
+          - button "🤍" [ref=e5407]
+          - generic: Ковельська вулиця
+        - generic [ref=e5408]:
+          - img "Street art" [ref=e5409] [cursor=pointer]
+          - button "🤍" [ref=e5410]
+          - generic: Flinders Street
+        - generic [ref=e5411]:
+          - img "Street art" [ref=e5412] [cursor=pointer]
+          - button "🤍" [ref=e5413]
+          - generic: Ковельська вулиця
+        - generic [ref=e5414]:
+          - img "Street art" [ref=e5415] [cursor=pointer]
+          - button "🤍" [ref=e5416]
+          - generic: Wellington Parade
+        - generic [ref=e5417]:
+          - img "Street art" [ref=e5418] [cursor=pointer]
+          - button "🤍" [ref=e5419]
+          - generic: Alexandra Avenue
+        - generic [ref=e5420]:
+          - img "Street art" [ref=e5421] [cursor=pointer]
+          - button "🤍" [ref=e5422]
+          - generic: Russell Street
+        - generic [ref=e5423]:
+          - img "Street art" [ref=e5424] [cursor=pointer]
+          - button "🤍" [ref=e5425]
+          - generic: Alexandra Avenue
+        - generic [ref=e5426]:
+          - img "Street art" [ref=e5427] [cursor=pointer]
+          - button "🤍" [ref=e5428]
+          - generic: Flinders Street
+        - generic [ref=e5429]:
+          - img "Street art" [ref=e5430] [cursor=pointer]
+          - button "🤍" [ref=e5431]
+          - generic: Tattersalls Lane
+        - generic [ref=e5432]:
+          - img "Street art" [ref=e5433] [cursor=pointer]
+          - button "🤍" [ref=e5434]
+          - generic: Tattersalls Lane
+        - generic [ref=e5435]:
+          - img "Street art" [ref=e5436] [cursor=pointer]
+          - button "🤍" [ref=e5437]
+          - generic: Lonsdale Street
+        - generic [ref=e5438]:
+          - img "Street art" [ref=e5439] [cursor=pointer]
+          - button "🤍" [ref=e5440]
+          - generic: Russell Street
+        - generic [ref=e5441]:
+          - img "Street art" [ref=e5442] [cursor=pointer]
+          - button "🤍" [ref=e5443]
+          - generic: Lonsdale Street
+        - generic [ref=e5444]:
+          - img "Street art" [ref=e5445] [cursor=pointer]
+          - button "🤍" [ref=e5446]
+          - generic: Lonsdale Street
+        - generic [ref=e5447]:
+          - img "Street art" [ref=e5448] [cursor=pointer]
+          - button "🤍" [ref=e5449]
+          - generic: Lonsdale Street
+        - generic [ref=e5450]:
+          - img "Street art" [ref=e5451] [cursor=pointer]
+          - button "🤍" [ref=e5452]
+          - generic: Lonsdale Street
+        - generic [ref=e5453]:
+          - img "Street art" [ref=e5454] [cursor=pointer]
+          - button "🤍" [ref=e5455]
+          - generic: Lonsdale Street
+        - generic [ref=e5456]:
+          - img "Street art" [ref=e5457] [cursor=pointer]
+          - button "🤍" [ref=e5458]
+          - generic: Lonsdale Street
+        - generic [ref=e5459]:
+          - img "Street art" [ref=e5460] [cursor=pointer]
+          - button "🤍" [ref=e5461]
+          - generic: Lonsdale Street
+        - generic [ref=e5462]:
+          - img "Street art" [ref=e5463] [cursor=pointer]
+          - button "🤍" [ref=e5464]
+          - generic: Lonsdale Street
+        - generic [ref=e5465]:
+          - img "Street art" [ref=e5466] [cursor=pointer]
+          - button "🤍" [ref=e5467]
+          - generic: Lonsdale Street
+        - generic [ref=e5468]:
+          - img "Street art" [ref=e5469] [cursor=pointer]
+          - button "🤍" [ref=e5470]
+          - generic: Tattersalls Lane
+        - generic [ref=e5471]:
+          - img "Street art" [ref=e5472] [cursor=pointer]
+          - button "🤍" [ref=e5473]
+          - generic: Tattersalls Lane
+        - generic [ref=e5474]:
+          - img "Street art" [ref=e5475] [cursor=pointer]
+          - button "🤍" [ref=e5476]
+          - generic: Tattersalls Lane
+        - generic [ref=e5477]:
+          - img "Street art" [ref=e5478] [cursor=pointer]
+          - button "🤍" [ref=e5479]
+          - generic: Tattersalls Lane
+        - generic [ref=e5480]:
+          - img "Street art" [ref=e5481] [cursor=pointer]
+          - button "🤍" [ref=e5482]
+          - generic: Lonsdale Street
+        - generic [ref=e5483]:
+          - img "Street art" [ref=e5484] [cursor=pointer]
+          - button "🤍" [ref=e5485]
+          - generic: Lonsdale Street
+        - generic [ref=e5486]:
+          - img "Street art" [ref=e5487] [cursor=pointer]
+          - button "🤍" [ref=e5488]
+          - generic: Lonsdale Street
+        - generic [ref=e5489]:
+          - img "Street art" [ref=e5490] [cursor=pointer]
+          - button "🤍" [ref=e5491]
+          - generic: Elizabeth Street
+        - generic [ref=e5492]:
+          - img "Street art" [ref=e5493] [cursor=pointer]
+          - button "🤍" [ref=e5494]
+          - generic: Flinders Ct
+        - generic [ref=e5495]:
+          - img "Street art" [ref=e5496] [cursor=pointer]
+          - button "🤍" [ref=e5497]
+          - generic: Godfrey Street
+        - generic [ref=e5498]:
+          - img "Street art" [ref=e5499] [cursor=pointer]
+          - button "🤍" [ref=e5500]
+          - generic: Hawthorn Glen
+        - generic [ref=e5501]:
+          - img "Street art" [ref=e5502] [cursor=pointer]
+          - button "🤍" [ref=e5503]
+          - generic: Elizabeth Street
+        - generic [ref=e5504]:
+          - img "Street art" [ref=e5505] [cursor=pointer]
+          - button "🤍" [ref=e5506]
+          - generic: Hawthorn Glen
+        - generic [ref=e5507]:
+          - img "Street art" [ref=e5508] [cursor=pointer]
+          - button "🤍" [ref=e5509]
+          - generic: Flinders Ct
+        - generic [ref=e5510]:
+          - img "Street art" [ref=e5511] [cursor=pointer]
+          - button "🤍" [ref=e5512]
+          - generic: Flinders Ct
+        - generic [ref=e5513]:
+          - img "Street art" [ref=e5514] [cursor=pointer]
+          - button "🤍" [ref=e5515]
+          - generic: Flinders Ct
+        - generic [ref=e5516]:
+          - img "Street art" [ref=e5517] [cursor=pointer]
+          - button "🤍" [ref=e5518]
+          - generic: Hawthorn Glen
+        - generic [ref=e5519]:
+          - img "Street art" [ref=e5520] [cursor=pointer]
+          - button "🤍" [ref=e5521]
+          - generic: Flinders Ct
+        - generic [ref=e5522]:
+          - img "Street art" [ref=e5523] [cursor=pointer]
+          - button "🤍" [ref=e5524]
+          - generic: Flinders Ct
+        - generic [ref=e5525]:
+          - img "Street art" [ref=e5526] [cursor=pointer]
+          - button "🤍" [ref=e5527]
+          - generic: Mill Pl
+        - generic [ref=e5528]:
+          - img "Street art" [ref=e5529] [cursor=pointer]
+          - button "🤍" [ref=e5530]
+          - generic: Elizabeth Street
+        - generic [ref=e5531]:
+          - img "Street art" [ref=e5532] [cursor=pointer]
+          - button "🤍" [ref=e5533]
+          - generic: Flinders Ct
+        - generic [ref=e5534]:
+          - img "Street art" [ref=e5535] [cursor=pointer]
+          - button "🤍" [ref=e5536]
+          - generic: Hawthorn Glen
+        - generic [ref=e5537]:
+          - img "Street art" [ref=e5538] [cursor=pointer]
+          - button "🤍" [ref=e5539]
+          - generic: Flinders Ct
+        - generic [ref=e5540]:
+          - img "Street art" [ref=e5541] [cursor=pointer]
+          - button "🤍" [ref=e5542]
+          - generic: Flinders Ct
+        - generic [ref=e5543]:
+          - img "Street art" [ref=e5544] [cursor=pointer]
+          - button "🤍" [ref=e5545]
+          - generic: Hawthorn Glen
+        - generic [ref=e5546]:
+          - img "Street art" [ref=e5547] [cursor=pointer]
+          - button "🤍" [ref=e5548]
+          - generic: Flinders Ct
+        - generic [ref=e5549]:
+          - img "Street art" [ref=e5550] [cursor=pointer]
+          - button "🤍" [ref=e5551]
+          - generic: Punt Rd
+        - generic [ref=e5552]:
+          - img "Street art" [ref=e5553] [cursor=pointer]
+          - button "🤍" [ref=e5554]
+          - generic: Punch Ln
+        - generic [ref=e5555]:
+          - img "Street art" [ref=e5556] [cursor=pointer]
+          - button "🤍" [ref=e5557]
+          - generic: Flinders Ct
+        - generic [ref=e5558]:
+          - img "Street art" [ref=e5559] [cursor=pointer]
+          - button "🤍" [ref=e5560]
+          - generic: Flinders Ct
+        - generic [ref=e5561]:
+          - img "Street art" [ref=e5562] [cursor=pointer]
+          - button "🤍" [ref=e5563]
+          - generic: Flinders Ct
+        - generic [ref=e5564]:
+          - img "Street art" [ref=e5565] [cursor=pointer]
+          - button "🤍" [ref=e5566]
+          - generic: Punt Rd
+        - generic [ref=e5567]:
+          - img "Street art" [ref=e5568] [cursor=pointer]
+          - button "🤍" [ref=e5569]
+          - generic: Punt Rd
+        - generic [ref=e5570]:
+          - img "Street art" [ref=e5571] [cursor=pointer]
+          - button "🤍" [ref=e5572]
+          - generic: State Route 30
+        - generic [ref=e5573]:
+          - img "Street art" [ref=e5574] [cursor=pointer]
+          - button "🤍" [ref=e5575]
+          - generic: Flinders Ct
+        - generic [ref=e5576]:
+          - img "Street art" [ref=e5577] [cursor=pointer]
+          - button "🤍" [ref=e5578]
+          - generic: Elizabeth St
+        - generic [ref=e5579]:
+          - img "Street art" [ref=e5580] [cursor=pointer]
+          - button "🤍" [ref=e5581]
+          - generic: Elizabeth St
+        - generic [ref=e5582]:
+          - img "Street art" [ref=e5583] [cursor=pointer]
+          - button "🤍" [ref=e5584]
+          - generic: Punt Rd
+        - generic [ref=e5585]:
+          - img "Street art" [ref=e5586] [cursor=pointer]
+          - button "🤍" [ref=e5587]
+          - generic: St Kilda Rd
+        - generic [ref=e5588]:
+          - img "Street art" [ref=e5589] [cursor=pointer]
+          - button "🤍" [ref=e5590]
+          - generic: Elizabeth St
+        - generic [ref=e5591]:
+          - img "Street art" [ref=e5592] [cursor=pointer]
+          - button "🤍" [ref=e5593]
+          - generic: St Kilda Rd
+        - generic [ref=e5594]:
+          - img "Street art" [ref=e5595] [cursor=pointer]
+          - button "🤍" [ref=e5596]
+          - generic: Punt Rd
+        - generic [ref=e5597]:
+          - img "Street art" [ref=e5598] [cursor=pointer]
+          - button "🤍" [ref=e5599]
+          - generic: State Route 3
+        - generic [ref=e5600]:
+          - img "Street art" [ref=e5601] [cursor=pointer]
+          - button "🤍" [ref=e5602]
+          - generic: Centre Pl
+        - generic [ref=e5603]:
+          - img "Street art" [ref=e5604] [cursor=pointer]
+          - button "🤍" [ref=e5605]
+          - generic: Punt Rd
+        - generic [ref=e5606]:
+          - img "Street art" [ref=e5607] [cursor=pointer]
+          - button "🤍" [ref=e5608]
+          - generic: Flinders Ct
+        - generic [ref=e5609]:
+          - img "Street art" [ref=e5610] [cursor=pointer]
+          - button "🤍" [ref=e5611]
+          - generic: St Kilda Rd
+        - generic [ref=e5612]:
+          - img "Street art" [ref=e5613] [cursor=pointer]
+          - button "🤍" [ref=e5614]
+          - generic: Punt Rd
+        - generic [ref=e5615]:
+          - img "Street art" [ref=e5616] [cursor=pointer]
+          - button "🤍" [ref=e5617]
+          - generic: St Kilda Rd
+        - generic [ref=e5618]:
+          - img "Street art" [ref=e5619] [cursor=pointer]
+          - button "🤍" [ref=e5620]
+          - generic: St Kilda Rd
+        - generic [ref=e5621]:
+          - img "Street art" [ref=e5622] [cursor=pointer]
+          - button "🤍" [ref=e5623]
+          - generic: Fitzroy St
+        - generic [ref=e5624]:
+          - img "Street art" [ref=e5625] [cursor=pointer]
+          - button "🤍" [ref=e5626]
+          - generic: St Kilda Rd
+        - generic [ref=e5627]:
+          - img "Street art" [ref=e5628] [cursor=pointer]
+          - button "🤍" [ref=e5629]
+          - generic: Punt Rd
+        - generic [ref=e5630]:
+          - img "Street art" [ref=e5631] [cursor=pointer]
+          - button "🤍" [ref=e5632]
+          - generic: Punt Rd
+        - generic [ref=e5633]:
+          - img "Street art" [ref=e5634] [cursor=pointer]
+          - button "🤍" [ref=e5635]
+          - generic: St Kilda Rd
+        - generic [ref=e5636]:
+          - img "Street art" [ref=e5637] [cursor=pointer]
+          - button "🤍" [ref=e5638]
+          - generic: Punt Rd
+        - generic [ref=e5639]:
+          - img "Street art" [ref=e5640] [cursor=pointer]
+          - button "🤍" [ref=e5641]
+          - generic: St Kilda Rd
+        - generic [ref=e5642]:
+          - img "Street art" [ref=e5643] [cursor=pointer]
+          - button "🤍" [ref=e5644]
+          - generic: St Kilda Rd
+        - generic [ref=e5645]:
+          - img "Street art" [ref=e5646] [cursor=pointer]
+          - button "🤍" [ref=e5647]
+          - generic: St Kilda Rd
+        - generic [ref=e5648]:
+          - img "Street art" [ref=e5649] [cursor=pointer]
+          - button "🤍" [ref=e5650]
+          - generic: Punt Rd
+        - generic [ref=e5651]:
+          - img "Street art" [ref=e5652] [cursor=pointer]
+          - button "🤍" [ref=e5653]
+          - generic: St Kilda Rd
+        - generic [ref=e5654]:
+          - img "Street art" [ref=e5655] [cursor=pointer]
+          - button "🤍" [ref=e5656]
+          - generic: St Kilda Rd
+        - generic [ref=e5657]:
+          - img "Street art" [ref=e5658] [cursor=pointer]
+          - button "🤍" [ref=e5659]
+          - generic: Punt Rd
+        - generic [ref=e5660]:
+          - img "Street art" [ref=e5661] [cursor=pointer]
+          - button "🤍" [ref=e5662]
+          - generic: St Kilda Rd
+        - generic [ref=e5663]:
+          - img "Street art" [ref=e5664] [cursor=pointer]
+          - button "🤍" [ref=e5665]
+          - generic: Punt Rd
+        - generic [ref=e5666]:
+          - img "Street art" [ref=e5667] [cursor=pointer]
+          - button "🤍" [ref=e5668]
+          - generic: St Kilda Rd
+        - generic [ref=e5669]:
+          - img "Street art" [ref=e5670] [cursor=pointer]
+          - button "🤍" [ref=e5671]
+          - generic: Carlisle St
+        - generic [ref=e5672]:
+          - img "Street art" [ref=e5673] [cursor=pointer]
+          - button "🤍" [ref=e5674]
+          - generic: Kipling St
+        - generic [ref=e5675]:
+          - img "Street art" [ref=e5676] [cursor=pointer]
+          - button "🤍" [ref=e5677]
+          - generic: Nelson St
+        - generic [ref=e5678]:
+          - img "Street art" [ref=e5679] [cursor=pointer]
+          - button "🤍" [ref=e5680]
+          - generic: Kipling St
+        - generic [ref=e5681]:
+          - img "Street art" [ref=e5682] [cursor=pointer]
+          - button "🤍" [ref=e5683]
+          - generic: St Kilda Rd
+        - generic [ref=e5684]:
+          - img "Street art" [ref=e5685] [cursor=pointer]
+          - button "🤍" [ref=e5686]
+          - generic: Swan St
+        - generic [ref=e5687]:
+          - img "Street art" [ref=e5688] [cursor=pointer]
+          - button "🤍" [ref=e5689]
+          - generic: Kipling St
+        - generic [ref=e5690]:
+          - img "Street art" [ref=e5691] [cursor=pointer]
+          - button "🤍" [ref=e5692]
+          - generic: Elsternwick Pl
+        - generic [ref=e5693]:
+          - img "Street art" [ref=e5694] [cursor=pointer]
+          - button "🤍" [ref=e5695]
+          - generic: Byron St
+        - generic [ref=e5696]:
+          - img "Street art" [ref=e5697] [cursor=pointer]
+          - button "🤍" [ref=e5698]
+          - generic: Byron St
+        - generic [ref=e5699]:
+          - img "Street art" [ref=e5700] [cursor=pointer]
+          - button "🤍" [ref=e5701]
+          - generic: St Kilda Rd
+        - generic [ref=e5702]:
+          - img "Street art" [ref=e5703] [cursor=pointer]
+          - button "🤍" [ref=e5704]
+          - generic: Nelson St
+        - generic [ref=e5705]:
+          - img "Street art" [ref=e5706] [cursor=pointer]
+          - button "🤍" [ref=e5707]
+          - generic: St Kilda Rd
+        - generic [ref=e5708]:
+          - img "Street art" [ref=e5709] [cursor=pointer]
+          - button "🤍" [ref=e5710]
+          - generic: Nelson St
+        - generic [ref=e5711]:
+          - img "Street art" [ref=e5712] [cursor=pointer]
+          - button "🤍" [ref=e5713]
+          - generic: Carlisle St
+        - generic [ref=e5714]:
+          - img "Street art" [ref=e5715] [cursor=pointer]
+          - button "🤍" [ref=e5716]
+          - generic: Carlisle St
+        - generic [ref=e5717]:
+          - img "Street art" [ref=e5718] [cursor=pointer]
+          - button "🤍" [ref=e5719]
+          - generic: Elsternwick Pl
+        - generic [ref=e5720]:
+          - img "Street art" [ref=e5721] [cursor=pointer]
+          - button "🤍" [ref=e5722]
+          - generic: Swan St
+        - generic [ref=e5723]:
+          - img "Street art" [ref=e5724] [cursor=pointer]
+          - button "🤍" [ref=e5725]
+          - generic: Elsternwick Pl
+        - generic [ref=e5726]:
+          - img "Street art" [ref=e5727] [cursor=pointer]
+          - button "🤍" [ref=e5728]
+          - generic: Kipling St
+        - generic [ref=e5729]:
+          - img "Street art" [ref=e5730] [cursor=pointer]
+          - button "🤍" [ref=e5731]
+          - generic: Swan St
+        - generic [ref=e5732]:
+          - img "Street art" [ref=e5733] [cursor=pointer]
+          - button "🤍" [ref=e5734]
+          - generic: Swan St
+        - generic [ref=e5735]:
+          - img "Street art" [ref=e5736] [cursor=pointer]
+          - button "🤍" [ref=e5737]
+          - generic: Botherambo St
+        - generic [ref=e5738]:
+          - img "Street art" [ref=e5739] [cursor=pointer]
+          - button "🤍" [ref=e5740]
+          - generic: Botherambo St
+        - generic [ref=e5741]:
+          - img "Street art" [ref=e5742] [cursor=pointer]
+          - button "🤍" [ref=e5743]
+          - generic: Swan St
+        - generic [ref=e5744]:
+          - img "Street art" [ref=e5745] [cursor=pointer]
+          - button "🤍" [ref=e5746]
+          - generic: Botherambo St
+        - generic [ref=e5747]:
+          - img "Street art" [ref=e5748] [cursor=pointer]
+          - button "🤍" [ref=e5749]
+          - generic: Botherambo St
+        - generic [ref=e5750]:
+          - img "Street art" [ref=e5751] [cursor=pointer]
+          - button "🤍" [ref=e5752]
+          - generic: Swan St
+        - generic [ref=e5753]:
+          - img "Street art" [ref=e5754] [cursor=pointer]
+          - button "🤍" [ref=e5755]
+          - generic: Botherambo St
+        - generic [ref=e5756]:
+          - img "Street art" [ref=e5757] [cursor=pointer]
+          - button "🤍" [ref=e5758]
+          - generic: Botherambo St
+        - generic [ref=e5759]:
+          - img "Street art" [ref=e5760] [cursor=pointer]
+          - button "🤍" [ref=e5761]
+          - generic: Botherambo St
+        - generic [ref=e5762]:
+          - img "Street art" [ref=e5763] [cursor=pointer]
+          - button "🤍" [ref=e5764]
+          - generic: Botherambo St
+        - generic [ref=e5765]:
+          - img "Street art" [ref=e5766] [cursor=pointer]
+          - button "🤍" [ref=e5767]
+          - generic: Botherambo St
+        - generic [ref=e5768]:
+          - img "Street art" [ref=e5769] [cursor=pointer]
+          - button "🤍" [ref=e5770]
+          - generic: Botherambo St
+        - generic [ref=e5771]:
+          - img "Street art" [ref=e5772] [cursor=pointer]
+          - button "🤍" [ref=e5773]
+          - generic: Botherambo St
+        - generic [ref=e5774]:
+          - img "Street art" [ref=e5775] [cursor=pointer]
+          - button "🤍" [ref=e5776]
+          - generic: Botherambo St
+        - generic [ref=e5777]:
+          - img "Street art" [ref=e5778] [cursor=pointer]
+          - button "🤍" [ref=e5779]
+          - generic: Botherambo St
+        - generic [ref=e5780]:
+          - img "Street art" [ref=e5781] [cursor=pointer]
+          - button "🤍" [ref=e5782]
+          - generic: Botherambo St
+        - generic [ref=e5783]:
+          - img "Street art" [ref=e5784] [cursor=pointer]
+          - button "🤍" [ref=e5785]
+          - generic: Botherambo St
+        - generic [ref=e5786]:
+          - img "Street art" [ref=e5787] [cursor=pointer]
+          - button "🤍" [ref=e5788]
+          - generic: Botherambo St
+        - generic [ref=e5789]:
+          - img "Street art" [ref=e5790] [cursor=pointer]
+          - button "🤍" [ref=e5791]
+          - generic: Botherambo St
+        - generic [ref=e5792]:
+          - img "Street art" [ref=e5793] [cursor=pointer]
+          - button "🤍" [ref=e5794]
+          - generic: Botherambo St
+        - generic [ref=e5795]:
+          - img "Street art" [ref=e5796] [cursor=pointer]
+          - button "🤍" [ref=e5797]
+          - generic: Stewart St
+        - generic [ref=e5798]:
+          - img "Street art" [ref=e5799] [cursor=pointer]
+          - button "🤍" [ref=e5800]
+          - generic: Wangaratta St
+        - generic [ref=e5801]:
+          - img "Street art" [ref=e5802] [cursor=pointer]
+          - button "🤍" [ref=e5803]
+          - generic: Botherambo St
+        - generic [ref=e5804]:
+          - img "Street art" [ref=e5805] [cursor=pointer]
+          - button "🤍" [ref=e5806]
+          - generic: Wangaratta St
+        - generic [ref=e5807]:
+          - img "Street art" [ref=e5808] [cursor=pointer]
+          - button "🤍" [ref=e5809]
+          - generic: Wangaratta St
+        - generic [ref=e5810]:
+          - img "Street art" [ref=e5811] [cursor=pointer]
+          - button "🤍" [ref=e5812]
+          - generic: Stewart St
+        - generic [ref=e5813]:
+          - img "Street art" [ref=e5814] [cursor=pointer]
+          - button "🤍" [ref=e5815]
+          - generic: Swan St
+        - generic [ref=e5816]:
+          - img "Street art" [ref=e5817] [cursor=pointer]
+          - button "🤍" [ref=e5818]
+          - generic: Swan St
+        - generic [ref=e5819]:
+          - img "Street art" [ref=e5820] [cursor=pointer]
+          - button "🤍" [ref=e5821]
+          - generic: Botherambo St
+        - generic [ref=e5822]:
+          - img "Street art" [ref=e5823] [cursor=pointer]
+          - button "🤍" [ref=e5824]
+          - generic: Botherambo St
+        - generic [ref=e5825]:
+          - img "Street art" [ref=e5826] [cursor=pointer]
+          - button "🤍" [ref=e5827]
+          - generic: Botherambo St
+        - generic [ref=e5828]:
+          - img "Street art" [ref=e5829] [cursor=pointer]
+          - button "🤍" [ref=e5830]
+          - generic: Stewart Pl
+        - generic [ref=e5831]:
+          - img "Street art" [ref=e5832] [cursor=pointer]
+          - button "🤍" [ref=e5833]
+          - generic: Stewart Pl
+        - generic [ref=e5834]:
+          - img "Street art" [ref=e5835] [cursor=pointer]
+          - button "🤍" [ref=e5836]
+          - generic: Swan St
+        - generic [ref=e5837]:
+          - img "Street art" [ref=e5838] [cursor=pointer]
+          - button "🤍" [ref=e5839]
+          - generic: Wangaratta St
+        - generic [ref=e5840]:
+          - img "Street art" [ref=e5841] [cursor=pointer]
+          - button "🤍" [ref=e5842]
+          - generic: Wangaratta St
+        - generic [ref=e5843]:
+          - img "Street art" [ref=e5844] [cursor=pointer]
+          - button "🤍" [ref=e5845]
+          - generic: Stewart Pl
+        - generic [ref=e5846]:
+          - img "Street art" [ref=e5847] [cursor=pointer]
+          - button "🤍" [ref=e5848]
+          - generic: Swan St
+        - generic [ref=e5849]:
+          - img "Street art" [ref=e5850] [cursor=pointer]
+          - button "🤍" [ref=e5851]
+          - generic: Stewart Pl
+        - generic [ref=e5852]:
+          - img "Street art" [ref=e5853] [cursor=pointer]
+          - button "🤍" [ref=e5854]
+          - generic: Stewart Pl
+        - generic [ref=e5855]:
+          - img "Street art" [ref=e5856] [cursor=pointer]
+          - button "🤍" [ref=e5857]
+          - generic: Stewart Pl
+        - generic [ref=e5858]:
+          - img "Street art" [ref=e5859] [cursor=pointer]
+          - button "🤍" [ref=e5860]
+          - generic: Stewart Pl
+        - generic [ref=e5861]:
+          - img "Street art" [ref=e5862] [cursor=pointer]
+          - button "🤍" [ref=e5863]
+          - generic: Madden Grove
+        - generic [ref=e5864]:
+          - img "Street art" [ref=e5865] [cursor=pointer]
+          - button "🤍" [ref=e5866]
+          - generic: Burnley St
+        - generic [ref=e5867]:
+          - img "Street art" [ref=e5868] [cursor=pointer]
+          - button "🤍" [ref=e5869]
+          - generic: Stewart Pl
+        - generic [ref=e5870]:
+          - img "Street art" [ref=e5871] [cursor=pointer]
+          - button "🤍" [ref=e5872]
+          - generic: Stewart Pl
+        - generic [ref=e5873]:
+          - img "Street art" [ref=e5874] [cursor=pointer]
+          - button "🤍" [ref=e5875]
+          - generic: Stewart St
+        - generic [ref=e5876]:
+          - img "Street art" [ref=e5877] [cursor=pointer]
+          - button "🤍" [ref=e5878]
+          - generic: Stewart Pl
+        - generic [ref=e5879]:
+          - img "Street art" [ref=e5880] [cursor=pointer]
+          - button "🤍" [ref=e5881]
+          - generic: Burnley St
+        - generic [ref=e5882]:
+          - img "Street art" [ref=e5883] [cursor=pointer]
+          - button "🤍" [ref=e5884]
+          - generic: Stewart Pl
+        - generic [ref=e5885]:
+          - img "Street art" [ref=e5886] [cursor=pointer]
+          - button "🤍" [ref=e5887]
+          - generic: Madden Grove
+        - generic [ref=e5888]:
+          - img "Street art" [ref=e5889] [cursor=pointer]
+          - button "🤍" [ref=e5890]
+          - generic: Burnley St
+        - generic [ref=e5891]:
+          - img "Street art" [ref=e5892] [cursor=pointer]
+          - button "🤍" [ref=e5893]
+          - generic: Stewart St
+        - generic [ref=e5894]:
+          - img "Street art" [ref=e5895] [cursor=pointer]
+          - button "🤍" [ref=e5896]
+          - generic: Madden Grove
+        - generic [ref=e5897]:
+          - img "Street art" [ref=e5898] [cursor=pointer]
+          - button "🤍" [ref=e5899]
+          - generic: Madden Grove
+        - generic [ref=e5900]:
+          - img "Street art" [ref=e5901] [cursor=pointer]
+          - button "🤍" [ref=e5902]
+          - generic: Stewart Pl
+        - generic [ref=e5903]:
+          - img "Street art" [ref=e5904] [cursor=pointer]
+          - button "🤍" [ref=e5905]
+          - generic: Madden Grove
+        - generic [ref=e5906]:
+          - img "Street art" [ref=e5907] [cursor=pointer]
+          - button "🤍" [ref=e5908]
+          - generic: Madden Grove
+        - generic [ref=e5909]:
+          - img "Street art" [ref=e5910] [cursor=pointer]
+          - button "🤍" [ref=e5911]
+          - generic: Madden Grove
+        - generic [ref=e5912]:
+          - img "Street art" [ref=e5913] [cursor=pointer]
+          - button "🤍" [ref=e5914]
+          - generic: Inkerman St
+        - generic [ref=e5915]:
+          - img "Street art" [ref=e5916] [cursor=pointer]
+          - button "🤍" [ref=e5917]
+          - generic: Inkerman St
+        - generic [ref=e5918]:
+          - img "Street art" [ref=e5919] [cursor=pointer]
+          - button "🤍" [ref=e5920]
+          - generic: Swan St
+        - generic [ref=e5921]:
+          - img "Street art" [ref=e5922] [cursor=pointer]
+          - button "🤍" [ref=e5923]
+          - generic: Stawell St
+        - generic [ref=e5924]:
+          - img "Street art" [ref=e5925] [cursor=pointer]
+          - button "🤍" [ref=e5926]
+          - generic: Swan St
+        - generic [ref=e5927]:
+          - img "Street art" [ref=e5928] [cursor=pointer]
+          - button "🤍" [ref=e5929]
+          - generic: McIlwrick St
+        - generic [ref=e5930]:
+          - img "Street art" [ref=e5931] [cursor=pointer]
+          - button "🤍" [ref=e5932]
+          - generic: Stawell St
+        - generic [ref=e5933]:
+          - img "Street art" [ref=e5934] [cursor=pointer]
+          - button "🤍" [ref=e5935]
+          - generic: McIlwrick St
+        - generic [ref=e5936]:
+          - img "Street art" [ref=e5937] [cursor=pointer]
+          - button "🤍" [ref=e5938]
+          - generic: Chapel St
+        - generic [ref=e5939]:
+          - img "Street art" [ref=e5940] [cursor=pointer]
+          - button "🤍" [ref=e5941]
+          - generic: McIlwrick St
+        - generic [ref=e5942]:
+          - img "Street art" [ref=e5943] [cursor=pointer]
+          - button "🤍" [ref=e5944]
+          - generic: St Edmonds Rd
+        - generic [ref=e5945]:
+          - img "Street art" [ref=e5946] [cursor=pointer]
+          - button "🤍" [ref=e5947]
+          - generic: Stawell St
+        - generic [ref=e5948]:
+          - img "Street art" [ref=e5949] [cursor=pointer]
+          - button "🤍" [ref=e5950]
+          - generic: Stawell St
+        - generic [ref=e5951]:
+          - img "Street art" [ref=e5952] [cursor=pointer]
+          - button "🤍" [ref=e5953]
+          - generic: Stawell St
+        - generic [ref=e5954]:
+          - img "Street art" [ref=e5955] [cursor=pointer]
+          - button "🤍" [ref=e5956]
+          - generic: McIlwrick St
+        - generic [ref=e5957]:
+          - img "Street art" [ref=e5958] [cursor=pointer]
+          - button "🤍" [ref=e5959]
+          - generic: Chapel St
+        - generic [ref=e5960]:
+          - img "Street art" [ref=e5961] [cursor=pointer]
+          - button "🤍" [ref=e5962]
+          - generic: Stawell St
+        - generic [ref=e5963]:
+          - img "Street art" [ref=e5964] [cursor=pointer]
+          - button "🤍" [ref=e5965]
+          - generic: Stawell St
+        - generic [ref=e5966]:
+          - img "Street art" [ref=e5967] [cursor=pointer]
+          - button "🤍" [ref=e5968]
+          - generic: Stawell St
+        - generic [ref=e5969]:
+          - img "Street art" [ref=e5970] [cursor=pointer]
+          - button "🤍" [ref=e5971]
+          - generic: McIlwrick St
+        - generic [ref=e5972]:
+          - img "Street art" [ref=e5973] [cursor=pointer]
+          - button "🤍" [ref=e5974]
+          - generic: McIlwrick St
+        - generic [ref=e5975]:
+          - img "Street art" [ref=e5976] [cursor=pointer]
+          - button "🤍" [ref=e5977]
+          - generic: Windsor Pl
+        - generic [ref=e5978]:
+          - img "Street art" [ref=e5979] [cursor=pointer]
+          - button "🤍" [ref=e5980]
+          - generic: Chapel St
+        - generic [ref=e5981]:
+          - img "Street art" [ref=e5982] [cursor=pointer]
+          - button "🤍" [ref=e5983]
+          - generic: McIlwrick St
+        - generic [ref=e5984]:
+          - img "Street art" [ref=e5985] [cursor=pointer]
+          - button "🤍" [ref=e5986]
+          - generic: Union St
+        - generic [ref=e5987]:
+          - img "Street art" [ref=e5988] [cursor=pointer]
+          - button "🤍" [ref=e5989]
+          - generic: McIlwrick St
+        - generic [ref=e5990]:
+          - img "Street art" [ref=e5991] [cursor=pointer]
+          - button "🤍" [ref=e5992]
+          - generic: Union St
+        - generic [ref=e5993]:
+          - img "Street art" [ref=e5994] [cursor=pointer]
+          - button "🤍" [ref=e5995]
+          - generic: Windsor Pl
+        - generic [ref=e5996]:
+          - img "Street art" [ref=e5997] [cursor=pointer]
+          - button "🤍" [ref=e5998]
+          - generic: Union St
+        - generic [ref=e5999]:
+          - img "Street art" [ref=e6000] [cursor=pointer]
+          - button "🤍" [ref=e6001]
+          - generic: McIlwrick St
+        - generic [ref=e6002]:
+          - img "Street art" [ref=e6003] [cursor=pointer]
+          - button "🤍" [ref=e6004]
+          - generic: McIlwrick St
+        - generic [ref=e6005]:
+          - img "Street art" [ref=e6006] [cursor=pointer]
+          - button "🤍" [ref=e6007]
+          - generic: Chapel St
+        - generic [ref=e6008]:
+          - img "Street art" [ref=e6009] [cursor=pointer]
+          - button "🤍" [ref=e6010]
+          - generic: Union St
+        - generic [ref=e6011]:
+          - img "Street art" [ref=e6012] [cursor=pointer]
+          - button "🤍" [ref=e6013]
+          - generic: Windsor Pl
+        - generic [ref=e6014]:
+          - img "Street art" [ref=e6015] [cursor=pointer]
+          - button "🤍" [ref=e6016]
+          - generic: Chapel St
+        - generic [ref=e6017]:
+          - img "Street art" [ref=e6018] [cursor=pointer]
+          - button "🤍" [ref=e6019]
+          - generic: Union St
+        - generic [ref=e6020]:
+          - img "Street art" [ref=e6021] [cursor=pointer]
+          - button "🤍" [ref=e6022]
+          - generic: Windsor Pl
+        - generic [ref=e6023]:
+          - img "Street art" [ref=e6024] [cursor=pointer]
+          - button "🤍" [ref=e6025]
+          - generic: McIlwrick St
+        - generic [ref=e6026]:
+          - img "Street art" [ref=e6027] [cursor=pointer]
+          - button "🤍" [ref=e6028]
+          - generic: Chapel St
+        - generic [ref=e6029]:
+          - img "Street art" [ref=e6030] [cursor=pointer]
+          - button "🤍" [ref=e6031]
+          - generic: Artists Ln
+        - generic [ref=e6032]:
+          - img "Street art" [ref=e6033] [cursor=pointer]
+          - button "🤍" [ref=e6034]
+          - generic: Chapel St
+        - generic [ref=e6035]:
+          - img "Street art" [ref=e6036] [cursor=pointer]
+          - button "🤍" [ref=e6037]
+          - generic: Artists Ln
+        - generic [ref=e6038]:
+          - img "Street art" [ref=e6039] [cursor=pointer]
+          - button "🤍" [ref=e6040]
+          - generic: Artists Ln
+        - generic [ref=e6041]:
+          - img "Street art" [ref=e6042] [cursor=pointer]
+          - button "🤍" [ref=e6043]
+          - generic: Artists Ln
+        - generic [ref=e6044]:
+          - img "Street art" [ref=e6045] [cursor=pointer]
+          - button "🤍" [ref=e6046]
+          - generic: Artists Ln
+        - generic [ref=e6047]:
+          - img "Street art" [ref=e6048] [cursor=pointer]
+          - button "🤍" [ref=e6049]
+          - generic: Artists Ln
+        - generic [ref=e6050]:
+          - img "Street art" [ref=e6051] [cursor=pointer]
+          - button "🤍" [ref=e6052]
+          - generic: Artists Ln
+        - generic [ref=e6053]:
+          - img "Street art" [ref=e6054] [cursor=pointer]
+          - button "🤍" [ref=e6055]
+          - generic: Artists Ln
+        - generic [ref=e6056]:
+          - img "Street art" [ref=e6057] [cursor=pointer]
+          - button "🤍" [ref=e6058]
+          - generic: Artists Ln
+        - generic [ref=e6059]:
+          - img "Street art" [ref=e6060] [cursor=pointer]
+          - button "🤍" [ref=e6061]
+          - generic: Artists Ln
+        - generic [ref=e6062]:
+          - img "Street art" [ref=e6063] [cursor=pointer]
+          - button "🤍" [ref=e6064]
+          - generic: Artists Ln
+        - generic [ref=e6065]:
+          - img "Street art" [ref=e6066] [cursor=pointer]
+          - button "🤍" [ref=e6067]
+          - generic: Artists Ln
+        - generic [ref=e6068]:
+          - img "Street art" [ref=e6069] [cursor=pointer]
+          - button "🤍" [ref=e6070]
+          - generic: Artists Ln
+        - generic [ref=e6071]:
+          - img "Street art" [ref=e6072] [cursor=pointer]
+          - button "🤍" [ref=e6073]
+          - generic: Artists Ln
+        - generic [ref=e6074]:
+          - img "Street art" [ref=e6075] [cursor=pointer]
+          - button "🤍" [ref=e6076]
+          - generic: Artists Ln
+        - generic [ref=e6077]:
+          - img "Street art" [ref=e6078] [cursor=pointer]
+          - button "🤍" [ref=e6079]
+          - generic: Union St
+        - generic [ref=e6080]:
+          - img "Street art" [ref=e6081] [cursor=pointer]
+          - button "🤍" [ref=e6082]
+          - generic: Artists Ln
+        - generic [ref=e6083]:
+          - img "Street art" [ref=e6084] [cursor=pointer]
+          - button "🤍" [ref=e6085]
+          - generic: Artists Ln
+        - generic [ref=e6086]:
+          - img "Street art" [ref=e6087] [cursor=pointer]
+          - button "🤍" [ref=e6088]
+          - generic: Artists Ln
+        - generic [ref=e6089]:
+          - img "Street art" [ref=e6090] [cursor=pointer]
+          - button "🤍" [ref=e6091]
+          - generic: Artists Ln
+        - generic [ref=e6092]:
+          - img "Street art" [ref=e6093] [cursor=pointer]
+          - button "🤍" [ref=e6094]
+          - generic: Artists Ln
+        - generic [ref=e6095]:
+          - img "Street art" [ref=e6096] [cursor=pointer]
+          - button "🤍" [ref=e6097]
+          - generic: Chapel St
+        - generic [ref=e6098]:
+          - img "Street art" [ref=e6099] [cursor=pointer]
+          - button "🤍" [ref=e6100]
+          - generic: Artists Ln
+        - generic [ref=e6101]:
+          - img "Street art" [ref=e6102] [cursor=pointer]
+          - button "🤍" [ref=e6103]
+          - generic: Artists Ln
+        - generic [ref=e6104]:
+          - img "Street art" [ref=e6105] [cursor=pointer]
+          - button "🤍" [ref=e6106]
+          - generic: Chapel St
+        - generic [ref=e6107]:
+          - img "Street art" [ref=e6108] [cursor=pointer]
+          - button "🤍" [ref=e6109]
+          - generic: Artists Ln
+        - generic [ref=e6110]:
+          - img "Street art" [ref=e6111] [cursor=pointer]
+          - button "🤍" [ref=e6112]
+          - generic: Artists Ln
+        - generic [ref=e6113]:
+          - img "Street art" [ref=e6114] [cursor=pointer]
+          - button "🤍" [ref=e6115]
+          - generic: Artists Ln
+        - generic [ref=e6116]:
+          - img "Street art" [ref=e6117] [cursor=pointer]
+          - button "🤍" [ref=e6118]
+          - generic: Artists Ln
+        - generic [ref=e6119]:
+          - img "Street art" [ref=e6120] [cursor=pointer]
+          - button "🤍" [ref=e6121]
+          - generic: Artists Ln
+        - generic [ref=e6122]:
+          - img "Street art" [ref=e6123] [cursor=pointer]
+          - button "🤍" [ref=e6124]
+          - generic: Artists Ln
+        - generic [ref=e6125]:
+          - img "Street art" [ref=e6126] [cursor=pointer]
+          - button "🤍" [ref=e6127]
+          - generic: Chapel St
+        - generic [ref=e6128]:
+          - img "Street art" [ref=e6129] [cursor=pointer]
+          - button "🤍" [ref=e6130]
+          - generic: Artists Ln
+        - generic [ref=e6131]:
+          - img "Street art" [ref=e6132] [cursor=pointer]
+          - button "🤍" [ref=e6133]
+          - generic: Chapel St
+        - generic [ref=e6134]:
+          - img "Street art" [ref=e6135] [cursor=pointer]
+          - button "🤍" [ref=e6136]
+          - generic: Artists Ln
+        - generic [ref=e6137]:
+          - img "Street art" [ref=e6138] [cursor=pointer]
+          - button "🤍" [ref=e6139]
+          - generic: Artists Ln
+        - generic [ref=e6140]:
+          - img "Street art" [ref=e6141] [cursor=pointer]
+          - button "🤍" [ref=e6142]
+          - generic: Artists Ln
+        - generic [ref=e6143]:
+          - img "Street art" [ref=e6144] [cursor=pointer]
+          - button "🤍" [ref=e6145]
+          - generic: Artists Ln
+        - generic [ref=e6146]:
+          - img "Street art" [ref=e6147] [cursor=pointer]
+          - button "🤍" [ref=e6148]
+          - generic: Artists Ln
+        - generic [ref=e6149]:
+          - img "Street art" [ref=e6150] [cursor=pointer]
+          - button "🤍" [ref=e6151]
+          - generic: Green St
+        - generic [ref=e6152]:
+          - img "Street art" [ref=e6153] [cursor=pointer]
+          - button "🤍" [ref=e6154]
+          - generic: Artists Ln
+        - generic [ref=e6155]:
+          - img "Street art" [ref=e6156] [cursor=pointer]
+          - button "🤍" [ref=e6157]
+          - generic: Farrell Way
+        - generic [ref=e6158]:
+          - img "Street art" [ref=e6159] [cursor=pointer]
+          - button "🤍" [ref=e6160]
+          - generic: Farrell Way
+        - generic [ref=e6161]:
+          - img "Street art" [ref=e6162] [cursor=pointer]
+          - button "🤍" [ref=e6163]
+          - generic: Green St
+        - generic [ref=e6164]:
+          - img "Street art" [ref=e6165] [cursor=pointer]
+          - button "🤍" [ref=e6166]
+          - generic: Green St
+        - generic [ref=e6167]:
+          - img "Street art" [ref=e6168] [cursor=pointer]
+          - button "🤍" [ref=e6169]
+          - generic: Green St
+        - generic [ref=e6170]:
+          - img "Street art" [ref=e6171] [cursor=pointer]
+          - button "🤍" [ref=e6172]
+          - generic: Artists Ln
+        - generic [ref=e6173]:
+          - img "Street art" [ref=e6174] [cursor=pointer]
+          - button "🤍" [ref=e6175]
+          - generic: Artists Ln
+        - generic [ref=e6176]:
+          - img "Street art" [ref=e6177] [cursor=pointer]
+          - button "🤍" [ref=e6178]
+          - generic: Farrell Way
+        - generic [ref=e6179]:
+          - img "Street art" [ref=e6180] [cursor=pointer]
+          - button "🤍" [ref=e6181]
+          - generic: Artists Ln
+        - generic [ref=e6182]:
+          - img "Street art" [ref=e6183] [cursor=pointer]
+          - button "🤍" [ref=e6184]
+          - generic: Green St
+        - generic [ref=e6185]:
+          - img "Street art" [ref=e6186] [cursor=pointer]
+          - button "🤍" [ref=e6187]
+          - generic: Artists Ln
+        - generic [ref=e6188]:
+          - img "Street art" [ref=e6189] [cursor=pointer]
+          - button "🤍" [ref=e6190]
+          - generic: Artists Ln
+        - generic [ref=e6191]:
+          - img "Street art" [ref=e6192] [cursor=pointer]
+          - button "🤍" [ref=e6193]
+          - generic: Farrell Way
+        - generic [ref=e6194]:
+          - img "Street art" [ref=e6195] [cursor=pointer]
+          - button "🤍" [ref=e6196]
+          - generic: Artists Ln
+        - generic [ref=e6197]:
+          - img "Street art" [ref=e6198] [cursor=pointer]
+          - button "🤍" [ref=e6199]
+          - generic: Green St
+        - generic [ref=e6200]:
+          - img "Street art" [ref=e6201] [cursor=pointer]
+          - button "🤍" [ref=e6202]
+          - generic: Farrell Way
+        - generic [ref=e6203]:
+          - img "Street art" [ref=e6204] [cursor=pointer]
+          - button "🤍" [ref=e6205]
+          - generic: Artists Ln
+        - generic [ref=e6206]:
+          - img "Street art" [ref=e6207] [cursor=pointer]
+          - button "🤍" [ref=e6208]
+          - generic: Farrell Way
+        - generic [ref=e6209]:
+          - img "Street art" [ref=e6210] [cursor=pointer]
+          - button "🤍" [ref=e6211]
+          - generic: Artists Ln
+        - generic [ref=e6212]:
+          - img "Street art" [ref=e6213] [cursor=pointer]
+          - button "🤍" [ref=e6214]
+          - generic: Artists Ln
+        - generic [ref=e6215]:
+          - img "Street art" [ref=e6216] [cursor=pointer]
+          - button "🤍" [ref=e6217]
+          - generic: Artists Ln
+        - generic [ref=e6218]:
+          - img "Street art" [ref=e6219] [cursor=pointer]
+          - button "🤍" [ref=e6220]
+          - generic: Artists Ln
+        - generic [ref=e6221]:
+          - img "Street art" [ref=e6222] [cursor=pointer]
+          - button "🤍" [ref=e6223]
+          - generic: Artists Ln
+        - generic [ref=e6224]:
+          - img "Street art" [ref=e6225] [cursor=pointer]
+          - button "🤍" [ref=e6226]
+          - generic: Artists Ln
+        - generic [ref=e6227]:
+          - img "Street art" [ref=e6228] [cursor=pointer]
+          - button "🤍" [ref=e6229]
+          - generic: Artists Ln
+        - generic [ref=e6230]:
+          - img "Street art" [ref=e6231] [cursor=pointer]
+          - button "🤍" [ref=e6232]
+          - generic: Artists Ln
+        - generic [ref=e6233]:
+          - img "Street art" [ref=e6234] [cursor=pointer]
+          - button "🤍" [ref=e6235]
+          - generic: Artists Ln
+        - generic [ref=e6236]:
+          - img "Street art" [ref=e6237] [cursor=pointer]
+          - button "🤍" [ref=e6238]
+          - generic: Artists Ln
+        - generic [ref=e6239]:
+          - img "Street art" [ref=e6240] [cursor=pointer]
+          - button "🤍" [ref=e6241]
+          - generic: Artists Ln
+        - generic [ref=e6242]:
+          - img "Street art" [ref=e6243] [cursor=pointer]
+          - button "🤍" [ref=e6244]
+          - generic: Artists Ln
+        - generic [ref=e6245]:
+          - img "Street art" [ref=e6246] [cursor=pointer]
+          - button "🤍" [ref=e6247]
+          - generic: Artists Ln
+        - generic [ref=e6248]:
+          - img "Street art" [ref=e6249] [cursor=pointer]
+          - button "🤍" [ref=e6250]
+          - generic: Artists Ln
+        - generic [ref=e6251]:
+          - img "Street art" [ref=e6252] [cursor=pointer]
+          - button "🤍" [ref=e6253]
+          - generic: Artists Ln
+        - generic [ref=e6254]:
+          - img "Street art" [ref=e6255] [cursor=pointer]
+          - button "🤍" [ref=e6256]
+          - generic: Artists Ln
+        - generic [ref=e6257]:
+          - img "Street art" [ref=e6258] [cursor=pointer]
+          - button "🤍" [ref=e6259]
+          - generic: Artists Ln
+        - generic [ref=e6260]:
+          - img "Street art" [ref=e6261] [cursor=pointer]
+          - button "🤍" [ref=e6262]
+          - generic: Artists Ln
+        - generic [ref=e6263]:
+          - img "Street art" [ref=e6264] [cursor=pointer]
+          - button "🤍" [ref=e6265]
+          - generic: Artists Ln
+        - generic [ref=e6266]:
+          - img "Street art" [ref=e6267] [cursor=pointer]
+          - button "🤍" [ref=e6268]
+          - generic: Artists Ln
+        - generic [ref=e6269]:
+          - img "Street art" [ref=e6270] [cursor=pointer]
+          - button "🤍" [ref=e6271]
+          - generic: Mechanics Ln
+        - generic [ref=e6272]:
+          - img "Street art" [ref=e6273] [cursor=pointer]
+          - button "🤍" [ref=e6274]
+          - generic: Malvern Rd
+        - generic [ref=e6275]:
+          - img "Street art" [ref=e6276] [cursor=pointer]
+          - button "🤍" [ref=e6277]
+          - generic: Little Chapel St
+        - generic [ref=e6278]:
+          - img "Street art" [ref=e6279] [cursor=pointer]
+          - button "🤍" [ref=e6280]
+          - generic: Mechanics Ln
+        - generic [ref=e6281]:
+          - img "Street art" [ref=e6282] [cursor=pointer]
+          - button "🤍" [ref=e6283]
+          - generic: Little Chapel St
+        - generic [ref=e6284]:
+          - img "Street art" [ref=e6285] [cursor=pointer]
+          - button "🤍" [ref=e6286]
+          - generic: Carlton St
+        - generic [ref=e6287]:
+          - img "Street art" [ref=e6288] [cursor=pointer]
+          - button "🤍" [ref=e6289]
+          - generic: Little Chapel St
+        - generic [ref=e6290]:
+          - img "Street art" [ref=e6291] [cursor=pointer]
+          - button "🤍" [ref=e6292]
+          - generic: Malvern Rd
+        - generic [ref=e6293]:
+          - img "Street art" [ref=e6294] [cursor=pointer]
+          - button "🤍" [ref=e6295]
+          - generic: Mechanics Ln
+        - generic [ref=e6296]:
+          - img "Street art" [ref=e6297] [cursor=pointer]
+          - button "🤍" [ref=e6298]
+          - generic: Little Chapel St
+        - generic [ref=e6299]:
+          - img "Street art" [ref=e6300] [cursor=pointer]
+          - button "🤍" [ref=e6301]
+          - generic: Little Chapel St
+        - generic [ref=e6302]:
+          - img "Street art" [ref=e6303] [cursor=pointer]
+          - button "🤍" [ref=e6304]
+          - generic: Little Chapel St
+        - generic [ref=e6305]:
+          - img "Street art" [ref=e6306] [cursor=pointer]
+          - button "🤍" [ref=e6307]
+          - generic: Artists Ln
+        - generic [ref=e6308]:
+          - img "Street art" [ref=e6309] [cursor=pointer]
+          - button "🤍" [ref=e6310]
+          - generic: Malvern Rd
+        - generic [ref=e6311]:
+          - img "Street art" [ref=e6312] [cursor=pointer]
+          - button "🤍" [ref=e6313]
+          - generic: Little Chapel St
+        - generic [ref=e6314]:
+          - img "Street art" [ref=e6315] [cursor=pointer]
+          - button "🤍" [ref=e6316]
+          - generic: Little Chapel St
+        - generic [ref=e6317]:
+          - img "Street art" [ref=e6318] [cursor=pointer]
+          - button "🤍" [ref=e6319]
+          - generic: Walker St
+        - generic [ref=e6320]:
+          - img "Street art" [ref=e6321] [cursor=pointer]
+          - button "🤍" [ref=e6322]
+          - generic: Carlton St
+        - generic [ref=e6323]:
+          - img "Street art" [ref=e6324] [cursor=pointer]
+          - button "🤍" [ref=e6325]
+          - generic: Carlton St
+        - generic [ref=e6326]:
+          - img "Street art" [ref=e6327] [cursor=pointer]
+          - button "🤍" [ref=e6328]
+          - generic: Walker St
+        - generic [ref=e6329]:
+          - img "Street art" [ref=e6330] [cursor=pointer]
+          - button "🤍" [ref=e6331]
+          - generic: Little Bourke St
+        - generic [ref=e6332]:
+          - img "Street art" [ref=e6333] [cursor=pointer]
+          - button "🤍" [ref=e6334]
+          - generic: Little La Trobe St
+        - generic [ref=e6335]:
+          - img "Street art" [ref=e6336] [cursor=pointer]
+          - button "🤍" [ref=e6337]
+          - generic: Little La Trobe St
+        - generic [ref=e6338]:
+          - img "Street art" [ref=e6339] [cursor=pointer]
+          - button "🤍" [ref=e6340]
+          - generic: Russell St
+        - generic [ref=e6341]:
+          - img "Street art" [ref=e6342] [cursor=pointer]
+          - button "🤍" [ref=e6343]
+          - generic: La Trobe St
+        - generic [ref=e6344]:
+          - img "Street art" [ref=e6345] [cursor=pointer]
+          - button "🤍" [ref=e6346]
+          - generic: Clifton St
+        - generic [ref=e6347]:
+          - img "Street art" [ref=e6348] [cursor=pointer]
+          - button "🤍" [ref=e6349]
+          - generic: Literature Ln
+        - generic [ref=e6350]:
+          - img "Street art" [ref=e6351] [cursor=pointer]
+          - button "🤍" [ref=e6352]
+          - generic: Walker St
+        - generic [ref=e6353]:
+          - img "Street art" [ref=e6354] [cursor=pointer]
+          - button "🤍" [ref=e6355]
+          - generic: Literature Ln
+        - generic [ref=e6356]:
+          - img "Street art" [ref=e6357] [cursor=pointer]
+          - button "🤍" [ref=e6358]
+          - generic: Franklin St
+        - generic [ref=e6359]:
+          - img "Street art" [ref=e6360] [cursor=pointer]
+          - button "🤍" [ref=e6361]
+          - generic: Flemington Rd
+        - generic [ref=e6362]:
+          - img "Street art" [ref=e6363] [cursor=pointer]
+          - button "🤍" [ref=e6364]
+          - generic: Literature Ln
+        - generic [ref=e6365]:
+          - img "Street art" [ref=e6366] [cursor=pointer]
+          - button "🤍" [ref=e6367]
+          - generic: Walker St
+        - generic [ref=e6368]:
+          - img "Street art" [ref=e6369] [cursor=pointer]
+          - button "🤍" [ref=e6370]
+          - generic: Literature Ln
+        - generic [ref=e6371]:
+          - img "Street art" [ref=e6372] [cursor=pointer]
+          - button "🤍" [ref=e6373]
+          - generic: Walker St
+        - generic [ref=e6374]:
+          - img "Street art" [ref=e6375] [cursor=pointer]
+          - button "🤍" [ref=e6376]
+          - generic: Drummond St
+        - generic [ref=e6377]:
+          - img "Street art" [ref=e6378] [cursor=pointer]
+          - button "🤍" [ref=e6379]
+          - generic: Clifton St
+        - generic [ref=e6380]:
+          - img "Street art" [ref=e6381] [cursor=pointer]
+          - button "🤍" [ref=e6382]
+          - generic: Little La Trobe St
+        - generic [ref=e6383]:
+          - img "Street art" [ref=e6384] [cursor=pointer]
+          - button "🤍" [ref=e6385]
+          - generic: Story St
+        - generic [ref=e6386]:
+          - img "Street art" [ref=e6387] [cursor=pointer]
+          - button "🤍" [ref=e6388]
+          - generic: Little La Trobe St
+        - generic [ref=e6389]:
+          - img "Street art" [ref=e6390] [cursor=pointer]
+          - button "🤍" [ref=e6391]
+          - generic: Swanston St
+        - generic [ref=e6392]:
+          - img "Street art" [ref=e6393] [cursor=pointer]
+          - button "🤍" [ref=e6394]
+          - generic: Swanston St
+        - generic [ref=e6395]:
+          - img "Street art" [ref=e6396] [cursor=pointer]
+          - button "🤍" [ref=e6397]
+          - generic: Little La Trobe St
+        - generic [ref=e6398]:
+          - img "Street art" [ref=e6399] [cursor=pointer]
+          - button "🤍" [ref=e6400]
+          - generic: Swanston St
+        - generic [ref=e6401]:
+          - img "Street art" [ref=e6402] [cursor=pointer]
+          - button "🤍" [ref=e6403]
+          - generic: Swanston St
+        - generic [ref=e6404]:
+          - img "Street art" [ref=e6405] [cursor=pointer]
+          - button "🤍" [ref=e6406]
+          - generic: Hardware St
+        - generic [ref=e6407]:
+          - img "Street art" [ref=e6408] [cursor=pointer]
+          - button "🤍" [ref=e6409]
+          - generic: Little La Trobe St
+        - generic [ref=e6410]:
+          - img "Street art" [ref=e6411] [cursor=pointer]
+          - button "🤍" [ref=e6412]
+          - generic: Little La Trobe St
+        - generic [ref=e6413]:
+          - img "Street art" [ref=e6414] [cursor=pointer]
+          - button "🤍" [ref=e6415]
+          - generic: La Trobe St
+        - generic [ref=e6416]:
+          - img "Street art" [ref=e6417] [cursor=pointer]
+          - button "🤍" [ref=e6418]
+          - generic: Swanston St
+        - generic [ref=e6419]:
+          - img "Street art" [ref=e6420] [cursor=pointer]
+          - button "🤍" [ref=e6421]
+          - generic: Lonsdale St
+        - generic [ref=e6422]:
+          - img "Street art" [ref=e6423] [cursor=pointer]
+          - button "🤍" [ref=e6424]
+          - generic: Little La Trobe St
+        - generic [ref=e6425]:
+          - img "Street art" [ref=e6426] [cursor=pointer]
+          - button "🤍" [ref=e6427]
+          - generic: State Route 30
+        - generic [ref=e6428]:
+          - img "Street art" [ref=e6429] [cursor=pointer]
+          - button "🤍" [ref=e6430]
+          - generic: Little La Trobe St
+        - generic [ref=e6431]:
+          - img "Street art" [ref=e6432] [cursor=pointer]
+          - button "🤍" [ref=e6433]
+          - generic: La Trobe St
+        - generic [ref=e6434]:
+          - img "Street art" [ref=e6435] [cursor=pointer]
+          - button "🤍" [ref=e6436]
+          - generic: Swanston St
+        - generic [ref=e6437]:
+          - img "Street art" [ref=e6438] [cursor=pointer]
+          - button "🤍" [ref=e6439]
+          - generic: Little La Trobe St
+        - generic [ref=e6440]:
+          - img "Street art" [ref=e6441] [cursor=pointer]
+          - button "🤍" [ref=e6442]
+          - generic: Little La Trobe St
+        - generic [ref=e6443]:
+          - img "Street art" [ref=e6444] [cursor=pointer]
+          - button "🤍" [ref=e6445]
+          - generic: Carlton St
+        - generic [ref=e6446]:
+          - img "Street art" [ref=e6447] [cursor=pointer]
+          - button "🤍" [ref=e6448]
+          - generic: Little La Trobe St
+        - generic [ref=e6449]:
+          - img "Street art" [ref=e6450] [cursor=pointer]
+          - button "🤍" [ref=e6451]
+          - generic: Little Lonsdale St
+        - generic [ref=e6452]:
+          - img "Street art" [ref=e6453] [cursor=pointer]
+          - button "🤍" [ref=e6454]
+          - generic: Little Lonsdale St
+        - generic [ref=e6455]:
+          - img "Street art" [ref=e6456] [cursor=pointer]
+          - button "🤍" [ref=e6457]
+          - generic: Little Lonsdale St
+        - generic [ref=e6458]:
+          - img "Street art" [ref=e6459] [cursor=pointer]
+          - button "🤍" [ref=e6460]
+          - generic: Little Lonsdale St
+        - generic [ref=e6461]:
+          - img "Street art" [ref=e6462] [cursor=pointer]
+          - button "🤍" [ref=e6463]
+          - generic: Little Lonsdale St
+        - generic [ref=e6464]:
+          - img "Street art" [ref=e6465] [cursor=pointer]
+          - button "🤍" [ref=e6466]
+          - generic: Queen St
+        - generic [ref=e6467]:
+          - img "Street art" [ref=e6468] [cursor=pointer]
+          - button "🤍" [ref=e6469]
+          - generic: Little Lonsdale St
+        - generic [ref=e6470]:
+          - img "Street art" [ref=e6471] [cursor=pointer]
+          - button "🤍" [ref=e6472]
+          - generic: Little Lonsdale St
+        - generic [ref=e6473]:
+          - img "Street art" [ref=e6474] [cursor=pointer]
+          - button "🤍" [ref=e6475]
+          - generic: Guildford Ln
+        - generic [ref=e6476]:
+          - img "Street art" [ref=e6477] [cursor=pointer]
+          - button "🤍" [ref=e6478]
+          - generic: Little Lonsdale St
+        - generic [ref=e6479]:
+          - img "Street art" [ref=e6480] [cursor=pointer]
+          - button "🤍" [ref=e6481]
+          - generic: Little Lonsdale St
+        - generic [ref=e6482]:
+          - img "Street art" [ref=e6483] [cursor=pointer]
+          - button "🤍" [ref=e6484]
+          - generic: Little Lonsdale St
+        - generic [ref=e6485]:
+          - img "Street art" [ref=e6486] [cursor=pointer]
+          - button "🤍" [ref=e6487]
+          - generic: Little Lonsdale St
+        - generic [ref=e6488]:
+          - img "Street art" [ref=e6489] [cursor=pointer]
+          - button "🤍" [ref=e6490]
+          - generic: Finlay Ln
+        - generic [ref=e6491]:
+          - img "Street art" [ref=e6492] [cursor=pointer]
+          - button "🤍" [ref=e6493]
+          - generic: Little Lonsdale St
+        - generic [ref=e6494]:
+          - img "Street art" [ref=e6495] [cursor=pointer]
+          - button "🤍" [ref=e6496]
+          - generic: Little Lonsdale St
+        - generic [ref=e6497]:
+          - img "Street art" [ref=e6498] [cursor=pointer]
+          - button "🤍" [ref=e6499]
+          - generic: Little Lonsdale St
+        - generic [ref=e6500]:
+          - img "Street art" [ref=e6501] [cursor=pointer]
+          - button "🤍" [ref=e6502]
+          - generic: Little Lonsdale St
+        - generic [ref=e6503]:
+          - img "Street art" [ref=e6504] [cursor=pointer]
+          - button "🤍" [ref=e6505]
+          - generic: Little Lonsdale St
+        - generic [ref=e6506]:
+          - img "Street art" [ref=e6507] [cursor=pointer]
+          - button "🤍" [ref=e6508]
+          - generic: Queen St
+        - generic [ref=e6509]:
+          - img "Street art" [ref=e6510] [cursor=pointer]
+          - button "🤍" [ref=e6511]
+          - generic: Heape Ct
+        - generic [ref=e6512]:
+          - img "Street art" [ref=e6513] [cursor=pointer]
+          - button "🤍" [ref=e6514]
+          - generic: Little Lonsdale St
+        - generic [ref=e6515]:
+          - img "Street art" [ref=e6516] [cursor=pointer]
+          - button "🤍" [ref=e6517]
+          - generic: Drewery Ln
+        - generic [ref=e6518]:
+          - img "Street art" [ref=e6519] [cursor=pointer]
+          - button "🤍" [ref=e6520]
+          - generic: Drewery Pl
+        - generic [ref=e6521]:
+          - img "Street art" [ref=e6522] [cursor=pointer]
+          - button "🤍" [ref=e6523]
+          - generic: Drewery Pl
+        - generic [ref=e6524]:
+          - img "Street art" [ref=e6525] [cursor=pointer]
+          - button "🤍" [ref=e6526]
+          - generic: Zevenboom Ln
+        - generic [ref=e6527]:
+          - img "Street art" [ref=e6528] [cursor=pointer]
+          - button "🤍" [ref=e6529]
+          - generic: La Trobe St
+        - generic [ref=e6530]:
+          - img "Street art" [ref=e6531] [cursor=pointer]
+          - button "🤍" [ref=e6532]
+          - generic: Drewery Ln
+        - generic [ref=e6533]:
+          - img "Street art" [ref=e6534] [cursor=pointer]
+          - button "🤍" [ref=e6535]
+          - generic: Lonsdale St
+        - generic [ref=e6536]:
+          - img "Street art" [ref=e6537] [cursor=pointer]
+          - button "🤍" [ref=e6538]
+          - generic: Heape Ct
+        - generic [ref=e6539]:
+          - img "Street art" [ref=e6540] [cursor=pointer]
+          - button "🤍" [ref=e6541]
+          - generic: Russell St
+        - generic [ref=e6542]:
+          - img "Street art" [ref=e6543] [cursor=pointer]
+          - button "🤍" [ref=e6544]
+          - generic: Sniders Ln
+        - generic [ref=e6545]:
+          - img "Street art" [ref=e6546] [cursor=pointer]
+          - button "🤍" [ref=e6547]
+          - generic: Hosier Ln
+        - generic [ref=e6548]:
+          - img "Street art" [ref=e6549] [cursor=pointer]
+          - button "🤍" [ref=e6550]
+          - generic: La Trobe St
+        - generic [ref=e6551]:
+          - img "Street art" [ref=e6552] [cursor=pointer]
+          - button "🤍" [ref=e6553]
+          - generic: Hosier Ln
+        - generic [ref=e6554]:
+          - img "Street art" [ref=e6555] [cursor=pointer]
+          - button "🤍" [ref=e6556]
+          - generic: Heape Ct
+        - generic [ref=e6557]:
+          - img "Street art" [ref=e6558] [cursor=pointer]
+          - button "🤍" [ref=e6559]
+          - generic: Drewery Pl
+        - generic [ref=e6560]:
+          - img "Street art" [ref=e6561] [cursor=pointer]
+          - button "🤍" [ref=e6562]
+          - generic: Lonsdale St
+        - generic [ref=e6563]:
+          - img "Street art" [ref=e6564] [cursor=pointer]
+          - button "🤍" [ref=e6565]
+          - generic: Knox Pl
+        - generic [ref=e6566]:
+          - img "Street art" [ref=e6567] [cursor=pointer]
+          - button "🤍" [ref=e6568]
+          - generic: Drewery Pl
+        - generic [ref=e6569]:
+          - img "Street art" [ref=e6570] [cursor=pointer]
+          - button "🤍" [ref=e6571]
+          - generic: Flinders Ln
+        - generic [ref=e6572]:
+          - img "Street art" [ref=e6573] [cursor=pointer]
+          - button "🤍" [ref=e6574]
+          - generic: Hosier Ln
+        - generic [ref=e6575]:
+          - img "Street art" [ref=e6576] [cursor=pointer]
+          - button "🤍" [ref=e6577]
+          - generic: Rutledge Ln
+        - generic [ref=e6578]:
+          - img "Street art" [ref=e6579] [cursor=pointer]
+          - button "🤍" [ref=e6580]
+          - generic: Hosier Ln
+        - generic [ref=e6581]:
+          - img "Street art" [ref=e6582] [cursor=pointer]
+          - button "🤍" [ref=e6583]
+          - generic: Flinders Ln
+        - generic [ref=e6584]:
+          - img "Street art" [ref=e6585] [cursor=pointer]
+          - button "🤍" [ref=e6586]
+          - generic: Flinders Ln
+        - generic [ref=e6587]:
+          - img "Street art" [ref=e6588] [cursor=pointer]
+          - button "🤍" [ref=e6589]
+          - generic: Rutledge Ln
+        - generic [ref=e6590]:
+          - img "Street art" [ref=e6591] [cursor=pointer]
+          - button "🤍" [ref=e6592]
+          - generic: Hosier Ln
+        - generic [ref=e6593]:
+          - img "Street art" [ref=e6594] [cursor=pointer]
+          - button "🤍" [ref=e6595]
+          - generic: Hosier Ln
+        - generic [ref=e6596]:
+          - img "Street art" [ref=e6597] [cursor=pointer]
+          - button "🤍" [ref=e6598]
+          - generic: Rutledge Ln
+        - generic [ref=e6599]:
+          - img "Street art" [ref=e6600] [cursor=pointer]
+          - button "🤍" [ref=e6601]
+          - generic: Little Barkly St
+        - generic [ref=e6602]:
+          - img "Street art" [ref=e6603] [cursor=pointer]
+          - button "🤍" [ref=e6604]
+          - generic: Acland St
+        - generic [ref=e6605]:
+          - img "Street art" [ref=e6606] [cursor=pointer]
+          - button "🤍" [ref=e6607]
+          - generic: Rutledge Ln
+        - generic [ref=e6608]:
+          - img "Street art" [ref=e6609] [cursor=pointer]
+          - button "🤍" [ref=e6610]
+          - generic: Flinders St
+        - generic [ref=e6611]:
+          - img "Street art" [ref=e6612] [cursor=pointer]
+          - button "🤍" [ref=e6613]
+          - generic: Rutledge Ln
+        - generic [ref=e6614]:
+          - img "Street art" [ref=e6615] [cursor=pointer]
+          - button "🤍" [ref=e6616]
+          - generic: Hosier Ln
+        - generic [ref=e6617]:
+          - img "Street art" [ref=e6618] [cursor=pointer]
+          - button "🤍" [ref=e6619]
+          - generic: Hosier Ln
+        - generic [ref=e6620]:
+          - img "Street art" [ref=e6621] [cursor=pointer]
+          - button "🤍" [ref=e6622]
+          - generic: Hosier Ln
+        - generic [ref=e6623]:
+          - img "Street art" [ref=e6624] [cursor=pointer]
+          - button "🤍" [ref=e6625]
+          - generic: Hosier Ln
+        - generic [ref=e6626]:
+          - img "Street art" [ref=e6627] [cursor=pointer]
+          - button "🤍" [ref=e6628]
+          - generic: Carlow Pl
+        - generic [ref=e6629]:
+          - img "Street art" [ref=e6630] [cursor=pointer]
+          - button "🤍" [ref=e6631]
+          - generic: Argyle St
+        - generic [ref=e6632]:
+          - img "Street art" [ref=e6633] [cursor=pointer]
+          - button "🤍" [ref=e6634]
+          - generic: Capital City Trail
+        - generic [ref=e6635]:
+          - img "Street art" [ref=e6636] [cursor=pointer]
+          - button "🤍" [ref=e6637]
+          - generic: Capital City Trail
+        - generic [ref=e6638]:
+          - img "Street art" [ref=e6639] [cursor=pointer]
+          - button "🤍" [ref=e6640]
+          - generic: Acland St
+        - generic [ref=e6641]:
+          - img "Street art" [ref=e6642] [cursor=pointer]
+          - button "🤍" [ref=e6643]
+          - generic: Sackville St
+        - generic [ref=e6644]:
+          - img "Street art" [ref=e6645] [cursor=pointer]
+          - button "🤍" [ref=e6646]
+          - generic: Gold St
+        - generic [ref=e6647]:
+          - img "Street art" [ref=e6648] [cursor=pointer]
+          - button "🤍" [ref=e6649]
+          - generic: Sackville St
+        - generic [ref=e6650]:
+          - img "Street art" [ref=e6651] [cursor=pointer]
+          - button "🤍" [ref=e6652]
+          - generic: Capital City Trail
+        - generic [ref=e6653]:
+          - img "Street art" [ref=e6654] [cursor=pointer]
+          - button "🤍" [ref=e6655]
+          - generic: Sackville St
+        - generic [ref=e6656]:
+          - img "Street art" [ref=e6657] [cursor=pointer]
+          - button "🤍" [ref=e6658]
+          - generic: Gold St
+        - generic [ref=e6659]:
+          - img "Street art" [ref=e6660] [cursor=pointer]
+          - button "🤍" [ref=e6661]
+          - generic: Johnston St
+        - generic [ref=e6662]:
+          - img "Street art" [ref=e6663] [cursor=pointer]
+          - button "🤍" [ref=e6664]
+          - generic: Argyle St
+        - generic [ref=e6665]:
+          - img "Street art" [ref=e6666] [cursor=pointer]
+          - button "🤍" [ref=e6667]
+          - generic: Easey St
+        - generic [ref=e6668]:
+          - img "Street art" [ref=e6669] [cursor=pointer]
+          - button "🤍" [ref=e6670]
+          - generic: Sackville St
+        - generic [ref=e6671]:
+          - img "Street art" [ref=e6672] [cursor=pointer]
+          - button "🤍" [ref=e6673]
+          - generic: Argyle St
+        - generic [ref=e6674]:
+          - img "Street art" [ref=e6675] [cursor=pointer]
+          - button "🤍" [ref=e6676]
+          - generic: Sackville St
+        - generic [ref=e6677]:
+          - img "Street art" [ref=e6678] [cursor=pointer]
+          - button "🤍" [ref=e6679]
+          - generic: Napier St
+        - generic [ref=e6680]:
+          - img "Street art" [ref=e6681] [cursor=pointer]
+          - button "🤍" [ref=e6682]
+          - generic: Napier St
+        - generic [ref=e6683]:
+          - img "Street art" [ref=e6684] [cursor=pointer]
+          - button "🤍" [ref=e6685]
+          - generic: Argyle St
+        - generic [ref=e6686]:
+          - img "Street art" [ref=e6687] [cursor=pointer]
+          - button "🤍" [ref=e6688]
+          - generic: Napier St
+        - generic [ref=e6689]:
+          - img "Street art" [ref=e6690] [cursor=pointer]
+          - button "🤍" [ref=e6691]
+          - generic: Fitzroy St
+        - generic [ref=e6692]:
+          - img "Street art" [ref=e6693] [cursor=pointer]
+          - button "🤍" [ref=e6694]
+          - generic: Rose St
+        - generic [ref=e6695]:
+          - img "Street art" [ref=e6696] [cursor=pointer]
+          - button "🤍" [ref=e6697]
+          - generic: Leicester St
+        - generic [ref=e6698]:
+          - img "Street art" [ref=e6699] [cursor=pointer]
+          - button "🤍" [ref=e6700]
+          - generic: Leicester St
+        - generic [ref=e6701]:
+          - img "Street art" [ref=e6702] [cursor=pointer]
+          - button "🤍" [ref=e6703]
+          - generic: Fitzroy St
+        - generic [ref=e6704]:
+          - img "Street art" [ref=e6705] [cursor=pointer]
+          - button "🤍" [ref=e6706]
+          - generic: Fitzroy St
+        - generic [ref=e6707]:
+          - img "Street art" [ref=e6708] [cursor=pointer]
+          - button "🤍" [ref=e6709]
+          - generic: Leicester St
+        - generic [ref=e6710]:
+          - img "Street art" [ref=e6711] [cursor=pointer]
+          - button "🤍" [ref=e6712]
+          - generic: Rose St
+        - generic [ref=e6713]:
+          - img "Street art" [ref=e6714] [cursor=pointer]
+          - button "🤍" [ref=e6715]
+          - generic: Kerr St
+        - generic [ref=e6716]:
+          - img "Street art" [ref=e6717] [cursor=pointer]
+          - button "🤍" [ref=e6718]
+          - generic: Fitzroy St
+        - generic [ref=e6719]:
+          - img "Street art" [ref=e6720] [cursor=pointer]
+          - button "🤍" [ref=e6721]
+          - generic: Rose St
+        - generic [ref=e6722]:
+          - img "Street art" [ref=e6723] [cursor=pointer]
+          - button "🤍" [ref=e6724]
+          - generic: Young St
+        - generic [ref=e6725]:
+          - img "Street art" [ref=e6726] [cursor=pointer]
+          - button "🤍" [ref=e6727]
+          - generic: Leicester St
+        - generic [ref=e6728]:
+          - img "Street art" [ref=e6729] [cursor=pointer]
+          - button "🤍" [ref=e6730]
+          - generic: Kerr St
+        - generic [ref=e6731]:
+          - img "Street art" [ref=e6732] [cursor=pointer]
+          - button "🤍" [ref=e6733]
+          - generic: Fitzroy St
+        - generic [ref=e6734]:
+          - img "Street art" [ref=e6735] [cursor=pointer]
+          - button "🤍" [ref=e6736]
+          - generic: Leicester St
+        - generic [ref=e6737]:
+          - img "Street art" [ref=e6738] [cursor=pointer]
+          - button "🤍" [ref=e6739]
+          - generic: Rose St
+        - generic [ref=e6740]:
+          - img "Street art" [ref=e6741] [cursor=pointer]
+          - button "🤍" [ref=e6742]
+          - generic: Leicester St
+        - generic [ref=e6743]:
+          - img "Street art" [ref=e6744] [cursor=pointer]
+          - button "🤍" [ref=e6745]
+          - generic: Leicester St
+        - generic [ref=e6746]:
+          - img "Street art" [ref=e6747] [cursor=pointer]
+          - button "🤍" [ref=e6748]
+          - generic: Rose St
+        - generic [ref=e6749]:
+          - img "Street art" [ref=e6750] [cursor=pointer]
+          - button "🤍" [ref=e6751]
+          - generic: Fitzroy St
+        - generic [ref=e6752]:
+          - img "Street art" [ref=e6753] [cursor=pointer]
+          - button "🤍" [ref=e6754]
+          - generic: Leicester St
+        - generic [ref=e6755]:
+          - img "Street art" [ref=e6756] [cursor=pointer]
+          - button "🤍" [ref=e6757]
+          - generic: Rose St
+        - generic [ref=e6758]:
+          - img "Street art" [ref=e6759] [cursor=pointer]
+          - button "🤍" [ref=e6760]
+          - generic: Rose St
+        - generic [ref=e6761]:
+          - img "Street art" [ref=e6762] [cursor=pointer]
+          - button "🤍" [ref=e6763]
+          - generic: Fitzroy St
+        - generic [ref=e6764]:
+          - img "Street art" [ref=e6765] [cursor=pointer]
+          - button "🤍" [ref=e6766]
+          - generic: Rose St
+        - generic [ref=e6767]:
+          - img "Street art" [ref=e6768] [cursor=pointer]
+          - button "🤍" [ref=e6769]
+          - generic: Rose St
+        - generic [ref=e6770]:
+          - img "Street art" [ref=e6771] [cursor=pointer]
+          - button "🤍" [ref=e6772]
+          - generic: Rose St
+        - generic [ref=e6773]:
+          - img "Street art" [ref=e6774] [cursor=pointer]
+          - button "🤍" [ref=e6775]
+          - generic: Rose St
+        - generic [ref=e6776]:
+          - img "Street art" [ref=e6777] [cursor=pointer]
+          - button "🤍" [ref=e6778]
+          - generic: Rose St
+        - generic [ref=e6779]:
+          - img "Street art" [ref=e6780] [cursor=pointer]
+          - button "🤍" [ref=e6781]
+          - generic: Fitzroy St
+        - generic [ref=e6782]:
+          - img "Street art" [ref=e6783] [cursor=pointer]
+          - button "🤍" [ref=e6784]
+          - generic: Rose St
+        - generic [ref=e6785]:
+          - img "Street art" [ref=e6786] [cursor=pointer]
+          - button "🤍" [ref=e6787]
+          - generic: Leicester St
+        - generic [ref=e6788]:
+          - img "Street art" [ref=e6789] [cursor=pointer]
+          - button "🤍" [ref=e6790]
+          - generic: Rose St
+        - generic [ref=e6791]:
+          - img "Street art" [ref=e6792] [cursor=pointer]
+          - button "🤍" [ref=e6793]
+          - generic: Rose St
+        - generic [ref=e6794]:
+          - img "Street art" [ref=e6795] [cursor=pointer]
+          - button "🤍" [ref=e6796]
+          - generic: Fitzroy St
+        - generic [ref=e6797]:
+          - img "Street art" [ref=e6798] [cursor=pointer]
+          - button "🤍" [ref=e6799]
+          - generic: Rose St
+        - generic [ref=e6800]:
+          - img "Street art" [ref=e6801] [cursor=pointer]
+          - button "🤍" [ref=e6802]
+          - generic: Rose St
+        - generic [ref=e6803]:
+          - img "Street art" [ref=e6804] [cursor=pointer]
+          - button "🤍" [ref=e6805]
+          - generic: Fitzroy St
+        - generic [ref=e6806]:
+          - img "Street art" [ref=e6807] [cursor=pointer]
+          - button "🤍" [ref=e6808]
+          - generic: Rose St
+        - generic [ref=e6809]:
+          - img "Street art" [ref=e6810] [cursor=pointer]
+          - button "🤍" [ref=e6811]
+          - generic: Rose St
+        - generic [ref=e6812]:
+          - img "Street art" [ref=e6813] [cursor=pointer]
+          - button "🤍" [ref=e6814]
+          - generic: Rose St
+        - generic [ref=e6815]:
+          - img "Street art" [ref=e6816] [cursor=pointer]
+          - button "🤍" [ref=e6817]
+          - generic: Rose St
+        - generic [ref=e6818]:
+          - img "Street art" [ref=e6819] [cursor=pointer]
+          - button "🤍" [ref=e6820]
+          - generic: Spring St
+        - generic [ref=e6821]:
+          - img "Street art" [ref=e6822] [cursor=pointer]
+          - button "🤍" [ref=e6823]
+          - generic: Rose St
+        - generic [ref=e6824]:
+          - img "Street art" [ref=e6825] [cursor=pointer]
+          - button "🤍" [ref=e6826]
+          - generic: Spring St
+        - generic [ref=e6827]:
+          - img "Street art" [ref=e6828] [cursor=pointer]
+          - button "🤍" [ref=e6829]
+          - generic: Leicester St
+        - generic [ref=e6830]:
+          - img "Street art" [ref=e6831] [cursor=pointer]
+          - button "🤍" [ref=e6832]
+          - generic: Leicester St
+        - generic [ref=e6833]:
+          - img "Street art" [ref=e6834] [cursor=pointer]
+          - button "🤍" [ref=e6835]
+          - generic: Spring St
+        - generic [ref=e6836]:
+          - img "Street art" [ref=e6837] [cursor=pointer]
+          - button "🤍" [ref=e6838]
+          - generic: Rose St
+        - generic [ref=e6839]:
+          - img "Street art" [ref=e6840] [cursor=pointer]
+          - button "🤍" [ref=e6841]
+          - generic: Rose St
+        - generic [ref=e6842]:
+          - img "Street art" [ref=e6843] [cursor=pointer]
+          - button "🤍" [ref=e6844]
+          - generic: Spring St
+        - generic [ref=e6845]:
+          - img "Street art" [ref=e6846] [cursor=pointer]
+          - button "🤍" [ref=e6847]
+          - generic: Leicester St
+        - generic [ref=e6848]:
+          - img "Street art" [ref=e6849] [cursor=pointer]
+          - button "🤍" [ref=e6850]
+          - generic: Rose St
+        - generic [ref=e6851]:
+          - img "Street art" [ref=e6852] [cursor=pointer]
+          - button "🤍" [ref=e6853]
+          - generic: Rose St
+        - generic [ref=e6854]:
+          - img "Street art" [ref=e6855] [cursor=pointer]
+          - button "🤍" [ref=e6856]
+          - generic: Rose St
+        - generic [ref=e6857]:
+          - img "Street art" [ref=e6858] [cursor=pointer]
+          - button "🤍" [ref=e6859]
+          - generic: Rose St
+        - generic [ref=e6860]:
+          - img "Street art" [ref=e6861] [cursor=pointer]
+          - button "🤍" [ref=e6862]
+          - generic: Rose St
+        - generic [ref=e6863]:
+          - img "Street art" [ref=e6864] [cursor=pointer]
+          - button "🤍" [ref=e6865]
+          - generic: Rose St
+        - generic [ref=e6866]:
+          - img "Street art" [ref=e6867] [cursor=pointer]
+          - button "🤍" [ref=e6868]
+          - generic: Rose St
+        - generic [ref=e6869]:
+          - img "Street art" [ref=e6870] [cursor=pointer]
+          - button "🤍" [ref=e6871]
+          - generic: Spring St
+        - generic [ref=e6872]:
+          - img "Street art" [ref=e6873] [cursor=pointer]
+          - button "🤍" [ref=e6874]
+          - generic: Victoria St
+        - generic [ref=e6875]:
+          - img "Street art" [ref=e6876] [cursor=pointer]
+          - button "🤍" [ref=e6877]
+          - generic: Johnston St
+        - generic [ref=e6878]:
+          - img "Street art" [ref=e6879] [cursor=pointer]
+          - button "🤍" [ref=e6880]
+          - generic: Johnston St
+        - generic [ref=e6881]:
+          - img "Street art" [ref=e6882] [cursor=pointer]
+          - button "🤍" [ref=e6883]
+          - generic: Johnston St
+        - generic [ref=e6884]:
+          - img "Street art" [ref=e6885] [cursor=pointer]
+          - button "🤍" [ref=e6886]
+          - generic: Victoria St
+        - generic [ref=e6887]:
+          - img "Street art" [ref=e6888] [cursor=pointer]
+          - button "🤍" [ref=e6889]
+          - generic: Canning St
+        - generic [ref=e6890]:
+          - img "Street art" [ref=e6891] [cursor=pointer]
+          - button "🤍" [ref=e6892]
+          - generic: Johnston St
+        - generic [ref=e6893]:
+          - img "Street art" [ref=e6894] [cursor=pointer]
+          - button "🤍" [ref=e6895]
+          - generic: Johnston St
+        - generic [ref=e6896]:
+          - img "Street art" [ref=e6897] [cursor=pointer]
+          - button "🤍" [ref=e6898]
+          - generic: Spring St
+        - generic [ref=e6899]:
+          - img "Street art" [ref=e6900] [cursor=pointer]
+          - button "🤍" [ref=e6901]
+          - generic: Johnston St
+        - generic [ref=e6902]:
+          - img "Street art" [ref=e6903] [cursor=pointer]
+          - button "🤍" [ref=e6904]
+          - generic: Fitzroy St
+        - generic [ref=e6905]:
+          - img "Street art" [ref=e6906] [cursor=pointer]
+          - button "🤍" [ref=e6907]
+          - generic: Johnston St
+        - generic [ref=e6908]:
+          - img "Street art" [ref=e6909] [cursor=pointer]
+          - button "🤍" [ref=e6910]
+          - generic: Victoria St
+        - generic [ref=e6911]:
+          - img "Street art" [ref=e6912] [cursor=pointer]
+          - button "🤍" [ref=e6913]
+          - generic: Fitzroy St
+        - generic [ref=e6914]:
+          - img "Street art" [ref=e6915] [cursor=pointer]
+          - button "🤍" [ref=e6916]
+          - generic: Johnston St
+        - generic [ref=e6917]:
+          - img "Street art" [ref=e6918] [cursor=pointer]
+          - button "🤍" [ref=e6919]
+          - generic: Victoria St
+        - generic [ref=e6920]:
+          - img "Street art" [ref=e6921] [cursor=pointer]
+          - button "🤍" [ref=e6922]
+          - generic: Spring St
+        - generic [ref=e6923]:
+          - img "Street art" [ref=e6924] [cursor=pointer]
+          - button "🤍" [ref=e6925]
+          - generic: Johnston St
+        - generic [ref=e6926]:
+          - img "Street art" [ref=e6927] [cursor=pointer]
+          - button "🤍" [ref=e6928]
+          - generic: Johnston St
+        - generic [ref=e6929]:
+          - img "Street art" [ref=e6930] [cursor=pointer]
+          - button "🤍" [ref=e6931]
+          - generic: Greeves St
+        - generic [ref=e6932]:
+          - img "Street art" [ref=e6933] [cursor=pointer]
+          - button "🤍" [ref=e6934]
+          - generic: Brunswick St
+        - generic [ref=e6935]:
+          - img "Street art" [ref=e6936] [cursor=pointer]
+          - button "🤍" [ref=e6937]
+          - generic: Greeves St
+        - generic [ref=e6938]:
+          - img "Street art" [ref=e6939] [cursor=pointer]
+          - button "🤍" [ref=e6940]
+          - generic: Brunswick St
+        - generic [ref=e6941]:
+          - img "Street art" [ref=e6942] [cursor=pointer]
+          - button "🤍" [ref=e6943]
+          - generic: Johnston St
+        - generic [ref=e6944]:
+          - img "Street art" [ref=e6945] [cursor=pointer]
+          - button "🤍" [ref=e6946]
+          - generic: Fishers Ln
+        - generic [ref=e6947]:
+          - img "Street art" [ref=e6948] [cursor=pointer]
+          - button "🤍" [ref=e6949]
+          - generic: Greeves St
+        - generic [ref=e6950]:
+          - img "Street art" [ref=e6951] [cursor=pointer]
+          - button "🤍" [ref=e6952]
+          - generic: Bell St
+        - generic [ref=e6953]:
+          - img "Street art" [ref=e6954] [cursor=pointer]
+          - button "🤍" [ref=e6955]
+          - generic: Bell St
+        - generic [ref=e6956]:
+          - img "Street art" [ref=e6957] [cursor=pointer]
+          - button "🤍" [ref=e6958]
+          - generic: Greeves St
+        - generic [ref=e6959]:
+          - img "Street art" [ref=e6960] [cursor=pointer]
+          - button "🤍" [ref=e6961]
+          - generic: Fishers Ln
+        - generic [ref=e6962]:
+          - img "Street art" [ref=e6963] [cursor=pointer]
+          - button "🤍" [ref=e6964]
+          - generic: Bell St
+        - generic [ref=e6965]:
+          - img "Street art" [ref=e6966] [cursor=pointer]
+          - button "🤍" [ref=e6967]
+          - generic: Brunswick St
+        - generic [ref=e6968]:
+          - img "Street art" [ref=e6969] [cursor=pointer]
+          - button "🤍" [ref=e6970]
+          - generic: Fishers Ln
+        - generic [ref=e6971]:
+          - img "Street art" [ref=e6972] [cursor=pointer]
+          - button "🤍" [ref=e6973]
+          - generic: Greeves St
+        - generic [ref=e6974]:
+          - img "Street art" [ref=e6975] [cursor=pointer]
+          - button "🤍" [ref=e6976]
+          - generic: Bell St
+        - generic [ref=e6977]:
+          - img "Street art" [ref=e6978] [cursor=pointer]
+          - button "🤍" [ref=e6979]
+          - generic: Bell St
+        - generic [ref=e6980]:
+          - img "Street art" [ref=e6981] [cursor=pointer]
+          - button "🤍" [ref=e6982]
+          - generic: Fitzroy St
+        - generic [ref=e6983]:
+          - img "Street art" [ref=e6984] [cursor=pointer]
+          - button "🤍" [ref=e6985]
+          - generic: Greeves St
+        - generic [ref=e6986]:
+          - img "Street art" [ref=e6987] [cursor=pointer]
+          - button "🤍" [ref=e6988]
+          - generic: Fishers Ln
+        - generic [ref=e6989]:
+          - img "Street art" [ref=e6990] [cursor=pointer]
+          - button "🤍" [ref=e6991]
+          - generic: Fitzroy St
+        - generic [ref=e6992]:
+          - img "Street art" [ref=e6993] [cursor=pointer]
+          - button "🤍" [ref=e6994]
+          - generic: Fitzroy St
+        - generic [ref=e6995]:
+          - img "Street art" [ref=e6996] [cursor=pointer]
+          - button "🤍" [ref=e6997]
+          - generic: Fishers Ln
+        - generic [ref=e6998]:
+          - img "Street art" [ref=e6999] [cursor=pointer]
+          - button "🤍" [ref=e7000]
+          - generic: Fishers Ln
+        - generic [ref=e7001]:
+          - img "Street art" [ref=e7002] [cursor=pointer]
+          - button "🤍" [ref=e7003]
+          - generic: Fitzroy St
+        - generic [ref=e7004]:
+          - img "Street art" [ref=e7005] [cursor=pointer]
+          - button "🤍" [ref=e7006]
+          - generic: Fitzroy St
+        - generic [ref=e7007]:
+          - img "Street art" [ref=e7008] [cursor=pointer]
+          - button "🤍" [ref=e7009]
+          - generic: Fitzroy St
+        - generic [ref=e7010]:
+          - img "Street art" [ref=e7011] [cursor=pointer]
+          - button "🤍" [ref=e7012]
+          - generic: Fitzroy St
+        - generic [ref=e7013]:
+          - img "Street art" [ref=e7014] [cursor=pointer]
+          - button "🤍" [ref=e7015]
+          - generic: Fitzroy St
+        - generic [ref=e7016]:
+          - img "Street art" [ref=e7017] [cursor=pointer]
+          - button "🤍" [ref=e7018]
+          - generic: Fishers Ln
+        - generic [ref=e7019]:
+          - img "Street art" [ref=e7020] [cursor=pointer]
+          - button "🤍" [ref=e7021]
+          - generic: Fishers Ln
+        - generic [ref=e7022]:
+          - img "Street art" [ref=e7023] [cursor=pointer]
+          - button "🤍" [ref=e7024]
+          - generic: Fitzroy St
+        - generic [ref=e7025]:
+          - img "Street art" [ref=e7026] [cursor=pointer]
+          - button "🤍" [ref=e7027]
+          - generic: King William St
+        - generic [ref=e7028]:
+          - img "Street art" [ref=e7029] [cursor=pointer]
+          - button "🤍" [ref=e7030]
+          - generic: Hanover St
+        - generic [ref=e7031]:
+          - img "Street art" [ref=e7032] [cursor=pointer]
+          - button "🤍" [ref=e7033]
+          - generic: Fitzroy St
+        - generic [ref=e7034]:
+          - img "Street art" [ref=e7035] [cursor=pointer]
+          - button "🤍" [ref=e7036]
+          - generic: Fishers Ln
+        - generic [ref=e7037]:
+          - img "Street art" [ref=e7038] [cursor=pointer]
+          - button "🤍" [ref=e7039]
+          - generic: Fitzroy St
+        - generic [ref=e7040]:
+          - img "Street art" [ref=e7041] [cursor=pointer]
+          - button "🤍" [ref=e7042]
+          - generic: Hanover St
+        - generic [ref=e7043]:
+          - img "Street art" [ref=e7044] [cursor=pointer]
+          - button "🤍" [ref=e7045]
+          - generic: Hanover St
+        - generic [ref=e7046]:
+          - img "Street art" [ref=e7047] [cursor=pointer]
+          - button "🤍" [ref=e7048]
+          - generic: Fitzroy St
+        - generic [ref=e7049]:
+          - img "Street art" [ref=e7050] [cursor=pointer]
+          - button "🤍" [ref=e7051]
+          - generic: James St
+        - generic [ref=e7052]:
+          - img "Street art" [ref=e7053] [cursor=pointer]
+          - button "🤍" [ref=e7054]
+          - generic: Brunswick St
+        - generic [ref=e7055]:
+          - img "Street art" [ref=e7056] [cursor=pointer]
+          - button "🤍" [ref=e7057]
+          - generic: Hanover St
+        - generic [ref=e7058]:
+          - img "Street art" [ref=e7059] [cursor=pointer]
+          - button "🤍" [ref=e7060]
+          - generic: James St
+        - generic [ref=e7061]:
+          - img "Street art" [ref=e7062] [cursor=pointer]
+          - button "🤍" [ref=e7063]
+          - generic: James St
+        - generic [ref=e7064]:
+          - img "Street art" [ref=e7065] [cursor=pointer]
+          - button "🤍" [ref=e7066]
+          - generic: James St
+        - generic [ref=e7067]:
+          - img "Street art" [ref=e7068] [cursor=pointer]
+          - button "🤍" [ref=e7069]
+          - generic: Marion St
+        - generic [ref=e7070]:
+          - img "Street art" [ref=e7071] [cursor=pointer]
+          - button "🤍" [ref=e7072]
+          - generic: Hanover St
+        - generic [ref=e7073]:
+          - img "Street art" [ref=e7074] [cursor=pointer]
+          - button "🤍" [ref=e7075]
+          - generic: Brunswick Pl
+        - generic [ref=e7076]:
+          - img "Street art" [ref=e7077] [cursor=pointer]
+          - button "🤍" [ref=e7078]
+          - generic: Brunswick St
+        - generic [ref=e7079]:
+          - img "Street art" [ref=e7080] [cursor=pointer]
+          - button "🤍" [ref=e7081]
+          - generic: James St
+        - generic [ref=e7082]:
+          - img "Street art" [ref=e7083] [cursor=pointer]
+          - button "🤍" [ref=e7084]
+          - generic: James St
+        - generic [ref=e7085]:
+          - img "Street art" [ref=e7086] [cursor=pointer]
+          - button "🤍" [ref=e7087]
+          - generic: Hanover St
+        - generic [ref=e7088]:
+          - img "Street art" [ref=e7089] [cursor=pointer]
+          - button "🤍" [ref=e7090]
+          - generic: Brunswick St
+        - generic [ref=e7091]:
+          - img "Street art" [ref=e7092] [cursor=pointer]
+          - button "🤍" [ref=e7093]
+          - generic: James St
+        - generic [ref=e7094]:
+          - img "Street art" [ref=e7095] [cursor=pointer]
+          - button "🤍" [ref=e7096]
+          - generic: Brunswick St
+        - generic [ref=e7097]:
+          - img "Street art" [ref=e7098] [cursor=pointer]
+          - button "🤍" [ref=e7099]
+          - generic: Hanover St
+        - generic [ref=e7100]:
+          - img "Street art" [ref=e7101] [cursor=pointer]
+          - button "🤍" [ref=e7102]
+          - generic: Little Hanover St
+        - generic [ref=e7103]:
+          - img "Street art" [ref=e7104] [cursor=pointer]
+          - button "🤍" [ref=e7105]
+          - generic: Brunswick St
+        - generic [ref=e7106]:
+          - img "Street art" [ref=e7107] [cursor=pointer]
+          - button "🤍" [ref=e7108]
+          - generic: James St
+        - generic [ref=e7109]:
+          - img "Street art" [ref=e7110] [cursor=pointer]
+          - button "🤍" [ref=e7111]
+          - generic: Gertrude St
+        - generic [ref=e7112]:
+          - img "Street art" [ref=e7113] [cursor=pointer]
+          - button "🤍" [ref=e7114]
+          - generic: Queen St
+        - generic [ref=e7115]:
+          - img "Street art" [ref=e7116] [cursor=pointer]
+          - button "🤍" [ref=e7117]
+          - generic: Franklin St
+        - generic [ref=e7118]:
+          - img "Street art" [ref=e7119] [cursor=pointer]
+          - button "🤍" [ref=e7120]
+          - generic: Kingsway
+        - generic [ref=e7121]:
+          - img "Street art" [ref=e7122] [cursor=pointer]
+          - button "🤍" [ref=e7123]
+          - generic: Franklin St
+        - generic [ref=e7124]:
+          - img "Street art" [ref=e7125] [cursor=pointer]
+          - button "🤍" [ref=e7126]
+          - generic: Marion St
+        - generic [ref=e7127]:
+          - img "Street art" [ref=e7128] [cursor=pointer]
+          - button "🤍" [ref=e7129]
+          - generic: Kingsway
+        - generic [ref=e7130]:
+          - img "Street art" [ref=e7131] [cursor=pointer]
+          - button "🤍" [ref=e7132]
+          - generic: Caledonian Ln
+        - generic [ref=e7133]:
+          - img "Street art" [ref=e7134] [cursor=pointer]
+          - button "🤍" [ref=e7135]
+          - generic: Caledonian Ln
+        - generic [ref=e7136]:
+          - img "Street art" [ref=e7137] [cursor=pointer]
+          - button "🤍" [ref=e7138]
+          - generic: Caledonian Ln
+        - generic [ref=e7139]:
+          - img "Street art" [ref=e7140] [cursor=pointer]
+          - button "🤍" [ref=e7141]
+          - generic: Fitzroy St
+        - generic [ref=e7142]:
+          - img "Street art" [ref=e7143] [cursor=pointer]
+          - button "🤍" [ref=e7144]
+          - generic: Franklin St
+        - generic [ref=e7145]:
+          - img "Street art" [ref=e7146] [cursor=pointer]
+          - button "🤍" [ref=e7147]
+          - generic: McKillop St
+        - generic [ref=e7148]:
+          - img "Street art" [ref=e7149] [cursor=pointer]
+          - button "🤍" [ref=e7150]
+          - generic: Franklin St
+        - generic [ref=e7151]:
+          - img "Street art" [ref=e7152] [cursor=pointer]
+          - button "🤍" [ref=e7153]
+          - generic: Queen St
+        - generic [ref=e7154]:
+          - img "Street art" [ref=e7155] [cursor=pointer]
+          - button "🤍" [ref=e7156]
+          - generic: Queen St
+        - generic [ref=e7157]:
+          - img "Street art" [ref=e7158] [cursor=pointer]
+          - button "🤍" [ref=e7159]
+          - generic: Franklin St
+        - generic [ref=e7160]:
+          - img "Street art" [ref=e7161] [cursor=pointer]
+          - button "🤍" [ref=e7162]
+          - generic: Franklin St
+        - generic [ref=e7163]:
+          - img "Street art" [ref=e7164] [cursor=pointer]
+          - button "🤍" [ref=e7165]
+          - generic: Meyers Pl
+        - generic [ref=e7166]:
+          - img "Street art" [ref=e7167] [cursor=pointer]
+          - button "🤍" [ref=e7168]
+          - generic: Caledonian Ln
+        - generic [ref=e7169]:
+          - img "Street art" [ref=e7170] [cursor=pointer]
+          - button "🤍" [ref=e7171]
+          - generic: Franklin St
+        - generic [ref=e7172]:
+          - img "Street art" [ref=e7173] [cursor=pointer]
+          - button "🤍" [ref=e7174]
+          - generic: Little Collins St
+        - generic [ref=e7175]:
+          - img "Street art" [ref=e7176] [cursor=pointer]
+          - button "🤍" [ref=e7177]
+          - generic: Franklin St
+        - generic [ref=e7178]:
+          - img "Street art" [ref=e7179] [cursor=pointer]
+          - button "🤍" [ref=e7180]
+          - generic: Franklin St
+        - generic [ref=e7181]:
+          - img "Street art" [ref=e7182] [cursor=pointer]
+          - button "🤍" [ref=e7183]
+          - generic: Lonsdale St
+        - generic [ref=e7184]:
+          - img "Street art" [ref=e7185] [cursor=pointer]
+          - button "🤍" [ref=e7186]
+          - generic: Franklin St
+        - generic [ref=e7187]:
+          - img "Street art" [ref=e7188] [cursor=pointer]
+          - button "🤍" [ref=e7189]
+          - generic: Franklin St
+        - generic [ref=e7190]:
+          - img "Street art" [ref=e7191] [cursor=pointer]
+          - button "🤍" [ref=e7192]
+          - generic: Franklin St
+        - generic [ref=e7193]:
+          - img "Street art" [ref=e7194] [cursor=pointer]
+          - button "🤍" [ref=e7195]
+          - generic: Lonsdale St
+        - generic [ref=e7196]:
+          - img "Street art" [ref=e7197] [cursor=pointer]
+          - button "🤍" [ref=e7198]
+          - generic: Lonsdale St
+        - generic [ref=e7199]:
+          - img "Street art" [ref=e7200] [cursor=pointer]
+          - button "🤍" [ref=e7201]
+          - generic: The Walk
+        - generic [ref=e7202]:
+          - img "Street art" [ref=e7203] [cursor=pointer]
+          - button "🤍" [ref=e7204]
+          - generic: Therry St
+        - generic [ref=e7205]:
+          - img "Street art" [ref=e7206] [cursor=pointer]
+          - button "🤍" [ref=e7207]
+          - generic: Franklin St
+        - generic [ref=e7208]:
+          - img "Street art" [ref=e7209] [cursor=pointer]
+          - button "🤍" [ref=e7210]
+          - generic: Lonsdale St
+        - generic [ref=e7211]:
+          - img "Street art" [ref=e7212] [cursor=pointer]
+          - button "🤍" [ref=e7213]
+          - generic: Franklin St
+        - generic [ref=e7214]:
+          - img "Street art" [ref=e7215] [cursor=pointer]
+          - button "🤍" [ref=e7216]
+          - generic: Sniders Ln
+        - generic [ref=e7217]:
+          - img "Street art" [ref=e7218] [cursor=pointer]
+          - button "🤍" [ref=e7219]
+          - generic: Drewery Ln
+        - generic [ref=e7220]:
+          - img "Street art" [ref=e7221] [cursor=pointer]
+          - button "🤍" [ref=e7222]
+          - generic: Franklin St
+        - generic [ref=e7223]:
+          - img "Street art" [ref=e7224] [cursor=pointer]
+          - button "🤍" [ref=e7225]
+          - generic: Drewery Ln
+        - generic [ref=e7226]:
+          - img "Street art" [ref=e7227] [cursor=pointer]
+          - button "🤍" [ref=e7228]
+          - generic: Union Ln
+        - generic [ref=e7229]:
+          - img "Street art" [ref=e7230] [cursor=pointer]
+          - button "🤍" [ref=e7231]
+          - generic: Carson Pl
+        - generic [ref=e7232]:
+          - img "Street art" [ref=e7233] [cursor=pointer]
+          - button "🤍" [ref=e7234]
+          - generic: M1
+        - generic [ref=e7235]:
+          - img "Street art" [ref=e7236] [cursor=pointer]
+          - button "🤍" [ref=e7237]
+          - generic: Bell Pl
+        - generic [ref=e7238]:
+          - img "Street art" [ref=e7239] [cursor=pointer]
+          - button "🤍" [ref=e7240]
+          - generic: Bourke St
+        - generic [ref=e7241]:
+          - img "Street art" [ref=e7242] [cursor=pointer]
+          - button "🤍" [ref=e7243]
+          - generic: Tattersalls Ln
+        - generic [ref=e7244]:
+          - img "Street art" [ref=e7245] [cursor=pointer]
+          - button "🤍" [ref=e7246]
+          - generic: Little George St
+        - generic [ref=e7247]:
+          - img "Street art" [ref=e7248] [cursor=pointer]
+          - button "🤍" [ref=e7249]
+          - generic: M1
+        - generic [ref=e7250]:
+          - img "Street art" [ref=e7251] [cursor=pointer]
+          - button "🤍" [ref=e7252]
+          - generic: Sugden Pl
+        - generic [ref=e7253]:
+          - img "Street art" [ref=e7254] [cursor=pointer]
+          - button "🤍" [ref=e7255]
+          - generic: Coromandel Pl
+        - generic [ref=e7256]:
+          - img "Street art" [ref=e7257] [cursor=pointer]
+          - button "🤍" [ref=e7258]
+          - generic: Little George St
+        - generic [ref=e7259]:
+          - img "Street art" [ref=e7260] [cursor=pointer]
+          - button "🤍" [ref=e7261]
+          - generic: Little George St
+        - generic [ref=e7262]:
+          - img "Street art" [ref=e7263] [cursor=pointer]
+          - button "🤍" [ref=e7264]
+          - generic: Little George St
+        - generic [ref=e7265]:
+          - img "Street art" [ref=e7266] [cursor=pointer]
+          - button "🤍" [ref=e7267]
+          - generic: Union Ln
+        - generic [ref=e7268]:
+          - img "Street art" [ref=e7269] [cursor=pointer]
+          - button "🤍" [ref=e7270]
+          - generic: Little George St
+        - generic [ref=e7271]:
+          - img "Street art" [ref=e7272] [cursor=pointer]
+          - button "🤍" [ref=e7273]
+          - generic: M1
+        - generic [ref=e7274]:
+          - img "Street art" [ref=e7275] [cursor=pointer]
+          - button "🤍" [ref=e7276]
+          - generic: Mackenzie St
+        - generic [ref=e7277]:
+          - img "Street art" [ref=e7278] [cursor=pointer]
+          - button "🤍" [ref=e7279]
+          - generic: Mackenzie St
+        - generic [ref=e7280]:
+          - img "Street art" [ref=e7281] [cursor=pointer]
+          - button "🤍" [ref=e7282]
+          - generic: Little George St
+        - generic [ref=e7283]:
+          - img "Street art" [ref=e7284] [cursor=pointer]
+          - button "🤍" [ref=e7285]
+          - generic: Little George St
+        - generic [ref=e7286]:
+          - img "Street art" [ref=e7287] [cursor=pointer]
+          - button "🤍" [ref=e7288]
+          - generic: Little George St
+        - generic [ref=e7289]:
+          - img "Street art" [ref=e7290] [cursor=pointer]
+          - button "🤍" [ref=e7291]
+          - generic: Acland St
+        - generic [ref=e7292]:
+          - img "Street art" [ref=e7293] [cursor=pointer]
+          - button "🤍" [ref=e7294]
+          - generic: AC/DC Ln
+        - generic [ref=e7295]:
+          - img "Street art" [ref=e7296] [cursor=pointer]
+          - button "🤍" [ref=e7297]
+          - generic: Acland St
+        - generic [ref=e7298]:
+          - img "Street art" [ref=e7299] [cursor=pointer]
+          - button "🤍" [ref=e7300]
+          - generic: Acland St
+        - generic [ref=e7301]:
+          - img "Street art" [ref=e7302] [cursor=pointer]
+          - button "🤍" [ref=e7303]
+          - generic: George Parade
+        - generic [ref=e7304]:
+          - img "Street art" [ref=e7305] [cursor=pointer]
+          - button "🤍" [ref=e7306]
+          - generic: Acland St
+        - generic [ref=e7307]:
+          - img "Street art" [ref=e7308] [cursor=pointer]
+          - button "🤍" [ref=e7309]
+          - generic: George Parade
+        - generic [ref=e7310]:
+          - img "Street art" [ref=e7311] [cursor=pointer]
+          - button "🤍" [ref=e7312]
+          - generic: Duckboard Pl
+        - generic [ref=e7313]:
+          - img "Street art" [ref=e7314] [cursor=pointer]
+          - button "🤍" [ref=e7315]
+          - generic: George Parade
+        - generic [ref=e7316]:
+          - img "Street art" [ref=e7317] [cursor=pointer]
+          - button "🤍" [ref=e7318]
+          - generic: George Parade
+        - generic [ref=e7319]:
+          - img "Street art" [ref=e7320] [cursor=pointer]
+          - button "🤍" [ref=e7321]
+          - generic: AC/DC Ln
+        - generic [ref=e7322]:
+          - img "Street art" [ref=e7323] [cursor=pointer]
+          - button "🤍" [ref=e7324]
+          - generic: Acland St
+        - generic [ref=e7325]:
+          - img "Street art" [ref=e7326] [cursor=pointer]
+          - button "🤍" [ref=e7327]
+          - generic: Acland St
+        - generic [ref=e7328]:
+          - img "Street art" [ref=e7329] [cursor=pointer]
+          - button "🤍" [ref=e7330]
+          - generic: George Parade
+        - generic [ref=e7331]:
+          - img "Street art" [ref=e7332] [cursor=pointer]
+          - button "🤍" [ref=e7333]
+          - generic: Acland St
+        - generic [ref=e7334]:
+          - img "Street art" [ref=e7335] [cursor=pointer]
+          - button "🤍" [ref=e7336]
+          - generic: AC/DC Ln
+        - generic [ref=e7337]:
+          - img "Street art" [ref=e7338] [cursor=pointer]
+          - button "🤍" [ref=e7339]
+          - generic: George Parade
+        - generic [ref=e7340]:
+          - img "Street art" [ref=e7341] [cursor=pointer]
+          - button "🤍" [ref=e7342]
+          - generic: Acland St
+        - generic [ref=e7343]:
+          - img "Street art" [ref=e7344] [cursor=pointer]
+          - button "🤍" [ref=e7345]
+          - generic: Duckboard Pl
+        - generic [ref=e7346]:
+          - img "Street art" [ref=e7347] [cursor=pointer]
+          - button "🤍" [ref=e7348]
+          - generic: George Parade
+        - generic [ref=e7349]:
+          - img "Street art" [ref=e7350] [cursor=pointer]
+          - button "🤍" [ref=e7351]
+          - generic: South Melbourne
+        - generic [ref=e7352]:
+          - img "Street art" [ref=e7353] [cursor=pointer]
+          - button "🤍" [ref=e7354]
+          - generic: Stevenson Ln
+        - generic [ref=e7355]:
+          - img "Street art" [ref=e7356] [cursor=pointer]
+          - button "🤍" [ref=e7357]
+          - generic: Saint Kilda
+        - generic [ref=e7358]:
+          - img "Street art" [ref=e7359] [cursor=pointer]
+          - button "🤍" [ref=e7360]
+          - generic: Stevenson Ln
+        - generic [ref=e7361]:
+          - img "Street art" [ref=e7362] [cursor=pointer]
+          - button "🤍" [ref=e7363]
+          - generic: Tope St
+        - generic [ref=e7364]:
+          - img "Street art" [ref=e7365] [cursor=pointer]
+          - button "🤍" [ref=e7366]
+          - generic: Saint Kilda
+        - generic [ref=e7367]:
+          - img "Street art" [ref=e7368] [cursor=pointer]
+          - button "🤍" [ref=e7369]
+          - generic: Swanston St
+        - generic [ref=e7370]:
+          - img "Street art" [ref=e7371] [cursor=pointer]
+          - button "🤍" [ref=e7372]
+          - generic: Stevenson Ln
+        - generic [ref=e7373]:
+          - img "Street art" [ref=e7374] [cursor=pointer]
+          - button "🤍" [ref=e7375]
+          - generic: Tope St
+        - generic [ref=e7376]:
+          - img "Street art" [ref=e7377] [cursor=pointer]
+          - button "🤍" [ref=e7378]
+          - generic: Corrs Ln
+        - generic [ref=e7379]:
+          - img "Street art" [ref=e7380] [cursor=pointer]
+          - button "🤍" [ref=e7381]
+          - generic: Saint Kilda
+        - generic [ref=e7382]:
+          - img "Street art" [ref=e7383] [cursor=pointer]
+          - button "🤍" [ref=e7384]
+          - generic: South Melbourne
+        - generic [ref=e7385]:
+          - img "Street art" [ref=e7386] [cursor=pointer]
+          - button "🤍" [ref=e7387]
+          - generic: South Melbourne
+        - generic [ref=e7388]:
+          - img "Street art" [ref=e7389] [cursor=pointer]
+          - button "🤍" [ref=e7390]
+          - generic: Saint Kilda
+        - generic [ref=e7391]:
+          - img "Street art" [ref=e7392] [cursor=pointer]
+          - button "🤍" [ref=e7393]
+          - generic: Lonsdale St
+        - generic [ref=e7394]:
+          - img "Street art" [ref=e7395] [cursor=pointer]
+          - button "🤍" [ref=e7396]
+          - generic: Saint Kilda
+        - generic [ref=e7397]:
+          - img "Street art" [ref=e7398] [cursor=pointer]
+          - button "🤍" [ref=e7399]
+          - generic: Saint Kilda
+        - generic [ref=e7400]:
+          - img "Street art" [ref=e7401] [cursor=pointer]
+          - button "🤍" [ref=e7402]
+          - generic: Saint Kilda
+        - generic [ref=e7403]:
+          - img "Street art" [ref=e7404] [cursor=pointer]
+          - button "🤍" [ref=e7405]
+          - generic: Tope St
+        - generic [ref=e7406]:
+          - img "Street art" [ref=e7407] [cursor=pointer]
+          - button "🤍" [ref=e7408]
+          - generic: Little Lonsdale St
+  - navigation [ref=e7409]:
+    - link "freeappstore.online" [ref=e7410] [cursor=pointer]:
+      - /url: https://freeappstore.online
+    - generic [ref=e7411]:
+      - button "Map" [ref=e7412]:
+        - img [ref=e7413]
+        - generic [ref=e7416]: Map
+      - button "Wall" [active] [ref=e7417]:
+        - img [ref=e7418]
+        - generic [ref=e7423]: Wall
+      - button [ref=e7424]:
+        - img [ref=e7426]
+      - button "Saved" [ref=e7428]:
+        - img [ref=e7429]
+        - generic [ref=e7431]: Saved
+```
+
+# Test source
+
+```ts
+  49  |     await page.waitForTimeout(3000)
+  50  |     // At world zoom, clusters should have text content (counts or labels)
+  51  |     const markers = page.locator('.leaflet-marker-icon')
+  52  |     const count = await markers.count()
+  53  |     expect(count).toBeGreaterThan(0)
+  54  |   })
+  55  | 
+  56  |   test('dark map tiles loaded', async ({ page }) => {
+  57  |     await page.goto(BASE)
+  58  |     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 10000 })
+  59  |     const leafletBg = await page.locator('.leaflet-container').evaluate((el) => getComputedStyle(el).backgroundColor)
+  60  |     // Should be dark (#1a1a1a)
+  61  |     expect(leafletBg).not.toBe('rgb(255, 255, 255)')
+  62  |   })
+  63  | })
+  64  | 
+  65  | test.describe('Location picker', () => {
+  66  |   test('opens on pill tap', async ({ page }) => {
+  67  |     await page.goto(BASE)
+  68  |     await page.getByText('All places').click()
+  69  |     await expect(page.getByPlaceholder('Search places...')).toBeVisible({ timeout: 5000 })
+  70  |   })
+  71  | 
+  72  |   test('shows countries', async ({ page }) => {
+  73  |     await page.goto(BASE)
+  74  |     await page.getByText('All places').click()
+  75  |     await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
+  76  |   })
+  77  | 
+  78  |   test('search filters locations', async ({ page }) => {
+  79  |     await page.goto(BASE)
+  80  |     await page.getByText('All places').click()
+  81  |     await page.getByPlaceholder('Search places...').fill('Melbourne')
+  82  |     await expect(page.locator('text=Melbourne').first()).toBeVisible({ timeout: 5000 })
+  83  |   })
+  84  | 
+  85  |   test('search for non-existent shows empty message', async ({ page }) => {
+  86  |     await page.goto(BASE)
+  87  |     await page.getByText('All places').click()
+  88  |     await page.getByPlaceholder('Search places...').fill('xyznonexistent')
+  89  |     await expect(page.getByText('No places matching')).toBeVisible({ timeout: 5000 })
+  90  |   })
+  91  | 
+  92  |   test('selecting a location updates pill', async ({ page }) => {
+  93  |     await page.goto(BASE)
+  94  |     await page.getByText('All places').click()
+  95  |     await page.getByPlaceholder('Search places...').fill('Melbourne')
+  96  |     await page.locator('.text-left:has-text("Melbourne")').first().click()
+  97  |     await expect(page.getByText('Melbourne')).toBeVisible({ timeout: 5000 })
+  98  |   })
+  99  | 
+  100 |   test('drill-down shows breadcrumb', async ({ page }) => {
+  101 |     await page.goto(BASE)
+  102 |     await page.getByText('All places').click()
+  103 |     // Find the › button next to Australia to drill down
+  104 |     const row = page.locator('.flex.items-center:has-text("Australia")').first()
+  105 |     await row.locator('button:has-text("›")').click()
+  106 |     await expect(page.getByRole('button', { name: 'All', exact: true })).toBeVisible()
+  107 |   })
+  108 | 
+  109 |   test('closes on backdrop tap', async ({ page }) => {
+  110 |     await page.goto(BASE)
+  111 |     await page.getByText('All places').click()
+  112 |     await expect(page.getByPlaceholder('Search places...')).toBeVisible()
+  113 |     // Tap the backdrop (top area)
+  114 |     await page.locator('.bg-black\\/60').click()
+  115 |     await expect(page.getByPlaceholder('Search places...')).not.toBeVisible()
+  116 |   })
+  117 | 
+  118 |   test('closes on × button', async ({ page }) => {
+  119 |     await page.goto(BASE)
+  120 |     await page.getByText('All places').click()
+  121 |     await page.locator('button:has-text("×")').click()
+  122 |     await expect(page.getByPlaceholder('Search places...')).not.toBeVisible()
+  123 |   })
+  124 | })
+  125 | 
+  126 | test.describe('Wall', () => {
+  127 |   test('shows photo grid', async ({ page }) => {
+  128 |     await page.goto(BASE)
+  129 |     await page.getByText('Wall').click()
+  130 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  131 |   })
+  132 | 
+  133 |   test('has Newest sort pill', async ({ page }) => {
+  134 |     await page.goto(BASE)
+  135 |     await page.getByText('Wall').click()
+  136 |     await expect(page.getByText('Newest')).toBeVisible({ timeout: 10000 })
+  137 |   })
+  138 | 
+  139 |   test('has Popular sort pill', async ({ page }) => {
+  140 |     await page.goto(BASE)
+  141 |     await page.getByText('Wall').click()
+  142 |     await expect(page.getByText('Popular')).toBeVisible({ timeout: 10000 })
+  143 |   })
+  144 | 
+  145 |   test('Popular sort changes order', async ({ page }) => {
+  146 |     await page.goto(BASE)
+  147 |     await page.getByRole('button', { name: 'Wall' }).click()
+  148 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+> 149 |     await page.getByRole('button', { name: 'Popular' }).click()
+      |                                                         ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  150 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
+  151 |   })
+  152 | 
+  153 |   test('grid/feed layout toggle works', async ({ page }) => {
+  154 |     await page.goto(BASE)
+  155 |     await page.getByRole('button', { name: 'Wall' }).click()
+  156 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  157 |     const gridContainer = page.locator('.grid.grid-cols-3')
+  158 |     await expect(gridContainer).toBeVisible()
+  159 |   })
+  160 | 
+  161 |   test('location pill visible on wall', async ({ page }) => {
+  162 |     await page.goto(BASE)
+  163 |     await page.getByText('Wall').click()
+  164 |     await expect(page.getByText('All places')).toBeVisible({ timeout: 5000 })
+  165 |   })
+  166 | 
+  167 |   test('heart buttons visible on grid items', async ({ page }) => {
+  168 |     await page.goto(BASE)
+  169 |     await page.getByText('Wall').click()
+  170 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  171 |     // Hearts should be visible
+  172 |     await expect(page.getByText('🤍').first()).toBeVisible()
+  173 |   })
+  174 | 
+  175 |   test('location badges visible on grid items', async ({ page }) => {
+  176 |     await page.goto(BASE)
+  177 |     await page.getByText('Wall').click()
+  178 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  179 |     // Location name overlay
+  180 |     const gradients = page.locator('.from-black\\/70')
+  181 |     await expect(gradients.first()).toBeVisible()
+  182 |   })
+  183 | 
+  184 |   test('location filter applies to wall', async ({ page }) => {
+  185 |     await page.goto(BASE)
+  186 |     await page.getByText('Wall').click()
+  187 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  188 |     // Open picker and select a location
+  189 |     await page.getByText('All places').click()
+  190 |     await page.getByPlaceholder('Search places...').fill('Melbourne')
+  191 |     await page.locator('.text-left:has-text("Melbourne")').first().click()
+  192 |     // Pill should now show Melbourne
+  193 |     await expect(page.getByText('Melbourne')).toBeVisible({ timeout: 5000 })
+  194 |   })
+  195 | })
+  196 | 
+  197 | test.describe('Auth', () => {
+  198 |   test('add tab requires sign-in', async ({ page }) => {
+  199 |     await page.goto(BASE)
+  200 |     await page.locator('nav button').nth(2).click()
+  201 |     await expect(page.getByText('Drop some art')).toBeVisible({ timeout: 5000 })
+  202 |   })
+  203 | 
+  204 |   test('add tab shows Google + GitHub buttons', async ({ page }) => {
+  205 |     await page.goto(BASE)
+  206 |     await page.locator('nav button').nth(2).click()
+  207 |     await expect(page.getByText('Google')).toBeVisible({ timeout: 5000 })
+  208 |     await expect(page.getByText('GitHub')).toBeVisible()
+  209 |   })
+  210 | 
+  211 |   test('saved tab requires sign-in', async ({ page }) => {
+  212 |     await page.goto(BASE)
+  213 |     await page.getByText('Saved').click()
+  214 |     await expect(page.getByText('Google')).toBeVisible({ timeout: 5000 })
+  215 |   })
+  216 | })
+  217 | 
+  218 | test.describe('Navigation', () => {
+  219 |   test('tab switching works', async ({ page }) => {
+  220 |     await page.goto(BASE)
+  221 |     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 15000 })
+  222 |     await page.getByRole('button', { name: 'Wall' }).click()
+  223 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  224 |     await page.getByRole('button', { name: 'Map' }).click()
+  225 |     await expect(page.locator('.leaflet-container')).toBeVisible()
+  226 |     await page.getByRole('button', { name: 'Saved' }).click()
+  227 |     await expect(page.getByText('Your collection')).toBeVisible()
+  228 |   })
+  229 | 
+  230 |   test('location filter persists across map/wall tabs', async ({ page }) => {
+  231 |     await page.goto(BASE)
+  232 |     await page.getByText('All places').click()
+  233 |     await page.getByPlaceholder('Search places...').fill('France')
+  234 |     await page.locator('.text-left:has-text("France")').first().click()
+  235 |     await expect(page.getByText('France')).toBeVisible({ timeout: 5000 })
+  236 |     await page.getByRole('button', { name: 'Wall' }).click()
+  237 |     await expect(page.getByText('France')).toBeVisible()
+  238 |     await page.getByRole('button', { name: 'Map' }).click()
+  239 |     await expect(page.getByText('France')).toBeVisible()
+  240 |   })
+  241 | 
+  242 |   test('tapping image on wall opens gallery', async ({ page }) => {
+  243 |     await page.goto(BASE)
+  244 |     await page.getByText('Wall').click()
+  245 |     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+  246 |     await page.locator('img[loading="lazy"]').first().click()
+  247 |     // Gallery should open — lightbox visible
+  248 |     await expect(page.locator('.yarl__root')).toBeVisible({ timeout: 5000 })
+  249 |   })
+```
