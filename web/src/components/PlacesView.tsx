@@ -20,23 +20,55 @@ function filterNodes(nodes: LocationNode[], query: string): LocationNode[] {
   return results
 }
 
+/** Rebuild the breadcrumb chain from root to a target node by matching the path segments. */
+function buildBreadcrumbTo(tree: LocationNode[], target: LocationNode): LocationNode[] {
+  const parts = target.path.split(' > ')
+  const chain: LocationNode[] = []
+  let siblings = tree
+  for (const part of parts) {
+    const node = siblings.find((n) => n.name === part)
+    if (!node) break
+    chain.push(node)
+    siblings = node.children
+  }
+  return chain
+}
+
 export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
   const [breadcrumb, setBreadcrumb] = useState<LocationNode[]>([])
   const [search, setSearch] = useState('')
-  const tree = buildLocationTree(posts)
-  const currentNodes = breadcrumb.length === 0
-    ? tree
-    : breadcrumb[breadcrumb.length - 1].children
+
+  const tree = useMemo(() => buildLocationTree(posts), [posts])
+
+  const currentNode = breadcrumb.length > 0 ? breadcrumb[breadcrumb.length - 1] : null
+  const childNodes = currentNode ? currentNode.children : tree
 
   const searchResults = useMemo(
     () => (search.length >= 2 ? filterNodes(tree, search) : null),
     [tree, search],
   )
 
+  // Posts at this exact level (not descendants)
+  const postsHere = useMemo(() => {
+    if (!currentNode) return []
+    return posts.filter((p) => p.locationPath === currentNode.path)
+  }, [posts, currentNode])
+
+  // All posts under this level (including descendants) — for when there are no child nodes
+  const allPostsHere = useMemo(() => {
+    if (!currentNode) return []
+    return getPostsForPath(posts, currentNode.path)
+  }, [posts, currentNode])
+
   const drillDown = useCallback((node: LocationNode) => {
     setSearch('')
     setBreadcrumb((prev) => [...prev, node])
   }, [])
+
+  const drillDownFromSearch = useCallback((node: LocationNode) => {
+    setSearch('')
+    setBreadcrumb(buildBreadcrumbTo(tree, node))
+  }, [tree])
 
   const goBack = useCallback((index: number) => {
     setBreadcrumb((prev) => prev.slice(0, index + 1))
@@ -46,11 +78,10 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
     setBreadcrumb([])
   }, [])
 
-  const currentPath = breadcrumb.length > 0 ? breadcrumb[breadcrumb.length - 1].path : null
-  const isLeaf = currentPath && currentNodes.length === 0
-  const leafPosts = isLeaf ? getPostsForPath(posts, currentPath) : []
-
-  const displayNodes = searchResults || currentNodes
+  const displayNodes = searchResults || childNodes
+  const hasChildren = childNodes.length > 0
+  const showPhotos = currentNode && (postsHere.length > 0 || !hasChildren)
+  const photosToShow = hasChildren ? postsHere : allPostsHere
 
   if (tree.length === 0) {
     return (
@@ -67,6 +98,11 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
     <div className="flex-1 overflow-y-auto">
       <div className="border-b border-[var(--line)] px-4 pb-2 pt-4">
         <span className="display-font text-xl text-[var(--ink)]">Places</span>
+        {currentNode && (
+          <span className="ml-2 text-sm text-[var(--muted)]">
+            {currentNode.count} artwork{currentNode.count !== 1 ? 's' : ''}
+          </span>
+        )}
       </div>
 
       <div className="px-4 py-2">
@@ -79,7 +115,7 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
       </div>
 
       {!searchResults && breadcrumb.length > 0 && (
-        <div className="flex items-center gap-1 border-b border-[var(--line)] px-4 py-2 text-xs">
+        <div className="flex flex-wrap items-center gap-1 border-b border-[var(--line)] px-4 py-2 text-xs">
           <button onClick={goRoot} className="text-[var(--accent)]">All</button>
           {breadcrumb.map((node, i) => (
             <span key={node.path} className="flex items-center gap-1">
@@ -95,10 +131,25 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
         </div>
       )}
 
-      {!isLeaf && displayNodes.map((node) => (
+      {/* Show all photos button when at a branch with many descendants */}
+      {currentNode && hasChildren && allPostsHere.length > postsHere.length && (
+        <button
+          onClick={() => onPostClick(allPostsHere[0])}
+          className="flex w-full items-center gap-2 border-b border-[var(--line)] px-4 py-2.5 text-xs text-[var(--accent)]"
+        >
+          <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+            <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          View all {allPostsHere.length} artworks in {currentNode.name}
+        </button>
+      )}
+
+      {/* Child location nodes */}
+      {displayNodes.map((node) => (
         <button
           key={node.path}
-          onClick={() => drillDown(node)}
+          onClick={() => searchResults ? drillDownFromSearch(node) : drillDown(node)}
           className="flex w-full items-center justify-between border-b border-[var(--line)] px-4 py-3.5"
         >
           <div className="text-left">
@@ -116,9 +167,10 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
         <div className="p-8 text-center text-sm text-[var(--muted)]">No places matching "{search}"</div>
       )}
 
-      {isLeaf && leafPosts.length > 0 && (
+      {/* Photos at this level */}
+      {showPhotos && photosToShow.length > 0 && (
         <div className="grid grid-cols-3 gap-px bg-[var(--line)]">
-          {leafPosts.map((post) => (
+          {photosToShow.map((post) => (
             <button
               key={post.id}
               onClick={() => onPostClick(post)}
@@ -135,7 +187,7 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
         </div>
       )}
 
-      {isLeaf && leafPosts.length === 0 && (
+      {currentNode && !hasChildren && allPostsHere.length === 0 && (
         <div className="p-8 text-center text-sm text-[var(--muted)]">No art at this location yet.</div>
       )}
     </div>

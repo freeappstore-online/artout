@@ -4,7 +4,7 @@ import { thumbUrl, fullUrl } from '../lib/cloudinary'
 import type { ArtPost } from '../lib/types'
 
 const PAGE_SIZE = 100
-const MAX_PAGES = 5
+const MAX_PAGES = 30
 
 export function usePosts() {
   const [posts, setPosts] = useState<ArtPost[]>([])

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { haversineDistance } from '../lib/geo'
 import type { ArtPost } from '../lib/types'
 
@@ -19,7 +19,16 @@ function formatDistance(meters: number): string {
 
 export function WallView({ posts, userLat, userLon, onPostClick }: WallViewProps) {
   const hasLocation = userLat != null && userLon != null
-  const [sort, setSort] = useState<Sort>(hasLocation ? 'nearby' : 'newest')
+  const [sort, setSort] = useState<Sort>('newest')
+  const [autoSwitched, setAutoSwitched] = useState(false)
+
+  // Auto-switch to 'nearby' when GPS first arrives
+  useEffect(() => {
+    if (hasLocation && !autoSwitched) {
+      setSort('nearby')
+      setAutoSwitched(true)
+    }
+  }, [hasLocation, autoSwitched])
 
   const sorted = useMemo(() => {
     if (sort === 'nearby' && hasLocation) {
