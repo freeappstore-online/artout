@@ -12,7 +12,7 @@ interface WallViewProps {
   getFavCount: (id: string) => number
 }
 
-type Sort = 'nearby' | 'newest'
+type Sort = 'nearby' | 'newest' | 'popular'
 type Layout = 'grid' | 'feed'
 
 function formatDistance(meters: number): string {
@@ -35,16 +35,18 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
   }, [hasLocation, autoSwitched])
 
   const sorted = useMemo(() => {
-    if (sort === 'nearby' && hasLocation) {
-      return [...posts]
-        .map((p) => ({ ...p, dist: haversineDistance(userLat, userLon, p.lat, p.lon) }))
-        .sort((a, b) => a.dist - b.dist)
-    }
-    return posts.map((p) => ({
+    const withDist = posts.map((p) => ({
       ...p,
       dist: hasLocation ? haversineDistance(userLat!, userLon!, p.lat, p.lon) : undefined,
     }))
-  }, [posts, sort, userLat, userLon, hasLocation])
+    if (sort === 'nearby' && hasLocation) {
+      return withDist.sort((a, b) => a.dist! - b.dist!)
+    }
+    if (sort === 'popular') {
+      return withDist.sort((a, b) => getFavCount(b.id) - getFavCount(a.id))
+    }
+    return withDist
+  }, [posts, sort, userLat, userLon, hasLocation, getFavCount])
 
   if (posts.length === 0) {
     return (
@@ -74,6 +76,12 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
             sort === 'newest' ? 'bg-[var(--accent)] text-black' : 'bg-[var(--glass)] text-[var(--muted)]'
           }`}
         >Newest</button>
+        <button
+          onClick={() => setSort('popular')}
+          className={`rounded-full px-3 py-1 text-xs font-semibold ${
+            sort === 'popular' ? 'bg-[var(--accent)] text-black' : 'bg-[var(--glass)] text-[var(--muted)]'
+          }`}
+        >Popular</button>
         <div className="ml-auto flex gap-1">
           <button
             onClick={() => setLayout('grid')}
