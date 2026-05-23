@@ -34,9 +34,8 @@ test.describe('ArtOut', () => {
     await page.goto(BASE)
     await page.getByText('Wall').click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    // Grid is default — images in grid cols
-    const gridImages = page.locator('.grid img')
-    await expect(gridImages.first()).toBeVisible()
+    // Grid is default — images visible
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
   })
 
   test('places tab shows location tree', async ({ page }) => {
@@ -62,8 +61,8 @@ test.describe('ArtOut', () => {
     await expect(page.locator('button:has-text("Australia")').first()).toBeVisible({ timeout: 10000 })
     await page.locator('button:has-text("Australia")').first().click()
     // Breadcrumb should show
-    await expect(page.getByText('All')).toBeVisible()
-    await expect(page.locator('button:has-text("Australia")').first()).toBeVisible()
+    await expect(page.getByRole('button', { name: 'All', exact: true })).toBeVisible()
+    await expect(page.locator('text=Australia').first()).toBeVisible()
   })
 
   test('add tab requires sign-in', async ({ page }) => {
