@@ -1,6 +1,6 @@
-import { useCallback, useState } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { Shell, type Tab } from './components/Shell'
-import { MapView } from './components/MapView'
+import { MapView, type MapBounds } from './components/MapView'
 import { WallView } from './components/WallView'
 import { AddView } from './components/AddView'
 import { PlacesView } from './components/PlacesView'
@@ -18,6 +18,8 @@ export default function App() {
   const { position } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
   const [galleryPosts, setGalleryPosts] = useState<ArtPost[]>([])
+  const [mapBounds, setMapBounds] = useState<MapBounds | null>(null)
+  const [wallFromMap, setWallFromMap] = useState(false)
 
   const openGallery = useCallback(
     (post: ArtPost, context?: ArtPost[]) => {
@@ -31,9 +33,31 @@ export default function App() {
 
   const handleAddDone = useCallback(() => setTab('map'), [])
 
+  const handleBoundsChange = useCallback((bounds: MapBounds) => {
+    setMapBounds(bounds)
+  }, [])
+
+  const handleShowWall = useCallback(() => {
+    setWallFromMap(true)
+    setTab('wall')
+  }, [])
+
+  const handleTabChange = useCallback((t: Tab) => {
+    if (t !== 'wall') setWallFromMap(false)
+    setTab(t)
+  }, [])
+
+  const wallPosts = useMemo(() => {
+    if (!wallFromMap || !mapBounds) return posts
+    return posts.filter((p) =>
+      p.lat >= mapBounds.south && p.lat <= mapBounds.north &&
+      p.lon >= mapBounds.west && p.lon <= mapBounds.east
+    )
+  }, [posts, wallFromMap, mapBounds])
+
   if (loading) {
     return (
-      <Shell activeTab={tab} onTabChange={setTab}>
+      <Shell activeTab={tab} onTabChange={handleTabChange}>
         <div className="flex flex-1 items-center justify-center">
           <div className="text-[var(--muted)]">Loading...</div>
         </div>
@@ -42,19 +66,28 @@ export default function App() {
   }
 
   return (
-    <Shell activeTab={tab} onTabChange={setTab}>
+    <Shell activeTab={tab} onTabChange={handleTabChange}>
       {tab === 'map' && (
         <MapView
           posts={posts}
           userLat={position?.lat}
           userLon={position?.lon}
           onPostClick={openGallery}
+          onBoundsChange={handleBoundsChange}
+          onShowWall={handleShowWall}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
         />
       )}
       {tab === 'wall' && (
-        <WallView posts={posts} userLat={position?.lat} userLon={position?.lon} onPostClick={openGallery} />
+        <WallView
+          posts={wallPosts}
+          userLat={position?.lat}
+          userLon={position?.lon}
+          onPostClick={openGallery}
+          filtered={wallFromMap}
+          onClearFilter={() => setWallFromMap(false)}
+        />
       )}
       {tab === 'add' && (
         <AddView

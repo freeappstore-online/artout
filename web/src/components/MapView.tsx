@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useState } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -16,7 +16,6 @@ const dotIcon = L.divIcon({
   iconAnchor: [5, 5],
 })
 
-/** Find the deepest common location segment from all markers in a cluster. */
 function getClusterLabel(cluster: any): string {
   const markers = cluster.getAllChildMarkers()
   const paths: string[][] = []
@@ -25,16 +24,12 @@ function getClusterLabel(cluster: any): string {
     if (lp) paths.push(lp.split(' > '))
   }
   if (paths.length === 0) return ''
-
-  // Find common prefix
   const first = paths[0]
   let depth = 0
   for (let i = 0; i < first.length; i++) {
     if (paths.every((p) => p[i] === first[i])) depth = i + 1
     else break
   }
-
-  // Return the deepest common segment
   return depth > 0 ? first[depth - 1] : ''
 }
 
@@ -87,13 +82,44 @@ function clusterIcon(cluster: any) {
   })
 }
 
+export interface MapBounds {
+  north: number
+  south: number
+  east: number
+  west: number
+}
+
 interface MapViewProps {
   posts: ArtPost[]
   userLat?: number
   userLon?: number
   onPostClick: (post: ArtPost) => void
+  onBoundsChange: (bounds: MapBounds, visibleCount: number) => void
+  onShowWall: () => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
+}
+
+function BoundsTracker({ posts, onBoundsChange }: { posts: ArtPost[]; onBoundsChange: (bounds: MapBounds, count: number) => void }) {
+  const update = useCallback((map: L.Map) => {
+    const b = map.getBounds()
+    const bounds: MapBounds = {
+      north: b.getNorth(), south: b.getSouth(),
+      east: b.getEast(), west: b.getWest(),
+    }
+    const count = posts.filter((p) =>
+      p.lat >= bounds.south && p.lat <= bounds.north &&
+      p.lon >= bounds.west && p.lon <= bounds.east
+    ).length
+    onBoundsChange(bounds, count)
+  }, [posts, onBoundsChange])
+
+  useMapEvents({
+    moveend: (e) => update(e.target),
+    zoomend: (e) => update(e.target),
+    load: (e) => update(e.target),
+  })
+  return null
 }
 
 function LocateButton({ lat, lon }: { lat: number; lon: number }) {
@@ -116,8 +142,14 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   )
 }
 
-export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite }: MapViewProps) {
+export function MapView({ posts, userLat, userLon, onPostClick, onBoundsChange, onShowWall, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
+  const [visibleCount, setVisibleCount] = useState(0)
+
+  const handleBoundsChange = useCallback((bounds: MapBounds, count: number) => {
+    setVisibleCount(count)
+    onBoundsChange(bounds, count)
+  }, [onBoundsChange])
 
   const center = useMemo<[number, number]>(
     () => (userLat && userLon ? [userLat, userLon] : DEFAULT_CENTER),
@@ -136,6 +168,7 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
         attributionControl={false}
       >
         <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
+        <BoundsTracker posts={posts} onBoundsChange={handleBoundsChange} />
 
         <MarkerClusterGroup
           iconCreateFunction={clusterIcon}
@@ -194,6 +227,19 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
 
         {userLat && userLon && <LocateButton lat={userLat} lon={userLon} />}
       </MapContainer>
+
+      {visibleCount > 0 && visibleCount < posts.length && (
+        <button
+          onClick={onShowWall}
+          className="absolute bottom-4 left-4 z-[1000] flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--panel-strong)] px-4 py-2 shadow-lg"
+        >
+          <svg className="h-4 w-4 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          <span className="text-xs font-semibold text-[var(--ink)]">{visibleCount} in view</span>
+        </button>
+      )}
     </div>
   )
 }
