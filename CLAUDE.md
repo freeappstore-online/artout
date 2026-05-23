@@ -5,12 +5,12 @@ Location-based street art photo sharing PWA on FreeAppStore.
 - Subdomain: `artout.freeappstore.online`
 - Dev: `pnpm install && pnpm dev`
 - Build: `pnpm build`
-- Deploy: `git push origin main` (auto-deploys via Cloudflare Pages)
+- Deploy: `git push origin main` (auto-deploys to R2 via GitHub Actions)
 
 ## Architecture
 
 - **Data:** FAS Collections `posts` collection (public read, auth write)
-- **Auth:** FAS SDK (`fas.auth.signIn('google')`)
+- **Auth:** FAS SDK (`fas.auth.signIn()` — GitHub OAuth)
 - **Favorites:** FAS KV (per-user, key: `favorites`, value: `string[]`)
 - **Images:** Cloudinary (direct client upload, cloud: `lkzycqsuf`, preset: `cttcla3s`)
 - **Map:** Google Maps JS API via `@vis.gl/react-google-maps`
@@ -36,6 +36,6 @@ interface ArtPost {
 
 ## Env vars
 
-- `VITE_GOOGLE_MAPS_KEY` -- Google Maps JavaScript API key
+- `VITE_GOOGLE_MAPS_KEY` -- Google Maps JavaScript API key (set as GitHub repo Variable for CI)
 
 Free, MIT-licensed, no tracking.

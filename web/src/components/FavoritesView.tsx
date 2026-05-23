@@ -20,7 +20,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
           onClick={signIn}
           className="rounded-full bg-[var(--accent)] px-6 py-2.5 text-sm font-semibold text-white"
         >
-          Sign in with Google
+          Sign in with GitHub
         </button>
       </div>
     )

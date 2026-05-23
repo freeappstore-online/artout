@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react'
+import { STORE_URL } from '../lib/fas'
 
 export type Tab = 'map' | 'wall' | 'add' | 'places' | 'favs'
 
@@ -22,6 +23,14 @@ export function Shell({ children, activeTab, onTabChange }: ShellProps) {
       <main className="flex min-h-0 flex-1 flex-col">{children}</main>
 
       <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
+        <a
+          href={STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mx-auto block max-w-md px-4 py-1 text-center text-[0.55rem] text-[var(--muted)] hover:text-[var(--accent)]"
+        >
+          a free app on freeappstore.online
+        </a>
         <div className="mx-auto grid max-w-md grid-cols-5 pb-[env(safe-area-inset-bottom)]">
           {tabs.map((t) => (
             <button

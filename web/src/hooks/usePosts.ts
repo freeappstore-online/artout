@@ -15,7 +15,7 @@ export function usePosts() {
     setLoading(true)
     const allPosts: ArtPost[] = []
     for (let page = 0; page < MAX_PAGES; page++) {
-      const result = await fas.db.collection('posts').query<ArtPost>({
+      const result = await fas.collections.collection('posts').query<ArtPost>({
         orderBy: 'created_at',
         order: 'desc',
         limit: PAGE_SIZE,
@@ -37,7 +37,7 @@ export function usePosts() {
 
   const addPost = useCallback(
     async (post: Omit<ArtPost, 'id' | 'thumbUrl' | 'imageUrl'> & { imageId: string }) => {
-      const doc = await fas.db.collection('posts').create({
+      const doc = await fas.collections.collection('posts').create({
         ...post,
         imageUrl: fullUrl(post.imageId),
         thumbUrl: thumbUrl(post.imageId),
@@ -49,7 +49,7 @@ export function usePosts() {
   )
 
   const deletePost = useCallback(async (id: string) => {
-    await fas.db.collection('posts').delete(id)
+    await fas.collections.collection('posts').delete(id)
     setPosts((prev) => prev.filter((p) => p.id !== id))
   }, [])
 

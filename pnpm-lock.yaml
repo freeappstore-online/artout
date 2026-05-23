@@ -11,8 +11,8 @@ importers:
   web:
     dependencies:
       '@freeappstore/sdk':
-        specifier: ^0.6.1
-        version: 0.6.1
+        specifier: ^0.12.0
+        version: 0.12.0(react@19.2.6)
       '@vis.gl/react-google-maps':
         specifier: ^1.8.3
         version: 1.8.3(react-dom@19.2.6(react@19.2.6))(react@19.2.6)
@@ -62,8 +62,13 @@ packages:
   '@emnapi/wasi-threads@1.2.1':
     resolution: {integrity: sha512-uTII7OYF+/Mes/MrcIOYp5yOtSMLBWSIoLPpcgwipoiKbli6k322tcoFsxoIIxPDqW01SQGAgko4EzZi2BNv2w==}
 
-  '@freeappstore/sdk@0.6.1':
-    resolution: {integrity: sha512-ZqL1jqIeuWETxXjU5LkXa79f3P+D5UU244yv/wGqd8cpyUUsjE4kqOUrzy46f1iYQJ+IAXvsMHSRdAEa/HvDhw==}
+  '@freeappstore/sdk@0.12.0':
+    resolution: {integrity: sha512-Nm4mkiNyCibbnfH9zEioB2EPIeFaoNrBVgB/yzYtMOf/b99yUgAeCnCL2VVpdkAmsTlgzZMQmYlOLaczshrK+g==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   '@googlemaps/js-api-loader@2.0.2':
     resolution: {integrity: sha512-bKVuTqatS8Jven5aFqVB7rCHF1VFEzpzyi0ruzO0GUR+A7m9oMqMgtnmpANj7kMYEvvhty8Fk7TnJ1MKjWHu+Q==}
@@ -564,7 +569,9 @@ snapshots:
       tslib: 2.8.1
     optional: true
 
-  '@freeappstore/sdk@0.6.1': {}
+  '@freeappstore/sdk@0.12.0(react@19.2.6)':
+    optionalDependencies:
+      react: 19.2.6
 
   '@googlemaps/js-api-loader@2.0.2':
     dependencies:

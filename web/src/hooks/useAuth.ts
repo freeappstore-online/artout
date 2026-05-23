@@ -11,7 +11,7 @@ export function useAuth() {
     return fas.auth.onChange(setUser)
   }, [])
 
-  const signIn = useCallback(() => fas.auth.signIn('google'), [])
+  const signIn = useCallback(() => fas.auth.signIn(), [])
   const signOut = useCallback(() => fas.auth.signOut(), [])
 
   return { user, loading, signIn, signOut }
