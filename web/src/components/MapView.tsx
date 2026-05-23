@@ -62,7 +62,7 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
         zoomControl={false}
         attributionControl={false}
       >
-        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+        <TileLayer url="https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png" />
 
         {posts.map((post) => (
           <Marker
