@@ -151,6 +151,11 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
+/* Dark Leaflet background — no white flash between tile loads */
+.leaflet-container {
+  background: #1a1a1a !important;
+}
+
 /* Override Leaflet popup styling for dark mode */
 .leaflet-popup-content-wrapper {
   background: var(--panel-strong) !important;
