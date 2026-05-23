@@ -54,7 +54,7 @@ export default function App() {
         />
       )}
       {tab === 'wall' && (
-        <WallView posts={posts} onPostClick={openGallery} />
+        <WallView posts={posts} userLat={position?.lat} userLon={position?.lon} onPostClick={openGallery} />
       )}
       {tab === 'add' && (
         <AddView

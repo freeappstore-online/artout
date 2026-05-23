@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 interface Position {
   lat: number
@@ -9,24 +9,21 @@ export function useGeolocation() {
   const [position, setPosition] = useState<Position | null>(null)
   const [error, setError] = useState<string | null>(null)
 
-  const requestPosition = useCallback(() => {
+  useEffect(() => {
     if (!navigator.geolocation) {
       setError('Geolocation not supported')
       return
     }
-    navigator.geolocation.getCurrentPosition(
+    const id = navigator.geolocation.watchPosition(
       (pos) => {
         setPosition({ lat: pos.coords.latitude, lon: pos.coords.longitude })
         setError(null)
       },
       (err) => setError(err.message),
-      { enableHighAccuracy: true, timeout: 10000 },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 },
     )
+    return () => navigator.geolocation.clearWatch(id)
   }, [])
 
-  useEffect(() => {
-    requestPosition()
-  }, [requestPosition])
-
-  return { position, error, requestPosition }
+  return { position, error }
 }
