@@ -13,26 +13,25 @@ export function haversineDistance(
   return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a))
 }
 
-export function isInBounds(
-  lat: number, lon: number,
-  bounds: { north: number; south: number; east: number; west: number },
-): boolean {
-  return lat >= bounds.south && lat <= bounds.north && lon >= bounds.west && lon <= bounds.east
-}
-
 interface NominatimAddress {
   country?: string
+  state?: string
+  county?: string
   city?: string
   town?: string
   village?: string
   suburb?: string
   neighbourhood?: string
-  county?: string
+  road?: string
 }
 
+/**
+ * Reverse geocode to 5-level location path: Country > State > City > Suburb > Street
+ * Uses Nominatim (free, no API key).
+ */
 export async function reverseGeocode(lat: number, lon: number): Promise<{ path: string; name: string }> {
   const res = await fetch(
-    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&addressdetails=1`,
+    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&addressdetails=1&zoom=18`,
     { headers: { 'User-Agent': 'ArtOut/1.0 (https://artout.freeappstore.online)' } },
   )
   if (!res.ok) return { path: 'Unknown', name: 'Unknown' }
@@ -42,10 +41,12 @@ export async function reverseGeocode(lat: number, lon: number): Promise<{ path: 
   if (!addr) return { path: 'Unknown', name: 'Unknown' }
 
   const country = addr.country || ''
+  const state = addr.state || addr.county || ''
   const city = addr.city || addr.town || addr.village || ''
-  const neighborhood = addr.suburb || addr.neighbourhood || addr.county || ''
+  const suburb = addr.suburb || addr.neighbourhood || ''
+  const street = addr.road || ''
 
-  const parts = [country, city, neighborhood].filter(Boolean)
+  const parts = [country, state, city, suburb, street].filter(Boolean)
   const path = parts.join(' > ')
   const name = parts[parts.length - 1] || 'Unknown'
   return { path, name }
