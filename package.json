@@ -14,9 +14,12 @@
     "dev": "pnpm --filter @artout/web dev",
     "build": "pnpm --filter @artout/web build",
     "preview": "pnpm --filter @artout/web preview",
-    "typecheck": "pnpm --filter @artout/web exec tsc -b"
+    "typecheck": "pnpm --filter @artout/web exec tsc -b",
+    "test:e2e": "npx playwright test"
   },
   "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "playwright": "^1.60.0",
     "tsx": "^4.22.3"
   }
 }

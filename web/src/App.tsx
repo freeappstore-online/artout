@@ -15,7 +15,7 @@ export default function App() {
   const [tab, setTab] = useState<Tab>('map')
   const { posts, loading, addPost } = usePosts()
   const { favorites, toggle: toggleFavorite, isFavorite } = useFavorites()
-  const { position } = useGeolocation()
+  const { position, state: geoState } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
   const [galleryPosts, setGalleryPosts] = useState<ArtPost[]>([])
   const [mapBounds, setMapBounds] = useState<MapBounds | null>(null)
@@ -93,6 +93,7 @@ export default function App() {
         <AddView
           userLat={position?.lat}
           userLon={position?.lon}
+          geoState={geoState}
           onSubmit={addPost}
           onDone={handleAddDone}
         />

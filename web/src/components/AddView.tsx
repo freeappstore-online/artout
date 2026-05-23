@@ -4,14 +4,17 @@ import { reverseGeocode } from '../lib/geo'
 import { useAuth } from '../hooks/useAuth'
 import type { ArtPost } from '../lib/types'
 
+import type { GeoState } from '../hooks/useGeolocation'
+
 interface AddViewProps {
   userLat?: number
   userLon?: number
+  geoState: GeoState
   onSubmit: (post: Omit<ArtPost, 'id' | 'thumbUrl' | 'imageUrl'> & { imageId: string }) => Promise<ArtPost>
   onDone: () => void
 }
 
-export function AddView({ userLat, userLon, onSubmit, onDone }: AddViewProps) {
+export function AddView({ userLat, userLon, geoState, onSubmit, onDone }: AddViewProps) {
   const { user, signIn, signInWithGoogle } = useAuth()
   const fileRef = useRef<HTMLInputElement>(null)
   const [file, setFile] = useState<File | null>(null)
@@ -87,15 +90,20 @@ export function AddView({ userLat, userLon, onSubmit, onDone }: AddViewProps) {
   }
 
   if (!hasGPS) {
+    const isPending = geoState === 'pending'
     return (
       <div className="flex flex-1 flex-col items-center justify-center gap-4 p-8 text-center">
-        <svg className="h-12 w-12 text-[var(--warning)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <svg className={`h-12 w-12 ${isPending ? 'animate-pulse text-[var(--accent)]' : 'text-[var(--warning)]'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
           <circle cx="12" cy="9" r="2.5" />
         </svg>
-        <p className="display-font text-xl text-[var(--ink)]">GPS required</p>
+        <p className="display-font text-xl text-[var(--ink)]">
+          {isPending ? 'Acquiring GPS...' : 'GPS required'}
+        </p>
         <p className="max-w-xs text-sm text-[var(--muted)]">
-          ArtOut needs your location to pin art on the map. Enable location access in your browser settings.
+          {isPending
+            ? 'Allow location access when prompted by your browser.'
+            : 'ArtOut needs your location to pin art on the map. Enable location access in your browser settings.'}
         </p>
       </div>
     )
