@@ -29,7 +29,7 @@ export function WallView({ posts, onPostClick }: WallViewProps) {
             <img
               src={post.thumbUrl}
               alt={post.title || 'Street art'}
-              className="h-full w-full object-cover transition-transform hover:scale-105"
+              className="h-full w-full object-cover"
               loading="lazy"
             />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">

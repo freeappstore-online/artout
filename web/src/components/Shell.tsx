@@ -59,7 +59,7 @@ export function Shell({ children, activeTab, onTabChange }: ShellProps) {
     <div className="relative flex min-h-[100dvh] flex-col bg-[var(--paper)]">
       <main className="flex min-h-0 flex-1 flex-col pb-[4.5rem]">{children}</main>
 
-      <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
+      <nav className="fixed inset-x-0 bottom-0 z-[1100] border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
         <a
           href={STORE_URL}
           target="_blank"
