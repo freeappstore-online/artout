@@ -12,7 +12,8 @@ export function useAuth() {
   }, [])
 
   const signIn = useCallback(() => fas.auth.signIn(), [])
+  const signInWithGoogle = useCallback(() => fas.auth.signIn('google'), [])
   const signOut = useCallback(() => fas.auth.signOut(), [])
 
-  return { user, loading, signIn, signOut }
+  return { user, loading, signIn, signInWithGoogle, signOut }
 }
