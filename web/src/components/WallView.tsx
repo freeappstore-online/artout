@@ -143,10 +143,23 @@ export function WallView({ posts, userLat, userLon, onPostClick, filtered, onCle
             >
               <img src={post.imageUrl} alt={post.title || 'Street art'} className="w-full object-cover" loading="lazy" style={{ maxHeight: 500 }} />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
-                <span className="text-sm font-medium text-white">{post.locationName}</span>
-                {post.dist != null && (
-                  <span className="ml-2 text-xs text-white/50">{formatDistance(post.dist)}</span>
-                )}
+                <div className="flex items-end justify-between">
+                  <div>
+                    <span className="text-sm font-medium text-white">{post.locationName}</span>
+                    {post.dist != null && (
+                      <span className="ml-2 text-xs text-white/50">{formatDistance(post.dist)}</span>
+                    )}
+                  </div>
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${post.lat},${post.lon}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="shrink-0 text-xs font-medium text-[var(--sky)]"
+                  >
+                    Navigate →
+                  </a>
+                </div>
               </div>
             </button>
           ))}

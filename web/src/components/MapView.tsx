@@ -211,15 +211,26 @@ export function MapView({ posts, userLat, userLon, onPostClick, onBoundsChange, 
                   {selected.title || 'Untitled'}
                 </div>
                 <div className="text-xs text-[var(--muted)]">{selected.locationPath}</div>
-                <button
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    onToggleFavorite(selected.id)
-                  }}
-                  className="mt-1 text-xs text-[var(--accent)]"
-                >
-                  {isFavorite(selected.id) ? '\u2764\ufe0f' : '\u2661'} Favorite
-                </button>
+                <div className="mt-1.5 flex items-center gap-3">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      onToggleFavorite(selected.id)
+                    }}
+                    className="text-xs text-[var(--accent)]"
+                  >
+                    {isFavorite(selected.id) ? '\u2764\ufe0f' : '\u2661'} Fav
+                  </button>
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${selected.lat},${selected.lon}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs text-[var(--sky)]"
+                  >
+                    Navigate →
+                  </a>
+                </div>
               </div>
             </div>
           </Popup>
