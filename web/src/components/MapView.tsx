@@ -16,9 +16,59 @@ const dotIcon = L.divIcon({
   iconAnchor: [5, 5],
 })
 
+/** Find the deepest common location segment from all markers in a cluster. */
+function getClusterLabel(cluster: any): string {
+  const markers = cluster.getAllChildMarkers()
+  const paths: string[][] = []
+  for (const m of markers) {
+    const lp = m.options?.locationPath as string | undefined
+    if (lp) paths.push(lp.split(' > '))
+  }
+  if (paths.length === 0) return ''
+
+  // Find common prefix
+  const first = paths[0]
+  let depth = 0
+  for (let i = 0; i < first.length; i++) {
+    if (paths.every((p) => p[i] === first[i])) depth = i + 1
+    else break
+  }
+
+  // Return the deepest common segment
+  return depth > 0 ? first[depth - 1] : ''
+}
+
+function formatCount(n: number): string {
+  if (n > 999) return (Math.round(n / 100) / 10) + 'k'
+  return String(n)
+}
+
 function clusterIcon(cluster: any) {
   const count = cluster.getChildCount()
-  const size = count > 100 ? 48 : count > 10 ? 40 : 32
+  const label = getClusterLabel(cluster)
+  const hasLabel = label.length > 0
+
+  if (hasLabel) {
+    const w = Math.max(48, label.length * 7 + 24)
+    return L.divIcon({
+      html: `<div style="
+        min-width:${w}px;height:28px;padding:0 10px;
+        border-radius:14px;
+        background:rgba(255,45,107,0.88);
+        color:#fff;
+        display:flex;align-items:center;justify-content:center;gap:5px;
+        font-family:Manrope,sans-serif;
+        font-weight:700;font-size:11px;white-space:nowrap;
+        box-shadow:0 0 12px rgba(255,45,107,0.4),0 2px 8px rgba(0,0,0,0.4);
+        border:1.5px solid rgba(255,255,255,0.15);
+      "><span style="opacity:0.7;font-size:10px">${formatCount(count)}</span> ${label}</div>`,
+      className: '',
+      iconSize: L.point(w, 28),
+      iconAnchor: L.point(w / 2, 14),
+    })
+  }
+
+  const size = count > 100 ? 44 : count > 10 ? 38 : 32
   return L.divIcon({
     html: `<div style="
       width:${size}px;height:${size}px;
@@ -27,10 +77,10 @@ function clusterIcon(cluster: any) {
       color:#fff;
       display:flex;align-items:center;justify-content:center;
       font-family:Manrope,sans-serif;
-      font-weight:700;font-size:${count > 100 ? 13 : 12}px;
+      font-weight:700;font-size:12px;
       box-shadow:0 0 12px rgba(255,45,107,0.5),0 2px 8px rgba(0,0,0,0.4);
       border:2px solid rgba(255,255,255,0.2);
-    ">${count > 999 ? Math.round(count / 100) / 10 + 'k' : count}</div>`,
+    ">${formatCount(count)}</div>`,
     className: '',
     iconSize: L.point(size, size),
     iconAnchor: L.point(size / 2, size / 2),
@@ -99,6 +149,8 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
               key={post.id}
               position={[post.lat, post.lon]}
               icon={dotIcon}
+              // @ts-expect-error — custom option for cluster label extraction
+              locationPath={post.locationPath}
               eventHandlers={{ click: () => setSelected(post) }}
             />
           ))}
@@ -125,7 +177,7 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
                 <div className="truncate text-sm font-semibold text-[var(--ink)]">
                   {selected.title || 'Untitled'}
                 </div>
-                <div className="text-xs text-[var(--muted)]">{selected.locationName}</div>
+                <div className="text-xs text-[var(--muted)]">{selected.locationPath}</div>
                 <button
                   onClick={(e) => {
                     e.stopPropagation()
