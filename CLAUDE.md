@@ -13,7 +13,7 @@ Location-based street art photo sharing PWA on FreeAppStore.
 - **Auth:** FAS SDK (`fas.auth.signIn()` — GitHub OAuth)
 - **Favorites:** FAS KV (per-user, key: `favorites`, value: `string[]`)
 - **Images:** Cloudinary (direct client upload, cloud: `lkzycqsuf`, preset: `cttcla3s`)
-- **Map:** Google Maps JS API via `@vis.gl/react-google-maps`
+- **Map:** Leaflet + OpenStreetMap (no API key needed)
 - **Location tree:** Derived client-side from posts' `locationPath` field (no separate collection)
 - **Gallery:** `yet-another-react-lightbox`
 
@@ -33,9 +33,5 @@ interface ArtPost {
   locationName: string // "Fitzroy"
 }
 ```
-
-## Env vars
-
-- `VITE_GOOGLE_MAPS_KEY` -- Google Maps JavaScript API key (set as GitHub repo Variable for CI)
 
 Free, MIT-licensed, no tracking.

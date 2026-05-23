@@ -1,6 +1,6 @@
 import { useCallback, useRef, useState } from 'react'
 import { uploadImage } from '../lib/cloudinary'
-import { buildLocationPath } from '../lib/geo'
+import { reverseGeocode } from '../lib/geo'
 import { useAuth } from '../hooks/useAuth'
 import type { ArtPost } from '../lib/types'
 
@@ -31,15 +31,9 @@ export function AddView({ userLat, userLon, onSubmit, onDone }: AddViewProps) {
       setError(null)
 
       // Reverse geocode if we have position
-      if (userLat && userLon && typeof google !== 'undefined') {
-        const geocoder = new google.maps.Geocoder()
-        geocoder
-          .geocode({ location: { lat: userLat, lng: userLon } })
-          .then(({ results }) => {
-            if (results?.[0]) {
-              setLocationInfo(buildLocationPath(results[0].address_components))
-            }
-          })
+      if (userLat && userLon) {
+        reverseGeocode(userLat, userLon)
+          .then(setLocationInfo)
           .catch(() => { /* geocoding failed, location stays null */ })
       }
     },

@@ -29,7 +29,6 @@ jobs:
 
       - name: Build
         env:
-          VITE_GOOGLE_MAPS_KEY: ${{ vars.VITE_GOOGLE_MAPS_KEY }}
           VITE_APP_VERSION: ${{ github.event.repository.name }}@${{ github.run_number }}
           VITE_COMMIT_SHA: ${{ github.sha }}
           VITE_BUILD_DATE: ${{ github.event.head_commit.timestamp }}

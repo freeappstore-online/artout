@@ -1,18 +1,19 @@
-import { useCallback, useMemo, useState } from 'react'
-import {
-  APIProvider,
-  Map,
-  AdvancedMarker,
-  InfoWindow,
-  useMap,
-} from '@vis.gl/react-google-maps'
+import { useCallback, useMemo, useRef, useState } from 'react'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
 import type { ArtPost } from '../lib/types'
 
-const MAPS_API_KEY = import.meta.env.VITE_GOOGLE_MAPS_KEY || ''
-
 // Default: Melbourne, AU (where ArtOut was born)
-const DEFAULT_CENTER = { lat: -37.8136, lng: 144.9631 }
+const DEFAULT_CENTER: [number, number] = [-37.8136, 144.9631]
 const DEFAULT_ZOOM = 13
+
+const dotIcon = L.divIcon({
+  className: '',
+  html: '<div style="width:12px;height:12px;border-radius:50%;border:2px solid white;background:var(--accent,#d86f4d);box-shadow:0 2px 6px rgba(0,0,0,0.3)"></div>',
+  iconSize: [12, 12],
+  iconAnchor: [6, 6],
+})
 
 interface MapViewProps {
   posts: ArtPost[]
@@ -23,47 +24,60 @@ interface MapViewProps {
   onToggleFavorite: (id: string) => void
 }
 
-function MapContent({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite }: MapViewProps) {
-  const [selected, setSelected] = useState<ArtPost | null>(null)
+function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   const map = useMap()
+  const handleClick = useCallback(() => {
+    map.setView([lat, lon], 15)
+  }, [map, lat, lon])
 
-  const center = useMemo(
-    () => (userLat && userLon ? { lat: userLat, lng: userLon } : DEFAULT_CENTER),
+  return (
+    <button
+      onClick={handleClick}
+      className="absolute bottom-4 right-4 z-[1000] flex h-10 w-10 items-center justify-center rounded-full bg-[var(--panel-strong)] shadow-lg backdrop-blur"
+      title="My location"
+    >
+      <svg className="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v3m0 14v3M2 12h3m14 0h3" />
+      </svg>
+    </button>
+  )
+}
+
+export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite }: MapViewProps) {
+  const [selected, setSelected] = useState<ArtPost | null>(null)
+  const popupRef = useRef<L.Popup>(null)
+
+  const center = useMemo<[number, number]>(
+    () => (userLat && userLon ? [userLat, userLon] : DEFAULT_CENTER),
     [userLat, userLon],
   )
 
-  const handleLocate = useCallback(() => {
-    if (map && userLat && userLon) {
-      map.panTo({ lat: userLat, lng: userLon })
-      map.setZoom(15)
-    }
-  }, [map, userLat, userLon])
-
   return (
     <div className="relative flex-1">
-      <Map
-        defaultCenter={center}
-        defaultZoom={DEFAULT_ZOOM}
-        mapId="artout-map"
-        gestureHandling="greedy"
-        disableDefaultUI
+      <MapContainer
+        center={center}
+        zoom={DEFAULT_ZOOM}
         className="h-full w-full"
+        zoomControl={false}
+        attributionControl={false}
       >
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
         {posts.map((post) => (
-          <AdvancedMarker
+          <Marker
             key={post.id}
-            position={{ lat: post.lat, lng: post.lon }}
-            onClick={() => setSelected(post)}
-          >
-            <div className="h-3 w-3 rounded-full border-2 border-white bg-[var(--accent)] shadow-lg" />
-          </AdvancedMarker>
+            position={[post.lat, post.lon]}
+            icon={dotIcon}
+            eventHandlers={{ click: () => setSelected(post) }}
+          />
         ))}
 
         {selected && (
-          <InfoWindow
-            position={{ lat: selected.lat, lng: selected.lon }}
-            onCloseClick={() => setSelected(null)}
-            headerDisabled
+          <Popup
+            ref={popupRef}
+            position={[selected.lat, selected.lon]}
+            eventHandlers={{ remove: () => setSelected(null) }}
           >
             <div
               className="flex cursor-pointer gap-2 p-1"
@@ -93,44 +107,11 @@ function MapContent({ posts, userLat, userLon, onPostClick, isFavorite, onToggle
                 </button>
               </div>
             </div>
-          </InfoWindow>
+          </Popup>
         )}
-      </Map>
 
-      {/* Locate me button */}
-      {userLat && userLon && (
-        <button
-          onClick={handleLocate}
-          className="absolute bottom-4 right-4 flex h-10 w-10 items-center justify-center rounded-full bg-[var(--panel-strong)] shadow-lg backdrop-blur"
-          title="My location"
-        >
-          <svg className="h-5 w-5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <circle cx="12" cy="12" r="3" />
-            <path d="M12 2v3m0 14v3M2 12h3m14 0h3" />
-          </svg>
-        </button>
-      )}
+        {userLat && userLon && <LocateButton lat={userLat} lon={userLon} />}
+      </MapContainer>
     </div>
-  )
-}
-
-export function MapView(props: MapViewProps) {
-  if (!MAPS_API_KEY) {
-    return (
-      <div className="flex flex-1 items-center justify-center p-8 text-center text-[var(--muted)]">
-        <div>
-          <p className="text-lg font-semibold">Google Maps API key missing</p>
-          <p className="mt-2 text-sm">
-            Set <code className="rounded bg-[var(--glass)] px-1">VITE_GOOGLE_MAPS_KEY</code> in your <code>.env</code> file.
-          </p>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <APIProvider apiKey={MAPS_API_KEY}>
-      <MapContent {...props} />
-    </APIProvider>
   )
 }

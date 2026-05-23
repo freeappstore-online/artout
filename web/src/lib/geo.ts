@@ -20,31 +20,30 @@ export function isInBounds(
   return lat >= bounds.south && lat <= bounds.north && lon >= bounds.west && lon <= bounds.east
 }
 
-export function buildLocationPath(components: google.maps.GeocoderAddressComponent[]): {
-  path: string
-  name: string
-} {
-  let country = ''
-  let city = ''
-  let neighborhood = ''
+interface NominatimAddress {
+  country?: string
+  city?: string
+  town?: string
+  village?: string
+  suburb?: string
+  neighbourhood?: string
+  county?: string
+}
 
-  for (const c of components) {
-    if (c.types.includes('country')) country = c.long_name
-    if (c.types.includes('locality')) city = c.long_name
-    if (c.types.includes('sublocality_level_1') || c.types.includes('neighborhood')) {
-      neighborhood = c.long_name
-    }
-  }
+export async function reverseGeocode(lat: number, lon: number): Promise<{ path: string; name: string }> {
+  const res = await fetch(
+    `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json&addressdetails=1`,
+    { headers: { 'User-Agent': 'ArtOut/1.0 (https://artout.freeappstore.online)' } },
+  )
+  if (!res.ok) return { path: 'Unknown', name: 'Unknown' }
 
-  // Fall back: if no neighborhood, try admin_area_level_2 or route
-  if (!neighborhood) {
-    for (const c of components) {
-      if (c.types.includes('administrative_area_level_2')) {
-        neighborhood = c.long_name
-        break
-      }
-    }
-  }
+  const data = await res.json() as { address?: NominatimAddress }
+  const addr = data.address
+  if (!addr) return { path: 'Unknown', name: 'Unknown' }
+
+  const country = addr.country || ''
+  const city = addr.city || addr.town || addr.village || ''
+  const neighborhood = addr.suburb || addr.neighbourhood || addr.county || ''
 
   const parts = [country, city, neighborhood].filter(Boolean)
   const path = parts.join(' > ')
