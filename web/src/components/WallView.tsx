@@ -9,8 +9,6 @@ interface WallViewProps {
   onPostClick: (post: ArtPost) => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
-  filtered?: boolean
-  onClearFilter?: () => void
 }
 
 type Sort = 'nearby' | 'newest'
@@ -22,7 +20,7 @@ function formatDistance(meters: number): string {
   return `${Math.round(meters / 1000)}km`
 }
 
-export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite, filtered, onClearFilter }: WallViewProps) {
+export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite }: WallViewProps) {
   const hasLocation = userLat != null && userLon != null
   const [sort, setSort] = useState<Sort>('newest')
   const [layout, setLayout] = useState<Layout>('grid')
@@ -51,17 +49,8 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
     return (
       <div className="flex flex-1 items-center justify-center p-8 text-center text-[var(--muted)]">
         <div>
-          <p className="display-font text-2xl text-[var(--ink)]">
-            {filtered ? 'No art in this area' : 'Nothing here yet'}
-          </p>
-          <p className="mt-2 text-sm">
-            {filtered ? 'Zoom out on the map or clear the filter.' : 'Be the first to drop some art.'}
-          </p>
-          {filtered && onClearFilter && (
-            <button onClick={onClearFilter} className="mt-4 rounded-full bg-[var(--accent)] px-5 py-2 text-xs font-semibold text-black">
-              Show all art
-            </button>
-          )}
+          <p className="display-font text-2xl text-[var(--ink)]">Nothing here yet</p>
+          <p className="mt-2 text-sm">Be the first to drop some art.</p>
         </div>
       </div>
     )
@@ -70,15 +59,6 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
   return (
     <div className="flex-1 overflow-y-auto">
       <div className="flex items-center gap-2 px-3 py-2">
-        {filtered && onClearFilter && (
-          <button
-            onClick={onClearFilter}
-            className="flex items-center gap-1 rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-semibold text-[var(--accent)]"
-          >
-            Map area ({posts.length})
-            <span className="ml-0.5 text-[0.6rem]">&times;</span>
-          </button>
-        )}
         {hasLocation && (
           <button
             onClick={() => setSort('nearby')}

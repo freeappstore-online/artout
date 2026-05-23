@@ -1,14 +1,15 @@
 import { useCallback, useMemo, useState } from 'react'
 import { Shell, type Tab } from './components/Shell'
-import { MapView, type MapBounds } from './components/MapView'
+import { MapView } from './components/MapView'
 import { WallView } from './components/WallView'
 import { AddView } from './components/AddView'
-import { PlacesView } from './components/PlacesView'
 import { FavoritesView } from './components/FavoritesView'
 import { Gallery } from './components/Gallery'
+import { LocationPill, LocationPickerModal } from './components/LocationPicker'
 import { usePosts } from './hooks/usePosts'
 import { useFavorites } from './hooks/useFavorites'
 import { useGeolocation } from './hooks/useGeolocation'
+import { getPostsForPath } from './lib/locations'
 import type { ArtPost } from './lib/types'
 
 export default function App() {
@@ -18,46 +19,40 @@ export default function App() {
   const { position, state: geoState } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
   const [galleryPosts, setGalleryPosts] = useState<ArtPost[]>([])
-  const [mapBounds, setMapBounds] = useState<MapBounds | null>(null)
-  const [wallFromMap, setWallFromMap] = useState(false)
+  const [locationFilter, setLocationFilter] = useState<string | null>(null)
+  const [pickerOpen, setPickerOpen] = useState(false)
+
+  const filteredPosts = useMemo(() => {
+    if (!locationFilter) return posts
+    return getPostsForPath(posts, locationFilter)
+  }, [posts, locationFilter])
 
   const openGallery = useCallback(
     (post: ArtPost, context?: ArtPost[]) => {
-      const list = context || posts
+      const list = context || filteredPosts
       const idx = list.findIndex((p) => p.id === post.id)
       setGalleryPosts(list)
       setGalleryIndex(idx >= 0 ? idx : 0)
     },
-    [posts],
+    [filteredPosts],
   )
 
   const handleAddDone = useCallback(() => setTab('map'), [])
 
-  const handleBoundsChange = useCallback((bounds: MapBounds) => {
-    setMapBounds(bounds)
-  }, [])
+  const showMap = tab === 'map'
+  const showWall = tab === 'wall'
 
-  const handleShowWall = useCallback(() => {
-    setWallFromMap(true)
-    setTab('wall')
-  }, [])
-
-  const handleTabChange = useCallback((t: Tab) => {
-    if (t !== 'wall') setWallFromMap(false)
-    setTab(t)
-  }, [])
-
-  const wallPosts = useMemo(() => {
-    if (!wallFromMap || !mapBounds) return posts
-    return posts.filter((p) =>
-      p.lat >= mapBounds.south && p.lat <= mapBounds.north &&
-      p.lon >= mapBounds.west && p.lon <= mapBounds.east
-    )
-  }, [posts, wallFromMap, mapBounds])
+  const header = (showMap || showWall) ? (
+    <LocationPill
+      posts={posts}
+      currentPath={locationFilter}
+      onOpen={() => setPickerOpen(true)}
+    />
+  ) : null
 
   if (loading) {
     return (
-      <Shell activeTab={tab} onTabChange={handleTabChange}>
+      <Shell activeTab={tab} onTabChange={setTab}>
         <div className="flex flex-1 items-center justify-center">
           <div className="text-[var(--muted)]">Loading...</div>
         </div>
@@ -66,29 +61,27 @@ export default function App() {
   }
 
   return (
-    <Shell activeTab={tab} onTabChange={handleTabChange}>
+    <Shell activeTab={tab} onTabChange={setTab} header={header}>
       {tab === 'map' && (
         <MapView
-          posts={posts}
+          posts={filteredPosts}
           userLat={position?.lat}
           userLon={position?.lon}
           onPostClick={openGallery}
-          onBoundsChange={handleBoundsChange}
-          onShowWall={handleShowWall}
+          onBoundsChange={() => {}}
+          onShowWall={() => setTab('wall')}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
         />
       )}
       {tab === 'wall' && (
         <WallView
-          posts={wallPosts}
+          posts={filteredPosts}
           userLat={position?.lat}
           userLon={position?.lon}
           onPostClick={openGallery}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
-          filtered={wallFromMap}
-          onClearFilter={() => setWallFromMap(false)}
         />
       )}
       {tab === 'add' && (
@@ -99,9 +92,6 @@ export default function App() {
           onSubmit={addPost}
           onDone={handleAddDone}
         />
-      )}
-      {tab === 'places' && (
-        <PlacesView posts={posts} onPostClick={openGallery} />
       )}
       {tab === 'favs' && (
         <FavoritesView
@@ -119,6 +109,15 @@ export default function App() {
           onClose={() => setGalleryIndex(null)}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
+        />
+      )}
+
+      {pickerOpen && (
+        <LocationPickerModal
+          posts={posts}
+          currentPath={locationFilter}
+          onSelect={setLocationFilter}
+          onClose={() => setPickerOpen(false)}
         />
       )}
     </Shell>

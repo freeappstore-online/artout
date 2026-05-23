@@ -11,22 +11,46 @@ test.describe('ArtOut', () => {
   test('shows cluster markers on the map', async ({ page }) => {
     await page.goto(BASE)
     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 15000 })
-    // Clusters or markers should appear
     await expect(page.locator('.leaflet-marker-icon').first()).toBeVisible({ timeout: 10000 })
+  })
+
+  test('location picker pill is visible on map', async ({ page }) => {
+    await page.goto(BASE)
+    await expect(page.getByText('All places')).toBeVisible({ timeout: 10000 })
+  })
+
+  test('location picker opens and shows countries', async ({ page }) => {
+    await page.goto(BASE)
+    await page.getByText('All places').click()
+    await expect(page.getByPlaceholder('Search places...')).toBeVisible({ timeout: 5000 })
+    await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
+  })
+
+  test('location picker search works', async ({ page }) => {
+    await page.goto(BASE)
+    await page.getByText('All places').click()
+    await page.getByPlaceholder('Search places...').fill('Melbourne')
+    await expect(page.locator('text=Melbourne').first()).toBeVisible({ timeout: 5000 })
+  })
+
+  test('selecting a location filters posts', async ({ page }) => {
+    await page.goto(BASE)
+    await page.getByText('All places').click()
+    await page.getByPlaceholder('Search places...').fill('Melbourne')
+    await page.locator('button:has-text("Melbourne")').first().click()
+    // Pill should now show Melbourne
+    await expect(page.getByText('Melbourne')).toBeVisible({ timeout: 5000 })
   })
 
   test('wall tab shows photo grid', async ({ page }) => {
     await page.goto(BASE)
-    // Navigate to wall tab
     await page.getByText('Wall').click()
-    // Should show images in the grid
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
   })
 
-  test('wall has nearby/newest sort toggle', async ({ page }) => {
+  test('wall has newest sort toggle', async ({ page }) => {
     await page.goto(BASE)
     await page.getByText('Wall').click()
-    // Should see sort buttons (may or may not have Nearby depending on GPS)
     await expect(page.getByText('Newest')).toBeVisible({ timeout: 10000 })
   })
 
@@ -34,42 +58,17 @@ test.describe('ArtOut', () => {
     await page.goto(BASE)
     await page.getByText('Wall').click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    // Grid is default — images visible
-    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
   })
 
-  test('places tab shows location tree', async ({ page }) => {
+  test('location picker visible on wall too', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Places').click()
-    await expect(page.locator('text=Places').first()).toBeVisible()
-    // Should have a search input
-    await expect(page.getByPlaceholder('Search places...')).toBeVisible()
-    // Should show location nodes (countries)
-    await expect(page.locator('button:has-text("Australia")').first()).toBeVisible({ timeout: 10000 })
-  })
-
-  test('places search filters locations', async ({ page }) => {
-    await page.goto(BASE)
-    await page.getByText('Places').click()
-    await page.getByPlaceholder('Search places...').fill('Melbourne')
-    await expect(page.locator('button:has-text("Melbourne")').first()).toBeVisible({ timeout: 5000 })
-  })
-
-  test('places drill-down shows breadcrumb', async ({ page }) => {
-    await page.goto(BASE)
-    await page.getByText('Places').click()
-    await expect(page.locator('button:has-text("Australia")').first()).toBeVisible({ timeout: 10000 })
-    await page.locator('button:has-text("Australia")').first().click()
-    // Breadcrumb should show
-    await expect(page.getByRole('button', { name: 'All', exact: true })).toBeVisible()
-    await expect(page.locator('text=Australia').first()).toBeVisible()
+    await page.getByText('Wall').click()
+    await expect(page.getByText('All places')).toBeVisible({ timeout: 5000 })
   })
 
   test('add tab requires sign-in', async ({ page }) => {
     await page.goto(BASE)
-    // Click the + button (middle tab)
     await page.locator('nav button').nth(2).click()
-    // Should show sign-in prompt
     await expect(page.getByText('Drop some art')).toBeVisible({ timeout: 5000 })
     await expect(page.getByText('Google')).toBeVisible()
     await expect(page.getByText('GitHub')).toBeVisible()
@@ -89,7 +88,6 @@ test.describe('ArtOut', () => {
   test('dark theme is default', async ({ page }) => {
     await page.goto(BASE)
     const bg = await page.locator('body').evaluate((el) => getComputedStyle(el).backgroundColor)
-    // Should be very dark (close to black)
     expect(bg).toMatch(/rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)/)
     const [, r, g, b] = bg.match(/rgb\(\s*(\d+),\s*(\d+),\s*(\d+)\s*\)/)!
     expect(Number(r)).toBeLessThan(30)
@@ -104,12 +102,17 @@ test.describe('ArtOut', () => {
     })
     await page.goto(BASE)
     await page.waitForTimeout(3000)
-    // Filter out expected errors (geolocation permission, favicon)
     const real = errors.filter((e) =>
       !e.includes('Permissions policy') &&
       !e.includes('favicon') &&
       !e.includes('Geolocation')
     )
     expect(real).toEqual([])
+  })
+
+  test('4 tabs in nav bar', async ({ page }) => {
+    await page.goto(BASE)
+    const navButtons = page.locator('nav button')
+    await expect(navButtons).toHaveCount(4, { timeout: 5000 })
   })
 })

@@ -1,12 +1,13 @@
 import type { ReactNode } from 'react'
 import { STORE_URL } from '../lib/fas'
 
-export type Tab = 'map' | 'wall' | 'add' | 'places' | 'favs'
+export type Tab = 'map' | 'wall' | 'add' | 'favs'
 
 interface ShellProps {
   children: ReactNode
   activeTab: Tab
   onTabChange: (tab: Tab) => void
+  header?: ReactNode
 }
 
 const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] = [
@@ -37,14 +38,6 @@ const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] =
     ),
   },
   {
-    id: 'places', label: 'Places',
-    icon: (a) => (
-      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={a ? 2.2 : 1.6}>
-        <circle cx="12" cy="12" r="9" /><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z" />
-      </svg>
-    ),
-  },
-  {
     id: 'favs', label: 'Saved',
     icon: (a) => (
       <svg className="h-5 w-5" viewBox="0 0 24 24" fill={a ? 'currentColor' : 'none'} stroke="currentColor" strokeWidth={a ? 0 : 1.6}>
@@ -54,9 +47,14 @@ const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] =
   },
 ]
 
-export function Shell({ children, activeTab, onTabChange }: ShellProps) {
+export function Shell({ children, activeTab, onTabChange, header }: ShellProps) {
   return (
     <div className="relative flex min-h-[100dvh] flex-col bg-[var(--paper)]">
+      {header && (
+        <div className="absolute inset-x-0 top-0 z-[1050] px-3 pt-2">
+          {header}
+        </div>
+      )}
       <main className="flex min-h-0 flex-1 flex-col pb-[4.5rem]">{children}</main>
 
       <nav className="fixed inset-x-0 bottom-0 z-[1100] border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
@@ -68,7 +66,7 @@ export function Shell({ children, activeTab, onTabChange }: ShellProps) {
         >
           freeappstore.online
         </a>
-        <div className="mx-auto grid max-w-md grid-cols-5 pb-[env(safe-area-inset-bottom)]">
+        <div className="mx-auto grid max-w-md grid-cols-4 pb-[env(safe-area-inset-bottom)]">
           {tabs.map((t) => (
             <button
               key={t.id}
