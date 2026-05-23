@@ -72,7 +72,7 @@ async function fetchAllPosts(fbToken: string): Promise<Record<string, FirebasePo
 }
 
 async function createPost(post: ArtPost, fasToken: string): Promise<boolean> {
-  const res = await fetch(`${FAS_API}/v1/apps/${APP_ID}/collections/posts`, {
+  const res = await fetch(`${FAS_API}/v1/apps/${APP_ID}/db/posts`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
