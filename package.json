@@ -2,12 +2,21 @@
   "name": "artout",
   "private": true,
   "packageManager": "pnpm@10.30.3",
-  "engines": { "node": ">=22" },
-  "pnpm": { "onlyBuiltDependencies": ["esbuild"] },
+  "engines": {
+    "node": ">=22"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
+  },
   "scripts": {
     "dev": "pnpm --filter @artout/web dev",
     "build": "pnpm --filter @artout/web build",
     "preview": "pnpm --filter @artout/web preview",
     "typecheck": "pnpm --filter @artout/web exec tsc -b"
+  },
+  "devDependencies": {
+    "tsx": "^4.22.3"
   }
 }
