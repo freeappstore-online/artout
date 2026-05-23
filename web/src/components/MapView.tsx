@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import L from 'leaflet'
@@ -93,11 +93,35 @@ interface MapViewProps {
   posts: ArtPost[]
   userLat?: number
   userLon?: number
+  locationFilter: string | null
   onPostClick: (post: ArtPost) => void
   onBoundsChange: (bounds: MapBounds, visibleCount: number) => void
   onShowWall: () => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
+}
+
+function FlyToFilteredPosts({ posts, locationFilter }: { posts: ArtPost[]; locationFilter: string | null }) {
+  const map = useMap()
+  const prevFilter = useRef(locationFilter)
+
+  useEffect(() => {
+    if (locationFilter === prevFilter.current) return
+    prevFilter.current = locationFilter
+
+    if (!locationFilter) return // reset to all — don't move
+    if (posts.length === 0) return
+
+    const lats = posts.map((p) => p.lat)
+    const lons = posts.map((p) => p.lon)
+    const bounds = L.latLngBounds(
+      [Math.min(...lats), Math.min(...lons)],
+      [Math.max(...lats), Math.max(...lons)],
+    )
+    map.flyToBounds(bounds, { padding: [40, 40], maxZoom: 16, duration: 0.8 })
+  }, [map, posts, locationFilter])
+
+  return null
 }
 
 function BoundsTracker({ posts, onBoundsChange }: { posts: ArtPost[]; onBoundsChange: (bounds: MapBounds, count: number) => void }) {
@@ -142,7 +166,7 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   )
 }
 
-export function MapView({ posts, userLat, userLon, onPostClick, onBoundsChange, onShowWall, isFavorite, onToggleFavorite }: MapViewProps) {
+export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onBoundsChange, onShowWall, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
   const [visibleCount, setVisibleCount] = useState(0)
 
@@ -169,6 +193,7 @@ export function MapView({ posts, userLat, userLon, onPostClick, onBoundsChange, 
       >
         <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
         <BoundsTracker posts={posts} onBoundsChange={handleBoundsChange} />
+        <FlyToFilteredPosts posts={posts} locationFilter={locationFilter} />
 
         <MarkerClusterGroup
           iconCreateFunction={clusterIcon}

@@ -67,6 +67,7 @@ export default function App() {
           posts={filteredPosts}
           userLat={position?.lat}
           userLon={position?.lon}
+          locationFilter={locationFilter}
           onPostClick={openGallery}
           onBoundsChange={() => {}}
           onShowWall={() => setTab('wall')}
