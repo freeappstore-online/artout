@@ -7,6 +7,8 @@ interface WallViewProps {
   userLat?: number
   userLon?: number
   onPostClick: (post: ArtPost) => void
+  isFavorite: (id: string) => boolean
+  onToggleFavorite: (id: string) => void
   filtered?: boolean
   onClearFilter?: () => void
 }
@@ -20,7 +22,7 @@ function formatDistance(meters: number): string {
   return `${Math.round(meters / 1000)}km`
 }
 
-export function WallView({ posts, userLat, userLon, onPostClick, filtered, onClearFilter }: WallViewProps) {
+export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onToggleFavorite, filtered, onClearFilter }: WallViewProps) {
   const hasLocation = userLat != null && userLon != null
   const [sort, setSort] = useState<Sort>('newest')
   const [layout, setLayout] = useState<Layout>('grid')
@@ -124,6 +126,12 @@ export function WallView({ posts, userLat, userLon, onPostClick, filtered, onCle
               className="relative aspect-square overflow-hidden bg-[var(--paper)]"
             >
               <img src={post.thumbUrl} alt={post.title || 'Street art'} className="h-full w-full object-cover" loading="lazy" />
+              <button
+                onClick={(e) => { e.stopPropagation(); onToggleFavorite(post.id) }}
+                className="absolute right-1.5 top-1.5 text-sm drop-shadow-lg"
+              >
+                {isFavorite(post.id) ? '❤️' : '🤍'}
+              </button>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">
                 <span className="text-[0.6rem] font-medium text-white/90">{post.locationName}</span>
                 {post.dist != null && (
@@ -142,6 +150,12 @@ export function WallView({ posts, userLat, userLon, onPostClick, filtered, onCle
               className="relative w-full overflow-hidden rounded-xl bg-[var(--paper)]"
             >
               <img src={post.imageUrl} alt={post.title || 'Street art'} className="w-full object-cover" loading="lazy" style={{ maxHeight: 500 }} />
+              <button
+                onClick={(e) => { e.stopPropagation(); onToggleFavorite(post.id) }}
+                className="absolute right-3 top-3 text-xl drop-shadow-lg"
+              >
+                {isFavorite(post.id) ? '❤️' : '🤍'}
+              </button>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
                 <div className="flex items-end justify-between">
                   <div>

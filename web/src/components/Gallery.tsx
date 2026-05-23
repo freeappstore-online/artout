@@ -7,9 +7,11 @@ interface GalleryProps {
   posts: ArtPost[]
   index: number
   onClose: () => void
+  isFavorite: (id: string) => boolean
+  onToggleFavorite: (id: string) => void
 }
 
-export function Gallery({ posts, index, onClose }: GalleryProps) {
+export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite }: GalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(index)
   const current = posts[currentIndex]
 
@@ -26,7 +28,13 @@ export function Gallery({ posts, index, onClose }: GalleryProps) {
         }))}
       />
       {current && (
-        <div className="fixed inset-x-0 bottom-0 z-[10000] flex items-center justify-between bg-black/80 px-4 py-3 backdrop-blur">
+        <div className="fixed inset-x-0 bottom-0 z-[10000] flex items-center gap-3 bg-black/80 px-4 py-3 backdrop-blur">
+          <button
+            onClick={() => onToggleFavorite(current.id)}
+            className="shrink-0 text-xl"
+          >
+            {isFavorite(current.id) ? '❤️' : '🤍'}
+          </button>
           <div className="min-w-0 flex-1">
             <div className="truncate text-sm text-white/90">{current.locationPath || current.locationName}</div>
           </div>
@@ -34,7 +42,7 @@ export function Gallery({ posts, index, onClose }: GalleryProps) {
             href={`https://www.google.com/maps/dir/?api=1&destination=${current.lat},${current.lon}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-3 shrink-0 rounded-full bg-[var(--sky)] px-4 py-1.5 text-xs font-semibold text-black"
+            className="shrink-0 rounded-full bg-[var(--sky)] px-4 py-1.5 text-xs font-semibold text-black"
           >
             Navigate →
           </a>

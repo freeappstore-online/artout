@@ -85,6 +85,8 @@ export default function App() {
           userLat={position?.lat}
           userLon={position?.lon}
           onPostClick={openGallery}
+          isFavorite={isFavorite}
+          onToggleFavorite={toggleFavorite}
           filtered={wallFromMap}
           onClearFilter={() => setWallFromMap(false)}
         />
@@ -115,6 +117,8 @@ export default function App() {
           posts={galleryPosts}
           index={galleryIndex}
           onClose={() => setGalleryIndex(null)}
+          isFavorite={isFavorite}
+          onToggleFavorite={toggleFavorite}
         />
       )}
     </Shell>
