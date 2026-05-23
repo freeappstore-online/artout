@@ -54,11 +54,11 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
   )
 
   return (
-    <div className="relative flex-1">
+    <div className="relative flex-1" style={{ minHeight: 0 }}>
       <MapContainer
         center={center}
         zoom={DEFAULT_ZOOM}
-        className="h-full w-full"
+        className="absolute inset-0"
         zoomControl={false}
         attributionControl={false}
       >
