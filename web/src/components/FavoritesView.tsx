@@ -49,7 +49,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
   }
 
   return (
-    <div className="flex-1 overflow-y-auto pb-20">
+    <div className="flex-1 overflow-y-auto">
       <div className="px-4 pb-2 pt-4"><span className="display-font text-xl text-[var(--ink)]">Saved</span></div>
       {favPosts.map((post) => (
         <div key={post.id} className="flex gap-3 border-b border-[var(--line)] px-4 py-3">

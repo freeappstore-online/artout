@@ -57,7 +57,7 @@ const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] =
 export function Shell({ children, activeTab, onTabChange }: ShellProps) {
   return (
     <div className="relative flex min-h-[100dvh] flex-col bg-[var(--paper)]">
-      <main className="flex min-h-0 flex-1 flex-col">{children}</main>
+      <main className="flex min-h-0 flex-1 flex-col pb-[4.5rem]">{children}</main>
 
       <nav className="fixed inset-x-0 bottom-0 z-40 border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
         <a

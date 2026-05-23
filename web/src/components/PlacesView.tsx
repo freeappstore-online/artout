@@ -43,7 +43,7 @@ export function PlacesView({ posts, onPostClick }: PlacesViewProps) {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto pb-20">
+    <div className="flex-1 overflow-y-auto">
       <div className="border-b border-[var(--line)] px-4 pb-2 pt-4">
         <span className="display-font text-xl text-[var(--ink)]">Places</span>
       </div>

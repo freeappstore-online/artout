@@ -18,7 +18,7 @@ export function WallView({ posts, onPostClick }: WallViewProps) {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto pb-20">
+    <div className="flex-1 overflow-y-auto">
       <div className="grid grid-cols-3 gap-px bg-[var(--line)]">
         {posts.map((post) => (
           <button

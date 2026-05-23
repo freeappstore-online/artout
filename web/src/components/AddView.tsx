@@ -94,7 +94,7 @@ export function AddView({ userLat, userLon, onSubmit, onDone }: AddViewProps) {
   }
 
   return (
-    <div className="flex-1 overflow-y-auto pb-20">
+    <div className="flex-1 overflow-y-auto">
       <div className="px-4 pb-2 pt-4">
         <span className="display-font text-xl text-[var(--ink)]">Drop a spot</span>
       </div>
