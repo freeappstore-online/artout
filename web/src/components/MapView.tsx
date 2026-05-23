@@ -1,11 +1,13 @@
 import { useCallback, useMemo, useState } from 'react'
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
+import MarkerClusterGroup from 'react-leaflet-markercluster'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
+import 'leaflet.markercluster/dist/MarkerCluster.css'
 import type { ArtPost } from '../lib/types'
 
 const DEFAULT_CENTER: [number, number] = [-37.8136, 144.9631]
-const DEFAULT_ZOOM = 13
+const DEFAULT_ZOOM = 3
 
 const dotIcon = L.divIcon({
   className: '',
@@ -13,6 +15,27 @@ const dotIcon = L.divIcon({
   iconSize: [10, 10],
   iconAnchor: [5, 5],
 })
+
+function clusterIcon(cluster: any) {
+  const count = cluster.getChildCount()
+  const size = count > 100 ? 48 : count > 10 ? 40 : 32
+  return L.divIcon({
+    html: `<div style="
+      width:${size}px;height:${size}px;
+      border-radius:50%;
+      background:rgba(255,45,107,0.85);
+      color:#fff;
+      display:flex;align-items:center;justify-content:center;
+      font-family:Manrope,sans-serif;
+      font-weight:700;font-size:${count > 100 ? 13 : 12}px;
+      box-shadow:0 0 12px rgba(255,45,107,0.5),0 2px 8px rgba(0,0,0,0.4);
+      border:2px solid rgba(255,255,255,0.2);
+    ">${count > 999 ? Math.round(count / 100) / 10 + 'k' : count}</div>`,
+    className: '',
+    iconSize: L.point(size, size),
+    iconAnchor: L.point(size / 2, size / 2),
+  })
+}
 
 interface MapViewProps {
   posts: ArtPost[]
@@ -51,25 +74,35 @@ export function MapView({ posts, userLat, userLon, onPostClick, isFavorite, onTo
     [userLat, userLon],
   )
 
+  const zoom = userLat && userLon ? 13 : DEFAULT_ZOOM
+
   return (
     <div className="relative flex-1" style={{ minHeight: 0 }}>
       <MapContainer
         center={center}
-        zoom={DEFAULT_ZOOM}
+        zoom={zoom}
         className="absolute inset-0"
         zoomControl={false}
         attributionControl={false}
       >
         <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
 
-        {posts.map((post) => (
-          <Marker
-            key={post.id}
-            position={[post.lat, post.lon]}
-            icon={dotIcon}
-            eventHandlers={{ click: () => setSelected(post) }}
-          />
-        ))}
+        <MarkerClusterGroup
+          iconCreateFunction={clusterIcon}
+          maxClusterRadius={60}
+          spiderfyOnMaxZoom
+          showCoverageOnHover={false}
+          disableClusteringAtZoom={17}
+        >
+          {posts.map((post) => (
+            <Marker
+              key={post.id}
+              position={[post.lat, post.lon]}
+              icon={dotIcon}
+              eventHandlers={{ click: () => setSelected(post) }}
+            />
+          ))}
+        </MarkerClusterGroup>
 
         {selected && (
           <Popup
