@@ -267,7 +267,7 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
       {visibleCount > 0 && visibleCount < posts.length && (
         <button
           onClick={onShowWall}
-          className="absolute bottom-4 left-4 z-[1000] flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--panel-strong)] px-4 py-2 shadow-lg"
+          className="absolute bottom-14 left-4 z-[1000] flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--panel-strong)] px-4 py-2 shadow-lg"
         >
           <svg className="h-4 w-4 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
             <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />

@@ -51,7 +51,7 @@ export function Shell({ children, activeTab, onTabChange, header }: ShellProps) 
   return (
     <div className="relative flex min-h-[100dvh] flex-col bg-[var(--paper)]">
       {header && (
-        <div className="absolute inset-x-0 top-0 z-[1050] px-3 pt-2">
+        <div className="absolute inset-x-0 top-0 z-[1050] px-3" style={{ paddingTop: 'calc(env(safe-area-inset-top) + 8px)' }}>
           {header}
         </div>
       )}

@@ -1,6 +1,6 @@
 import { useCallback, useMemo, useState } from 'react'
 import type { ArtPost, LocationNode } from '../lib/types'
-import { buildLocationTree, getPostsForPath } from '../lib/locations'
+import { buildLocationTree } from '../lib/locations'
 
 interface LocationPickerProps {
   posts: ArtPost[]
@@ -34,13 +34,10 @@ function buildBreadcrumbTo(tree: LocationNode[], path: string): LocationNode[] {
   return chain
 }
 
-export function LocationPill({ posts, currentPath, onOpen }: { posts: ArtPost[]; currentPath: string | null; onOpen: () => void }) {
+export function LocationPill({ currentPath, count, onOpen }: { currentPath: string | null; count: number; onOpen: () => void }) {
   const label = currentPath
     ? currentPath.split(' > ').pop() || currentPath
     : 'All places'
-  const count = currentPath
-    ? getPostsForPath(posts, currentPath).length
-    : posts.length
 
   return (
     <button

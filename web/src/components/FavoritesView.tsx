@@ -65,9 +65,9 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
             className="min-w-0 flex-1 text-left"
           >
             <div className="truncate text-sm font-semibold text-[var(--ink)]">
-              {post.title || 'Untitled'}
+              {post.locationName}
             </div>
-            <div className="text-xs text-[var(--muted)]">{post.locationName}</div>
+            <div className="truncate text-xs text-[var(--muted)]">{post.locationPath}</div>
           </button>
           <button
             onClick={() => onToggleFavorite(post.id)}

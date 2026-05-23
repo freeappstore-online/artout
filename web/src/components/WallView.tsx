@@ -145,9 +145,10 @@ export function WallView({ posts, userLat, userLon, onPostClick, isFavorite, onT
               />
               <button
                 onClick={() => onToggleFavorite(post.id)}
-                className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-lg backdrop-blur-sm"
+                className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1.5 text-base backdrop-blur-sm"
               >
                 {isFavorite(post.id) ? '❤️' : '🤍'}
+                {getFavCount(post.id) > 0 && <span className="text-sm text-white/80">{getFavCount(post.id)}</span>}
               </button>
               <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
                 <div className="flex items-end justify-between">

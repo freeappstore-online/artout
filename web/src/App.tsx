@@ -44,8 +44,8 @@ export default function App() {
 
   const header = (showMap || showWall) ? (
     <LocationPill
-      posts={posts}
       currentPath={locationFilter}
+      count={filteredPosts.length}
       onOpen={() => setPickerOpen(true)}
     />
   ) : null
