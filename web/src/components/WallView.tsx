@@ -10,8 +10,8 @@ export function WallView({ posts, onPostClick }: WallViewProps) {
     return (
       <div className="flex flex-1 items-center justify-center p-8 text-center text-[var(--muted)]">
         <div>
-          <p className="text-lg font-semibold">No art yet</p>
-          <p className="mt-2 text-sm">Be the first to share some street art!</p>
+          <p className="display-font text-2xl text-[var(--ink)]">Nothing here yet</p>
+          <p className="mt-2 text-sm">Be the first to drop some art.</p>
         </div>
       </div>
     )
@@ -19,23 +19,24 @@ export function WallView({ posts, onPostClick }: WallViewProps) {
 
   return (
     <div className="flex-1 overflow-y-auto pb-20">
-      <div className="px-4 pb-2 pt-4 text-lg font-bold">Nearby Art</div>
-      <div className="grid grid-cols-3 gap-0.5 px-0.5">
+      <div className="grid grid-cols-3 gap-px bg-[var(--line)]">
         {posts.map((post) => (
           <button
             key={post.id}
             onClick={() => onPostClick(post)}
-            className="relative aspect-square overflow-hidden"
+            className="relative aspect-square overflow-hidden bg-[var(--paper)]"
           >
             <img
               src={post.thumbUrl}
               alt={post.title || 'Street art'}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-cover transition-transform hover:scale-105"
               loading="lazy"
             />
-            <span className="absolute bottom-1 left-1 rounded bg-black/60 px-1.5 py-0.5 text-[0.6rem] text-white/80 backdrop-blur-sm">
-              {post.locationName}
-            </span>
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">
+              <span className="text-[0.6rem] font-medium text-white/90">
+                {post.locationName}
+              </span>
+            </div>
           </button>
         ))}
       </div>
