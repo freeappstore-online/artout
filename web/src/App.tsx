@@ -19,7 +19,7 @@ type Layout = 'grid' | 'feed'
 
 export default function App() {
   const [tab, setTab] = useState<Tab>('map')
-  const { posts, loading, addPost } = usePosts()
+  const { posts, loading, allLoaded, loadMore, loadAll, addPost } = usePosts()
   const { favorites, toggle: toggleFavorite, isFavorite, getFavCount } = useFavorites()
   const { position, state: geoState } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
@@ -75,6 +75,11 @@ export default function App() {
 
   const handleAddDone = useCallback(() => setTab('map'), [])
 
+  // Map needs all posts for clustering — load them when map is active
+  useEffect(() => {
+    if (tab === 'map' && !allLoaded) loadAll()
+  }, [tab, allLoaded, loadAll])
+
   const showMap = tab === 'map'
   const showWall = tab === 'wall'
   const showFavs = tab === 'favs'
@@ -128,6 +133,8 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
+          allLoaded={allLoaded}
+          onLoadMore={loadMore}
         />
       )}
       {tab === 'add' && (

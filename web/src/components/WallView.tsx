@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { haversineDistance } from '../lib/geo'
 import type { ArtPost } from '../lib/types'
 
@@ -15,6 +15,8 @@ interface WallViewProps {
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
   getFavCount: (id: string) => number
+  allLoaded?: boolean
+  onLoadMore?: () => void
 }
 
 function formatDistance(meters: number): string {
@@ -23,7 +25,18 @@ function formatDistance(meters: number): string {
   return `${Math.round(meters / 1000)}km`
 }
 
-export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, isFavorite, onToggleFavorite, getFavCount }: WallViewProps) {
+export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, isFavorite, onToggleFavorite, getFavCount, allLoaded, onLoadMore }: WallViewProps) {
+  // Infinite scroll
+  const sentinelRef = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    if (allLoaded || !onLoadMore || !sentinelRef.current) return
+    const observer = new IntersectionObserver(
+      (entries) => { if (entries[0].isIntersecting) onLoadMore() },
+      { rootMargin: '400px' },
+    )
+    observer.observe(sentinelRef.current)
+    return () => observer.disconnect()
+  }, [allLoaded, onLoadMore])
   const hasLocation = userLat != null && userLon != null
 
   const sorted = useMemo(() => {
@@ -119,6 +132,11 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
               </div>
             </div>
           ))}
+        </div>
+      )}
+      {!allLoaded && onLoadMore && (
+        <div ref={sentinelRef} className="flex items-center justify-center py-6">
+          <span className="animate-pulse text-xs text-[var(--muted)]">Loading more...</span>
         </div>
       )}
     </div>
