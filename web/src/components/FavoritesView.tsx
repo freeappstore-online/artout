@@ -1,19 +1,18 @@
-import { useState } from 'react'
 import { useAuth } from '../hooks/useAuth'
 import type { ArtPost } from '../lib/types'
+
+type Layout = 'grid' | 'feed'
 
 interface FavoritesViewProps {
   posts: ArtPost[]
   favorites: string[]
+  layout: Layout
   onPostClick: (post: ArtPost, context?: ArtPost[]) => void
   onToggleFavorite: (id: string) => void
 }
 
-type Layout = 'grid' | 'feed'
-
-export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite }: FavoritesViewProps) {
+export function FavoritesView({ posts, favorites, layout, onPostClick, onToggleFavorite }: FavoritesViewProps) {
   const { user, signIn, signInWithGoogle } = useAuth()
-  const [layout, setLayout] = useState<Layout>('grid')
   const favPosts = posts.filter((p) => favorites.includes(p.id))
 
   if (!user) {
@@ -48,29 +47,6 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
 
   return (
     <div className="flex-1 overflow-y-auto">
-      <div className="flex items-center justify-between px-4 pb-2 pt-4">
-        <span className="display-font text-xl text-[var(--ink)]">Saved ({favPosts.length})</span>
-        <div className="flex gap-1">
-          <button
-            onClick={() => setLayout('grid')}
-            className={`rounded-lg p-1.5 ${layout === 'grid' ? 'text-[var(--accent)]' : 'text-[var(--muted)]'}`}
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
-              <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
-            </svg>
-          </button>
-          <button
-            onClick={() => setLayout('feed')}
-            className={`rounded-lg p-1.5 ${layout === 'feed' ? 'text-[var(--accent)]' : 'text-[var(--muted)]'}`}
-          >
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-              <rect x="3" y="3" width="18" height="8" rx="1" />
-              <rect x="3" y="14" width="18" height="8" rx="1" />
-            </svg>
-          </button>
-        </div>
-      </div>
 
       {layout === 'grid' ? (
         <div className="grid grid-cols-3 gap-px bg-[var(--line)]">

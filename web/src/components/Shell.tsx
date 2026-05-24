@@ -7,7 +7,7 @@ interface ShellProps {
   children: ReactNode
   activeTab: Tab
   onTabChange: (tab: Tab) => void
-  header?: ReactNode
+  topBar?: ReactNode
 }
 
 const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] = [
@@ -56,15 +56,17 @@ const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] =
   },
 ]
 
-export function Shell({ children, activeTab, onTabChange, header }: ShellProps) {
+export function Shell({ children, activeTab, onTabChange, topBar }: ShellProps) {
   return (
     <div className="relative flex min-h-[100dvh] flex-col bg-[var(--paper)]">
-      {header && (
-        <div className="absolute inset-x-0 top-0 z-[1050] px-3" style={{ paddingTop: 'calc(env(safe-area-inset-top) + 8px)' }}>
-          {header}
+      {topBar && (
+        <div className="fixed inset-x-0 top-0 z-[1050] border-b border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
+          <div className="mx-auto max-w-md px-3 py-2">
+            {topBar}
+          </div>
         </div>
       )}
-      <main className="flex min-h-0 flex-1 flex-col pb-[4.5rem]">{children}</main>
+      <main className={`flex min-h-0 flex-1 flex-col pb-[4rem] ${topBar ? 'pt-12' : ''}`}>{children}</main>
 
       <nav className="fixed inset-x-0 bottom-0 z-[1100] border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
         <div className="mx-auto grid max-w-md grid-cols-5">
