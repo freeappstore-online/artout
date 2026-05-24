@@ -1,6 +1,13 @@
 import { test, expect } from '@playwright/test'
 
+import type { Page } from '@playwright/test'
+
 const BASE = 'https://artout.freeappstore.online'
+
+async function openSearchPicker(page: Page) {
+  await page.locator('button:has(svg circle[r="7"])').first().click()
+  await expect(page.getByPlaceholder('Search places...')).toBeVisible({ timeout: 5000 })
+}
 
 test.describe('App load', () => {
   test('renders map with dark background', async ({ page }) => {
@@ -39,9 +46,9 @@ test.describe('Map', () => {
     await expect(page.locator('.leaflet-marker-icon').first()).toBeVisible({ timeout: 15000 })
   })
 
-  test('location picker pill visible', async ({ page }) => {
+  test('location breadcrumb visible', async ({ page }) => {
     await page.goto(BASE)
-    await expect(page.getByText('All places')).toBeVisible({ timeout: 10000 })
+    await expect(page.getByText('World')).toBeVisible({ timeout: 10000 })
   })
 
   test('cluster labels show location names', async ({ page }) => {
@@ -60,35 +67,38 @@ test.describe('Map', () => {
 })
 
 test.describe('Location picker', () => {
-  test('opens on pill tap', async ({ page }) => {
+  test('opens on search icon tap', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    // Click search icon in top bar
+    await page.locator('nav + div button svg circle').first().click({ timeout: 5000 }).catch(() => {})
+    // Fallback: click the search button directly
+    await page.locator('button:has(svg circle[r="7"])').first().click()
     await expect(page.getByPlaceholder('Search places...')).toBeVisible({ timeout: 5000 })
   })
 
   test('shows countries', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
   })
 
   test('search filters locations', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Melbourne')
     await expect(page.locator('text=Melbourne').first()).toBeVisible({ timeout: 5000 })
   })
 
   test('search for non-existent shows empty message', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('xyznonexistent')
     await expect(page.getByText('No places matching')).toBeVisible({ timeout: 5000 })
   })
 
   test('selecting a location updates pill', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Melbourne')
     await page.locator('.text-left:has-text("Melbourne")').first().click()
     await expect(page.getByText('Melbourne')).toBeVisible({ timeout: 5000 })
@@ -96,7 +106,7 @@ test.describe('Location picker', () => {
 
   test('drill-down shows breadcrumb', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     // Find the › button next to Australia to drill down
     const row = page.locator('.flex.items-center:has-text("Australia")').first()
     await row.locator('button:has-text("›")').click()
@@ -105,7 +115,7 @@ test.describe('Location picker', () => {
 
   test('closes on backdrop tap', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await expect(page.getByPlaceholder('Search places...')).toBeVisible()
     // Tap the backdrop (top area)
     await page.locator('.bg-black\\/60').click()
@@ -114,7 +124,7 @@ test.describe('Location picker', () => {
 
   test('closes on × button', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await page.locator('button:has-text("×")').click()
     await expect(page.getByPlaceholder('Search places...')).not.toBeVisible()
   })
@@ -127,18 +137,17 @@ test.describe('Wall', () => {
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
   })
 
-  test('has sort pills in top bar', async ({ page }) => {
+  test('has sort dropdown in top bar', async ({ page }) => {
     await page.goto(BASE)
     await page.getByRole('button', { name: 'Wall' }).click()
-    await expect(page.getByText('New')).toBeVisible({ timeout: 10000 })
-    await expect(page.getByText('Top')).toBeVisible()
+    await expect(page.locator('select')).toBeVisible({ timeout: 10000 })
   })
 
-  test('Top sort changes order', async ({ page }) => {
+  test('sort dropdown changes order', async ({ page }) => {
     await page.goto(BASE)
     await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    await page.getByRole('button', { name: 'Top' }).click()
+    await page.locator('select').selectOption('popular')
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
   })
 
@@ -150,10 +159,10 @@ test.describe('Wall', () => {
     await expect(gridContainer).toBeVisible()
   })
 
-  test('location pill visible on wall', async ({ page }) => {
+  test('location breadcrumb visible on wall', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Wall').click()
-    await expect(page.getByText('All places')).toBeVisible({ timeout: 5000 })
+    await page.getByRole('button', { name: 'Wall' }).click()
+    await expect(page.getByText('World')).toBeVisible({ timeout: 5000 })
   })
 
   test('heart buttons visible on grid items', async ({ page }) => {
@@ -175,7 +184,7 @@ test.describe('Wall', () => {
 
   test('location filter applies from map', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Melbourne')
     await page.locator('.text-left:has-text("Melbourne")').first().click()
     await expect(page.locator('text=Melbourne').first()).toBeVisible({ timeout: 5000 })
@@ -240,7 +249,7 @@ test.describe('Navigation', () => {
 
   test('location filter persists across map/wall tabs', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('All places').click()
+    await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('France')
     await page.locator('.text-left:has-text("France")').first().click()
     await expect(page.getByText('France')).toBeVisible({ timeout: 5000 })

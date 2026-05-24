@@ -6,7 +6,7 @@ import { AddView } from './components/AddView'
 import { FavoritesView } from './components/FavoritesView'
 import { ProfileView } from './components/ProfileView'
 import { Gallery } from './components/Gallery'
-import { TopBar } from './components/TopBar'
+import { MapTopBar, WallTopBar, FavsTopBar } from './components/TopBar'
 import { LocationPickerModal } from './components/LocationPicker'
 import { usePosts } from './hooks/usePosts'
 import { useFavorites } from './hooks/useFavorites'
@@ -14,7 +14,7 @@ import { useGeolocation } from './hooks/useGeolocation'
 import { getPostsForPath } from './lib/locations'
 import type { ArtPost } from './lib/types'
 
-type Sort = 'nearby' | 'newest' | 'popular'
+type Sort = 'newest' | 'nearby' | 'popular'
 type Layout = 'grid' | 'feed'
 
 export default function App() {
@@ -24,79 +24,91 @@ export default function App() {
   const { position, state: geoState } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
   const [galleryPosts, setGalleryPosts] = useState<ArtPost[]>([])
-  const [locationFilter, setLocationFilter] = useState<string | null>(null)
-  const [pickerOpen, setPickerOpen] = useState(false)
+
+  // Separate location filters
+  const [mapLocation, setMapLocation] = useState<string | null>(null)
+  const [wallLocation, setWallLocation] = useState<string | null>(null)
+  const [pickerFor, setPickerFor] = useState<'map' | 'wall' | null>(null)
+
+  // Wall controls
   const [sort, setSort] = useState<Sort>('newest')
   const [layout, setLayout] = useState<Layout>('grid')
-  const [sortAutoSwitched, setSortAutoSwitched] = useState(false)
 
-  const hasLocation = position != null
+  const hasGPS = position != null
 
-  // Auto-switch to nearby when GPS arrives
-  useEffect(() => {
-    if (hasLocation && !sortAutoSwitched) {
-      setSort('nearby')
-      setSortAutoSwitched(true)
-    }
-  }, [hasLocation, sortAutoSwitched])
-
-  // Stable posts ref for map — only update map markers when posts stop changing
-  // (prevents blinking during progressive load)
+  // Stable posts for map (debounced to prevent marker blinking)
   const [stablePosts, setStablePosts] = useState<ArtPost[]>([])
   const stabilizeTimer = useRef<ReturnType<typeof setTimeout>>(undefined)
   useEffect(() => {
     clearTimeout(stabilizeTimer.current)
     stabilizeTimer.current = setTimeout(() => setStablePosts(posts), 500)
-    // Show first batch immediately
     if (stablePosts.length === 0 && posts.length > 0) setStablePosts(posts)
     return () => clearTimeout(stabilizeTimer.current)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [posts])
 
-  const filteredPosts = useMemo(() => {
-    if (!locationFilter) return stablePosts
-    return getPostsForPath(stablePosts, locationFilter)
-  }, [stablePosts, locationFilter])
-
-  const filteredWallPosts = useMemo(() => {
-    if (!locationFilter) return posts
-    return getPostsForPath(posts, locationFilter)
-  }, [posts, locationFilter])
-
-  const openGallery = useCallback(
-    (post: ArtPost, context?: ArtPost[]) => {
-      const list = context || filteredWallPosts
-      const idx = list.findIndex((p) => p.id === post.id)
-      setGalleryPosts(list)
-      setGalleryIndex(idx >= 0 ? idx : 0)
-    },
-    [filteredWallPosts],
-  )
-
-  const handleAddDone = useCallback(() => setTab('map'), [])
-
-  // Map needs all posts for clustering — load them when map is active
+  // Map needs all posts for clustering
   useEffect(() => {
     if (tab === 'map' && !allLoaded) loadAll()
   }, [tab, allLoaded, loadAll])
 
-  const showMap = tab === 'map'
-  const showWall = tab === 'wall'
-  const showFavs = tab === 'favs'
+  // Filtered posts per view
+  const mapPosts = useMemo(() => {
+    if (!mapLocation) return stablePosts
+    return getPostsForPath(stablePosts, mapLocation)
+  }, [stablePosts, mapLocation])
 
-  const topBar = (showMap || showWall || showFavs) ? (
-    <TopBar
-      locationPath={locationFilter}
-      locationCount={filteredWallPosts.length}
-      onOpenPicker={() => setPickerOpen(true)}
-      sort={sort}
-      onSortChange={showMap ? undefined : setSort}
-      hasLocation={hasLocation}
-      layout={layout}
-      onLayoutChange={(showWall || showFavs) ? setLayout : undefined}
-      showControls={!showMap}
-    />
-  ) : null
+  const wallPosts = useMemo(() => {
+    if (!wallLocation) return posts
+    return getPostsForPath(posts, wallLocation)
+  }, [posts, wallLocation])
+
+  const openGallery = useCallback(
+    (post: ArtPost, context?: ArtPost[]) => {
+      const list = context || wallPosts
+      const idx = list.findIndex((p) => p.id === post.id)
+      setGalleryPosts(list)
+      setGalleryIndex(idx >= 0 ? idx : 0)
+    },
+    [wallPosts],
+  )
+
+  const handleAddDone = useCallback(() => setTab('map'), [])
+
+  const handlePickerSelect = useCallback((path: string | null) => {
+    if (pickerFor === 'map') setMapLocation(path)
+    else if (pickerFor === 'wall') setWallLocation(path)
+    setPickerFor(null)
+  }, [pickerFor])
+
+  // Top bars per tab
+  let topBar = null
+  if (tab === 'map') {
+    topBar = (
+      <MapTopBar
+        path={mapLocation}
+        onNavigate={setMapLocation}
+        onSearch={() => setPickerFor('map')}
+      />
+    )
+  } else if (tab === 'wall') {
+    topBar = (
+      <WallTopBar
+        path={wallLocation}
+        onNavigate={setWallLocation}
+        onSearch={() => setPickerFor('wall')}
+        sort={sort}
+        onSortChange={setSort}
+        hasGPS={hasGPS}
+        layout={layout}
+        onLayoutChange={setLayout}
+      />
+    )
+  } else if (tab === 'favs') {
+    topBar = (
+      <FavsTopBar layout={layout} onLayoutChange={setLayout} />
+    )
+  }
 
   if (loading) {
     return (
@@ -110,12 +122,12 @@ export default function App() {
 
   return (
     <Shell activeTab={tab} onTabChange={setTab} topBar={topBar}>
-      <div className={showMap ? 'flex min-h-0 flex-1 flex-col' : 'hidden'}>
+      <div className={tab === 'map' ? 'flex min-h-0 flex-1 flex-col' : 'hidden'}>
         <MapView
-          posts={filteredPosts}
+          posts={mapPosts}
           userLat={position?.lat}
           userLon={position?.lon}
-          locationFilter={locationFilter}
+          locationFilter={mapLocation}
           onPostClick={openGallery}
           onShowWall={() => setTab('wall')}
           isFavorite={isFavorite}
@@ -124,7 +136,7 @@ export default function App() {
       </div>
       {tab === 'wall' && (
         <WallView
-          posts={filteredWallPosts}
+          posts={wallPosts}
           userLat={position?.lat}
           userLon={position?.lon}
           sort={sort}
@@ -168,12 +180,12 @@ export default function App() {
         />
       )}
 
-      {pickerOpen && (
+      {pickerFor && (
         <LocationPickerModal
           posts={posts}
-          currentPath={locationFilter}
-          onSelect={setLocationFilter}
-          onClose={() => setPickerOpen(false)}
+          currentPath={pickerFor === 'map' ? mapLocation : wallLocation}
+          onSelect={handlePickerSelect}
+          onClose={() => setPickerFor(null)}
         />
       )}
     </Shell>
