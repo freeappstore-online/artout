@@ -247,16 +247,17 @@ test.describe('Navigation', () => {
     await expect(page.getByText('Your collection')).toBeVisible()
   })
 
-  test('location filter persists across map/wall tabs', async ({ page }) => {
+  test('map and wall have independent location filters', async ({ page }) => {
     await page.goto(BASE)
+    // Set map filter
     await openSearchPicker(page)
-    await page.getByPlaceholder('Search places...').fill('France')
-    await page.locator('.text-left:has-text("France")').first().click()
-    await expect(page.getByText('France')).toBeVisible({ timeout: 5000 })
+    await page.getByPlaceholder('Search places...').fill('Australia')
+    await page.locator('.text-left:has-text("Australia")').first().click()
+    // Map breadcrumb shows Australia
+    await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
+    // Switch to wall — should show World (independent filter)
     await page.getByRole('button', { name: 'Wall' }).click()
-    await expect(page.getByText('France')).toBeVisible()
-    await page.getByRole('button', { name: 'Map' }).click()
-    await expect(page.getByText('France')).toBeVisible()
+    await expect(page.getByText('World')).toBeVisible()
   })
 
   test('tapping image on wall opens gallery', async ({ page }) => {
