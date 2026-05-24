@@ -95,7 +95,6 @@ interface MapViewProps {
   userLon?: number
   locationFilter: string | null
   onPostClick: (post: ArtPost) => void
-  onBoundsChange: (bounds: MapBounds, visibleCount: number) => void
   onShowWall: () => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
@@ -166,14 +165,13 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   )
 }
 
-export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onBoundsChange, onShowWall, isFavorite, onToggleFavorite }: MapViewProps) {
+export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
   const [visibleCount, setVisibleCount] = useState(0)
 
-  const handleBoundsChange = useCallback((bounds: MapBounds, count: number) => {
+  const handleBoundsChange = useCallback((_bounds: MapBounds, count: number) => {
     setVisibleCount(count)
-    onBoundsChange(bounds, count)
-  }, [onBoundsChange])
+  }, [])
 
   const center = useMemo<[number, number]>(
     () => (userLat && userLon ? [userLat, userLon] : DEFAULT_CENTER),

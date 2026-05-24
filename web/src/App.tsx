@@ -69,7 +69,6 @@ export default function App() {
           userLon={position?.lon}
           locationFilter={locationFilter}
           onPostClick={openGallery}
-          onBoundsChange={() => {}}
           onShowWall={() => setTab('wall')}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}

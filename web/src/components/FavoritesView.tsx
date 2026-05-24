@@ -78,7 +78,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
             <div key={post.id} className="relative aspect-square overflow-hidden bg-[var(--paper)]">
               <img
                 src={post.thumbUrl}
-                alt="Street art"
+                alt={post.title || 'Street art'}
                 className="h-full w-full cursor-pointer object-cover"
                 loading="lazy"
                 onClick={() => onPostClick(post)}
@@ -98,7 +98,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
             <div key={post.id} className="relative overflow-hidden rounded-xl bg-[var(--paper)]">
               <img
                 src={post.imageUrl}
-                alt="Street art"
+                alt={post.title || 'Street art'}
                 className="w-full cursor-pointer object-cover"
                 loading="lazy"
                 style={{ maxHeight: 500 }}

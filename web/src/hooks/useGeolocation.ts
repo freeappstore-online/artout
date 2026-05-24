@@ -32,7 +32,9 @@ export function useGeolocation() {
       } else if (!fallbackDone) {
         // High-accuracy timed out — try low accuracy
         fallbackDone = true
-        navigator.geolocation.getCurrentPosition(onSuccess, () => setState('denied'), {
+        navigator.geolocation.getCurrentPosition(onSuccess, (fallbackErr) => {
+          setState(fallbackErr.code === fallbackErr.PERMISSION_DENIED ? 'denied' : 'unavailable')
+        }, {
           enableHighAccuracy: false,
           timeout: 10000,
           maximumAge: 60000,

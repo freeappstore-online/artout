@@ -31,6 +31,7 @@ export function AddView({ userLat, userLon, geoState, onSubmit, onDone }: AddVie
       const f = e.target.files?.[0]
       if (!f) return
       setFile(f)
+      if (preview) URL.revokeObjectURL(preview)
       setPreview(URL.createObjectURL(f))
       setError(null)
       setLocationInfo(null)
@@ -170,7 +171,7 @@ export function AddView({ userLat, userLon, geoState, onSubmit, onDone }: AddVie
 
           <div className="mx-4 mt-4 flex gap-3">
             <button
-              onClick={() => { setFile(null); setPreview(null); setLocationInfo(null) }}
+              onClick={() => { if (preview) URL.revokeObjectURL(preview); setFile(null); setPreview(null); setLocationInfo(null) }}
               className="flex-1 rounded-full border border-[var(--line-strong)] px-4 py-2.5 text-sm font-semibold text-[var(--muted)]"
             >
               Retake
