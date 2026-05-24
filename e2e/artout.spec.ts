@@ -127,23 +127,18 @@ test.describe('Wall', () => {
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
   })
 
-  test('has Newest sort pill', async ({ page }) => {
+  test('has sort pills in top bar', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Wall').click()
-    await expect(page.getByText('Newest')).toBeVisible({ timeout: 10000 })
+    await page.getByRole('button', { name: 'Wall' }).click()
+    await expect(page.getByText('New')).toBeVisible({ timeout: 10000 })
+    await expect(page.getByText('Top')).toBeVisible()
   })
 
-  test('has Popular sort pill', async ({ page }) => {
-    await page.goto(BASE)
-    await page.getByText('Wall').click()
-    await expect(page.getByText('Popular')).toBeVisible({ timeout: 10000 })
-  })
-
-  test('Popular sort changes order', async ({ page }) => {
+  test('Top sort changes order', async ({ page }) => {
     await page.goto(BASE)
     await page.getByRole('button', { name: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    await page.getByRole('button', { name: 'Popular' }).click()
+    await page.getByRole('button', { name: 'Top' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
   })
 
