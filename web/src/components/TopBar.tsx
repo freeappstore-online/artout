@@ -67,30 +67,28 @@ export function LocationBreadcrumb({ path, posts, onNavigate }: {
         />
       )}
 
-      {/* Path segments */}
+      {/* Path segments — tap to navigate to that level, tap again to drill down */}
       {parts.map((part, i) => {
+        const segPath = parts.slice(0, i + 1).join(' > ')
         const isLast = i === parts.length - 1
         const hasChildren = getChildrenAt(i).length > 0
         return (
           <span key={i} className="flex shrink-0 items-center gap-0.5">
             <span className="text-[var(--muted)]/50">›</span>
-            {isLast && hasChildren ? (
-              <button
-                onClick={() => setOpenDropdown(openDropdown === i ? null : i)}
-                className="whitespace-nowrap font-semibold text-[var(--accent)]"
-              >
-                {part}
-              </button>
-            ) : (
-              <span className={`whitespace-nowrap font-semibold ${isLast ? 'text-[var(--accent)]' : 'text-[var(--muted)]'}`}>
-                {part}
-              </span>
-            )}
             <button
-              onClick={() => onNavigate(i === 0 ? null : parts.slice(0, i).join(' > '))}
-              className="flex h-4 w-4 items-center justify-center rounded-full text-[0.5rem] text-[var(--muted)] hover:bg-[var(--glass)] hover:text-[var(--ink)]"
+              onClick={() => {
+                if (isLast && hasChildren) {
+                  // Last segment with children — toggle dropdown to drill deeper
+                  setOpenDropdown(openDropdown === i ? null : i)
+                } else {
+                  // Non-last segment — navigate to this level (clear below)
+                  onNavigate(segPath)
+                  setOpenDropdown(null)
+                }
+              }}
+              className={`whitespace-nowrap font-semibold ${isLast ? 'text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--ink)]'}`}
             >
-              ×
+              {part}
             </button>
             {openDropdown === i && (
               <InlineDropdown
