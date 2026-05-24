@@ -17,7 +17,17 @@ const dotIcon = L.divIcon({
   iconAnchor: [5, 5],
 })
 
-function getClusterLabel(cluster: any): string {
+/**
+ * Find the deepest common location segment, then return the NEXT unique
+ * segment after what's already shown in the breadcrumb filter.
+ *
+ * Example: filtered to "Australia > Victoria > Melbourne"
+ * - All posts share "Australia > Victoria > Melbourne" → common depth = 3
+ * - But that's already in the breadcrumb, so show depth 3 (next level): "Fitzroy"
+ *
+ * Without filter: common = "Australia" → show "Australia"
+ */
+function getClusterLabel(cluster: any, filterDepth: number): string {
   const markers = cluster.getAllChildMarkers()
   const paths: string[][] = []
   for (const m of markers) {
@@ -31,7 +41,9 @@ function getClusterLabel(cluster: any): string {
     if (paths.every((p) => p[i] === first[i])) depth = i + 1
     else break
   }
-  return depth > 0 ? first[depth - 1] : ''
+  // Show the deepest common segment, but skip levels already in the filter
+  if (depth <= filterDepth) return ''
+  return first[depth - 1]
 }
 
 function formatCount(n: number): string {
@@ -39,9 +51,13 @@ function formatCount(n: number): string {
   return String(n)
 }
 
-function clusterIcon(cluster: any) {
+function makeClusterIcon(filterDepth: number) {
+  return (cluster: any) => clusterIcon(cluster, filterDepth)
+}
+
+function clusterIcon(cluster: any, filterDepth: number) {
   const count = cluster.getChildCount()
-  const label = getClusterLabel(cluster)
+  const label = getClusterLabel(cluster, filterDepth)
   const hasLabel = label.length > 0
 
   if (hasLabel) {
@@ -171,6 +187,8 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
 export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, onLocationChange, onLocationTap, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
   const [visibleCount, setVisibleCount] = useState(0)
+  const filterDepth = locationFilter ? locationFilter.split(' > ').length : 0
+  const clusterIconFn = useMemo(() => makeClusterIcon(filterDepth), [filterDepth])
 
   const handleBoundsChange = useCallback((_bounds: MapBounds, count: number) => {
     setVisibleCount(count)
@@ -197,7 +215,7 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
         <FlyToFilteredPosts posts={posts} locationFilter={locationFilter} />
 
         <MarkerClusterGroup
-          iconCreateFunction={clusterIcon}
+          iconCreateFunction={clusterIconFn}
           maxClusterRadius={60}
           spiderfyOnMaxZoom
           showCoverageOnHover={false}
