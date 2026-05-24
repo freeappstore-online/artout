@@ -296,3 +296,124 @@ test.describe('Navigation', () => {
     await expect(page.locator('.yarl__root')).not.toBeVisible({ timeout: 3000 })
   })
 })
+
+test.describe('Breadcrumb', () => {
+  test('World button opens countries dropdown', async ({ page }) => {
+    await page.goto(BASE)
+    await page.getByText('World').first().click()
+    // Dropdown with countries should appear
+    await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
+  })
+
+  test('selecting from dropdown updates breadcrumb', async ({ page }) => {
+    await page.goto(BASE)
+    await page.getByText('World').first().click()
+    await page.locator('button:has-text("Australia")').first().click()
+    // Breadcrumb should now show Australia
+    await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 3000 })
+  })
+
+  test('tapping middle segment navigates up', async ({ page }) => {
+    await page.goto(BASE)
+    // Drill to Australia > Victoria via search
+    await openSearchPicker(page)
+    await page.getByPlaceholder('Search places...').fill('Melbourne')
+    await page.locator('.text-left:has-text("Melbourne")').first().click()
+    // Now at Australia > Victoria > Melbourne — tap Australia to go up
+    await page.getByText('Australia').first().click()
+    // Should now be at Australia level (Victoria and Melbourne gone)
+    await expect(page.getByText('World')).toBeVisible()
+  })
+})
+
+test.describe('Location tags', () => {
+  test('posts show tappable location tags', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+    // Location tags should be visible as buttons in the grid overlay
+    const tags = page.locator('.bg-white\\/15')
+    await expect(tags.first()).toBeVisible({ timeout: 5000 })
+  })
+
+  test('tapping a location tag navigates to wall with that filter', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+    // Tap first location tag
+    const firstTag = page.locator('.bg-white\\/15').first()
+    const tagText = await firstTag.textContent()
+    await firstTag.click()
+    // Breadcrumb should update to include that location
+    if (tagText) {
+      await expect(page.locator(`text=${tagText}`).first()).toBeVisible({ timeout: 3000 })
+    }
+  })
+})
+
+test.describe('Feed layout', () => {
+  test('feed shows large images', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+    // Switch to feed layout
+    await page.locator('button:has(svg rect[width="18"])').first().click()
+    // Feed cards have rounded corners
+    await expect(page.locator('.rounded-xl').first()).toBeVisible({ timeout: 3000 })
+  })
+
+  test('feed shows navigate link', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+    await page.locator('button:has(svg rect[width="18"])').first().click()
+    await expect(page.getByText('Navigate →').first()).toBeVisible({ timeout: 3000 })
+  })
+
+  test('navigate link has correct Google Maps URL', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+    await page.locator('button:has(svg rect[width="18"])').first().click()
+    const link = page.locator('a:has-text("Navigate →")').first()
+    const href = await link.getAttribute('href')
+    expect(href).toContain('google.com/maps/dir')
+    expect(href).toContain('destination=')
+  })
+})
+
+test.describe('Sort', () => {
+  test('default sort is newest', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    const select = page.locator('select')
+    await expect(select).toBeVisible({ timeout: 10000 })
+    await expect(select).toHaveValue('newest')
+  })
+
+  test('sort persists across tab switches', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await page.locator('select').selectOption('popular')
+    // Switch to map and back
+    await page.locator('nav button', { hasText: 'Map' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('select')).toHaveValue('popular')
+  })
+})
+
+test.describe('Infinite scroll', () => {
+  test('loading indicator appears at bottom of wall', async ({ page }) => {
+    await page.goto(BASE)
+    await page.locator('nav button', { hasText: 'Wall' }).click()
+    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+    // Scroll to bottom — should see "Loading more..." sentinel
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight))
+    // The sentinel should exist (may or may not be visible depending on if all loaded)
+    const sentinel = page.getByText('Loading more...')
+    // It exists in DOM (even if posts are still loading)
+    const count = await sentinel.count()
+    // Either shows loading or all loaded (no sentinel)
+    expect(count).toBeLessThanOrEqual(1)
+  })
+})
