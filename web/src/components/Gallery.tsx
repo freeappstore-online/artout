@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
+import { LocationTags } from './LocationTags'
 import type { ArtPost } from '../lib/types'
 
 function formatDate(iso?: string): string {
@@ -17,9 +18,10 @@ interface GalleryProps {
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
   getFavCount: (id: string) => number
+  onLocationTap: (path: string) => void
 }
 
-export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, getFavCount }: GalleryProps) {
+export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, getFavCount, onLocationTap }: GalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(index)
   const current = posts[currentIndex]
 
@@ -47,8 +49,8 @@ export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, g
             )}
           </button>
           <div className="min-w-0 flex-1">
-            <div className="truncate text-sm text-white/90">{current.locationPath || current.locationName}</div>
-            {current.created_at && <div className="text-[0.6rem] text-white/40">{formatDate(current.created_at)}</div>}
+            <LocationTags locationPath={current.locationPath} onTagClick={(p) => { onLocationTap(p); onClose() }} />
+            {current.created_at && <div className="mt-1 text-[0.6rem] text-white/40">{formatDate(current.created_at)}</div>}
           </div>
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${current.lat},${current.lon}`}

@@ -75,6 +75,11 @@ export default function App() {
 
   const handleAddDone = useCallback(() => setTab('map'), [])
 
+  const handleLocationTap = useCallback((path: string) => {
+    setWallLocation(path)
+    setTab('wall')
+  }, [])
+
   const handlePickerSelect = useCallback((path: string | null) => {
     if (pickerFor === 'map') setMapLocation(path)
     else if (pickerFor === 'wall') setWallLocation(path)
@@ -148,6 +153,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
+          onLocationTap={handleLocationTap}
           allLoaded={allLoaded}
           onLoadMore={loadMore}
         />
@@ -180,6 +186,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
+          onLocationTap={handleLocationTap}
         />
       )}
 

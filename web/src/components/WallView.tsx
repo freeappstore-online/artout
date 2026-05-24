@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { haversineDistance } from '../lib/geo'
+import { LocationTags } from './LocationTags'
 import type { ArtPost } from '../lib/types'
 
 function formatDate(iso?: string): string {
@@ -22,6 +23,7 @@ interface WallViewProps {
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
   getFavCount: (id: string) => number
+  onLocationTap: (path: string) => void
   allLoaded?: boolean
   onLoadMore?: () => void
 }
@@ -32,7 +34,7 @@ function formatDistance(meters: number): string {
   return `${Math.round(meters / 1000)}km`
 }
 
-export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, isFavorite, onToggleFavorite, getFavCount, allLoaded, onLoadMore }: WallViewProps) {
+export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, isFavorite, onToggleFavorite, getFavCount, onLocationTap, allLoaded, onLoadMore }: WallViewProps) {
   // Infinite scroll
   const sentinelRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -91,14 +93,8 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                 {isFavorite(post.id) ? '❤️' : '🤍'}
                 {getFavCount(post.id) > 0 && <span className="text-white/80">{getFavCount(post.id)}</span>}
               </button>
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2 pb-1.5 pt-4">
-                <span className="text-[0.6rem] font-medium text-white/90">{post.locationName}</span>
-                {post.dist != null && (
-                  <span className="ml-1 text-[0.55rem] text-white/50">{formatDistance(post.dist)}</span>
-                )}
-                {post.created_at && (
-                  <span className="ml-1 text-[0.5rem] text-white/40">{formatDate(post.created_at)}</span>
-                )}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-1.5 pb-1.5 pt-4">
+                <LocationTags locationPath={post.locationPath} onTagClick={onLocationTap} />
               </div>
             </div>
           ))}
@@ -122,16 +118,14 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                 {isFavorite(post.id) ? '❤️' : '🤍'}
                 {getFavCount(post.id) > 0 && <span className="text-sm text-white/80">{getFavCount(post.id)}</span>}
               </button>
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8">
-                <div className="flex items-end justify-between">
-                  <div>
-                    <span className="text-sm font-medium text-white">{post.locationName}</span>
-                    {post.dist != null && (
-                      <span className="ml-2 text-xs text-white/50">{formatDistance(post.dist)}</span>
-                    )}
-                    {post.created_at && (
-                      <span className="ml-2 text-xs text-white/40">{formatDate(post.created_at)}</span>
-                    )}
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-3 pb-3 pt-8">
+                <div className="flex items-end justify-between gap-2">
+                  <div className="min-w-0">
+                    <LocationTags locationPath={post.locationPath} onTagClick={onLocationTap} />
+                    <div className="mt-1 flex items-center gap-2 text-xs text-white/40">
+                      {post.dist != null && <span>{formatDistance(post.dist)}</span>}
+                      {post.created_at && <span>{formatDate(post.created_at)}</span>}
+                    </div>
                   </div>
                   <a
                     href={`https://www.google.com/maps/dir/?api=1&destination=${post.lat},${post.lon}`}
