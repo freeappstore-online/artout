@@ -31,8 +31,10 @@ export function AddView({ userLat, userLon, geoState, onSubmit, onDone }: AddVie
       const f = e.target.files?.[0]
       if (!f) return
       setFile(f)
-      if (preview) URL.revokeObjectURL(preview)
-      setPreview(URL.createObjectURL(f))
+      setPreview((prev) => {
+        if (prev) URL.revokeObjectURL(prev)
+        return URL.createObjectURL(f)
+      })
       setError(null)
       setLocationInfo(null)
 

@@ -203,18 +203,20 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
           eventHandlers={{
             clusterclick: (e: any) => {
               const cluster = e.layer
-              const label = getClusterLabel(cluster)
-              if (label) {
-                // Build the full path from the cluster's common prefix
-                const markers = cluster.getAllChildMarkers()
-                const firstPath = markers[0]?.options?.locationPath as string | undefined
-                if (firstPath) {
-                  const parts = firstPath.split(' > ')
-                  const labelIdx = parts.indexOf(label)
-                  if (labelIdx >= 0) {
-                    onLocationChange(parts.slice(0, labelIdx + 1).join(' > '))
-                  }
-                }
+              const markers = cluster.getAllChildMarkers()
+              // Find deepest common path prefix across all markers
+              const paths = markers
+                .map((m: any) => m.options?.locationPath as string | undefined)
+                .filter(Boolean) as string[]
+              if (paths.length === 0) return
+              const first = paths[0].split(' > ')
+              let depth = 0
+              for (let i = 0; i < first.length; i++) {
+                if (paths.every((p: string) => p.split(' > ')[i] === first[i])) depth = i + 1
+                else break
+              }
+              if (depth > 0) {
+                onLocationChange(first.slice(0, depth).join(' > '))
               }
             },
           }}

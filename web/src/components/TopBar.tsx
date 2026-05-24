@@ -12,7 +12,7 @@ function InlineDropdown({ nodes, onSelect, onClose }: {
   return (
     <>
       <div className="fixed inset-0 z-[1060]" onClick={onClose} />
-      <div className="absolute left-0 top-full z-[1061] mt-1 max-h-64 min-w-48 overflow-y-auto rounded-xl border border-[var(--line-strong)] bg-[var(--panel-strong)] shadow-lg backdrop-blur-xl">
+      <div className="fixed left-3 right-3 top-12 z-[1061] max-h-64 overflow-y-auto rounded-xl border border-[var(--line-strong)] bg-[var(--panel-strong)] shadow-lg backdrop-blur-xl" style={{ marginTop: 'env(safe-area-inset-top)' }}>
         {nodes.map((n) => (
           <button
             key={n.path}
