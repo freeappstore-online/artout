@@ -139,13 +139,13 @@ test.describe('Wall', () => {
 
   test('has sort dropdown in top bar', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.locator('select')).toBeVisible({ timeout: 10000 })
   })
 
   test('sort dropdown changes order', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
     await page.locator('select').selectOption('popular')
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible()
@@ -153,7 +153,7 @@ test.describe('Wall', () => {
 
   test('grid/feed layout toggle works', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
     const gridContainer = page.locator('.grid.grid-cols-3')
     await expect(gridContainer).toBeVisible()
@@ -161,7 +161,7 @@ test.describe('Wall', () => {
 
   test('location breadcrumb visible on wall', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.getByText('World')).toBeVisible({ timeout: 5000 })
   })
 
@@ -207,13 +207,13 @@ test.describe('Auth', () => {
 
   test('saved tab requires sign-in', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Saved' }).click()
+    await page.locator('nav button', { hasText: 'Saved' }).click()
     await expect(page.getByText('Google')).toBeVisible({ timeout: 5000 })
   })
 
   test('profile tab shows sign-in', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'You' }).click()
+    await page.locator('nav button', { hasText: 'You' }).click()
     await expect(page.getByText('Sign in', { exact: true })).toBeVisible({ timeout: 5000 })
     await expect(page.getByText('Google')).toBeVisible()
   })
@@ -222,7 +222,7 @@ test.describe('Auth', () => {
 test.describe('Favorites', () => {
   test('shows sign-in when not authenticated', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Saved' }).click()
+    await page.locator('nav button', { hasText: 'Saved' }).click()
     await expect(page.getByText('Your collection')).toBeVisible({ timeout: 5000 })
   })
 
@@ -230,7 +230,7 @@ test.describe('Favorites', () => {
     // Will only see toggle when signed in with favorites, but the sign-in
     // screen should at least render without errors
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Saved' }).click()
+    await page.locator('nav button', { hasText: 'Saved' }).click()
     await expect(page.getByText('Your collection')).toBeVisible({ timeout: 5000 })
   })
 })
@@ -239,11 +239,11 @@ test.describe('Navigation', () => {
   test('tab switching works', async ({ page }) => {
     await page.goto(BASE)
     await expect(page.locator('.leaflet-container')).toBeVisible({ timeout: 15000 })
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    await page.getByRole('button', { name: 'Map' }).click()
+    await page.locator('nav button', { hasText: 'Map' }).click()
     await expect(page.locator('.leaflet-container')).toBeVisible()
-    await page.getByRole('button', { name: 'Saved' }).click()
+    await page.locator('nav button', { hasText: 'Saved' }).click()
     await expect(page.getByText('Your collection')).toBeVisible()
   })
 
@@ -256,7 +256,7 @@ test.describe('Navigation', () => {
     // Map breadcrumb shows Australia
     await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
     // Switch to wall — should show World (independent filter)
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.getByText('World')).toBeVisible()
   })
 
@@ -288,7 +288,7 @@ test.describe('Navigation', () => {
 
   test('gallery closes on Escape key', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByRole('button', { name: 'Wall' }).click()
+    await page.locator('nav button', { hasText: 'Wall' }).click()
     await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
     await page.locator('img[loading="lazy"]').first().click()
     await expect(page.locator('.yarl__root')).toBeVisible({ timeout: 5000 })
