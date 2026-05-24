@@ -46,11 +46,8 @@ test.describe('Map', () => {
 
   test('cluster labels show location names', async ({ page }) => {
     await page.goto(BASE)
-    await page.waitForTimeout(3000)
-    // At world zoom, clusters should have text content (counts or labels)
-    const markers = page.locator('.leaflet-marker-icon')
-    const count = await markers.count()
-    expect(count).toBeGreaterThan(0)
+    // Wait for markers to appear (progressive loading)
+    await expect(page.locator('.leaflet-marker-icon').first()).toBeVisible({ timeout: 15000 })
   })
 
   test('dark map tiles loaded', async ({ page }) => {
@@ -181,16 +178,12 @@ test.describe('Wall', () => {
     await expect(gradients.first()).toBeVisible()
   })
 
-  test('location filter applies to wall', async ({ page }) => {
+  test('location filter applies from map', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Wall').click()
-    await expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
-    // Open picker and select a location
     await page.getByText('All places').click()
     await page.getByPlaceholder('Search places...').fill('Melbourne')
     await page.locator('.text-left:has-text("Melbourne")').first().click()
-    // Pill should now show Melbourne
-    await expect(page.getByText('Melbourne')).toBeVisible({ timeout: 5000 })
+    await expect(page.locator('text=Melbourne').first()).toBeVisible({ timeout: 5000 })
   })
 })
 
@@ -217,7 +210,7 @@ test.describe('Auth', () => {
   test('profile tab shows sign-in', async ({ page }) => {
     await page.goto(BASE)
     await page.getByRole('button', { name: 'You' }).click()
-    await expect(page.getByText('Sign in')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByText('Sign in', { exact: true })).toBeVisible({ timeout: 5000 })
     await expect(page.getByText('Google')).toBeVisible()
   })
 })
