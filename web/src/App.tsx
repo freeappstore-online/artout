@@ -87,6 +87,7 @@ export default function App() {
     topBar = (
       <MapTopBar
         path={mapLocation}
+        posts={posts}
         onNavigate={setMapLocation}
         onSearch={() => setPickerFor('map')}
       />
@@ -95,6 +96,7 @@ export default function App() {
     topBar = (
       <WallTopBar
         path={wallLocation}
+        posts={posts}
         onNavigate={setWallLocation}
         onSearch={() => setPickerFor('wall')}
         sort={sort}
