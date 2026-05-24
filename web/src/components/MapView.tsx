@@ -215,7 +215,7 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
         <FlyToFilteredPosts posts={posts} locationFilter={locationFilter} />
 
         <MarkerClusterGroup
-          key={`clusters-${filterDepth}-${posts.length}`}
+          key={`clusters-${filterDepth}-${posts.length}-${posts[0]?.id || ''}-${posts[posts.length - 1]?.id || ''}`}
           iconCreateFunction={clusterIconFn}
           maxClusterRadius={60}
           spiderfyOnMaxZoom

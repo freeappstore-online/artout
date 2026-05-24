@@ -170,7 +170,8 @@ export function WallTopBar({ path, posts, onNavigate, onSearch, sort, onSortChan
       <select
         value={sort}
         onChange={(e) => onSortChange(e.target.value as Sort)}
-        className="shrink-0 rounded-lg border border-[var(--line-strong)] bg-[var(--glass)] px-2 py-1 text-xs font-semibold text-[var(--ink)] focus:outline-none"
+        className="shrink-0 appearance-none rounded-lg border border-[var(--line-strong)] bg-[var(--glass)] px-2 py-1 pr-5 text-xs font-semibold text-[var(--ink)] focus:outline-none"
+        style={{ WebkitAppearance: 'none' }}
       >
         <option value="newest">Newest</option>
         {hasGPS && <option value="nearby">Nearby</option>}

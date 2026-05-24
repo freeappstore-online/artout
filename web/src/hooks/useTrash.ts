@@ -16,22 +16,21 @@ export function useTrash() {
 
   const trash = useCallback(async (postId: string) => {
     if (!fas.auth.user) return
-    if (trashed.includes(postId)) return
 
     setTrashed((prev) => {
+      if (prev.includes(postId)) return prev // already trashed
       const next = [...prev, postId]
       fas.kv.set('trashed', next)
       return next
     })
 
-    // Increment public trash counter (for admin visibility)
     fas.counters.increment(`trash:${postId}`, 1).catch(() => {})
-  }, [trashed])
+  }, [])
 
   const isTrashed = useCallback(
     (postId: string) => trashed.includes(postId),
     [trashed],
   )
 
-  return { trashed, trash, isTrashed }
+  return { trash, isTrashed }
 }
