@@ -51,7 +51,7 @@ export function LocationBreadcrumb({ path, posts, onNavigate }: {
   }, [tree, parts])
 
   return (
-    <div className="relative flex min-w-0 items-center gap-0.5 text-xs">
+    <div className="relative flex min-w-0 items-center gap-0.5 overflow-x-auto text-xs">
       {/* World button */}
       <button
         onClick={() => setOpenDropdown(openDropdown === -1 ? null : -1)}
