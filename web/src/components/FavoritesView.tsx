@@ -5,7 +5,7 @@ import type { ArtPost } from '../lib/types'
 interface FavoritesViewProps {
   posts: ArtPost[]
   favorites: string[]
-  onPostClick: (post: ArtPost) => void
+  onPostClick: (post: ArtPost, context?: ArtPost[]) => void
   onToggleFavorite: (id: string) => void
 }
 
@@ -81,7 +81,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
                 alt={post.title || 'Street art'}
                 className="h-full w-full cursor-pointer object-cover"
                 loading="lazy"
-                onClick={() => onPostClick(post)}
+                onClick={() => onPostClick(post, favPosts)}
               />
               <button
                 onClick={() => onToggleFavorite(post.id)}
@@ -102,7 +102,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
                 className="w-full cursor-pointer object-cover"
                 loading="lazy"
                 style={{ maxHeight: 500 }}
-                onClick={() => onPostClick(post)}
+                onClick={() => onPostClick(post, favPosts)}
               />
               <button
                 onClick={() => onToggleFavorite(post.id)}
