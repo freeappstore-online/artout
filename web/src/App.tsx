@@ -4,6 +4,7 @@ import { MapView } from './components/MapView'
 import { WallView } from './components/WallView'
 import { AddView } from './components/AddView'
 import { FavoritesView } from './components/FavoritesView'
+import { ProfileView } from './components/ProfileView'
 import { Gallery } from './components/Gallery'
 import { LocationPill, LocationPickerModal } from './components/LocationPicker'
 import { usePosts } from './hooks/usePosts'
@@ -62,7 +63,8 @@ export default function App() {
 
   return (
     <Shell activeTab={tab} onTabChange={setTab} header={header}>
-      {tab === 'map' && (
+      {/* Map stays mounted to prevent re-init blink */}
+      <div className={showMap ? 'flex min-h-0 flex-1 flex-col' : 'hidden'}>
         <MapView
           posts={filteredPosts}
           userLat={position?.lat}
@@ -73,7 +75,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
         />
-      )}
+      </div>
       {tab === 'wall' && (
         <WallView
           posts={filteredPosts}
@@ -102,6 +104,7 @@ export default function App() {
           onToggleFavorite={toggleFavorite}
         />
       )}
+      {tab === 'profile' && <ProfileView />}
 
       {galleryIndex !== null && (
         <Gallery

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { STORE_URL } from '../lib/fas'
 
-export type Tab = 'map' | 'wall' | 'add' | 'favs'
+export type Tab = 'map' | 'wall' | 'add' | 'favs' | 'profile'
 
 interface ShellProps {
   children: ReactNode
@@ -45,6 +45,15 @@ const tabs: { id: Tab; label: string; icon: (active: boolean) => ReactNode }[] =
       </svg>
     ),
   },
+  {
+    id: 'profile', label: 'You',
+    icon: (a) => (
+      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={a ? 2.2 : 1.6}>
+        <circle cx="12" cy="8" r="4" />
+        <path d="M20 21a8 8 0 0 0-16 0" />
+      </svg>
+    ),
+  },
 ]
 
 export function Shell({ children, activeTab, onTabChange, header }: ShellProps) {
@@ -58,20 +67,12 @@ export function Shell({ children, activeTab, onTabChange, header }: ShellProps) 
       <main className="flex min-h-0 flex-1 flex-col pb-[4.5rem]">{children}</main>
 
       <nav className="fixed inset-x-0 bottom-0 z-[1100] border-t border-[var(--line)] bg-[var(--dock)]/95 backdrop-blur-2xl">
-        <a
-          href={STORE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mx-auto block max-w-md px-4 py-0.5 text-center text-[0.5rem] tracking-wider text-[var(--muted)]/50 hover:text-[var(--accent)]"
-        >
-          freeappstore.online
-        </a>
-        <div className="mx-auto grid max-w-md grid-cols-4 pb-[env(safe-area-inset-bottom)]">
+        <div className="mx-auto grid max-w-md grid-cols-5">
           {tabs.map((t) => (
             <button
               key={t.id}
               onClick={() => onTabChange(t.id)}
-              className={`flex flex-col items-center gap-0.5 pb-1.5 pt-1.5 transition-colors ${
+              className={`flex flex-col items-center gap-0.5 pb-1.5 pt-2 transition-colors ${
                 t.id === 'add'
                   ? ''
                   : activeTab === t.id
@@ -92,6 +93,15 @@ export function Shell({ children, activeTab, onTabChange, header }: ShellProps) 
             </button>
           ))}
         </div>
+        <a
+          href={STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mx-auto block max-w-md px-4 text-center text-[0.45rem] tracking-wider text-[var(--muted)]/40 hover:text-[var(--accent)]"
+          style={{ paddingBottom: 'calc(env(safe-area-inset-bottom) + 2px)' }}
+        >
+          freeappstore.online
+        </a>
       </nav>
     </div>
   )

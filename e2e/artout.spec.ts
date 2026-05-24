@@ -22,9 +22,9 @@ test.describe('App load', () => {
     expect(real).toEqual([])
   })
 
-  test('4 tabs in nav bar', async ({ page }) => {
+  test('5 tabs in nav bar', async ({ page }) => {
     await page.goto(BASE)
-    await expect(page.locator('nav button')).toHaveCount(4, { timeout: 5000 })
+    await expect(page.locator('nav button')).toHaveCount(5, { timeout: 5000 })
   })
 
   test('has freeappstore.online link', async ({ page }) => {
@@ -210,8 +210,15 @@ test.describe('Auth', () => {
 
   test('saved tab requires sign-in', async ({ page }) => {
     await page.goto(BASE)
-    await page.getByText('Saved').click()
+    await page.getByRole('button', { name: 'Saved' }).click()
     await expect(page.getByText('Google')).toBeVisible({ timeout: 5000 })
+  })
+
+  test('profile tab shows sign-in', async ({ page }) => {
+    await page.goto(BASE)
+    await page.getByRole('button', { name: 'You' }).click()
+    await expect(page.getByText('Sign in')).toBeVisible({ timeout: 5000 })
+    await expect(page.getByText('Google')).toBeVisible()
   })
 })
 
