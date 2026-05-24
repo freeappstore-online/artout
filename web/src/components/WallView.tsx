@@ -23,6 +23,7 @@ interface WallViewProps {
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
   getFavCount: (id: string) => number
+  onTrash: (id: string) => void
   onLocationTap: (path: string) => void
   allLoaded?: boolean
   onLoadMore?: () => void
@@ -34,7 +35,7 @@ function formatDistance(meters: number): string {
   return `${Math.round(meters / 1000)}km`
 }
 
-export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, isFavorite, onToggleFavorite, getFavCount, onLocationTap, allLoaded, onLoadMore }: WallViewProps) {
+export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, isFavorite, onToggleFavorite, getFavCount, onTrash, onLocationTap, allLoaded, onLoadMore }: WallViewProps) {
   // Infinite scroll
   const sentinelRef = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -86,13 +87,21 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                 loading="lazy"
                 onClick={() => onPostClick(post)}
               />
-              <button
-                onClick={() => onToggleFavorite(post.id)}
-                className="absolute right-1 top-1 flex items-center gap-0.5 rounded-full bg-black/40 px-1.5 py-0.5 text-xs backdrop-blur-sm"
-              >
-                {isFavorite(post.id) ? '❤️' : '🤍'}
-                {getFavCount(post.id) > 0 && <span className="text-white/80">{getFavCount(post.id)}</span>}
-              </button>
+              <div className="absolute right-1 top-1 flex gap-1">
+                <button
+                  onClick={() => onToggleFavorite(post.id)}
+                  className="flex items-center gap-0.5 rounded-full bg-black/40 px-1.5 py-0.5 text-xs backdrop-blur-sm"
+                >
+                  {isFavorite(post.id) ? '❤️' : '🤍'}
+                  {getFavCount(post.id) > 0 && <span className="text-white/80">{getFavCount(post.id)}</span>}
+                </button>
+                <button
+                  onClick={() => onTrash(post.id)}
+                  className="flex h-5 w-5 items-center justify-center rounded-full bg-black/40 text-[0.5rem] text-white/60 backdrop-blur-sm"
+                >
+                  🗑
+                </button>
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-1.5 pb-1.5 pt-4">
                 <LocationTags locationPath={post.locationPath} onTagClick={onLocationTap} />
               </div>
@@ -111,13 +120,21 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                 style={{ maxHeight: 500 }}
                 onClick={() => onPostClick(post)}
               />
-              <button
-                onClick={() => onToggleFavorite(post.id)}
-                className="absolute right-3 top-3 flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1.5 text-base backdrop-blur-sm"
-              >
-                {isFavorite(post.id) ? '❤️' : '🤍'}
-                {getFavCount(post.id) > 0 && <span className="text-sm text-white/80">{getFavCount(post.id)}</span>}
-              </button>
+              <div className="absolute right-3 top-3 flex gap-2">
+                <button
+                  onClick={() => onToggleFavorite(post.id)}
+                  className="flex items-center gap-1 rounded-full bg-black/40 px-2.5 py-1.5 text-base backdrop-blur-sm"
+                >
+                  {isFavorite(post.id) ? '❤️' : '🤍'}
+                  {getFavCount(post.id) > 0 && <span className="text-sm text-white/80">{getFavCount(post.id)}</span>}
+                </button>
+                <button
+                  onClick={() => onTrash(post.id)}
+                  className="flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-sm text-white/60 backdrop-blur-sm"
+                >
+                  🗑
+                </button>
+              </div>
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-3 pb-3 pt-8">
                 <div className="flex items-end justify-between gap-2">
                   <div className="min-w-0">

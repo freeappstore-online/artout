@@ -18,10 +18,11 @@ interface GalleryProps {
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
   getFavCount: (id: string) => number
+  onTrash: (id: string) => void
   onLocationTap: (path: string) => void
 }
 
-export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, getFavCount, onLocationTap }: GalleryProps) {
+export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, getFavCount, onTrash, onLocationTap }: GalleryProps) {
   const [currentIndex, setCurrentIndex] = useState(index)
   const current = posts[currentIndex]
 
@@ -52,6 +53,12 @@ export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, g
             <LocationTags locationPath={current.locationPath} onTagClick={(p) => { onLocationTap(p); onClose() }} />
             {current.created_at && <div className="mt-1 text-[0.6rem] text-white/40">{formatDate(current.created_at)}</div>}
           </div>
+          <button
+            onClick={() => { onTrash(current.id); onClose() }}
+            className="shrink-0 text-lg text-white/40 hover:text-white/70"
+          >
+            🗑
+          </button>
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${current.lat},${current.lon}`}
             target="_blank"

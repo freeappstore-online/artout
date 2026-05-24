@@ -10,6 +10,7 @@ import { MapTopBar, WallTopBar, FavsTopBar } from './components/TopBar'
 import { LocationPickerModal } from './components/LocationPicker'
 import { usePosts } from './hooks/usePosts'
 import { useFavorites } from './hooks/useFavorites'
+import { useTrash } from './hooks/useTrash'
 import { useGeolocation } from './hooks/useGeolocation'
 import { getPostsForPath } from './lib/locations'
 import type { ArtPost } from './lib/types'
@@ -21,6 +22,7 @@ export default function App() {
   const [tab, setTab] = useState<Tab>('map')
   const { posts, loading, allLoaded, loadMore, loadAll, addPost } = usePosts()
   const { favorites, toggle: toggleFavorite, isFavorite, getFavCount } = useFavorites()
+  const { trash: trashPost, isTrashed } = useTrash()
   const { position, state: geoState } = useGeolocation()
   const [galleryIndex, setGalleryIndex] = useState<number | null>(null)
   const [galleryPosts, setGalleryPosts] = useState<ArtPost[]>([])
@@ -52,16 +54,24 @@ export default function App() {
     if (tab === 'map' && !allLoaded) loadAll()
   }, [tab, allLoaded, loadAll])
 
-  // Filtered posts per view
+  // Filter trashed posts, then by location
+  const visiblePosts = useMemo(() =>
+    posts.filter((p) => !isTrashed(p.id)),
+  [posts, isTrashed])
+
+  const visibleStablePosts = useMemo(() =>
+    stablePosts.filter((p) => !isTrashed(p.id)),
+  [stablePosts, isTrashed])
+
   const mapPosts = useMemo(() => {
-    if (!mapLocation) return stablePosts
-    return getPostsForPath(stablePosts, mapLocation)
-  }, [stablePosts, mapLocation])
+    if (!mapLocation) return visibleStablePosts
+    return getPostsForPath(visibleStablePosts, mapLocation)
+  }, [visibleStablePosts, mapLocation])
 
   const wallPosts = useMemo(() => {
-    if (!wallLocation) return posts
-    return getPostsForPath(posts, wallLocation)
-  }, [posts, wallLocation])
+    if (!wallLocation) return visiblePosts
+    return getPostsForPath(visiblePosts, wallLocation)
+  }, [visiblePosts, wallLocation])
 
   const openGallery = useCallback(
     (post: ArtPost, context?: ArtPost[]) => {
@@ -154,6 +164,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
+          onTrash={trashPost}
           onLocationTap={handleLocationTap}
           allLoaded={allLoaded}
           onLoadMore={loadMore}
@@ -170,7 +181,7 @@ export default function App() {
       )}
       {tab === 'favs' && (
         <FavoritesView
-          posts={posts}
+          posts={visiblePosts}
           favorites={favorites}
           layout={layout}
           onPostClick={openGallery}
@@ -187,6 +198,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
+          onTrash={trashPost}
           onLocationTap={handleLocationTap}
         />
       )}
