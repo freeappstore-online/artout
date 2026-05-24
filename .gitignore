@@ -7,3 +7,4 @@ dist
 
 # TypeScript incremental build cache
 *.tsbuildinfo
+test-results/
