@@ -11,29 +11,40 @@ export function usePosts() {
   const [loading, setLoading] = useState(true)
   const fetchedRef = useRef(false)
 
-  const fetchAllPosts = useCallback(async () => {
-    setLoading(true)
-    const allPosts: ArtPost[] = []
-    for (let page = 0; page < MAX_PAGES; page++) {
-      const result = await fas.collections.collection('posts').query<ArtPost>({
-        orderBy: 'created_at',
-        order: 'desc',
-        limit: PAGE_SIZE,
-        offset: page * PAGE_SIZE,
-      })
-      allPosts.push(...result.documents)
-      if (result.documents.length < PAGE_SIZE) break
-    }
-    setPosts(allPosts)
-    setLoading(false)
+  const fetchPage = useCallback(async (offset: number) => {
+    const result = await fas.collections.collection('posts').query<ArtPost>({
+      orderBy: 'created_at',
+      order: 'desc',
+      limit: PAGE_SIZE,
+      offset,
+    })
+    return result.documents
   }, [])
 
   useEffect(() => {
-    if (!fetchedRef.current) {
-      fetchedRef.current = true
-      fetchAllPosts()
-    }
-  }, [fetchAllPosts])
+    if (fetchedRef.current) return
+    fetchedRef.current = true
+
+    // Load first page fast, show the app, then background-load the rest
+    fetchPage(0).then((first) => {
+      setPosts(first)
+      setLoading(false)
+
+      if (first.length < PAGE_SIZE) return // all posts fit in one page
+
+      // Fetch remaining pages in background
+      const loadRemaining = async () => {
+        const allPosts = [...first]
+        for (let page = 1; page < MAX_PAGES; page++) {
+          const docs = await fetchPage(page * PAGE_SIZE)
+          allPosts.push(...docs)
+          setPosts([...allPosts]) // update progressively
+          if (docs.length < PAGE_SIZE) break
+        }
+      }
+      loadRemaining()
+    }).catch(() => setLoading(false))
+  }, [fetchPage])
 
   const addPost = useCallback(
     async (post: Omit<ArtPost, 'id' | 'thumbUrl' | 'imageUrl'> & { imageId: string }) => {
@@ -53,5 +64,5 @@ export function usePosts() {
     setPosts((prev) => prev.filter((p) => p.id !== id))
   }, [])
 
-  return { posts, loading, addPost, deletePost, refresh: fetchAllPosts }
+  return { posts, loading, addPost, deletePost }
 }

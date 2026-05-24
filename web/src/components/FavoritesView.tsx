@@ -58,6 +58,7 @@ export function FavoritesView({ posts, favorites, onPostClick, onToggleFavorite 
               src={post.thumbUrl}
               alt={post.title || 'Street art'}
               className="h-14 w-14 rounded-lg object-cover"
+              loading="lazy"
             />
           </button>
           <button
