@@ -132,6 +132,7 @@ export default function App() {
           locationFilter={mapLocation}
           onPostClick={openGallery}
           onShowWall={() => setTab('wall')}
+          onLocationChange={setMapLocation}
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
         />

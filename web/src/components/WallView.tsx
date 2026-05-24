@@ -2,6 +2,13 @@ import { useEffect, useMemo, useRef } from 'react'
 import { haversineDistance } from '../lib/geo'
 import type { ArtPost } from '../lib/types'
 
+function formatDate(iso?: string): string {
+  if (!iso) return ''
+  const d = new Date(iso)
+  if (isNaN(d.getTime())) return ''
+  return d.toLocaleDateString(undefined, { month: 'short', year: 'numeric' })
+}
+
 type Sort = 'nearby' | 'newest' | 'popular'
 type Layout = 'grid' | 'feed'
 
@@ -89,6 +96,9 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                 {post.dist != null && (
                   <span className="ml-1 text-[0.55rem] text-white/50">{formatDistance(post.dist)}</span>
                 )}
+                {post.created_at && (
+                  <span className="ml-1 text-[0.5rem] text-white/40">{formatDate(post.created_at)}</span>
+                )}
               </div>
             </div>
           ))}
@@ -118,6 +128,9 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                     <span className="text-sm font-medium text-white">{post.locationName}</span>
                     {post.dist != null && (
                       <span className="ml-2 text-xs text-white/50">{formatDistance(post.dist)}</span>
+                    )}
+                    {post.created_at && (
+                      <span className="ml-2 text-xs text-white/40">{formatDate(post.created_at)}</span>
                     )}
                   </div>
                   <a

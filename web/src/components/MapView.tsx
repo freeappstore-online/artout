@@ -96,6 +96,7 @@ interface MapViewProps {
   locationFilter: string | null
   onPostClick: (post: ArtPost) => void
   onShowWall: () => void
+  onLocationChange: (path: string | null) => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
 }
@@ -165,7 +166,7 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   )
 }
 
-export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, isFavorite, onToggleFavorite }: MapViewProps) {
+export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, onLocationChange, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
   const [visibleCount, setVisibleCount] = useState(0)
 
@@ -199,6 +200,24 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
           spiderfyOnMaxZoom
           showCoverageOnHover={false}
           disableClusteringAtZoom={17}
+          eventHandlers={{
+            clusterclick: (e: any) => {
+              const cluster = e.layer
+              const label = getClusterLabel(cluster)
+              if (label) {
+                // Build the full path from the cluster's common prefix
+                const markers = cluster.getAllChildMarkers()
+                const firstPath = markers[0]?.options?.locationPath as string | undefined
+                if (firstPath) {
+                  const parts = firstPath.split(' > ')
+                  const labelIdx = parts.indexOf(label)
+                  if (labelIdx >= 0) {
+                    onLocationChange(parts.slice(0, labelIdx + 1).join(' > '))
+                  }
+                }
+              }
+            },
+          }}
         >
           {posts.map((post) => (
             <Marker
@@ -207,7 +226,12 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
               icon={dotIcon}
               // @ts-expect-error — custom option for cluster label extraction
               locationPath={post.locationPath}
-              eventHandlers={{ click: () => setSelected(post) }}
+              eventHandlers={{
+                click: () => {
+                  setSelected(post)
+                  if (post.locationPath) onLocationChange(post.locationPath)
+                },
+              }}
             />
           ))}
         </MarkerClusterGroup>

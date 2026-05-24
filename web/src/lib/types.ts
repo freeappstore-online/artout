@@ -9,6 +9,7 @@ export interface ArtPost {
   lon: number
   locationPath: string
   locationName: string
+  created_at?: string
 }
 
 export interface LocationNode {

@@ -3,6 +3,13 @@ import Lightbox from 'yet-another-react-lightbox'
 import 'yet-another-react-lightbox/styles.css'
 import type { ArtPost } from '../lib/types'
 
+function formatDate(iso?: string): string {
+  if (!iso) return ''
+  const d = new Date(iso)
+  if (isNaN(d.getTime())) return ''
+  return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })
+}
+
 interface GalleryProps {
   posts: ArtPost[]
   index: number
@@ -41,6 +48,7 @@ export function Gallery({ posts, index, onClose, isFavorite, onToggleFavorite, g
           </button>
           <div className="min-w-0 flex-1">
             <div className="truncate text-sm text-white/90">{current.locationPath || current.locationName}</div>
+            {current.created_at && <div className="text-[0.6rem] text-white/40">{formatDate(current.created_at)}</div>}
           </div>
           <a
             href={`https://www.google.com/maps/dir/?api=1&destination=${current.lat},${current.lon}`}
