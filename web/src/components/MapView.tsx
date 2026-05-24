@@ -4,6 +4,7 @@ import MarkerClusterGroup from 'react-leaflet-markercluster'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 import 'leaflet.markercluster/dist/MarkerCluster.css'
+import { LocationTags } from './LocationTags'
 import type { ArtPost } from '../lib/types'
 
 const DEFAULT_CENTER: [number, number] = [-37.8136, 144.9631]
@@ -94,9 +95,10 @@ interface MapViewProps {
   userLat?: number
   userLon?: number
   locationFilter: string | null
-  onPostClick: (post: ArtPost) => void
+  onPostClick: (post: ArtPost, context?: ArtPost[]) => void
   onShowWall: () => void
   onLocationChange: (path: string | null) => void
+  onLocationTap: (path: string) => void
   isFavorite: (id: string) => boolean
   onToggleFavorite: (id: string) => void
 }
@@ -166,7 +168,7 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   )
 }
 
-export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, onLocationChange, isFavorite, onToggleFavorite }: MapViewProps) {
+export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, onLocationChange, onLocationTap, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
   const [visibleCount, setVisibleCount] = useState(0)
 
@@ -243,42 +245,41 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
             position={[selected.lat, selected.lon]}
             eventHandlers={{ remove: () => setSelected(null) }}
           >
-            <div
-              className="flex cursor-pointer gap-3"
-              onClick={() => {
-                onPostClick(selected)
-                setSelected(null)
-              }}
-            >
-              <img
-                src={selected.thumbUrl}
-                alt={selected.title || 'Street art'}
-                className="h-16 w-16 rounded-lg object-cover"
-              />
-              <div className="min-w-0 flex-1">
-                <div className="truncate text-sm font-semibold text-[var(--ink)]">
-                  {selected.title || 'Untitled'}
-                </div>
-                <div className="text-xs text-[var(--muted)]">{selected.locationPath}</div>
-                <div className="mt-1.5 flex items-center gap-3">
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      onToggleFavorite(selected.id)
-                    }}
-                    className="text-xs text-[var(--accent)]"
-                  >
-                    {isFavorite(selected.id) ? '\u2764\ufe0f' : '\u2661'} Fav
-                  </button>
-                  <a
-                    href={`https://www.google.com/maps/dir/?api=1&destination=${selected.lat},${selected.lon}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
-                    className="text-xs text-[var(--sky)]"
-                  >
-                    Navigate →
-                  </a>
+            <div className="flex flex-col gap-2">
+              <div
+                className="flex cursor-pointer gap-3"
+                onClick={() => {
+                  onPostClick(selected, posts)
+                  setSelected(null)
+                }}
+              >
+                <img
+                  src={selected.thumbUrl}
+                  alt={selected.title || 'Street art'}
+                  className="h-16 w-16 rounded-lg object-cover"
+                />
+                <div className="min-w-0 flex-1">
+                  <LocationTags locationPath={selected.locationPath} onTagClick={(p) => { setSelected(null); onLocationTap(p) }} />
+                  <div className="mt-1.5 flex items-center gap-3">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        onToggleFavorite(selected.id)
+                      }}
+                      className="text-xs text-[var(--accent)]"
+                    >
+                      {isFavorite(selected.id) ? '\u2764\ufe0f' : '\u2661'} Fav
+                    </button>
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&destination=${selected.lat},${selected.lon}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="text-xs text-[var(--sky)]"
+                    >
+                      Navigate →
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
