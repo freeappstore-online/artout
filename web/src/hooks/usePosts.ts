@@ -3,7 +3,7 @@ import { fas } from '../lib/fas'
 import { thumbUrl, fullUrl } from '../lib/cloudinary'
 import type { ArtPost } from '../lib/types'
 
-const PAGE_SIZE = 100
+const PAGE_SIZE = 30
 
 async function fetchPage(offset: number): Promise<ArtPost[]> {
   const result = await fas.collections.collection('posts').query<ArtPost>({

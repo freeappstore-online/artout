@@ -2,12 +2,19 @@ const CLOUD_NAME = 'lkzycqsuf'
 const UPLOAD_PRESET = 'cttcla3s'
 const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload/`
 
-export function thumbUrl(publicId: string, size = 300): string {
-  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_${size},h_${size},c_fill/${publicId}`
+/** Small square thumb for grid view (~5-8KB each) */
+export function thumbUrl(publicId: string, size = 150): string {
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_${size},h_${size},c_fill,f_auto,q_auto/${publicId}`
 }
 
+/** Medium image for feed view (~30-50KB) */
+export function mediumUrl(publicId: string, maxWidth = 800): string {
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_${maxWidth},c_limit,f_auto,q_auto/${publicId}`
+}
+
+/** Full-res for gallery (~80-150KB) */
 export function fullUrl(publicId: string, maxWidth = 1600): string {
-  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_${maxWidth},c_limit/${publicId}`
+  return `https://res.cloudinary.com/${CLOUD_NAME}/image/upload/w_${maxWidth},c_limit,f_auto,q_auto/${publicId}`
 }
 
 export async function uploadImage(file: File): Promise<{ publicId: string; url: string }> {

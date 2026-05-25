@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react'
 import { haversineDistance } from '../lib/geo'
+import { thumbUrl as smallThumb, mediumUrl } from '../lib/cloudinary'
 import { LocationTags } from './LocationTags'
 import type { ArtPost } from '../lib/types'
 
@@ -81,7 +82,7 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
           {sorted.map((post) => (
             <div key={post.id} className="relative aspect-square overflow-hidden bg-[var(--paper)]">
               <img
-                src={post.thumbUrl}
+                src={smallThumb(post.imageId)}
                 alt={post.title || 'Street art'}
                 className="h-full w-full cursor-pointer object-cover"
                 loading="lazy"
@@ -117,7 +118,7 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
           {sorted.map((post) => (
             <div key={post.id} className="relative overflow-hidden rounded-xl bg-[var(--paper)]">
               <img
-                src={post.imageUrl}
+                src={mediumUrl(post.imageId)}
                 alt={post.title || 'Street art'}
                 className="w-full cursor-pointer object-cover"
                 loading="lazy"
