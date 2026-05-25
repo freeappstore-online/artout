@@ -5,6 +5,14 @@ const BASE = 'https://artout.freeappstore.online'
 // Helpers
 const nav = (page: Page, tab: string) => page.locator('nav button', { hasText: tab }).click()
 const waitForWall = (page: Page) => expect(page.locator('img[loading="lazy"]').first()).toBeVisible({ timeout: 10000 })
+/** Wait for map to load all posts (map triggers loadAll) */
+const waitForAllPosts = async (page: Page) => {
+  await page.goto(BASE)
+  // Map tab triggers loadAll — wait for clusters to appear
+  await expect(page.locator('.leaflet-marker-icon').first()).toBeVisible({ timeout: 15000 })
+  // Give loadAll time to finish
+  await page.waitForTimeout(2000)
+}
 const openGallery = async (page: Page) => {
   await nav(page, 'Wall')
   await waitForWall(page)
@@ -89,9 +97,8 @@ test.describe('Map', () => {
   })
 
   test('search icon opens location picker', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
-    // Should see countries in the picker
     await expect(page.locator('text=Australia').first()).toBeVisible({ timeout: 5000 })
   })
 
@@ -109,21 +116,21 @@ test.describe('Map', () => {
 
 test.describe('Location picker', () => {
   test('search filters by name', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Melbourne')
     await expect(page.locator('.text-left:has-text("Melbourne")').first()).toBeVisible({ timeout: 5000 })
   })
 
   test('search with no results shows message', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('xyznonexistent')
     await expect(page.getByText('No places matching')).toBeVisible({ timeout: 5000 })
   })
 
   test('selecting location updates map breadcrumb', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Australia')
     await page.locator('.text-left:has-text("Australia")').first().click()
@@ -133,7 +140,7 @@ test.describe('Location picker', () => {
   })
 
   test('drill-down via › button shows children', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
     const row = page.locator('.flex.items-center:has-text("Australia")').first()
     await row.locator('button:has-text("›")').click()
@@ -142,14 +149,14 @@ test.describe('Location picker', () => {
   })
 
   test('closes on backdrop tap', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
     await page.locator('.bg-black\\/60').click()
     await expect(page.getByPlaceholder('Search places...')).not.toBeVisible()
   })
 
   test('closes on × button', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await openSearchPicker(page)
     await page.locator('button:has-text("×")').click()
     await expect(page.getByPlaceholder('Search places...')).not.toBeVisible()
@@ -160,13 +167,13 @@ test.describe('Location picker', () => {
 
 test.describe('Breadcrumb', () => {
   test('World opens inline country dropdown', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await page.getByText('World').first().click()
     await expect(page.locator('button:has-text("Australia")').first()).toBeVisible({ timeout: 5000 })
   })
 
   test('selecting from dropdown navigates to that level', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     await page.getByText('World').first().click()
     await page.locator('button:has-text("Australia")').first().click()
     // Breadcrumb should now show World › Australia
@@ -174,7 +181,7 @@ test.describe('Breadcrumb', () => {
   })
 
   test('tapping a parent segment clears children below', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     // Navigate to Melbourne via search
     await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Melbourne')
@@ -186,7 +193,7 @@ test.describe('Breadcrumb', () => {
   })
 
   test('map and wall have independent breadcrumbs', async ({ page }) => {
-    await page.goto(BASE)
+    await waitForAllPosts(page)
     // Set map to Australia
     await openSearchPicker(page)
     await page.getByPlaceholder('Search places...').fill('Australia')
