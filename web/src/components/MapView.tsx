@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, useMap, useMapEvents } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet'
 import MarkerClusterGroup from 'react-leaflet-markercluster'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
@@ -99,13 +99,6 @@ function clusterIcon(cluster: any, filterDepth: number) {
   })
 }
 
-export interface MapBounds {
-  north: number
-  south: number
-  east: number
-  west: number
-}
-
 interface MapViewProps {
   posts: ArtPost[]
   userLat?: number
@@ -142,28 +135,6 @@ function FlyToFilteredPosts({ posts, locationFilter }: { posts: ArtPost[]; locat
   return null
 }
 
-function BoundsTracker({ posts, onBoundsChange }: { posts: ArtPost[]; onBoundsChange: (bounds: MapBounds, count: number) => void }) {
-  const update = useCallback((map: L.Map) => {
-    const b = map.getBounds()
-    const bounds: MapBounds = {
-      north: b.getNorth(), south: b.getSouth(),
-      east: b.getEast(), west: b.getWest(),
-    }
-    const count = posts.filter((p) =>
-      p.lat >= bounds.south && p.lat <= bounds.north &&
-      p.lon >= bounds.west && p.lon <= bounds.east
-    ).length
-    onBoundsChange(bounds, count)
-  }, [posts, onBoundsChange])
-
-  useMapEvents({
-    moveend: (e) => update(e.target),
-    zoomend: (e) => update(e.target),
-    load: (e) => update(e.target),
-  })
-  return null
-}
-
 function LocateButton({ lat, lon }: { lat: number; lon: number }) {
   const map = useMap()
   const handleClick = useCallback(() => {
@@ -186,13 +157,8 @@ function LocateButton({ lat, lon }: { lat: number; lon: number }) {
 
 export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, onShowWall, onLocationChange, onLocationTap, isFavorite, onToggleFavorite }: MapViewProps) {
   const [selected, setSelected] = useState<ArtPost | null>(null)
-  const [visibleCount, setVisibleCount] = useState(0)
   const filterDepth = locationFilter ? locationFilter.split(' > ').length : 0
   const clusterIconFn = useMemo(() => makeClusterIcon(filterDepth), [filterDepth])
-
-  const handleBoundsChange = useCallback((_bounds: MapBounds, count: number) => {
-    setVisibleCount(count)
-  }, [])
 
   const center = useMemo<[number, number]>(
     () => (userLat && userLon ? [userLat, userLon] : DEFAULT_CENTER),
@@ -211,7 +177,6 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
         attributionControl={false}
       >
         <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
-        <BoundsTracker posts={posts} onBoundsChange={handleBoundsChange} />
         <FlyToFilteredPosts posts={posts} locationFilter={locationFilter} />
 
         <MarkerClusterGroup
@@ -308,7 +273,7 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
         {userLat && userLon && <LocateButton lat={userLat} lon={userLon} />}
       </MapContainer>
 
-      {visibleCount > 0 && visibleCount < posts.length && (
+      {posts.length > 0 && (
         <button
           onClick={onShowWall}
           className="absolute bottom-14 left-4 z-[1000] flex items-center gap-2 rounded-full border border-[var(--line-strong)] bg-[var(--panel-strong)] px-4 py-2 shadow-lg"
@@ -317,8 +282,17 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
             <rect x="3" y="3" width="7" height="7" rx="1" /><rect x="14" y="3" width="7" height="7" rx="1" />
             <rect x="3" y="14" width="7" height="7" rx="1" /><rect x="14" y="14" width="7" height="7" rx="1" />
           </svg>
-          <span className="text-xs font-semibold text-[var(--ink)]">{visibleCount} in view</span>
+          <span className="text-xs font-semibold text-[var(--ink)]">{posts.length} artworks</span>
         </button>
+      )}
+
+      {posts.length === 0 && locationFilter && (
+        <div className="absolute inset-0 z-[1000] flex items-center justify-center">
+          <div className="rounded-2xl bg-[var(--panel-strong)] px-6 py-4 text-center backdrop-blur">
+            <p className="text-sm font-semibold text-[var(--ink)]">No art in this area</p>
+            <p className="mt-1 text-xs text-[var(--muted)]">Try a broader location</p>
+          </div>
+        </div>
       )}
     </div>
   )

@@ -102,8 +102,12 @@ export function WallView({ posts, userLat, userLon, sort, layout, onPostClick, i
                   🗑
                 </button>
               </div>
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-1.5 pb-1.5 pt-4">
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-1.5 pb-1 pt-4">
                 <LocationTags locationPath={post.locationPath} onTagClick={onLocationTap} />
+                <div className="mt-0.5 flex items-center gap-1 text-[0.5rem] text-white/40">
+                  {post.dist != null && <span>{formatDistance(post.dist)}</span>}
+                  {post.created_at && <span>{formatDate(post.created_at)}</span>}
+                </div>
               </div>
             </div>
           ))}

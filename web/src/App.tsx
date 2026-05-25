@@ -85,6 +85,12 @@ export default function App() {
 
   const handleAddDone = useCallback(() => setTab('map'), [])
 
+  const confirmTrash = useCallback((id: string) => {
+    if (window.confirm('Hide this post? It won\'t appear for you again.')) {
+      trashPost(id)
+    }
+  }, [trashPost])
+
   const handleLocationTap = useCallback((path: string) => {
     setWallLocation(path)
     setTab('wall')
@@ -146,7 +152,7 @@ export default function App() {
           userLon={position?.lon}
           locationFilter={mapLocation}
           onPostClick={openGallery}
-          onShowWall={() => setTab('wall')}
+          onShowWall={() => { setWallLocation(mapLocation); setTab('wall') }}
           onLocationChange={setMapLocation}
           onLocationTap={handleLocationTap}
           isFavorite={isFavorite}
@@ -164,7 +170,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
-          onTrash={trashPost}
+          onTrash={confirmTrash}
           onLocationTap={handleLocationTap}
           allLoaded={allLoaded}
           onLoadMore={loadMore}
@@ -198,7 +204,7 @@ export default function App() {
           isFavorite={isFavorite}
           onToggleFavorite={toggleFavorite}
           getFavCount={getFavCount}
-          onTrash={trashPost}
+          onTrash={confirmTrash}
           onLocationTap={handleLocationTap}
         />
       )}
