@@ -174,9 +174,13 @@ export function MapView({ posts, userLat, userLon, locationFilter, onPostClick, 
         zoom={zoom}
         className="absolute inset-0"
         zoomControl={false}
-        attributionControl={false}
       >
-        <TileLayer url="https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}{r}.png" />
+        <TileLayer
+          url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+          className="artout-dark-tiles"
+          maxZoom={19}
+        />
         <FlyToFilteredPosts posts={posts} locationFilter={locationFilter} />
 
         <MarkerClusterGroup

@@ -166,6 +166,18 @@ a:focus-visible {
   background: #1a1a1a !important;
 }
 
+/* OSM tiles are light; darken them to match the app */
+.artout-dark-tiles {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9) saturate(0.4);
+}
+.leaflet-control-attribution {
+  background: rgba(26, 26, 26, 0.7) !important;
+  color: #999 !important;
+}
+.leaflet-control-attribution a {
+  color: #bbb !important;
+}
+
 /* Override Leaflet popup styling for dark mode */
 .leaflet-popup-content-wrapper {
   background: var(--panel-strong) !important;
